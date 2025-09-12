@@ -59,7 +59,7 @@ _No external frameworks (e.g., React, Angular, Vue) or libraries are used._
 
 ```
 # Clone the repository
-git clone https://github.com/yourusername/game-store-website.git
+git clone https://github.com/hnim3103/game-store-website.git
 cd game-store-website
 
 # Open index.html directly in a browser
