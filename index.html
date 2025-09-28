@@ -1,21 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pixel Palace Games</title>
-    <link rel="stylesheet" href="styles/main.css">
-</head>
-<body>
-    <header>
-        <h1 class="title">PIXEL PALACE GAMES</h1>
-    </header>
-    <main>     
-        <img src="sources/logo.png" alt="Pixel Palace Games Logo" class="logo">
-        <button class="neon-btn" onclick="window.location.href='store.html'">
-            <span>Explore Games</span>
-        </button>
-    </main>
-    <script src="main.js"></script>
-</body>
+
+    <head>
+        <meta charse="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>GSW</title>
+        
+        <link rel="stylesheet" href="styles/style.css">
+        <!-- Boxicons CDN Link -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    </head>
+
+    <body>
+        <!--Navigation bar-->
+        <header>
+            <a href="#" class="logo"><img src="img/logo.svg" class="logo-icon"></a>
+
+            <!--Search Bar-->
+            <div class="search-container">
+                <i class="bx bx-search"></i> 
+                <input type="text" name="search-text" class="search-input" placeholder="Search...">
+            </div>
+            
+            <!--Menu icon-->
+            <div class="bx bx-menu" id="menu-icon"></div>
+
+            <!--Navigation List-->
+            <ul class="navbar">
+                <li><a href=#home>HOME</a></li>
+                <li><a href=#categories>CATEGORIES</a></li>
+                <li><a href=#faq>FAQ</a></li>
+                <li><a href=#about>ABOUT</a></li>
+            </ul>
+
+            <!--Language setting-->
+            <div class="language-setting"><img src="img/icons/earth.svg" class="lang-icon"><span class="lang-text">EN</span></div>
+            
+            <!--Cart icon-->
+            <div class="bx bx-cart" id="cart-icon"></div>
+            
+            <!--Profile-->
+            <div class="bx bx-user-circle" id="profile-icon"></div>
+        </header>
+
+    </body>
 </html>
