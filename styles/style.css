@@ -21,7 +21,7 @@
 }
 
 body {
-  min-height: 100vh;
+  min-height: 500vh;
   color: var(--text-color);
   background-color: var(--black-color);
   background-image: linear-gradient(
@@ -29,6 +29,8 @@ body {
     var(--black-color) 25%,
     var(--dark-green-color) 81%
   );
+  justify-content: center;
+  align-items: center;
 }
 
 img {
@@ -37,7 +39,7 @@ img {
 
 /* Header */
 header {
-  position: fixed;
+  position: relative;
   top: 0;
   right: 0;
   width: 100%;
@@ -45,7 +47,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 100px;
+  padding: 20px 15px;
   background-color: transparent;
   transition: 0.5s;
   z-index: 1000;
@@ -66,7 +68,7 @@ header {
 }
 
 .navbar a:hover,
-.navbar .home-active{
+.navbar .home-active {
   background-color: var(--green-color);
   border-radius: 5rem;
 }
@@ -142,4 +144,75 @@ header {
 
 .bx-user-circle {
   font-size: 50px;
+  color: var(--text-color);
+}
+
+.slider {
+  border: none;
+  margin-top: 30px;
+  height: 550px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Each item is absolutely positioned in center */
+.item {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.7);
+  transition: all 0.6s ease;
+  z-index: 1;
+  visibility: hidden;
+}
+
+.item img {
+  width: 750px;
+  height: 450px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+
+.item.active {
+  visibility: visible;
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+  z-index: 3;
+}
+
+
+.item.prev {
+  visibility: visible;
+  transform: translate(-150%, -50%) scale(0.85);
+  opacity: 0.8;
+  z-index: 2;
+}
+
+.item.next {
+  visibility: visible;
+  transform: translate(50%, -50%) scale(0.85);
+  opacity: 0.8;
+  z-index: 2;
+}
+
+#next,
+#prev {
+  font-size: 60px;
+  background: transparent;
+  color: var(--green-color);
+  border: none;
+  position: absolute;
+  transform: translateY(-50%);
+  cursor: pointer;
+  top: 225px;
+  z-index: 5;
+}
+
+#prev {
+  left: calc(50% - 400px);
+}
+
+#next {
+  right: calc(50% - 400px);
 }
