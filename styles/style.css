@@ -1,7 +1,11 @@
-/* Google Font Import */
+/* ---------------------------------------------------
+   Google Font Import
+--------------------------------------------------- */
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
 
-/* Reset & Base */
+/* ---------------------------------------------------
+   Reset & Base Styles
+--------------------------------------------------- */
 * {
   font-family: 'Roboto Flex', sans-serif;
   margin: 0;
@@ -39,7 +43,9 @@ img {
   height: auto;
 }
 
-/* Header */
+/* ---------------------------------------------------
+   Header & Navigation
+--------------------------------------------------- */
 header {
   position: relative;
   top: 0;
@@ -89,7 +95,9 @@ header {
   z-index: 10001;
 }
 
-/* Language */
+/* ---------------------------------------------------
+   Language Settings
+--------------------------------------------------- */
 .language-setting {
   position: relative;
   align-items: center;
@@ -108,7 +116,9 @@ header {
   padding-left: 5px;
 }
 
-/* Search */
+/* ---------------------------------------------------
+   Search Bar
+--------------------------------------------------- */
 .search-container {
   position: relative;
   width: 300px;
@@ -132,7 +142,9 @@ header {
   padding: 8px 0 0 10px;
 }
 
-/* Icons */
+/* ---------------------------------------------------
+   Icons
+--------------------------------------------------- */
 .bx-cart {
   font-size: 50px;
   color: var(--text-color);
@@ -149,6 +161,9 @@ header {
   color: var(--text-color);
 }
 
+/* ---------------------------------------------------
+   Slider Section
+--------------------------------------------------- */
 .slider {
   border: none;
   margin-top: 20px;
@@ -158,7 +173,7 @@ header {
   display: flex;
 }
 
-.item{
+.item {
   display: flex;
   justify-content: center;
   position: absolute;
@@ -170,14 +185,14 @@ header {
   visibility: hidden;
 }
 
-.item-image{
+.item-image {
   width: 750px;
   height: 450px;
   object-fit: cover;
   border-radius: 10px;
 }
 
-.item-content{
+.item-content {
   position: absolute;
   bottom: 100px;
   width: 400px;
@@ -190,13 +205,13 @@ header {
   color: var(--text-color);
 }
 
+/* Slider States */
 .item.active {
   visibility: visible;
   transform: translate(-50%, -50%) scale(1);
   opacity: 1;
   z-index: 3;
 }
-
 
 .item.prev {
   visibility: visible;
@@ -212,14 +227,17 @@ header {
   z-index: 2;
 }
 
-.discount-percent-container{
+/* ---------------------------------------------------
+   Product Price & Discount
+--------------------------------------------------- */
+.discount-percent-container {
   margin-left: auto;
   border: solid 5px red;
   background-color: red;
   border-radius: 5px;
 }
 
-.discount-percent{
+.discount-percent {
   font-size: 25px;
 }
 
@@ -244,6 +262,9 @@ header {
   font-size: 25px;
 }
 
+/* ---------------------------------------------------
+   Heart Animation
+--------------------------------------------------- */
 .fa-heart {
   display: flex;
   justify-content: center;
@@ -253,7 +274,6 @@ header {
   transition: color 0.3s ease;
 }
 
-/* When active (clicked) */
 .fa-heart.active {
   color: red;
   animation: bounce 0.4s ease;
@@ -266,8 +286,10 @@ header {
   100% { transform: scale(1); }
 }
 
-
-.add-to-cart{
+/* ---------------------------------------------------
+   Add to Cart Button
+--------------------------------------------------- */
+.add-to-cart {
   border: solid 5px var(--green-color);
   width: 150px;
   margin-left: 5px;
@@ -275,13 +297,13 @@ header {
   border-radius: 5px;
 }
 
-.txt-add-to-cart{
+.txt-add-to-cart {
   color: var(--text-color);
 }
 
-
-
-
+/* ---------------------------------------------------
+   Slider Navigation Arrows
+--------------------------------------------------- */
 #next,
 #prev {
   font-size: 60px;
@@ -303,14 +325,17 @@ header {
   right: calc(50% - 400px);
 }
 
-.popular-genres-container{
+/* ---------------------------------------------------
+   Popular Genres Section
+--------------------------------------------------- */
+.popular-genres-container {
   height: 800px;
   position: relative;
   margin-left: 10%;
   margin-right: 10%;
 }
 
-.popular-genres-container .content-header{
+.popular-genres-container .content-header {
   height: 70px;
   width: 100%;
   display: flex;
@@ -318,22 +343,27 @@ header {
   border-bottom: 3px solid var(--green-color);
 }
 
-.see-more{
+.see-more {
   color: var(--text-color);
   margin-left: auto;
 }
 
-.game-view-container{
+/* ---------------------------------------------------
+   Game View Section
+--------------------------------------------------- */
+.game-view-container {
   margin-top: 50px;
   width: 100%;
   display: flex;
 }
 
-.left-container{
+/* Left Container */
+.left-container {
   width: 43%;
 }
 
-.item-style-one{
+/* Main Game Item (Large) */
+.item-style-one {
   position: relative;
   width: 500px;
   height: 420px;
@@ -341,13 +371,13 @@ header {
   background-color: var(--black-color);
 }
 
-.item-style-one .item-image{
+.item-style-one .item-image {
   object-fit: cover;
   width: 100%;
   height: 60%;
 }
 
-.item-style-one .item-content{
+.item-style-one .item-content {
   position: absolute;
   width: 100%;
   height: 33%;
@@ -355,21 +385,21 @@ header {
   display: block;
 }
 
-.item-style-one .price-container{
+.item-style-one .price-container {
   background-color: var(--super-dark-green-color);
   width: 100%;
   height: 50%;
   left: -5px;
 }
 
-.item-style-one .game-price{
+.item-style-one .game-price {
   color: var(--green-color);
   font-size: larger;
   font-weight: bolder;
   margin-right: 80%;
 }
 
-.item-style-one .add-to-cart{
+.item-style-one .add-to-cart {
   background-color: var(--super-dark-green-color);
   height: 40%;
   margin-top: 8px;
@@ -382,13 +412,16 @@ header {
   font-size: 130%;
 }
 
-.item-style-one .fa-heart{
+.item-style-one .fa-heart {
   position: absolute;
   bottom: 12px;
   right: 13%;
   font-size: 250%;
 }
 
+/* ---------------------------------------------------
+   Right Container (Small Game Items)
+--------------------------------------------------- */
 .right-container {
   display: grid;
   grid-template-columns: repeat(2, 320px);
@@ -397,13 +430,12 @@ header {
   margin-left: auto;
 }
 
-.right-container .item-style-one{
-  width: 100% ; 
+.right-container .item-style-one {
+  width: 100%;
   height: 90%;
 }
 
-
-.right-container .item-style-one .item-content{
+.right-container .item-style-one .item-content {
   position: absolute;
   width: 100%;
   height: 33%;
@@ -412,21 +444,21 @@ header {
   background-color: var(--black-color);
 }
 
-.right-container .item-style-one .price-container{
+.right-container .item-style-one .price-container {
   background-color: var(--super-dark-green-color);
   width: 100%;
   height: 50%;
   left: -5px;
 }
 
-.right-container .item-style-one .game-price{
+.right-container .item-style-one .game-price {
   color: var(--green-color);
-  font-size: medium; 
+  font-size: medium;
   font-weight: bolder;
   margin-right: 80%;
 }
 
-.right-container .item-style-one .add-to-cart{
+.right-container .item-style-one .add-to-cart {
   background-color: var(--super-dark-green-color);
   height: 40%;
   margin-top: 5px;
@@ -436,12 +468,12 @@ header {
   width: 60%;
   padding-left: 5%;
   font-weight: lighter;
-  font-size: 100%; 
+  font-size: 100%;
 }
 
-.right-container .item-style-one .fa-heart{
+.right-container .item-style-one .fa-heart {
   position: absolute;
   bottom: 0px;
   right: 13%;
-  font-size: 125%; 
+  font-size: 125%;
 }
