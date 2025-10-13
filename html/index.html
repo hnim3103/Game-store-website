@@ -27,41 +27,41 @@
 <body>
     <!-- Header -->
     <header>
-        <a href="#" class="logo"><img src="/img/logo.svg" class="logo-icon" alt="GSW Logo"></a>
+        <div class="box">
+            <a href="#" class="logo"><img src="/img/logo.svg" class="logo-icon" alt="GSW Logo"></a>
 
-        <!-- Search Bar -->
-        <div class="search-container">
-            <i class="bx bx-search"></i> 
-            <input type="text" name="search-text" class="search-input" placeholder="Search...">
+            <!-- Search Bar -->
+            <div class="search-container">
+                <i class="bx bx-search"></i> 
+                <input type="text" name="search-text" class="search-input" placeholder="Search...">
+            </div>
+            
+            <!-- Menu icon -->
+            <div class="bx bx-menu" id="menu-icon" hidden></div>
+
+            <!-- Navigation List -->
+            <ul class="navbar">
+                <li><a href="#home" class="home-active">HOME</a></li>
+                <li><a href="#categories">CATEGORY</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#about">ABOUT</a></li>
+            </ul>
+
+            <!-- Language setting -->
+            <div class="language-setting">
+                <img src="/img/icons/earth.svg" class="lang-icon" alt="Language">
+                <span class="lang-text">EN</span>
+            </div>
+            
+            <!-- Cart -->
+            <a href="#cart"><div class="bx bx-cart" id="cart-icon" aria-label="Cart"></div></a>
+            
+            <!-- Profile -->
+            <a href="#profile"><div class="bx bx-user-circle" id="profile-icon" aria-label="Profile"></div></a>
         </div>
-        
-        <!-- Menu icon -->
-        <div class="bx bx-menu" id="menu-icon" hidden></div>
-
-        <!-- Navigation List -->
-        <ul class="navbar">
-            <li><a href="#home" class="home-active">HOME</a></li>
-            <li><a href="#categories">CATEGORY</a></li>
-            <li><a href="#faq">FAQ</a></li>
-            <li><a href="#about">ABOUT</a></li>
-        </ul>
-
-        <!-- Language setting -->
-        <div class="language-setting">
-            <img src="/img/icons/earth.svg" class="lang-icon" alt="Language">
-            <span class="lang-text">EN</span>
-        </div>
-        
-        <!-- Cart -->
-        <a href="#cart"><div class="bx bx-cart" id="cart-icon" aria-label="Cart"></div></a>
-        
-        <!-- Profile -->
-        <a href="#profile"><div class="bx bx-user-circle" id="profile-icon" aria-label="Profile"></div></a>
     </header>
-
     <!-- Slider -->
     <div class="slider" id="slider">
-
         <div class="item">
             <div class="item-image">
                 <img src="/img/assets/1.png" alt="Game1">
@@ -170,14 +170,14 @@
         </button>
     </div>
 
-    <div class="popular-genres-container">
-        <div class="content-header">
-            <h1 class="popular-genres">Popular Genres</h1>
-            <a href="#categories" class="see-more">See more</a>
-        </div>
-        <div class="game-view-container">
-            <div class="left-container">
-                <div class="item-style-one">
+    <div class="container">
+        <div class="popular-genres-container">
+            <div class="content-header">
+                <h1 class="popular-genres">Popular Genres</h1>
+                <a href="#categories" class="see-more">See more</a>
+            </div>
+            <div class="game-view-container">
+                <div class="item-style-one" id="big-item">
                     <div class="item-image">
                         <img src="/img/assets/1.png">
                     </div>
@@ -194,8 +194,6 @@
                         <i class="fa-regular fa-heart"></i>
                     </div>
                 </div>
-            </div>
-            <div class="right-container">
                 <div class="item-style-one">
                     <div class="item-image">
                         <img src="/img/assets/2.jpg">
