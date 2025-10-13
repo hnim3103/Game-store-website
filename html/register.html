@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles/register.css">
+    <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <!--Box sign-in-->
+    <div class ="main">
+
+        <!--Button Sign in and Register-->
+        <div class="button-group">
+            <a href="login.html" class="sign-in">
+                <span>Sign In</span>
+            </a>
+
+            <button class="Register">
+                <span>Register</span>
+            </button>
+        </div>
+
+        <!--Register form-->
+        <div>
+            <h3>Register with... </h3>
+        </div>
+
+        <!--Social Register-->
+        <div class="social-register">            
+            <!--Login with Facebook-->
+            <button onclick="window.location.href='https'" class="facebook">
+                <img src="/img/icons/fb.png" alt="Facebook Icon">
+            </button>
+            <!--Login with Google-->
+            <button onclick="window.location.href='https'" class="Google">
+                <img src="/img/icons/gg.png" alt="Google Icon">
+            </button>
+            <!--Login with LinkedIn-->
+            <button onclick="window.location.href='https'" class="LinkedIn">
+                <img src="/img/icons/linkedin.jpg" alt="LinkedIn Icon">
+            </button>
+            <!--Login with Twitter-->
+            <button onclick="window.location.href='https'" class="Twitter">
+                <img src="/img/icons/twitter.png" alt="Twitter Icon">
+            </button>
+        </div>
+
+        <!--Devider-->
+        <div class="divider">
+            <span>OR</span>
+        </div>
+
+        <!--Register form-->
+        <form class="register-form">
+            <label for="name">Username
+                <input type="name" id="name" name="name" placeholder="Input Username" required>
+            </label>
+            <br>
+            <label for="email">Email Address
+                <input type="email" id="email" name="email" placeholder="Input Email Address" required>
+            </label>
+            <br>
+            <label for="password">Password
+                <input type="password" id="password" name="password" placeholder="Input Password" required>
+            </label>
+            <br>
+            <label for="dob">Date of Birth
+                <input type="text" id="dob" name="dob" placeholder="DD/MM/YYYY" required>
+            </label>
+
+            <div class="confirm-container"> 
+                <input type="checkbox" id="terms" class="hidden-checkbox"> 
+                <label for="terms" class="terms-label">
+                    <span class="custom-box1"></span> 
+                    <span class="term-text">I Accept The <u>Terms And Conditions, Cookie Policy And Privacy Policy.</u> </span>
+                </label>
+            </div> 
+
+            <div class="confirm-container"> 
+                <input type="checkbox" id="promotions" class="hidden-checkbox"> 
+                <label for="promotions" class="terms-label">
+                    <span class="custom-box2"></span> 
+                    <span class="term-text">IConditions, Cookie Policy And Privacy Policy.</span>
+                </label>
+            </div> 
+
+            <div>
+                <button type="submit" class="submit">
+                        <span>REGISTER</span> 
+                </button>
+            </div>        
+        </form>
+    </div>
+        <!--Java script-->
+    <script src="/scripts/register.js"></script>
+</body>
+</html>

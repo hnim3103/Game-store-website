@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles/login.css">
+
+    <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <!--Box sign-in-->
+    <div class ="main">
+        <!--Button Sign in and Register-->
+        <div class="button-group">
+            <button class="sign-in">
+                <span>Sign In</span>
+            </button>
+
+            <a href="register.html" class="Register">
+                <span>Register</span>
+            </a>
+        </div>
+
+        <!--Login form-->
+        <form class="login-form">
+            <h3>Sign In with...</h3>
+            <label for="email">Email Address
+                <input type="email" id="email" name="email" placeholder="Input Email Address" required>
+            </label>
+            <br>
+            <label for="password">Password
+                <input type="password" id="password" name="password" placeholder="Input Password" required>
+            </label>
+            <br>
+            <button type="submit" class="submit">
+                <span>SIGN IN</span> 
+            </button>
+            <a href="https:" class="forgot-password">
+                Forgot Your Password?
+            </a>
+        </form>
+
+        <!--Devider-->
+        <div class="divider">
+            <span>OR</span>
+        </div>
+
+        <!--Social Login-->
+        <div  class="social-login">
+
+            <!--Login with Facebook-->
+            <button onclick="window.location.href='https'" class="facebook">
+                <img src="/img/icons/fb.png" alt="Facebook Icon">
+            </button>
+            <!--Login with Google-->
+            <button onclick="window.location.href='https'" class="Google">
+                <img src="/img/icons/gg.png" alt="Google Icon">
+            </button>
+            <!--Login with LinkedIn-->
+            <button onclick="window.location.href='https'" class="LinkedIn">
+                <img src="/img/icons/linkedin.jpg" alt="LinkedIn Icon">
+            </button>
+            <!--Login with Twitter-->
+            <button onclick="window.location.href='https'" class="Twitter">
+                <img src="/img/icons/twitter.png" alt="Twitter Icon">
+            </button>
+        </div>
+
+    </div>
+        <!--Java script-->
+    <script src="/scripts/login.js"></script>
+</body>
+</html>
