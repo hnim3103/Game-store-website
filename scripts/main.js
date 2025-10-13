@@ -21,3 +21,4 @@ nextBtn.addEventListener('click', () => {
 });
 
     updateSlider();
+
