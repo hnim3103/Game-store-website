@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>GSW</title>
+    <title>GSW-FAQ</title>
     
     <!-- Styles -->
     <link rel="stylesheet" href="/styles/style.css">
@@ -40,9 +40,9 @@
 
         <!-- Navigation List -->
         <ul class="navbar">
-            <li><a href="#home" class="home-active">HOME</a></li>
+            <li><a href="#home">HOME</a></li>
             <li><a href="#categories">CATEGORY</a></li>
-            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#faq" class="FAQ-active">FAQ</a></li>
             <li><a href="#about">ABOUT</a></li>
         </ul>
 
@@ -59,215 +59,129 @@
         <a href="#profile"><div class="bx bx-user-circle" id="profile-icon" aria-label="Profile"></div></a>
     </header>
 
-    <!-- Slider -->
-    <div class="slider" id="slider">
-
-        <div class="item">
-            <div class="item-image">
-                <img src="/img/assets/1.png" alt="Game1">
-            </div>
-            <div class="item-content">
-                <div class="discount-percent-container">
-                    <p class="discount-percent">75%</p>
-                </div>
-                <div class="price-container">
-                    <p class="default-price">29$</p>
-                    <p class="discount-price">40.99</p>
-                </div>
-                <i class="fa-regular fa-heart"></i>
-                <div class="add-to-cart">
-                    <i class="fa-solid fa-cart-plus"></i>
-                    <a href="#cart"><span class="txt-add-to-cart">Add to Cart</span></a>
-                </div>
-            </div>
+    <!-- FAQ Section -->
+    <section class="faq-section" id="faq">
+        <!-- Logo GSW -->
+        <div class="faq-logo">
+            <img src="/img/logo-faq.png" alt="GSW Logo">
         </div>
 
-        <div class="item">
-            <div class="item-image">
-                <img src="/img/assets/2.jpg" alt="Game1">
+        <!-- FAQ Container -->
+        <div class="faq-container">
+            <!-- FAQ Item 1 -->
+            <div class="faq-item">
+                <div class="faq-question">
+                    <i class="bx  bx-wallet-alt faq-icon"></i>
+                    <div class="faq-text">
+                        <span>How will I receive the game after purchase?</span>
+                    </div>
+                    <i class="bx bx-plus faq-toggle"></i>
+                </div>
+                <div class="faq-answer"></div>
             </div>
-            <div class="item-content">
-                <div class="discount-percent-container">
-                    <p class="discount-percent">75%</p>
-                </div>
-                <div class="price-container">
-                    <p class="default-price">29$</p>
-                    <p class="discount-price">4.99</p>
-                </div>
-                <i class="fa-regular fa-heart"></i>
-                <div class="add-to-cart">
-                    <i class="fa-solid fa-cart-plus"></i>
-                    <a href="#cart"><span class="txt-add-to-cart">Add to Cart</span></a>
-                </div>
-            </div>
-        </div>
-        
-        <div class="item">
-            <div class="item-image">
-                <img src="/img/assets/3.jpg" alt="Game1">
-            </div>
-            <div class="item-content">
-                <div class="discount-percent-container">
-                    <p class="discount-percent">75%</p>
-                </div>
-                <div class="price-container">
-                    <p class="default-price">29$</p>
-                    <p class="discount-price">4.99</p>
-                </div>
-                <i class="fa-regular fa-heart"></i>
-                <div class="add-to-cart">
-                    <i class="fa-solid fa-cart-plus"></i>
-                    <a href="#cart"><span class="txt-add-to-cart">Add to Cart</span></a>
-                </div>
-            </div>
-        </div>
 
-        <div class="item">
-            <div class="item-image">
-                <img src="/img/assets/1.png" alt="Game1">
-            </div>
-            <div class="item-content">
-                <div class="discount-percent-container">
-                    <p class="discount-percent">75%</p>
+            <!-- FAQ Item 2 -->
+             <div class="faq-item">
+                <div class="faq-question">
+                    <i class="bx bx-gift faq-icon"></i>
+                    <div class="faq-text">
+                        <span>Can I get a refund if I no longer want to play the game?</span>
+                    </div>
+                    <i class="bx bx-plus faq-toggle"></i>
                 </div>
-                <div class="price-container">
-                    <p class="default-price">29$</p>
-                    <p class="discount-price">4.99</p>
+                <div class="faq-answer">
+                    <p>After successful payment, you will receive a license key (CD-Key/Steam Key) or a direct download file in your account. The system will also send a confirmation email with installation instructions.</p>
                 </div>
-                <i class="fa-regular fa-heart"></i>
-                <div class="add-to-cart">
-                    <i class="fa-solid fa-cart-plus"></i>
-                    <a href="#cart"><span class="txt-add-to-cart">Add to Cart</span></a>
-                </div>
-            </div>
-        </div>
+             </div>
 
-        <div class="item">
-            <div class="item-image">
-                <img src="/img/assets/2.jpg" alt="Game1">
-            </div>
-            <div class="item-content">
-                <div class="discount-percent-container">
-                    <p class="discount-percent">75%</p>
+            <!-- FAQ Item 3 -->
+            <div class="faq-item">
+                <div class="faq-question">
+                    <i class="bx bx-credit-card faq-icon"></i>
+                    <div class="faq-text">
+                        <span>How can I pay when purchasing a game?</span>
+                    </div>
+                    <i class="bx bx-plus faq-toggle"></i>
                 </div>
-                <div class="price-container">
-                    <p class="default-price">29$</p>
-                    <p class="discount-price">4.99</p>
-                </div>
-                <i class="fa-regular fa-heart"></i>
-                <div class="add-to-cart">
-                    <i class="fa-solid fa-cart-plus"></i>
-                    <a href="#cart"><span class="txt-add-to-cart">Add to Cart</span></a>
+                <div class="faq-answer">
+                    <p>You can pay for your game using various payment methods such as credit or debit cards (Visa, MasterCard), PayPal, e-wallets (like Momo, ZaloPay), or prepaid gift cards. Some platforms may also support bank transfers or mobile payments depending on your region.</p>
                 </div>
             </div>
-        </div>
-        <!-- Buttons -->
-        <button id="prev" aria-label="Previous">
-            <i class='bx bx-chevron-left-circle'></i>
-        </button>
-        <button id="next" aria-label="Next">
-            <i class='bx bx-chevron-right-circle'></i>
-        </button>
-    </div>
 
-    <div class="popular-genres-container">
-        <div class="content-header">
-            <h1 class="popular-genres">Popular Genres</h1>
-            <a href="#categories" class="see-more">See more</a>
-        </div>
-        <div class="game-view-container">
-            <div class="left-container">
-                <div class="item-style-one">
-                    <div class="item-image">
-                        <img src="/img/assets/1.png">
+            <!-- FAQ Item 4 -->
+            <div class="faq-item">
+                <div class="faq-question">
+                    <i class="bx bx-credit-card faq-icon"></i>
+                    <div class="faq-text">
+                        <span>How can I pay when purchasing a game?</span>
                     </div>
-                    <div class="item-content">
-                        <div class="price-container">
-                            <div class="game-price">
-                                <p>4.99$</p>    
-                            </div>
-                        </div>
-                        <div class="add-to-cart">
-                            <i class="fa-solid fa-cart-plus"></i>
-                            <a href="#cart"><span class="txt-add-to-cart">Add to cart</span></a>
-                        </div>
-                        <i class="fa-regular fa-heart"></i>
-                    </div>
+                    <i class="bx bx-plus faq-toggle"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>You can pay for your game using various payment methods such as credit or debit cards (Visa, MasterCard), PayPal, e-wallets (like Momo, ZaloPay), or prepaid gift cards. Some platforms may also support bank transfers or mobile payments depending on your region.</p>
                 </div>
             </div>
-            <div class="right-container">
-                <div class="item-style-one">
-                    <div class="item-image">
-                        <img src="/img/assets/2.jpg">
-                    </div>
-                    <div class="item-content">
-                        <div class="price-container">
-                            <div class="game-price">
-                                <p>4.99$</p>    
-                            </div>
-                        </div>
-                        <div class="add-to-cart">
-                            <i class="fa-solid fa-cart-plus"></i>
-                            <a href="#cart"><span class="txt-add-to-cart">Add to cart</span></a>
-                        </div>
-                        <i class="fa-regular fa-heart"></i>
-                    </div>
-                </div>
-                <div class="item-style-one">
-                    <div class="item-image">
-                        <img src="/img/assets/3.jpg">
-                    </div>
-                    <div class="item-content">
-                        <div class="price-container">
-                            <div class="game-price">
-                                <p>4.99$</p>    
-                            </div>
-                        </div>
-                        <div class="add-to-cart">
-                            <i class="fa-solid fa-cart-plus"></i>
-                            <a href="#cart"><span class="txt-add-to-cart">Add to cart</span></a>
-                        </div>
-                        <i class="fa-regular fa-heart"></i>
-                    </div>
-                </div>
-                <div class="item-style-one">
-                    <div class="item-image">
-                        <img src="/img/assets/1.png">
-                    </div>
-                    <div class="item-content">
-                        <div class="price-container">
-                            <div class="game-price">
-                                <p>4.99$</p>    
-                            </div>
-                        </div>
-                        <div class="add-to-cart">
-                            <i class="fa-solid fa-cart-plus"></i>
-                            <a href="#cart"><span class="txt-add-to-cart">Add to cart</span></a>
-                        </div>
-                        <i class="fa-regular fa-heart"></i>
-                    </div>
-                </div>
-                <div class="item-style-one">
-                    <div class="item-image">
-                        <img src="/img/assets/2.jpg">
-                    </div>
-                    <div class="item-content">
-                        <div class="price-container">
-                            <div class="game-price">
-                                <p>4.99$</p>    
-                            </div>
-                        </div>
-                        <div class="add-to-cart">
-                            <i class="fa-solid fa-cart-plus"></i>
-                            <a href="#cart"><span class="txt-add-to-cart">Add to cart</span></a>
-                        </div>
-                        <i class="fa-regular fa-heart"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
+            <!-- FAQ Item 5 -->
+            <div class="faq-item">
+                <div class="faq-question">
+                    <i class="bx bx-credit-card faq-icon"></i>
+                    <div class="faq-text">
+                        <span>How can I pay when purchasing a game?</span>
+                    </div>
+                    <i class="bx bx-plus faq-toggle"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>You can pay for your game using various payment methods such as credit or debit cards (Visa, MasterCard), PayPal, e-wallets (like Momo, ZaloPay), or prepaid gift cards. Some platforms may also support bank transfers or mobile payments depending on your region.</p>
+                </div>
+            </div>
+
+            <!-- FAQ Item 6 -->
+            <div class="faq-item">
+                <div class="faq-question">
+                    <i class="bx bx-credit-card faq-icon"></i>
+                    <div class="faq-text">
+                        <span>How can I pay when purchasing a game?</span>
+                    </div>
+                    <i class="bx bx-plus faq-toggle"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>You can pay for your game using various payment methods such as credit or debit cards (Visa, MasterCard), PayPal, e-wallets (like Momo, ZaloPay), or prepaid gift cards. Some platforms may also support bank transfers or mobile payments depending on your region.</p>
+                </div>
+            </div>
+
+            <!-- FAQ Item 7 -->
+            <div class="faq-item">
+                <div class="faq-question">
+                    <i class="bx bx-credit-card faq-icon"></i>
+                    <div class="faq-text">
+                        <span>How can I pay when purchasing a game?</span>
+                    </div>
+                    <i class="bx bx-plus faq-toggle"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>You can pay for your game using various payment methods such as credit or debit cards (Visa, MasterCard), PayPal, e-wallets (like Momo, ZaloPay), or prepaid gift cards. Some platforms may also support bank transfers or mobile payments depending on your region.</p>
+                </div>
+            </div>
+
+            <!-- FAQ Item 8 -->
+            <div class="faq-item">
+                <div class="faq-question">
+                    <i class="bx bx-credit-card faq-icon"></i>
+                    <div class="faq-text">
+                        <span>How can I pay when purchasing a game?</span>
+                    </div>
+                    <i class="bx bx-plus faq-toggle"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>You can pay for your game using various payment methods such as credit or debit cards (Visa, MasterCard), PayPal, e-wallets (like Momo, ZaloPay), or prepaid gift cards. Some platforms may also support bank transfers or mobile payments depending on your region.</p>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+    
+    <!-- JavaScript -->
     <script src="/scripts/main.js" defer></script>
 </body>
 </html>
