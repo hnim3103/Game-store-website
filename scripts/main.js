@@ -1,24 +1,43 @@
-const items = document.querySelectorAll('.item');
-const prevBtn = document.getElementById('prev');
-const nextBtn = document.getElementById('next');
-let index = 0;
+document.addEventListener('DOMContentLoaded', function() {
+    // Lấy tất cả các câu hỏi FAQ
+    const faqQuestions = document.querySelectorAll('.faq-question');
 
-function updateSlider() {
-    items.forEach(item => item.className = 'item'); // reset all
-    items[index].classList.add('active');
-    items[(index - 1 + items.length) % items.length].classList.add('prev');
-    items[(index + 1) % items.length].classList.add('next');
-}
+    faqQuestions.forEach(question => {
+        question.addEventListener('click', function() {
+            // Lấy phần tử cha (faq-item)
+            const faqItem = this.parentElement;
+            const faqAnswer = faqItem.querySelector('.faq-answer');
+            const toggleIcon = this.querySelector('.faq-toggle');
+            const isActive = faqItem.classList.contains('active');
 
-prevBtn.addEventListener('click', () => {
-    index = (index - 1 + items.length) % items.length;
-    updateSlider();
+            // Đóng tất cả các item khác khi mở 1 item mới
+            document.querySelectorAll('.faq-item').forEach(item => {
+                const answer = item.querySelector('.faq-answer');
+                const icon = item.querySelector('.faq-toggle');
+                if (item !== faqItem) {
+                    item.classList.remove('active');
+                    answer.style.maxHeight = null; // thu gọn mượt
+                    icon.classList.remove('bx-minus');
+                    icon.classList.add('bx-plus');
+                }
+            });
+
+            // Nếu item hiện tại đang mở thì đóng lại
+            if (isActive) {
+                faqItem.classList.remove('active');
+                faqAnswer.style.maxHeight = null;
+                // Đổi từ dấu - về dấu +
+                toggleIcon.classList.remove('bx-minus');
+                toggleIcon.classList.add('bx-plus');
+            } 
+            // Nếu item hiện tại đang đóng thì mở ra
+            else {
+                faqItem.classList.add('active');
+                faqAnswer.style.maxHeight = faqAnswer.scrollHeight + "px"; // set maxHeight động
+                // Đổi từ dấu + sang dấu -
+                toggleIcon.classList.remove('bx-plus');
+                toggleIcon.classList.add('bx-minus');
+            }
+        });
+    });
 });
-
-nextBtn.addEventListener('click', () => {
-    index = (index + 1) % items.length;
-    updateSlider();
-});
-
-    updateSlider();
-
