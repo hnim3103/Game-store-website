@@ -186,14 +186,14 @@ img {
   visibility: hidden;
 }
 
-.item-image {
+.slider .item-image {
   width: 750px;
   height: 450px;
   object-fit: cover;
   border-radius: 10px;
 }
 
-.item-content {
+.slider .item-content {
   position: absolute;
   bottom: 100px;
   width: 400px;
@@ -366,14 +366,15 @@ img {
   display: grid;
   grid-template-columns: auto auto auto auto auto;
   column-gap: 20px;
-  row-gap: 100px;
 }
 
 .item-style-one {
   border: 1px solid yellow;
   width: 100%;
   position: relative;
-  display: block;
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
 }
 
 .item-style-one .item-image {
@@ -381,21 +382,16 @@ img {
   height: auto;
   display: block;
   border: 1px solid red;
-  line-height: 0; /* Remove any line-height spacing */
+  line-height: 0; 
 }
 
-/* THIS IS THE KEY FIX */
-.item-style-one .item-image img {
-  display: block; /* Removes inline spacing below image */
-  width: 100%;
-  height: auto;
-}
 
 .item-style-one .item-content {
-  background-color: var(--super-dark-green-color);
+  background-color: var(--black-color);
   border: 1px solid blue;
   width: 100%;
-  display: block;
+  display: flex;
+  flex-direction: column;
 }
 
 .item-content .add-to-cart{
@@ -410,6 +406,16 @@ img {
   justify-content: center;
   width: auto;
   height: 40px;
+}
+
+.item-style-one .item-content .price-container{
+  border: 1px solid yellow;
+  color: var(--green-color);
+  font-size: large;
+  margin: 0;
+  text-align: left;
+  background-color: var(--super-dark-green-color);
+  height: 50px;
 }
 
 .item .txt-add-to-cart{
