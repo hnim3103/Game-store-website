@@ -1,10 +1,10 @@
 document.getElementsByClassName("login-form")[0].addEventListener
 ("submit", function(event) 
     {
-        event.preventDefault(); // Ngăn form gửi đi ngay lập tức
+        event.preventDefault(); // Prevent the form from submitting immediately
 
 
-        // Lấy giá trị người dùng nhập
+        // Get user input values
         const emailInput = document.getElementById("email");
         const passwordInput = document.getElementById("password");
 
@@ -24,7 +24,7 @@ document.getElementsByClassName("login-form")[0].addEventListener
             return;
         }
 
-        // Nếu tất cả hợp lệ
+        // If all validations pass
         alert("Đăng nhập thành công!");
         window.location.href = "index.html";
         

@@ -1,8 +1,8 @@
 
     document.getElementsByClassName("register-form")[0].addEventListener("submit", function(event) {
-    event.preventDefault(); // Ngăn form gửi đi ngay lập tức
+    event.preventDefault(); // Prevent the form from submitting immediately
 
-    // Lấy giá trị người dùng nhập
+    // get user input values
     const nameInput = document.getElementById("name");
     const emailInput = document.getElementById("email");
     const passwordInput = document.getElementById("password");
@@ -10,7 +10,7 @@
     const termsInput = document.getElementById("terms");
     const promotionsInput = document.getElementById("promotions");
 
-    // Kiểm tra từng điều kiện
+    // Check if inputs are valid
     if (nameInput.value.trim().length < 5) {
         alert("Username phải có ít nhất 5 ký tự!");
         nameInput.classList.add("error");
@@ -58,7 +58,7 @@
         return;
     }
 
-    // Nếu tất cả hợp lệ
+    // if all validations pass
     alert("Đăng ký thành công!");
     window.location.href = "login.html";
     });
