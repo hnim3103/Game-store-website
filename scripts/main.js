@@ -1,24 +1,32 @@
-const items = document.querySelectorAll('.item');
+const cards = document.querySelectorAll('.slider__card');
 const prevBtn = document.getElementById('prev');
 const nextBtn = document.getElementById('next');
-let index = 0;
+
+let currentIndex = 0;
 
 function updateSlider() {
-    items.forEach(item => item.className = 'item'); // reset all
-    items[index].classList.add('active');
-    items[(index - 1 + items.length) % items.length].classList.add('prev');
-    items[(index + 1) % items.length].classList.add('next');
+  cards.forEach((card, index) => {
+    card.classList.remove('active', 'prev', 'next');
+  });
+
+  const total = cards.length;
+  const prevIndex = (currentIndex - 1 + total) % total;
+  const nextIndex = (currentIndex + 1) % total;
+
+  cards[currentIndex].classList.add('active');
+  cards[prevIndex].classList.add('prev');
+  cards[nextIndex].classList.add('next');
 }
 
-prevBtn.addEventListener('click', () => {
-    index = (index - 1 + items.length) % items.length;
-    updateSlider();
-});
-
 nextBtn.addEventListener('click', () => {
-    index = (index + 1) % items.length;
-    updateSlider();
+  currentIndex = (currentIndex + 1) % cards.length;
+  updateSlider();
 });
 
-    updateSlider();
+prevBtn.addEventListener('click', () => {
+  currentIndex = (currentIndex - 1 + cards.length) % cards.length;
+  updateSlider();
+});
 
+// Initialize
+updateSlider();

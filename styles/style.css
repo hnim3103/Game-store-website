@@ -23,6 +23,7 @@
   --black-color: #070f1a;
   --text-color: #ffffff;
   --super-dark-green-color: #0f232c;
+  font-size: 10px;
 }
 
 body {
@@ -30,9 +31,9 @@ body {
   color: var(--text-color);
   background-color: var(--black-color);
   background-image: linear-gradient(
-   180deg,
-   var(--black-color) 25%,
-   var(--dark-green-color) 81%
+    180deg,
+    var(--black-color) 25%,
+    var(--dark-green-color) 81%
   );
   justify-content: center;
   align-items: center;
@@ -43,10 +44,14 @@ img {
   height: auto;
 }
 
+h1 {
+  font-size: 3rem;
+}
+
 /* ---------------------------------------------------
   Header & Navigation
 --------------------------------------------------- */
-.box{
+.header__container {
   position: relative;
   top: 0;
   right: 0;
@@ -63,55 +68,54 @@ img {
 }
 
 /* Navbar */
-.navbar {
+.header__nav {
   display: flex;
   column-gap: 1rem;
 }
 
-.navbar a {
+.header__nav-link {
   color: var(--text-color);
-  font-size: 20px;
+  font-size: 2rem;
   font-weight: bold;
   padding: 0.5rem 1rem;
   transition: background 0.6s;
 }
 
-.navbar a:hover,
-.navbar .home-active {
+.header__nav-link:hover,
+.header__nav-link--active {
   background-color: var(--green-color);
   border-radius: 5rem;
 }
 
 /* Logo */
-.logo-icon {
+.header__logo-img {
   width: 100px;
   height: 50px;
 }
 
 /* Menu Icon */
-#menu-icon {
-  font-size: 40px;
+.header__menu-icon {
+  font-size: 4rem;
   cursor: pointer;
-  display: none;
   z-index: 10001;
 }
 
 /* ---------------------------------------------------
   Language Settings
 --------------------------------------------------- */
-.language-setting {
+.header__language {
   position: relative;
   align-items: center;
 }
 
-.lang-icon {
+.header__language-icon {
   width: 48px;
   height: 44px;
 }
 
-.lang-text {
+.header__language-text {
   position: absolute;
-  font-size: 20px;
+  font-size: 2rem;
   font-weight: bold;
   padding-top: 10px;
   padding-left: 5px;
@@ -120,7 +124,7 @@ img {
 /* ---------------------------------------------------
   Search Bar
 --------------------------------------------------- */
-.search-container {
+.header__search {
   position: relative;
   width: 300px;
   height: 46px;
@@ -131,11 +135,11 @@ img {
   justify-content: center;
 }
 
-.search-input {
+.header__search-input {
   position: absolute;
   width: 250px;
   height: 30px;
-  font-size: 18px;
+  font-size: 1.8rem;
   background: transparent;
   border: none;
   outline: none;
@@ -143,22 +147,18 @@ img {
   padding: 8px 0 0 10px;
 }
 
-/* ---------------------------------------------------
-  Icons
---------------------------------------------------- */
-.bx-cart {
-  font-size: 50px;
-  color: var(--text-color);
-}
-
-.bx-search {
-  font-size: 28px;
+.header__search .bx-search {
+  font-size: 2.8rem;
   padding-top: 5px;
   padding-left: 10px;
 }
 
-.bx-user-circle {
-  font-size: 50px;
+/* ---------------------------------------------------
+  Header Icons
+--------------------------------------------------- */
+.header__cart .bx-cart,
+.header__profile .bx-user-circle {
+  font-size: 5rem;
   color: var(--text-color);
 }
 
@@ -166,7 +166,6 @@ img {
   Slider Section
 --------------------------------------------------- */
 .slider {
-  border: 1px solid blue;
   margin-top: 20px;
   height: 450px;
   position: relative;
@@ -174,7 +173,7 @@ img {
   display: flex;
 }
 
-.item {
+.slider__card {
   display: flex;
   justify-content: center;
   position: absolute;
@@ -186,19 +185,19 @@ img {
   visibility: hidden;
 }
 
-.slider .item-image {
+.slider__card-image {
   width: 750px;
   height: 450px;
   object-fit: cover;
   border-radius: 10px;
 }
 
-.slider .item-content {
+.slider__card-content {
   position: absolute;
   bottom: 100px;
   width: 400px;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 2rem;
   height: 60px;
   margin-bottom: -20px;
   margin-right: -100px;
@@ -208,21 +207,21 @@ img {
 }
 
 /* Slider States */
-.item.active {
+.slider__card.active {
   visibility: visible;
   transform: translate(-50%, -50%) scale(1);
   opacity: 1;
   z-index: 3;
 }
 
-.item.prev {
+.slider__card.prev {
   visibility: visible;
   transform: translate(-150%, -50%) scale(0.85);
   opacity: 0.8;
   z-index: 2;
 }
 
-.item.next {
+.slider__card.next {
   visibility: visible;
   transform: translate(50%, -50%) scale(0.85);
   opacity: 0.8;
@@ -230,9 +229,9 @@ img {
 }
 
 /* ---------------------------------------------------
-  Product Price & Discount
+  Slider Product Price & Discount
 --------------------------------------------------- */
-.discount-percent-container {
+.slider__discount {
   margin-left: auto;
   background-color: red;
   border-radius: 5px;
@@ -243,11 +242,11 @@ img {
   padding: 2px;
 }
 
-.discount-percent {
-  font-size: 25px;
+.slider__discount-percent {
+  font-size: 2.5rem;
 }
 
-.price-container {
+.slider__price {
   margin-left: 5px;
   display: flex;
   flex-direction: column;
@@ -258,29 +257,40 @@ img {
   font-weight: bold;
 }
 
-.default-price {
-  font-size: 20px;
+.slider__price-original {
+  font-size: 2rem;
   text-decoration: line-through;
   margin-bottom: 2px;
 }
 
-.discount-price {
-  font-size: 25px;
+.slider__price-discounted {
+  font-size: 2.5rem;
 }
 
 /* ---------------------------------------------------
-  Heart Animation
+  Wishlist Heart Animation
 --------------------------------------------------- */
-.fa-heart {
+.slider__wishlist,
+.game-card__wishlist {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.slider__wishlist .fa-heart,
+.game-card__wishlist .fa-heart {
   display: flex;
   justify-content: center;
-  font-size: 40px;
+  font-size: 4rem;
   margin-left: 5px;
   cursor: pointer;
   transition: color 0.3s ease;
+  color: var(--text-color);
 }
 
-.fa-heart.active {
+.slider__wishlist .fa-heart.active,
+.game-card__wishlist .fa-heart.active {
   color: red;
   animation: bounce 0.4s ease;
 }
@@ -293,26 +303,33 @@ img {
 }
 
 /* ---------------------------------------------------
-  Add to Cart Button
+  Slider Add to Cart Button
 --------------------------------------------------- */
-.add-to-cart {
+.slider__add-cart {
   border: solid 5px var(--green-color);
   width: 150px;
   margin-left: 5px;
   background-color: var(--green-color);
   border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
 }
 
-.txt-add-to-cart {
+.slider__add-cart a {
+  color: var(--black-color);
+}
+
+.slider__add-cart:hover a {
   color: var(--text-color);
 }
 
 /* ---------------------------------------------------
   Slider Navigation Arrows
 --------------------------------------------------- */
-#next,
-#prev {
-  font-size: 60px;
+.slider__btn {
+  font-size: 6rem;
   background: transparent;
   color: var(--green-color);
   border: none;
@@ -323,24 +340,35 @@ img {
   z-index: 5;
 }
 
-#prev {
+.slider__btn--prev {
   left: calc(50% - 400px);
 }
 
-#next {
+.slider__btn--next {
   right: calc(50% - 400px);
+}
+
+/* ---------------------------------------------------
+  Main Content Container
+--------------------------------------------------- */
+.main {
+  width: 1200px;
+  max-width: 100%;
+  margin: 10px auto;
+  position: relative;
 }
 
 /* ---------------------------------------------------
   Popular Genres Section
 --------------------------------------------------- */
-.popular-genres-container {
-  height: 800px;
+.genres {
+  height: fit-content;
   position: absolute;
   width: 100%;
+  display: block;
 }
 
-.popular-genres-container .content-header {
+.genres__header {
   height: 70px;
   width: 100%;
   display: flex;
@@ -348,28 +376,35 @@ img {
   border-bottom: 3px solid var(--green-color);
 }
 
-.see-more {
-  border: 1px solid  blue;
+.genres__link {
+  font-size: 1.5rem;
   color: var(--text-color);
   margin-left: auto;
 }
 
-.container {
-  border: 1px solid red;
-  width: 1200px;
-  max-width: 100%;
-  margin: 10px auto;
-  position: relative;
+.genres__link:hover {
+  color: var(--green-color);
 }
 
-.popular-genres-container .game-view-container {
+.genres__grid {
   display: grid;
+  margin-top: 5rem;
   grid-template-columns: auto auto auto auto auto;
-  column-gap: 20px;
+  gap: 10px 10px;
 }
 
-.item-style-one {
-  border: 1px solid yellow;
+.genres__bottom-grid {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 10px 10px;
+  width: 100%;
+  margin-top: 30px;
+}
+
+/* ---------------------------------------------------
+  Game Card Component
+--------------------------------------------------- */
+.game-card {
   width: 100%;
   position: relative;
   display: flex;
@@ -377,56 +412,84 @@ img {
   height: fit-content;
 }
 
-.item-style-one .item-image {
+.game-card__image {
   width: 100%;
   height: auto;
   display: block;
-  border: 1px solid red;
-  line-height: 0; 
+  line-height: 0;
 }
 
-
-.item-style-one .item-content {
+.game-card__content {
   background-color: var(--black-color);
-  border: 1px solid blue;
   width: 100%;
   display: flex;
   flex-direction: column;
 }
 
-.item-content .add-to-cart{
-  width: 60%;
+.game-card__price-wrapper {
+  color: var(--green-color);
+  font-size: 2rem;
+  font-weight: bold;
+  display: flex;
+  justify-content: left;
+  background-color: var(--super-dark-green-color);
+  height: 6rem;
+  padding-left: 1.5rem;
+  align-items: center;
 }
 
-.item .add-to-cart{
-  color: var(--black-color);
-  border-radius: 0;
+.game-card__add-cart {
+  background-color: var(--super-dark-green-color);
+  width: 70%;
+  font-size: 1.8rem;
+  height: 5rem;
   display: flex;
   align-items: center;
-  justify-content: center;
-  width: auto;
-  height: 40px;
+  padding: 1.5rem;
+  margin-left: 0.5rem;
+  margin-top: 0.5rem;
 }
 
-.item-style-one .item-content .price-container{
-  border: 1px solid yellow;
-  color: var(--green-color);
-  font-size: large;
-  margin: 0;
-  text-align: left;
-  background-color: var(--super-dark-green-color);
-  height: 50px;
+.game-card__add-cart a {
+  color: var(--text-color);
+  margin-left: 0.5rem;
 }
 
-.item .txt-add-to-cart{
-  color: var(--black-color);
+.game-card__add-cart:hover {
+  background-color: var(--green-color);
+} 
+
+
+.game-card__wishlist {
+  position: absolute;
+  bottom: 0.5rem;
+  right: 5%;
 }
 
+.game-card__wishlist .fa-heart {
+  font-size: 4rem;
 
-#big-item{
-  grid-column-start: 1;
-  grid-column-end: 4;
-  grid-row-start: 1;
-  grid-row-end: 4;
 }
 
+/* ---------------------------------------------------
+  Large Game Card Variant
+--------------------------------------------------- */
+.game-card--large {
+  grid-column: 1 / 4;
+  grid-row: 1 / 4;
+}
+
+.game-card--large .game-card__price-wrapper {
+  height: 9rem;
+  font-size: 3rem;
+}
+
+.game-card--large .game-card__add-cart {
+  height: 8rem;
+  margin-top: 1rem;
+  font-size: 2.3rem;
+}
+
+.game-card--large .game-card__wishlist .fa-heart {
+  font-size: 6rem;
+}
