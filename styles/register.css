@@ -1,0 +1,245 @@
+/* Google Font Import */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
+
+/* Reset & Base */
+* {
+  font-family: 'Roboto Flex', sans-serif;
+  text-decoration: none;
+}
+
+:root {
+  --green-color: #00e122;
+  --dark-green-color: #225557;
+  --black-color: #070f1a;
+  --text-color: #ffffff;
+}
+
+
+
+body{
+    background-color: var(--text-color);                                  
+    display: flex;                 
+    justify-content: center;       
+    align-items: center;
+    max-height: 100vh;   
+    overflow-x: hidden;
+        
+}
+
+.main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    gap: 10px;
+    background-color: #0F232C;
+    border-radius: 10px;
+    width: 90%;         /* co giãn theo màn hình */
+    max-width: 800px;
+    height: auto;
+    transform: scale(0.6); 
+}
+
+.button-group{
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    max-width: 720px;
+    padding: 0 2%;
+    box-sizing: border-box;
+}
+
+.Register {
+    width: 100%;
+    max-width: 344px;
+    height: 100px;
+    background-color: var(--dark-green-color);
+    color: white;
+    border-radius: 10px; 
+    font-size: 30px;
+    font-weight: 700;
+    border: none;
+    box-shadow: 0px 5px 8px var(--green-color);
+}
+
+.sign-in{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 344px;
+    height: 100px;
+    background-color: var(--dark-green-color);
+    color: white;
+    border-radius: 10px;
+    font-size: 30px;
+    font-weight: 700;
+    border: none;
+    box-shadow: 0px 2px 8px black;
+    text-decoration: none;
+}
+
+h3 {
+    color: var(--text-color);
+    font-size: 24px;
+    font-weight: 600;
+    margin-right: 520px;
+}
+
+.social-register {
+    width: 100%;
+    max-width: 690px;
+    display: flex;
+    gap: 18%; 
+    justify-content: center;
+    align-items: center;
+    background-color: var(--dark-green-color);
+    padding: 15px 5%; 
+    border-radius: 10px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+.social-register button {
+  background: transparent; 
+  border: none;            
+}
+
+.social-register img {
+  width: 50px;  
+  height: 50px;
+}
+
+.divider{
+    font-size: 32px;
+    color: white;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 765px;
+    margin-bottom: 10px;
+}
+
+.divider::before, .divider::after {
+    content: "";
+    flex: 1;                          /* chia đều 2 bên */
+    border-bottom: 2px solid #ffffff; /* line trắng sáng rõ */
+    margin: 0 40px;  
+    padding: 0 2%;                 /* khoảng cách chữ với line */
+}
+
+
+.register-form{
+    font-size: 24px;
+    color: white;
+    font-weight: 500;  
+    gap: 5px;
+    width: 100%;
+    max-width: 720px;
+    padding: 0 2%;
+    box-sizing: border-box;
+}
+
+.register-form input{
+    background-color: var(--dark-green-color);
+    max-width: 465px;
+    width: 100%;
+    height: 60px;
+    border-radius: 10px;
+    border-color: var(--green-color);
+    font-size: 24px;
+    box-sizing: border-box;
+    padding: 0 1%;
+}
+
+.register-form label{
+    display: flex;
+    font-size: 26px;
+    color: white;
+    font-weight: 500;
+    justify-content: space-between; /* text bên trái, input bên phải */
+    align-items: center;          /* căn giữa theo chiều dọc */
+    width: 100%;                  
+
+}
+
+.hidden-checkbox{
+    position: absolute;
+    opacity: 0; /* Làm cho checkbox gốc vô hình */
+    width: 0;
+    height: 0;
+}
+
+.terms-label{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.term-text{
+    flex-grow: 1;
+    min-width: 0;
+    font-size: 20px;
+}
+
+.confirm-container{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    max-width: 720px;
+    width: 100%;
+    box-sizing: border-box;
+    align-self: flex-start;
+}
+/* 3. ĐỊNH KIỂU Ô VUÔNG TÙY CHỈNH (Cái hộp 30x30) */
+.custom-box1, .custom-box2{
+    width: 30px;
+    height: 30px;
+    margin-right: 20px;
+    background-color: transparent; 
+    border: 3px solid var(--green-color);
+    border-radius: 5px; 
+    position: relative; 
+    flex-shrink: 0; 
+}
+
+.hidden-checkbox:checked + .terms-label .custom-box1::after, .hidden-checkbox:checked + .terms-label .custom-box2::after{
+    content: "";
+    width: 8px;
+    height: 18px;
+    border: solid var(--green-color);
+    border-width: 0 4px 4px 0;
+    position: absolute;
+    top: 2px;
+    left: 10px;
+    transform: rotate(45deg);
+}
+
+.submit{
+    margin-top: 15px;
+    width: 100%;
+    height: 70px;
+    padding: 0 2%;;
+    background-color: var(--green-color);
+    color: white;
+    border-radius: 10px; 
+    font-size: 30px;
+    font-weight: 700;
+    border: none;
+}
+
+.submit:hover, .social-register img:hover, .sign-in:hover {
+  transform: scale(1.1); 
+  cursor: pointer;
+}
+
+
+input.error {
+  border: 2px solid red;
+  animation: shake 0.3s;
+}
