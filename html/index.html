@@ -26,245 +26,345 @@
 
 <body>
     <!-- Header -->
-    <header>
-        <div class="box">
-            <a href="#" class="logo"><img src="/img/logo.svg" class="logo-icon" alt="GSW Logo"></a>
+    <header class="header">
+        <div class="header__container">
+            <a href="#" class="header__logo">
+                <img src="/img/logo.svg" class="header__logo-img" alt="GSW Logo">
+            </a>
 
             <!-- Search Bar -->
-            <div class="search-container">
+            <div class="header__search">
                 <i class="bx bx-search"></i> 
-                <input type="text" name="search-text" class="search-input" placeholder="Search...">
+                <input type="text" name="search-text" class="header__search-input" placeholder="Search...">
             </div>
             
             <!-- Menu icon -->
-            <div class="bx bx-menu" id="menu-icon" hidden></div>
+            <div class="bx bx-menu header__menu-icon" id="menu-icon" hidden></div>
 
             <!-- Navigation List -->
-            <ul class="navbar">
-                <li><a href="#home" class="home-active">HOME</a></li>
-                <li><a href="#categories">CATEGORY</a></li>
-                <li><a href="#faq">FAQ</a></li>
-                <li><a href="#about">ABOUT</a></li>
-            </ul>
+            <nav>
+                <ul class="header__nav">
+                    <li class="header__nav-item"><a href="#home" class="header__nav-link header__nav-link--active">HOME</a></li>
+                    <li class="header__nav-item"><a href="#category" class="header__nav-link">CATEGORY</a></li>
+                    <li class="header__nav-item"><a href="#faq" class="header__nav-link">FAQ</a></li>
+                    <li class="header__nav-item"><a href="#about" class="header__nav-link">ABOUT</a></li>
+                </ul>
+            </nav>
 
             <!-- Language setting -->
-            <div class="language-setting">
-                <img src="/img/icons/earth.svg" class="lang-icon" alt="Language">
-                <span class="lang-text">EN</span>
+            <div class="header__language">
+                <img src="/img/icons/earth.svg" class="header__language-icon" alt="Language">
+                <span class="header__language-text">EN</span>
             </div>
             
             <!-- Cart -->
-            <a href="#cart"><div class="bx bx-cart" id="cart-icon" aria-label="Cart"></div></a>
+            <a href="#cart" class="header__cart" aria-label="Cart">
+                <i class="bx bx-cart"></i>
+            </a>
             
             <!-- Profile -->
-            <a href="#profile"><div class="bx bx-user-circle" id="profile-icon" aria-label="Profile"></div></a>
+            <a href="#profile" class="header__profile" aria-label="Profile">
+                <i class="bx bx-user-circle"></i>
+            </a>
         </div>
     </header>
+
     <!-- Slider -->
-    <div class="slider" id="slider">
-        <div class="item">
-            <div class="item-image">
-                <img src="/img/assets/1.png" alt="Game1">
-            </div>
-            <div class="item-content">
-                <div class="discount-percent-container">
-                    <p class="discount-percent">75%</p>
+    <section class="slider" id="slider">
+        <div class="slider__track">
+            <article class="slider__card">
+                <div class="slider__card-image">
+                    <img src="/img/assets/1.png" alt="Game1">
                 </div>
-                <div class="price-container">
-                    <p class="default-price">29$</p>
-                    <p class="discount-price">40.99</p>
+                <div class="slider__card-content">
+                    <div class="slider__discount">
+                        <p class="slider__discount-percent">75%</p>
+                    </div>
+                    <div class="slider__price">
+                        <p class="slider__price-original">29$</p>
+                        <p class="slider__price-discounted">40.99</p>
+                    </div>
+                    <button class="slider__wishlist" aria-label="Add to wishlist">
+                        <i class="fa-regular fa-heart"></i>
+                    </button>
+                    <div class="slider__add-cart">
+                        <i class="fa-solid fa-cart-plus"></i>
+                        <a href="#cart"><span class="slider__add-cart-text">Add to Cart</span></a>
+                    </div>
                 </div>
-                <i class="fa-regular fa-heart"></i>
-                <div class="add-to-cart">
-                    <i class="fa-solid fa-cart-plus"></i>
-                    <a href="#cart"><span class="txt-add-to-cart">Add to Cart</span></a>
-                </div>
-            </div>
-        </div>
+            </article>
 
-        <div class="item">
-            <div class="item-image">
-                <img src="/img/assets/2.jpg" alt="Game1">
-            </div>
-            <div class="item-content">
-                <div class="discount-percent-container">
-                    <p class="discount-percent">75%</p>
+            <article class="slider__card">
+                <div class="slider__card-image">
+                    <img src="/img/assets/2.jpg" alt="Game2">
                 </div>
-                <div class="price-container">
-                    <p class="default-price">29$</p>
-                    <p class="discount-price">4.99</p>
+                <div class="slider__card-content">
+                    <div class="slider__discount">
+                        <p class="slider__discount-percent">75%</p>
+                    </div>
+                    <div class="slider__price">
+                        <p class="slider__price-original">29$</p>
+                        <p class="slider__price-discounted">4.99</p>
+                    </div>
+                    <button class="slider__wishlist" aria-label="Add to wishlist">
+                        <i class="fa-regular fa-heart"></i>
+                    </button>
+                    <div class="slider__add-cart">
+                        <i class="fa-solid fa-cart-plus"></i>
+                        <a href="#cart"><span class="slider__add-cart-text">Add to Cart</span></a>
+                    </div>
                 </div>
-                <i class="fa-regular fa-heart"></i>
-                <div class="add-to-cart">
-                    <i class="fa-solid fa-cart-plus"></i>
-                    <a href="#cart"><span class="txt-add-to-cart">Add to Cart</span></a>
-                </div>
-            </div>
-        </div>
+            </article>
         
-        <div class="item">
-            <div class="item-image">
-                <img src="/img/assets/3.jpg" alt="Game1">
-            </div>
-            <div class="item-content">
-                <div class="discount-percent-container">
-                    <p class="discount-percent">75%</p>
+            <article class="slider__card">
+                <div class="slider__card-image">
+                    <img src="/img/assets/3.jpg" alt="Game3">
                 </div>
-                <div class="price-container">
-                    <p class="default-price">29$</p>
-                    <p class="discount-price">4.99</p>
+                <div class="slider__card-content">
+                    <div class="slider__discount">
+                        <p class="slider__discount-percent">75%</p>
+                    </div>
+                    <div class="slider__price">
+                        <p class="slider__price-original">29$</p>
+                        <p class="slider__price-discounted">4.99</p>
+                    </div>
+                    <button class="slider__wishlist" aria-label="Add to wishlist">
+                        <i class="fa-regular fa-heart"></i>
+                    </button>
+                    <div class="slider__add-cart">
+                        <i class="fa-solid fa-cart-plus"></i>
+                        <a href="#cart"><span class="slider__add-cart-text">Add to Cart</span></a>
+                    </div>
                 </div>
-                <i class="fa-regular fa-heart"></i>
-                <div class="add-to-cart">
-                    <i class="fa-solid fa-cart-plus"></i>
-                    <a href="#cart"><span class="txt-add-to-cart">Add to Cart</span></a>
+            </article>
+
+            <article class="slider__card">
+                <div class="slider__card-image">
+                    <img src="/img/assets/1.png" alt="Game4">
                 </div>
-            </div>
+                <div class="slider__card-content">
+                    <div class="slider__discount">
+                        <p class="slider__discount-percent">75%</p>
+                    </div>
+                    <div class="slider__price">
+                        <p class="slider__price-original">29$</p>
+                        <p class="slider__price-discounted">4.99</p>
+                    </div>
+                    <button class="slider__wishlist" aria-label="Add to wishlist">
+                        <i class="fa-regular fa-heart"></i>
+                    </button>
+                    <div class="slider__add-cart">
+                        <i class="fa-solid fa-cart-plus"></i>
+                        <a href="#cart"><span class="slider__add-cart-text">Add to Cart</span></a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="slider__card">
+                <div class="slider__card-image">
+                    <img src="/img/assets/2.jpg" alt="Game5">
+                </div>
+                <div class="slider__card-content">
+                    <div class="slider__discount">
+                        <p class="slider__discount-percent">75%</p>
+                    </div>
+                    <div class="slider__price">
+                        <p class="slider__price-original">29$</p>
+                        <p class="slider__price-discounted">4.99</p>
+                    </div>
+                    <button class="slider__wishlist" aria-label="Add to wishlist">
+                        <i class="fa-regular fa-heart"></i>
+                    </button>
+                    <div class="slider__add-cart">
+                        <i class="fa-solid fa-cart-plus"></i>
+                        <a href="#cart"><span class="slider__add-cart-text">Add to Cart</span></a>
+                    </div>
+                </div>
+            </article>
         </div>
 
-        <div class="item">
-            <div class="item-image">
-                <img src="/img/assets/1.png" alt="Game1">
-            </div>
-            <div class="item-content">
-                <div class="discount-percent-container">
-                    <p class="discount-percent">75%</p>
-                </div>
-                <div class="price-container">
-                    <p class="default-price">29$</p>
-                    <p class="discount-price">4.99</p>
-                </div>
-                <i class="fa-regular fa-heart"></i>
-                <div class="add-to-cart">
-                    <i class="fa-solid fa-cart-plus"></i>
-                    <a href="#cart"><span class="txt-add-to-cart">Add to Cart</span></a>
-                </div>
-            </div>
-        </div>
-
-        <div class="item">
-            <div class="item-image">
-                <img src="/img/assets/2.jpg" alt="Game1">
-            </div>
-            <div class="item-content">
-                <div class="discount-percent-container">
-                    <p class="discount-percent">75%</p>
-                </div>
-                <div class="price-container">
-                    <p class="default-price">29$</p>
-                    <p class="discount-price">4.99</p>
-                </div>
-                <i class="fa-regular fa-heart"></i>
-                <div class="add-to-cart">
-                    <i class="fa-solid fa-cart-plus"></i>
-                    <a href="#cart"><span class="txt-add-to-cart">Add to Cart</span></a>
-                </div>
-            </div>
-        </div>
-        <!-- Buttons -->
-        <button id="prev" aria-label="Previous">
+        <!-- Slider Controls -->
+        <button class="slider__btn slider__btn--prev" id="prev" aria-label="Previous">
             <i class='bx bx-chevron-left-circle'></i>
         </button>
-        <button id="next" aria-label="Next">
+        <button class="slider__btn slider__btn--next" id="next" aria-label="Next">
             <i class='bx bx-chevron-right-circle'></i>
         </button>
-    </div>
+    </section>
 
-    <div class="container">
-        <div class="popular-genres-container">
-            <div class="content-header">
-                <h1 class="popular-genres">Popular Genres</h1>
-                <a href="#categories" class="see-more">See more</a>
+    <!-- Main Content -->
+    <main class="main">
+        <section class="genres">
+            <div class="genres__header">
+                <h1 class="genres__title">Popular Genres</h1>
+                <a href="#categories" class="genres__link">See more</a>
             </div>
-            <div class="game-view-container">
-                <div class="item-style-one" id="big-item">
-                    <div class="item-image">
-                        <img src="/img/assets/1.png">
+            
+            <div class="genres__grid">
+                <article class="game-card game-card--large">
+                    <div class="game-card__image">
+                        <img src="/img/assets/1.png" alt="Game">
                     </div>
-                    <div class="item-content">
-                        <div class="price-container">
-                            <div class="game-price">
+                    <div class="game-card__content">
+                        <div class="game-card__price-wrapper">
+                            <div class="game-card__price">
                                 <p>4.99$</p>    
                             </div>
                         </div>
-                        <div class="add-to-cart">
+                        <div class="game-card__add-cart">
                             <i class="fa-solid fa-cart-plus"></i>
-                            <a href="#cart"><span class="txt-add-to-cart">Add to cart</span></a>
+                            <a href="#cart">Add to cart</a>
                         </div>
-                        <i class="fa-regular fa-heart"></i>
+                        <button class="game-card__wishlist" aria-label="Add to wishlist">
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
                     </div>
-                </div>
-                <div class="item-style-one">
-                    <div class="item-image">
-                        <img src="/img/assets/2.jpg">
+                </article>
+
+                <article class="game-card">
+                    <div class="game-card__image">
+                        <img src="/img/assets/2.jpg" alt="Game">
                     </div>
-                    <div class="item-content">
-                        <div class="price-container">
-                            <div class="game-price">
+                    <div class="game-card__content">
+                        <div class="game-card__price-wrapper">
+                            <div class="game-card__price">
                                 <p>4.99$</p>    
                             </div>
                         </div>
-                        <div class="add-to-cart">
+                        <div class="game-card__add-cart">
                             <i class="fa-solid fa-cart-plus"></i>
-                            <a href="#cart"><span class="txt-add-to-cart">Add to cart</span></a>
+                            <a href="#cart"><span class="game-card__add-cart-text">Add to cart</span></a>
                         </div>
-                        <i class="fa-regular fa-heart"></i>
+                        <button class="game-card__wishlist" aria-label="Add to wishlist">
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
                     </div>
-                </div>
-                <div class="item-style-one">
-                    <div class="item-image">
-                        <img src="/img/assets/3.jpg">
+                </article>
+
+                <article class="game-card">
+                    <div class="game-card__image">
+                        <img src="/img/assets/3.jpg" alt="Game">
                     </div>
-                    <div class="item-content">
-                        <div class="price-container">
-                            <div class="game-price">
+                    <div class="game-card__content">
+                        <div class="game-card__price-wrapper">
+                            <div class="game-card__price">
                                 <p>4.99$</p>    
                             </div>
                         </div>
-                        <div class="add-to-cart">
+                        <div class="game-card__add-cart">
                             <i class="fa-solid fa-cart-plus"></i>
-                            <a href="#cart"><span class="txt-add-to-cart">Add to cart</span></a>
+                            <a href="#cart"><span class="game-card__add-cart-text">Add to cart</span></a>
                         </div>
-                        <i class="fa-regular fa-heart"></i>
+                        <button class="game-card__wishlist" aria-label="Add to wishlist">
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
                     </div>
-                </div>
-                <div class="item-style-one">
-                    <div class="item-image">
-                        <img src="/img/assets/1.png">
+                </article>
+
+                <article class="game-card">
+                    <div class="game-card__image">
+                        <img src="/img/assets/1.png" alt="Game">
                     </div>
-                    <div class="item-content">
-                        <div class="price-container">
-                            <div class="game-price">
+                    <div class="game-card__content">
+                        <div class="game-card__price-wrapper">
+                            <div class="game-card__price">
                                 <p>4.99$</p>    
                             </div>
                         </div>
-                        <div class="add-to-cart">
+                        <div class="game-card__add-cart">
                             <i class="fa-solid fa-cart-plus"></i>
-                            <a href="#cart"><span class="txt-add-to-cart">Add to cart</span></a>
+                            <a href="#cart"><span class="game-card__add-cart-text">Add to cart</span></a>
                         </div>
-                        <i class="fa-regular fa-heart"></i>
+                        <button class="game-card__wishlist" aria-label="Add to wishlist">
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
                     </div>
-                </div>
-                <div class="item-style-one">
-                    <div class="item-image">
-                        <img src="/img/assets/2.jpg">
+                </article>
+
+                <article class="game-card">
+                    <div class="game-card__image">
+                        <img src="/img/assets/2.jpg" alt="Game">
                     </div>
-                    <div class="item-content">
-                        <div class="price-container">
-                            <div class="game-price">
+                    <div class="game-card__content">
+                        <div class="game-card__price-wrapper">
+                            <div class="game-card__price">
                                 <p>4.99$</p>    
                             </div>
                         </div>
-                        <div class="add-to-cart">
+                        <div class="game-card__add-cart">
                             <i class="fa-solid fa-cart-plus"></i>
-                            <a href="#cart"><span class="txt-add-to-cart">Add to cart</span></a>
+                            <a href="#cart"><span class="game-card__add-cart-text">Add to cart</span></a>
                         </div>
-                        <i class="fa-regular fa-heart"></i>
+                        <button class="game-card__wishlist" aria-label="Add to wishlist">
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
                     </div>
-                </div>
+                </article>
             </div>
-        </div>
-    </div>
+
+            <div class="genres__bottom-grid">
+                <article class="game-card">
+                    <div class="game-card__image">
+                        <img src="/img/assets/1.png" alt="Game">
+                    </div>
+                    <div class="game-card__content">
+                        <div class="game-card__price-wrapper">
+                            <div class="game-card__price">
+                                <p>4.99$</p>    
+                            </div>
+                        </div>
+                        <div class="game-card__add-cart">
+                            <i class="fa-solid fa-cart-plus"></i>
+                            <a href="#cart"><span class="game-card__add-cart-text">Add to cart</span></a>
+                        </div>
+                        <button class="game-card__wishlist" aria-label="Add to wishlist">
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                    </div>
+                </article>
+
+                <article class="game-card">
+                    <div class="game-card__image">
+                        <img src="/img/assets/2.jpg" alt="Game">
+                    </div>
+                    <div class="game-card__content">
+                        <div class="game-card__price-wrapper">
+                            <div class="game-card__price">
+                                <p>4.99$</p>    
+                            </div>
+                        </div>
+                        <div class="game-card__add-cart">
+                            <i class="fa-solid fa-cart-plus"></i>
+                            <a href="#cart"><span class="game-card__add-cart-text">Add to cart</span></a>
+                        </div>
+                        <button class="game-card__wishlist" aria-label="Add to wishlist">
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                    </div>
+                </article>
+
+                <article class="game-card">
+                    <div class="game-card__image">
+                        <img src="/img/assets/3.jpg" alt="Game">
+                    </div>
+                    <div class="game-card__content">
+                        <div class="game-card__price-wrapper">
+                            <div class="game-card__price">
+                                <p>4.99$</p>    
+                            </div>
+                        </div>
+                        <div class="game-card__add-cart">
+                            <i class="fa-solid fa-cart-plus"></i>
+                            <a href="#cart"><span class="game-card__add-cart-text">Add to cart</span></a>
+                        </div>
+                        <button class="game-card__wishlist" aria-label="Add to wishlist">
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
 
     <script src="/scripts/main.js" defer></script>
 </body>
