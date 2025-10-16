@@ -201,7 +201,7 @@ header {
   transition: all 0.3s ease;
   animation: fadeInUp 0.6s ease-out backwards;
   border: 2px solid transparent;
-  border: solid 1px var(--green-color);
+  border: 1px solid var(--green-color);
 }
 
 .faq-item:nth-child(1) { animation-delay: 0.1s; }
