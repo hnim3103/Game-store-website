@@ -81,8 +81,8 @@ h1 {
   transition: background 0.6s;
 }
 
-.navbar a:hover,
-.navbar .FAQ-active {
+.header__nav-link:hover,
+.header__nav-link--active {
   background-color: var(--green-color);
   border-radius: 5rem;
 }
@@ -165,7 +165,7 @@ h1 {
 /* ---------------------------------------------------
    FAQ Section
 --------------------------------------------------- */
-.faq-section {
+.faq {
   max-width: 1200px;
   margin: 0 auto;
   padding: 60px 20px;
@@ -175,18 +175,18 @@ h1 {
 }
 
 /* FAQ Logo */
-.faq-logo {
-  margin-bottom: 75px;
+.faq__logo {
+  margin-bottom: 88px;
   text-align: center;
 }
 
-.faq-logo img {
-  width: 350px;
+.faq__logo img {
+  width: 404px;
   height: auto;
 }
 
 /* FAQ Container */
-.faq-container {
+.faq__container {
   width: 100%;
   max-width: 900px;
   display: flex;
@@ -195,7 +195,7 @@ h1 {
 }
 
 /* FAQ Item */
-.faq-item {
+.faq__item {
   background: linear-gradient(135deg, #225557 100%);
   border-radius: 5px;
   overflow: hidden;
@@ -205,14 +205,14 @@ h1 {
   border: 1px solid var(--green-color);
 }
 
-.faq-item:nth-child(1) { animation-delay: 0.1s; }
-.faq-item:nth-child(2) { animation-delay: 0.2s; }
-.faq-item:nth-child(3) { animation-delay: 0.3s; }
-.faq-item:nth-child(4) { animation-delay: 0.4s; }
-.faq-item:nth-child(5) { animation-delay: 0.5s; }
-.faq-item:nth-child(6) { animation-delay: 0.6s; }
-.faq-item:nth-child(7) { animation-delay: 0.7s; }
-.faq-item:nth-child(8) { animation-delay: 0.8s; }
+.faq__item:nth-child(1) { animation-delay: 0.1s; }
+.faq__item:nth-child(2) { animation-delay: 0.2s; }
+.faq__item:nth-child(3) { animation-delay: 0.3s; }
+.faq__item:nth-child(4) { animation-delay: 0.4s; }
+.faq__item:nth-child(5) { animation-delay: 0.5s; }
+.faq__item:nth-child(6) { animation-delay: 0.6s; }
+.faq__item:nth-child(7) { animation-delay: 0.7s; }
+.faq__item:nth-child(8) { animation-delay: 0.8s; }
 
 @keyframes fadeInUp {
   from {
@@ -225,14 +225,14 @@ h1 {
   }
 }
 
-.faq-item:hover {
+.faq__item:hover {
   border-color: var(--green-color);
   box-shadow: 0 5px 20px rgba(0, 255, 34, 0.2);
   transform: translateY(-2px);
 }
 
 /* FAQ Question */
-.faq-question {
+.faq__question {
   display: flex;
   align-items: center;
   gap: 15px;
@@ -243,12 +243,12 @@ h1 {
   position: relative;
 }
 
-.faq-question .faq-icon {
+.faq__question .faq__icon {
   flex-shrink: 0;
   margin-right: 15px;
 }
 
-.faq-question span {
+.faq__question span {
   font-size: 22px;
   font-weight: 800;
   color: var(--text-color);
@@ -257,7 +257,7 @@ h1 {
   width: fit-content;
 }
 
-.faq-question .faq-toggle {
+.faq__question .faq__toggle {
   position: absolute;
   right: 25px;
   top: 50%;
@@ -268,13 +268,13 @@ h1 {
 }
 
 /* FAQ Icons */
-.faq-icon {
+.faq__icon {
   font-size: 32px;
   color: var(--green-color);
   flex-shrink: 0;
 }
 
-.faq-toggle {
+.faq__toggle {
   font-size: 32px;
   color: var(--green-color);
   flex-shrink: 0;
@@ -282,61 +282,58 @@ h1 {
 }
 
 /* FAQ Answer */
-.faq-answer {
+.faq__answer {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.4s ease, padding 0.4s ease;
 }
 
-.faq-answer p {
-  padding: 0 2rem 1rem 4rem;
+.faq__answer p {
+  padding: 0 6rem 1rem 8rem;
   font-size: 20px;
+  font-weight: 600;
   line-height: 1.6;
   color: var(--text-color);
   margin: 0;
 }
 
 /* Active State */
-.faq-item.active .faq-answer {
+.faq__item.active .faq__answer {
   max-height: 500px;
 }
 
 /* HighLight effect for active item title */
-.faq-item.active .faq-question span {
+.faq__item.active .faq__question span {
   background: var(--green-color);
   padding: 5px 15px;
   border-radius: 5px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 40px;
 }
 
 /* ---------------------------------------------------
    Responsive Design
 --------------------------------------------------- */
 @media (max-width: 768px) {
-  .faq-logo img {
+  .faq__logo img {
     width: 250px;
   }
 
-  .faq-container {
+  .faq__container {
     padding: 0 10px;
   }
-  .faq-question {
+  .faq__question {
     padding: 15px 20px;
     gap: 10px;
   }
 
-  .faq-question span {
+  .faq__question span {
     font-size: 16px;
   }
 
-  .faq-icon, .faq-toggle {
+  .faq__icon, .faq__toggle {
     font-size: 24px;
   }
 
-  .faq-answer p {
+  .faq__answer p {
     font-size: 14px;
     padding: 0 20px;
   }

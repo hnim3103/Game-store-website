@@ -5,10 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>GSW-FAQ</title>
+    <title>GSW</title>
     
     <!-- Styles -->
-    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="/styles/faq.css">
     
     <!-- Boxicons CDN -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
@@ -26,154 +26,167 @@
 
 <body>
     <!-- Header -->
-    <header>
-        <a href="#" class="logo"><img src="/img/logo.svg" class="logo-icon" alt="GSW Logo"></a>
+    <header class="header">
+        <div class="header__container">
+            <a href="#" class="header__logo">
+                <img src="/img/logo.svg" class="header__logo-img" alt="GSW Logo">
+            </a>
 
-        <!-- Search Bar -->
-        <div class="search-container">
-            <i class="bx bx-search"></i> 
-            <input type="text" name="search-text" class="search-input" placeholder="Search...">
+            <!-- Search Bar -->
+            <div class="header__search">
+                <i class="bx bx-search"></i> 
+                <input type="text" name="search-text" class="header__search-input" placeholder="Search...">
+            </div>
+            
+            <!-- Menu icon -->
+            <div class="bx bx-menu header__menu-icon" id="menu-icon" hidden></div>
+
+            <!-- Navigation List -->
+            <nav>
+                <ul class="header__nav">
+                    <li class="header__nav-item"><a href="#home" class="header__nav-link">HOME</a></li>
+                    <li class="header__nav-item"><a href="#category" class="header__nav-link">CATEGORY</a></li>
+                    <li class="header__nav-item"><a href="#faq" class="header__nav-link header__nav-link--active">FAQ</a></li>
+                    <li class="header__nav-item"><a href="#about" class="header__nav-link">ABOUT</a></li>
+                </ul>
+            </nav>
+
+            <!-- Language setting -->
+            <div class="header__language">
+                <img src="/img/icons/earth.svg" class="header__language-icon" alt="Language">
+                <span class="header__language-text">EN</span>
+            </div>
+            
+            <!-- Cart -->
+            <a href="#cart" class="header__cart" aria-label="Cart">
+                <i class="bx bx-cart"></i>
+            </a>
+            
+            <!-- Profile -->
+            <a href="#profile" class="header__profile" aria-label="Profile">
+                <i class="bx bx-user-circle"></i>
+            </a>
         </div>
-        
-        <!-- Menu icon -->
-        <div class="bx bx-menu" id="menu-icon" hidden></div>
-
-        <!-- Navigation List -->
-        <ul class="navbar">
-            <li><a href="#home">HOME</a></li>
-            <li><a href="#categories">CATEGORY</a></li>
-            <li><a href="#faq" class="FAQ-active">FAQ</a></li>
-            <li><a href="#about">ABOUT</a></li>
-        </ul>
-
-        <!-- Language setting -->
-        <div class="language-setting">
-            <img src="/img/icons/earth.svg" class="lang-icon" alt="Language">
-            <span class="lang-text">EN</span>
-        </div>
-        
-        <!-- Cart -->
-        <a href="#cart"><div class="bx bx-cart" id="cart-icon" aria-label="Cart"></div></a>
-        
-        <!-- Profile -->
-        <a href="#profile"><div class="bx bx-user-circle" id="profile-icon" aria-label="Profile"></div></a>
     </header>
 
     <!-- FAQ Section -->
-    <section class="faq-section" id="faq">
+    <section class="faq" id="faq">
         <!-- Logo GSW -->
-        <div class="faq-logo">
+        <div class="faq__logo">
             <img src="/img/logo-faq.png" alt="GSW Logo">
         </div>
 
         <!-- FAQ Container -->
-        <div class="faq-container">
+        <div class="faq__container">
             <!-- FAQ Item 1 -->
-            <div class="faq-item">
-                <div class="faq-question">
-                    <i class="bx  bx-wallet-alt faq-icon"></i>
-                    <div class="faq-text">
+            <div class="faq__item">
+                <div class="faq__question">
+                    <i class="bx bx-wallet-alt faq__icon"></i>
+                    <div class="faq__text">
                         <span>How will I receive the game after purchase?</span>
                     </div>
-                    <i class="bx bx-plus faq-toggle"></i>
+                    <i class="bx bx-plus faq__toggle"></i>
                 </div>
-                <div class="faq-answer"></div>
+                <div class="faq__answer">
+                    <p>Immediately after your payment is successfully processed, you will receive a digital activation key (also known as a product key or CD key) for your game.</p>
+                    <p>This key will be sent to the email address you used to register your account. You can also view your key at any time in the 'Order History' or 'My Games Library' section of your account on our website.</p>
+                </div>
             </div>
 
             <!-- FAQ Item 2 -->
-             <div class="faq-item">
-                <div class="faq-question">
-                    <i class="bx bx-gift faq-icon"></i>
-                    <div class="faq-text">
+             <div class="faq__item">
+                <div class="faq__question">
+                    <i class="bx bx-gift faq__icon"></i>
+                    <div class="faq__text">
                         <span>Can I get a refund if I no longer want to play the game?</span>
                     </div>
-                    <i class="bx bx-plus faq-toggle"></i>
+                    <i class="bx bx-plus faq__toggle"></i>
                 </div>
-                <div class="faq-answer">
+                <div class="faq__answer">
                     <p>After successful payment, you will receive a license key (CD-Key/Steam Key) or a direct download file in your account. The system will also send a confirmation email with installation instructions.</p>
                 </div>
              </div>
 
             <!-- FAQ Item 3 -->
-            <div class="faq-item">
-                <div class="faq-question">
-                    <i class="bx bx-credit-card faq-icon"></i>
-                    <div class="faq-text">
+            <div class="faq__item">
+                <div class="faq__question">
+                    <i class="bx bx-credit-card faq__icon"></i>
+                    <div class="faq__text">
                         <span>How can I pay when purchasing a game?</span>
                     </div>
-                    <i class="bx bx-plus faq-toggle"></i>
+                    <i class="bx bx-plus faq__toggle"></i>
                 </div>
-                <div class="faq-answer">
+                <div class="faq__answer">
                     <p>You can pay for your game using various payment methods such as credit or debit cards (Visa, MasterCard), PayPal, e-wallets (like Momo, ZaloPay), or prepaid gift cards. Some platforms may also support bank transfers or mobile payments depending on your region.</p>
                 </div>
             </div>
 
             <!-- FAQ Item 4 -->
-            <div class="faq-item">
-                <div class="faq-question">
-                    <i class="bx bx-credit-card faq-icon"></i>
-                    <div class="faq-text">
+            <div class="faq__item">
+                <div class="faq__question">
+                    <i class="bx bx-credit-card faq__icon"></i>
+                    <div class="faq__text">
                         <span>How can I pay when purchasing a game?</span>
                     </div>
-                    <i class="bx bx-plus faq-toggle"></i>
+                    <i class="bx bx-plus faq__toggle"></i>
                 </div>
-                <div class="faq-answer">
+                <div class="faq__answer">
                     <p>You can pay for your game using various payment methods such as credit or debit cards (Visa, MasterCard), PayPal, e-wallets (like Momo, ZaloPay), or prepaid gift cards. Some platforms may also support bank transfers or mobile payments depending on your region.</p>
                 </div>
             </div>
 
             <!-- FAQ Item 5 -->
-            <div class="faq-item">
-                <div class="faq-question">
-                    <i class="bx bx-credit-card faq-icon"></i>
-                    <div class="faq-text">
+            <div class="faq__item">
+                <div class="faq__question">
+                    <i class="bx bx-credit-card faq__icon"></i>
+                    <div class="faq__text">
                         <span>How can I pay when purchasing a game?</span>
                     </div>
-                    <i class="bx bx-plus faq-toggle"></i>
+                    <i class="bx bx-plus faq__toggle"></i>
                 </div>
-                <div class="faq-answer">
+                <div class="faq__answer">
                     <p>You can pay for your game using various payment methods such as credit or debit cards (Visa, MasterCard), PayPal, e-wallets (like Momo, ZaloPay), or prepaid gift cards. Some platforms may also support bank transfers or mobile payments depending on your region.</p>
                 </div>
             </div>
 
             <!-- FAQ Item 6 -->
-            <div class="faq-item">
-                <div class="faq-question">
-                    <i class="bx bx-credit-card faq-icon"></i>
-                    <div class="faq-text">
+            <div class="faq__item">
+                <div class="faq__question">
+                    <i class="bx bx-credit-card faq__icon"></i>
+                    <div class="faq__text">
                         <span>How can I pay when purchasing a game?</span>
                     </div>
-                    <i class="bx bx-plus faq-toggle"></i>
+                    <i class="bx bx-plus faq__toggle"></i>
                 </div>
-                <div class="faq-answer">
+                <div class="faq__answer">
                     <p>You can pay for your game using various payment methods such as credit or debit cards (Visa, MasterCard), PayPal, e-wallets (like Momo, ZaloPay), or prepaid gift cards. Some platforms may also support bank transfers or mobile payments depending on your region.</p>
                 </div>
             </div>
 
             <!-- FAQ Item 7 -->
-            <div class="faq-item">
-                <div class="faq-question">
-                    <i class="bx bx-credit-card faq-icon"></i>
-                    <div class="faq-text">
+            <div class="faq__item">
+                <div class="faq__question">
+                    <i class="bx bx-credit-card faq__icon"></i>
+                    <div class="faq__text">
                         <span>How can I pay when purchasing a game?</span>
                     </div>
-                    <i class="bx bx-plus faq-toggle"></i>
+                    <i class="bx bx-plus faq__toggle"></i>
                 </div>
-                <div class="faq-answer">
+                <div class="faq__answer">
                     <p>You can pay for your game using various payment methods such as credit or debit cards (Visa, MasterCard), PayPal, e-wallets (like Momo, ZaloPay), or prepaid gift cards. Some platforms may also support bank transfers or mobile payments depending on your region.</p>
                 </div>
             </div>
 
             <!-- FAQ Item 8 -->
-            <div class="faq-item">
-                <div class="faq-question">
-                    <i class="bx bx-credit-card faq-icon"></i>
-                    <div class="faq-text">
+            <div class="faq__item">
+                <div class="faq__question">
+                    <i class="bx bx-credit-card faq__icon"></i>
+                    <div class="faq__text">
                         <span>How can I pay when purchasing a game?</span>
                     </div>
-                    <i class="bx bx-plus faq-toggle"></i>
+                    <i class="bx bx-plus faq__toggle"></i>
                 </div>
-                <div class="faq-answer">
+                <div class="faq__answer">
                     <p>You can pay for your game using various payment methods such as credit or debit cards (Visa, MasterCard), PayPal, e-wallets (like Momo, ZaloPay), or prepaid gift cards. Some platforms may also support bank transfers or mobile payments depending on your region.</p>
                 </div>
             </div>
