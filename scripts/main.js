@@ -8,14 +8,14 @@ document.addEventListener('DOMContentLoaded', function() {
             const faqItem = this.parentElement;
             const faqAnswer = faqItem.querySelector('.faq__answer');
             const toggleIcon = this.querySelector('.faq__toggle');
-            const isActive = faqItem.classList.contains('faq__item--active');
+            const isActive = faqItem.classList.contains('active');
 
             // Đóng tất cả các item khác khi mở 1 item mới
             document.querySelectorAll('.faq__item').forEach(item => {
                 const answer = item.querySelector('.faq__answer');
                 const icon = item.querySelector('.faq__toggle');
                 if (item !== faqItem) {
-                    item.classList.remove('faq__item--active');
+                    item.classList.remove('active');
                     answer.style.maxHeight = null; // thu gọn mượt
                     icon.classList.remove('bx-minus');
                     icon.classList.add('bx-plus');
@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Nếu item hiện tại đang mở thì đóng lại
             if (isActive) {
-                faqItem.classList.remove('faq__item--active');
+                faqItem.classList.remove('active');
                 faqAnswer.style.maxHeight = null;
                 // Đổi từ dấu - về dấu +
                 toggleIcon.classList.remove('bx-minus');
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
             } 
             // Nếu item hiện tại đang đóng thì mở ra
             else {
-                faqItem.classList.add('faq__item--active');
+                faqItem.classList.add('active');
                 faqAnswer.style.maxHeight = faqAnswer.scrollHeight + "px"; // set maxHeight động
                 // Đổi từ dấu + sang dấu -
                 toggleIcon.classList.remove('bx-plus');
