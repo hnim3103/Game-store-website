@@ -1,0 +1,620 @@
+/* ---------------------------------------------------
+  Google Font Import
+--------------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
+
+/* ---------------------------------------------------
+  Reset & Base Styles
+--------------------------------------------------- */
+* {
+  font-family: 'Roboto Flex', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  scroll-padding-top: 2rem;
+  scroll-behavior: smooth;
+}
+
+:root {
+  --green-color: #00e122;
+  --dark-green-color: #225557;
+  --black-color: #070f1a;
+  --text-color: #ffffff;
+  --super-dark-green-color: #0f232c;
+  font-size: 10px;
+}
+
+body {
+  min-height: 1000vh;
+  color: var(--text-color);
+  background-color: var(--black-color);
+  background-image: linear-gradient(
+    180deg,
+    var(--black-color) 25%,
+    var(--dark-green-color) 81%
+  );
+  justify-content: center;
+  align-items: center;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+/* ---------------------------------------------------
+  Header & Navigation
+--------------------------------------------------- */
+.header__container {
+  position: relative;
+  top: 0;
+  right: 0;
+  width: 1200px;
+  max-width: 100%;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 15px;
+  background-color: transparent;
+  transition: 0.5s;
+  margin: auto;
+}
+
+/* Navbar */
+.header__nav {
+  display: flex;
+  column-gap: 1rem;
+}
+
+.header__nav-link {
+  color: var(--text-color);
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  transition: background 0.6s;
+}
+
+.header__nav-link:hover,
+.header__nav-link--active {
+  background-color: var(--green-color);
+  border-radius: 5rem;
+}
+
+/* Logo */
+.header__logo-img {
+  width: 100px;
+  height: 50px;
+}
+
+/* Menu Icon */
+.header__menu-icon {
+  font-size: 4rem;
+  cursor: pointer;
+  z-index: 10001;
+}
+
+/* ---------------------------------------------------
+  Language Settings
+--------------------------------------------------- */
+.header__language {
+  position: relative;
+  align-items: center;
+}
+
+.header__language-icon {
+  width: 48px;
+  height: 44px;
+}
+
+.header__language-text {
+  position: absolute;
+  font-size: 2rem;
+  font-weight: bold;
+  padding-top: 10px;
+  padding-left: 5px;
+}
+
+/* ---------------------------------------------------
+  Search Bar
+--------------------------------------------------- */
+.header__search {
+  position: relative;
+  width: 300px;
+  height: 46px;
+  background-color: #404044;
+  border: 5px solid var(--green-color);
+  border-radius: 60px;
+  align-items: center;
+  justify-content: center;
+}
+
+.header__search-input {
+  position: absolute;
+  width: 250px;
+  height: 30px;
+  font-size: 1.8rem;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--text-color);
+  padding: 8px 0 0 10px;
+}
+
+.header__search .bx-search {
+  font-size: 2.8rem;
+  padding-top: 5px;
+  padding-left: 10px;
+}
+
+/* ---------------------------------------------------
+  Header Icons
+--------------------------------------------------- */
+.header__cart .bx-cart,
+.header__profile .bx-user-circle {
+  font-size: 5rem;
+  color: var(--text-color);
+}
+
+/* ---------------------------------------------------
+  Slider Section
+--------------------------------------------------- */
+.slider {
+  margin-top: 20px;
+  height: 450px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+}
+
+.slider__card {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.7);
+  transition: all 0.6s ease;
+  z-index: 1;
+  visibility: hidden;
+}
+
+.slider__card-image {
+  width: 750px;
+  height: 450px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.slider__card-content{
+  position: absolute;
+  bottom: 100px;
+  width: 400px;
+  font-weight: bold;
+  font-size: 2rem;
+  height: 60px;
+  margin-bottom: -20px;
+  margin-right: -100px;
+  display: flex;
+  align-items: center;
+  color: var(--text-color);
+}
+
+/* Slider States */
+.slider__card.active {
+  visibility: visible;
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+  z-index: 3;
+}
+
+.slider__card.prev {
+  visibility: visible;
+  transform: translate(-150%, -50%) scale(0.85);
+  opacity: 0.8;
+  z-index: 2;
+}
+
+.slider__card.next {
+  visibility: visible;
+  transform: translate(50%, -50%) scale(0.85);
+  opacity: 0.8;
+  z-index: 2;
+}
+
+/* ---------------------------------------------------
+  Slider Product Price & Discount
+--------------------------------------------------- */
+.slider__discount, .upcoming .game-card--large .game-card__discount {
+  margin-left: auto;
+  background-color: red;
+  border-radius: 5px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2px;
+}
+
+.slider__discount-percent, .upcoming .game-card--large .game-card__discount-percent  {
+  font-size: 2.5rem;
+}
+
+.slider__price, .upcoming .game-card--large .game-card__price {
+  margin-left: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  position: relative;
+  font-weight: bold;
+}
+
+.slider__price-original, .upcoming .game-card--large .game-card__price-original {
+  font-size: 2rem;
+  text-decoration: line-through;
+  margin-bottom: 2px;
+}
+
+.slider__price-discounted, .upcoming .game-card--large .game-card__price-discounted {
+  font-size: 2.5rem;
+}
+
+/* ---------------------------------------------------
+  Wishlist Heart Animation
+--------------------------------------------------- */
+.slider__wishlist,
+.game-card__wishlist {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.slider__wishlist .fa-heart,
+.game-card__wishlist .fa-heart{
+  display: flex;
+  justify-content: center;
+  font-size: 4rem;
+  margin-left: 5px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  color: var(--text-color);
+}
+
+.slider__wishlist .fa-heart.active,
+.game-card__wishlist .fa-heart.active {
+  color: red;
+  animation: bounce 0.4s ease;
+}
+
+@keyframes bounce {
+  0% { transform: scale(1); }
+  30% { transform: scale(1.3); }
+  60% { transform: scale(0.9); }
+  100% { transform: scale(1); }
+}
+
+/* ---------------------------------------------------
+  Slider Add to Cart Button
+--------------------------------------------------- */
+.slider__add-cart, .upcoming .game-card--large .game-card__add-cart {
+  border: solid 5px var(--green-color);
+  width: 150px;
+  margin-left: 5px;
+  background-color: var(--green-color);
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  color: var(--black-color);
+}
+
+.slider__add-cart:hover, .upcoming .game-card--large .game-card__add-cart:hover{
+  color: var(--text-color);
+}
+
+.slider__add-cart a, .upcoming .game-card--large .game-card__add-cart a {
+  color: var(--black-color);
+}
+
+.slider__add-cart:hover a, .upcoming .game-card--large .game-card__add-cart:hover a {
+  color: var(--text-color);
+}
+
+/* ---------------------------------------------------
+  Slider Navigation Arrows
+--------------------------------------------------- */
+.slider__btn {
+  font-size: 6rem;
+  background: transparent;
+  color: var(--green-color);
+  border: none;
+  position: absolute;
+  transform: translateY(-50%);
+  cursor: pointer;
+  top: 225px;
+  z-index: 5;
+}
+
+.slider__btn--prev {
+  left: calc(50% - 400px);
+}
+
+.slider__btn--next {
+  right: calc(50% - 400px);
+}
+
+/* ---------------------------------------------------
+  Main Content Container
+--------------------------------------------------- */
+.main {
+  width: 1200px;
+  max-width: 100%;
+  margin: 10px auto;
+  position: relative;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------------------------------------------------
+  Popular Genres Section
+--------------------------------------------------- */
+.genres, .new-releases, .upcoming, .trending {
+  height: fit-content;
+  width: 100%;
+  display: block;
+}
+
+.genres__header, .new-releases__header, .upcoming__header, .trending__header{
+  height: 70px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border-bottom: 3px solid var(--green-color);
+}
+
+.genres__link, .new-releases__link, .upcoming__link, .trending__link {
+  font-size: 1.5rem;
+  color: var(--text-color);
+  margin-left: auto;
+}
+
+.genres__link:hover, .new-releases__link:hover, .upcoming__link:hover, .trending__link:hover {
+  color: var(--green-color);
+}
+
+.genres__grid, .trending__grid {
+  display: grid;
+  margin-top: 5rem;
+  grid-template-columns: auto auto auto auto auto;
+  gap: 10px 10px;
+}
+
+.genres__bottom-grid {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 10px 10px;
+  width: 100%;
+  margin-top: 30px;
+}
+
+/* ---------------------------------------------------
+  Game Card Component
+--------------------------------------------------- */
+.game-card {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+}
+
+.game-card__image {
+  width: 100%;
+  height: auto;
+  display: block;
+  line-height: 0;
+}
+
+.game-card__content {
+  background-color: var(--black-color);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.game-card__price-wrapper {
+  color: var(--green-color);
+  font-size: 2rem;
+  font-weight: bold;
+  display: flex;
+  justify-content: left;
+  background-color: var(--super-dark-green-color);
+  height: 6rem;
+  padding-left: 1.5rem;
+  align-items: center;
+}
+
+.game-card__add-cart {
+  background-color: var(--super-dark-green-color);
+  width: 70%;
+  font-size: 1.8rem;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  padding: 1.5rem;
+  margin-left: 0.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.game-card__add-cart a {
+  color: var(--text-color);
+  margin-left: 0.5rem;
+}
+
+.game-card__add-cart:hover {
+  background-color: var(--green-color);
+} 
+
+
+.game-card__wishlist {
+  position: absolute;
+  bottom: 1rem;
+  right: 5%;
+}
+
+.game-card__wishlist .fa-heart {
+  font-size: 4rem;
+}
+
+/* ---------------------------------------------------
+  Large Game Card Variant
+--------------------------------------------------- */
+.game-card--large {
+  grid-column: 1 / 4;
+  grid-row: 1 / 4;
+}
+
+.game-card--large .game-card__price-wrapper {
+  height: 9rem;
+  font-size: 3rem;
+}
+
+.game-card--large .game-card__add-cart {
+  height: 8rem;
+  margin-top: 1rem;
+  font-size: 2.3rem;
+}
+
+.game-card--large .game-card__wishlist .fa-heart {
+  font-size: 6rem;
+}
+
+.new-releases{
+  margin-top: 50px;
+}
+
+.new-releases__slider{
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  margin: center;
+  overflow: hidden;
+}
+
+
+.new-releases__slider .game-card,
+.upcoming__grid .game-card{
+  width: 190px;
+  height: 290px;
+  margin: 10px;
+  display: flex ;
+  position: relative;
+}
+
+.new-releases__slider .game-card__image,
+.upcoming__grid .game-card__image{
+  height: 85%;
+}
+
+.new-releases__slider .game-card__image img,
+.upcoming__grid .game-card__image img{
+  height: 100%;
+  object-fit: cover;
+}
+
+.new-releases__slider .game-card__content,
+.upcoming__grid .game-card__content{
+  height: 15%;
+}
+
+.new-releases__slider .game-card__price-wrapper,
+.upcoming__grid .game-card__price-wrapper{
+  background-color: transparent;
+  width: fit-content;
+  position: absolute;
+  bottom: 15%;
+  right: 5%;
+} 
+
+.new-releases__slider .game-card__add-cart,
+.upcoming__grid .game-card__add-cart{
+  width: fit-content;
+  margin: 0;
+  height: 80%;
+  margin: 5px;
+  font-size: 1.5rem;
+}
+
+.new-releases__slider .game-card__wishlist .fa-heart, 
+.upcoming__grid .game-card__wishlist .fa-heart {
+  font-size: 2rem;
+  margin: 5px;
+}
+
+.upcoming__grid .game-card--large{
+  grid-row: 1/3;
+  grid-column: 3/5;
+  height: 600px;
+  width: 500px;
+  display: flex;
+}
+
+
+.upcoming{
+  margin-top: 50px;
+}
+
+.upcoming__grid .game-card--large .game-card__image{
+  height: 100%;
+}
+
+
+.upcoming .game-card--large .game-card__content{
+  display: flex;
+  flex-direction: row;
+  background-color: transparent;
+  position: absolute;
+  font-weight: bold;
+  align-items: center;
+  justify-content: center;
+  bottom: 50px;
+  padding-right: 30px;
+}
+
+.upcoming .game-card--large .game-card__wishlist{
+  position: static;
+}
+
+.upcoming .game-card--large .fa-heart{
+  font-size: 4rem;
+}
+
+
+.upcoming__grid{
+  display: grid;
+  margin: 50px 80px 50px;
+  grid-template-columns: auto auto auto auto;
+  column-gap: 50px;
+}
+
+.upcoming .game-card--large .game-card__add-cart{
+  font-size: 2rem;
+  width: auto;
+}
+
+
+.trending__grid{
+  grid-template-columns: auto auto auto;
+}
