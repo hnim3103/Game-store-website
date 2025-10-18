@@ -5,28 +5,36 @@ document.getElementsByClassName("login-form")[0].addEventListener
 
 
         // Get user input values
-        const emailInput = document.getElementById("email");
-        const passwordInput = document.getElementById("password");
-
-
+        const form = document.querySelector(".login-form");
+        const email = document.getElementById("email");
+        const password = document.getElementById("password");
         const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailPattern.test(emailInput.value.trim())) {
-            alert("Email không hợp lệ!");
-            emailInput.classList.add("error");
-            emailInput.focus();
+
+        let valid = true;
+        [email, password].forEach(i => i.classList.remove("error"));
+
+        if (!emailPattern.test(email.value.trim())) {
+            alert("Invalid Email");
+            email.classList.add("error");
+            valid = false;
             return;
         }
 
-        if (passwordInput.value.length < 6) {
-            alert("Mật khẩu phải có ít nhất 6 ký tự!");
-            passwordInput.classList.add("error");
-            passwordInput.focus();
+        if (password.value.length < 6) {
+            alert("Password must be at least 6 characters");
+            password.classList.add("error");
+            valid = false;
             return;
         }
 
-        // If all validations pass
-        alert("Đăng nhập thành công!");
-        window.location.href = "index.html";
-        
+        if (valid) {
+            alert("Login successfully!");
+            window.location.href = "index.html";
+        }
     }
 );
+
+form.addEventListener("input", e => {
+    if (e.target.classList.contains("error")) e.target.classList.remove("error");
+});
+    

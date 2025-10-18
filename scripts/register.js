@@ -1,64 +1,63 @@
+document.getElementsByClassName("register-form")[0].addEventListener("submit", function(event) {
+event.preventDefault(); // Prevent the form from submitting immediately
 
-    document.getElementsByClassName("register-form")[0].addEventListener("submit", function(event) {
-    event.preventDefault(); // Prevent the form from submitting immediately
+    // get user  values
+    const form = document.getElementsByClassName("register-form")[0];
+    const email = document.getElementById("email");
+    const password = document.getElementById("password");
+    const dob = document.getElementById("dob");
+    const terms = document.getElementById("terms");
+    const promotions = document.getElementById("promotions");
 
-    // get user input values
-    const nameInput = document.getElementById("name");
-    const emailInput = document.getElementById("email");
-    const passwordInput = document.getElementById("password");
-    const dobInput = document.getElementById("dob");
-    const termsInput = document.getElementById("terms");
-    const promotionsInput = document.getElementById("promotions");
+    
+    let valid = true;
+    [email, password, dob, terms, promotions].forEach(i => i.classList.remove("error"));
 
-    // Check if inputs are valid
-    if (nameInput.value.trim().length < 5) {
-        alert("Username phải có ít nhất 5 ký tự!");
-        nameInput.classList.add("error");
-        nameInput.focus();
-        return;
-    }
-
+    // Check if s are valid
+    // Email conditions
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailPattern.test(emailInput.value.trim())) {
-        alert("Email không hợp lệ!");
-        emailInput.classList.add("error");
-        emailInput.focus();
+    if (!emailPattern.test(email.value.trim())) {
+        alert("Invalid Email");
+        email.classList.add("error");
+        valid = false;
         return;
     }
-
-    if (passwordInput.value.length < 6) {
-        alert("Mật khẩu phải có ít nhất 6 ký tự!");
-        passwordInput.classList.add("error");
-        passwordInput.focus();
+    //Password conditions
+    const passwordPattern = /^(?=.*[A-Z])(?=.*[!@#$%^&*()_+{}\[\]:;<>,.?~\\/-]).{6,}$/;
+    if (!passwordPattern.test(password.value.trim())) {
+        alert("Password must be at least 6 characters including uppercase letters and special characters");
+        password.classList.add("error");
+        valid = false;
         return;
     }
+    // Dob conditons
     const dobPattern = /^(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[0-2])\/\d{4}$/;
-    if (!dobInput.value) {
-        alert("Ngày sinh không hợp lệ. Vui lòng chọn ngày sinh theo định dạng DD/MM/YYYY.");
-        dobInput.classList.add("error");
-        dobInput.focus();
-        return;
-    }
-    if (!dobPattern.test(dobInput.value.trim())) {
-        alert("Ngày sinh không hợp lệ. Vui lòng nhập theo định dạng DD/MM/YYYY.");
-        dobInput.classList.add("error");
-        dobInput.focus();
+    if (!dobPattern.test(dob.value.trim())) {
+        alert("Invalid date of birth. Please select date of birth in DD/MM/YYYY format.");
+        dob.classList.add("error");
+        valid = false;
         return;
     }
 
-    if (!termsInput.checked) {
-        alert("Bạn phải đồng ý với điều khoản trước khi đăng ký!");
-        termsInput.focus();
+    if (!terms.checked) {
+        alert("You must agree to the terms before registering!");
+        valid = false;
         return;
     }
 
-     if (!promotionsInput.checked) {
-        alert("Bạn phải đồng ý với điều khoản trước khi đăng ký!");
-        termsInput.focus();
+     if (!promotions.checked) {
+        alert("You must agree to the terms before registering!");
+        valid = false;
         return;
     }
 
     // if all validations pass
-    alert("Đăng ký thành công!");
-    window.location.href = "login.html";
-    });
+    if (valid) {
+        alert("Login successfully!");
+        window.location.href = "index.html";
+    }
+})
+//Remove the error when input
+form.addEventListener("input", e => {
+    if (e.target.classList.contains("error")) e.target.classList.remove("error");
+})
