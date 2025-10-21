@@ -375,7 +375,11 @@ h1 {
   display: block;
 }
 
-.genres__header, .new-releases__header, .upcoming__header, .trending__header{
+.genres__header, 
+.new-releases__header, 
+.upcoming__header, 
+.trending__header,
+.best-sellers__header{
   height: 70px;
   width: 100%;
   display: flex;
@@ -383,13 +387,21 @@ h1 {
   border-bottom: 3px solid var(--green-color);
 }
 
-.genres__link, .new-releases__link, .upcoming__link, .trending__link {
+.genres__link, 
+.new-releases__link, 
+.upcoming__link, 
+.trending__link,
+.best-sellers__link {
   font-size: 1.5rem;
   color: var(--text-color);
   margin-left: auto;
 }
 
-.genres__link:hover, .new-releases__link:hover, .upcoming__link:hover, .trending__link:hover {
+.genres__link:hover, 
+.new-releases__link:hover, 
+.upcoming__link:hover, 
+.trending__link:hover,
+.best-sellers__link:hover {
   color: var(--green-color);
 }
 
@@ -617,6 +629,11 @@ h1 {
 
 .trending__grid{
   grid-template-columns: auto auto auto;
+}
+
+.best-sellers{
+  border: 1px solid red;
+  margin-top: 50px;
 }
 
 
