@@ -16,7 +16,8 @@
 
 
 
-body{                                
+body{         
+    background-color: #CDCDCD;                       
     display: flex;                 
     justify-content: center;       
     align-items: center;
@@ -32,7 +33,7 @@ body{
     gap: 10px;
     background-color: #0F232C;
     border-radius: 10px;
-    width: 90%;         /* co giãn theo màn hình */
+    width: 90%;         
     max-width: 800px;
     height: 100%;
     transform: scale(0.6);  
@@ -54,7 +55,7 @@ body{
     max-height: 100vh;
     width: 100%;
     background-color: var(--dark-green-color);
-    color: white;
+    color: var(--text-color);
     border-radius: 10px;
     font-size: 30px;
     font-weight: 700;
@@ -68,7 +69,7 @@ body{
     height: 100px;
     width: 100%;
     background-color: var(--dark-green-color);
-    color: white;
+    color: var(--text-color);
     border-radius: 10px;
     font-size: 30px;
     font-weight: 700;
@@ -79,7 +80,7 @@ body{
     display: flex;
     color: var(--text-color);
     font-size: 26px;
-    margin: 0% 0% 0% 7%;
+    margin: -2% 0% -2% 7%;
     align-self: flex-start;
 }
 
@@ -90,7 +91,7 @@ body{
   max-width: 690px;
   width: 95%;
   gap: 18%; 
-  margin: 2% 10% 0% 10%;
+  margin: 0% 10% 0% 10%;
   background-color: var(--dark-green-color);
   padding: 2% 2%; 
   border-radius: 10px;
@@ -111,7 +112,7 @@ body{
 
 .divider{
     font-size: 32px;
-    color: white;
+    color: var(--text-color);
     font-weight: 700;
     display: flex;
     align-items: center;
@@ -122,16 +123,16 @@ body{
 
 .divider::before, .divider::after {
     content: "";
-    flex: 1;                          /* chia đều 2 bên */
-    border-bottom: 2px solid #ffffff; /* line trắng sáng rõ */
+    flex: 1;                          
+    border-bottom: 2px solid var(--text-color);
     margin: 0 40px;  
-    padding: 0 2%;                 /* khoảng cách chữ với line */
+    padding: 0 2%;                 
 }
 
 
 .register-form{
     font-size: 24px;
-    color: white;
+    color: var(--text-color);
     font-weight: 500;  
     gap: 5px;
     width: 100%;
@@ -146,7 +147,7 @@ body{
     width: 100%;
     height: 60px;
     border-radius: 10px;
-    border-color: var(--green-color);
+    border:1px solid var(--green-color);
     font-size: 24px;
     box-sizing: border-box;
     padding: 0 1%;
@@ -155,19 +156,20 @@ body{
 .register-form label{
     display: flex;
     font-size: 26px;
-    color: white;
+    color: var(--text-color);
     font-weight: 500;
-    justify-content: space-between; /* text bên trái, input bên phải */
-    align-items: center;          /* căn giữa theo chiều dọc */
+    justify-content: space-between; 
+    align-items: center;        
     width: 100%;                  
 
 }
 
 .hidden-checkbox{
     position: absolute;
-    opacity: 0; /* Làm cho checkbox gốc vô hình */
+    opacity: 0; 
     width: 0;
     height: 0;
+    pointer-events: none;
 }
 
 .terms-label{
@@ -194,13 +196,13 @@ body{
     box-sizing: border-box;
     align-self: flex-start;
 }
-/* 3. ĐỊNH KIỂU Ô VUÔNG TÙY CHỈNH (Cái hộp 30x30) */
+/*Custom box 3x3*/
 .custom-box1, .custom-box2{
     width: 30px;
     height: 30px;
     margin-right: 20px;
     background-color: transparent; 
-    border: 3px solid var(--green-color);
+    border: 2px solid var(--green-color);
     border-radius: 5px; 
     position: relative; 
     flex-shrink: 0; 
@@ -224,18 +226,23 @@ body{
     height: 70px;
     padding: 0 2%;;
     background-color: var(--green-color);
-    color: white;
+    color: var(--text-color);
     border-radius: 10px; 
     font-size: 30px;
     font-weight: 700;
     border: none;
 }
 
-.submit:hover, .social-register img:hover, .sign-in:hover {
-  transform: scale(1.1); 
+.social-register img:hover {
+  transform: scale(1.2); 
   cursor: pointer;
 }
 
+.sign-in:hover, .register:hover{
+  box-shadow: 0px 5px 8px var(--green-color);
+  transform: scale(1.05);
+  filter: brightness(1.2);
+}
 
 input.error {
   border: 2px solid red;
@@ -251,6 +258,34 @@ input{
   color: var(--text-color);
   font-family: 'Roboto Flex', sans-serif;
 }
+
+.register-form input:hover{
+  background-color: var(--dark-green-color);
+  border: 2px solid var(--green-color);
+  filter: brightness(1.2);
+}
+
+.register-form input:focus {
+  outline: none;
+  border: 2px solid var(--green-color);
+  box-shadow: 0 0 4px var(--green-color); 
+}
+
+.submit:hover{
+  background-color: var(--green-color);
+  filter: brightness(1.2);
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.terms-label:hover .custom-box1,
+.terms-label:hover .custom-box2 {
+  border-color: var(--green-color);
+  box-shadow: 0 0 6px var(--green-color);
+  filter: brightness(1.2);
+}
+
+
 
 .login-form input.error {
   border: 3px solid #ff4d4d;

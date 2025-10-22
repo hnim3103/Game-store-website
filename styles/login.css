@@ -13,7 +13,8 @@
   --text-color: #ffffff;
 }
 
-body{                               
+body{                     
+    background-color: #CDCDCD;           
     display: flex;                 
     justify-content: center;       
     align-items: center;
@@ -28,7 +29,7 @@ body{
     gap: 10px;
     background-color: #0F232C;
     border-radius: 10px;
-    width: 90%;         /* co giãn theo màn hình */
+    width: 90%;         
     max-width: 800px;
     height: 95%;
     transform: scale(0.6); 
@@ -50,7 +51,7 @@ body{
     max-height: 100vh;
     width: 100%;
     background-color: var(--dark-green-color);
-    color: white;
+    color: var(--text-color);
     border-radius: 10px;
     font-size: 30px;
     font-weight: 700;
@@ -64,16 +65,16 @@ body{
     height: 100px;
     width: 100%;
     background-color: var(--dark-green-color);
-    color: white;
+    color: var(--text-color);
     border-radius: 10px;
     font-size: 30px;
     font-weight: 700;
-    box-shadow: 0px 2px 8px black;
+    box-shadow: 0px 2px 8px var(--black-color);
 }
 
 .login-form{
     font-size: 24px;
-    color: white;
+    color: var(--text-color);
     font-weight: 500;  
     gap: 5px;
     width: 100%;
@@ -85,11 +86,11 @@ body{
 
 .login-form input{
     background-color: var(--dark-green-color);
+    border: 1px solid var(--green-color);
     max-width: 465px;
     width: 100%;
     height: 60px;
     border-radius: 10px;
-    border-color: var(--green-color);
     font-size: 24px;
     box-sizing: border-box;
     padding: 0 1%;
@@ -98,10 +99,10 @@ body{
 .login-form label{
     display: flex;
     font-size: 24px;
-    color: white;
+    color: var(--text-color);
     font-weight: 500;
-    justify-content: space-between; /* text bên trái, input bên phải */
-    align-items: center;          /* căn giữa theo chiều dọc */
+    justify-content: space-between; 
+    align-items: center;          
     width: 100%;                  
 
 }
@@ -112,27 +113,26 @@ body{
     height: 70px;
     padding: 0 2%;;
     background-color: var(--green-color);
-    color: white;
+    color: var(--text-color);
     border-radius: 10px; 
     font-size: 30px;
     font-weight: 700;
     border: none;
 }
-
 .forgot-password{
-    display: flex;
+    display: inline-block;
     font-size: 20px;
-    color: #ffffff;
+    color: var(--text-color);
     background: transparent;
     font-weight: 500;  
     text-decoration: underline;
     border: none;
-    padding-top: 15px;
+    margin-top: 13px;
 }
 
 .divider{
     font-size: 32px;
-    color: white;
+    color: var(--text-color);
     font-weight: 700;
     display: flex;
     align-items: center;
@@ -143,10 +143,10 @@ body{
 
 .divider::before, .divider::after {
   content: "";
-  flex: 1;                          /* chia đều 2 bên */
-  border-bottom: 2px solid #ffffff; /* line trắng sáng rõ */
+  flex: 1;                          
+  border-bottom: 2px solid var(--text-color);
   margin: 0 40px;  
-  padding: 0 2%;                 /* khoảng cách chữ với line */
+  padding: 0 2%;             
 }
 
 .social-login {
@@ -175,13 +175,27 @@ body{
   height: 100%;
 }
 
-.submit:hover, .social-login img:hover, .forgot-password:hover {
-  transform: scale(1.1); 
+.submit:hover {
+  background-color: var(--green-color);
+  filter: brightness(1.2);
+  transform: scale(1.05); 
   cursor: pointer;
 }
 
-.Register:hover{
+.sign-in:hover, .Register:hover{
   box-shadow: 0px 5px 8px var(--green-color);
+  transform: scale(1.05);
+  filter: brightness(1.2);
+}
+
+.forgot-password:hover{
+  color: var(--green-color);
+  transform: scale(1.05);
+}
+
+.social-login img:hover{
+  transform: scale(1.2); 
+  cursor: pointer;
 }
 
 ::placeholder{
@@ -193,6 +207,19 @@ input{
   color: var(--text-color);
   font-family: 'Roboto Flex', sans-serif;
 }
+
+.login-form input:hover{
+  background-color: var(--dark-green-color);
+  filter: brightness(1.2);
+  border: 2px solid var(--green-color);
+}
+
+.login-form input:focus {
+  outline: none;
+  border: 2px solid var(--green-color);
+  box-shadow: 0 0 4px var(--green-color); 
+}
+
 
 .login-form input.error {
   border: 3px solid #ff4d4d;
