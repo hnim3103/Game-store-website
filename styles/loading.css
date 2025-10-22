@@ -1,0 +1,117 @@
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0; 
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  background:#051423; 
+  overflow:hidden;
+}
+
+/* Sân khấu full-screen */
+.stage{ 
+  position:relative; 
+  width:100%; 
+  height:100vh; 
+  isolation:isolate; 
+  transition:opacity .45s ease; }
+.stage.is-hidden{ 
+  opacity:0; 
+  pointer-events:none; 
+  visibility:hidden; }
+
+/* Lưới nền tĩnh */
+.bg{
+  position:absolute; 
+  inset:0;
+  background:
+    repeating-linear-gradient(90deg,rgba(255,255,255,.06) 0 1px,transparent 1px 32px),
+    repeating-linear-gradient(0deg, rgba(255,255,255,.06) 0 1px,transparent 1px 32px);
+  opacity:.25; 
+  z-index:0;
+}
+
+/* chấm sáng tĩnh nhẹ */
+.spark,.spark::before,.spark::after{
+  position:absolute; 
+  width:6px; height:6px; 
+  border-radius:50%;
+  background:rgba(124,243,255,.85); 
+  box-shadow:0 0 10px 2px rgba(124,243,255,.85);
+  top:18%; 
+  left:26%; 
+  opacity:.9;
+}
+.spark::before{
+  content:""; 
+  top:160px; 
+  left:520px}
+.spark::after{
+  content:""; 
+  top:380px; 
+  left:-220px
+}
+
+/* Ảnh nền tĩnh phủ toàn màn hình */
+.loading-background{
+  position:fixed; 
+  inset:0;
+  background:url("../img/loading/loading_bgr.png") center/cover no-repeat;
+  filter:saturate(1.05) brightness(.95) blur(.6px);
+  z-index:-1;
+}
+.loading-background::after{
+  content:""; 
+  position:absolute; 
+  inset:0;
+  background:radial-gradient(1200px 1200px at 50% 50%,transparent 55%,rgba(0,0,0,.35) 100%);
+}
+
+/* Logo giữa (không dùng animation ở CSS) */
+.loading-logo{ 
+  position:absolute; 
+  inset:0; display:grid; 
+  place-items:center; 
+  z-index:3; 
+  pointer-events:none; 
+}
+.loading-logo img{
+  width:min(48vmin,340px); 
+  height:auto;
+  filter:drop-shadow(0 0 16px rgba(124,243,255,.85)) drop-shadow(0 6px 24px rgba(0,0,0,.6));
+}
+
+/* Ảnh xung quanh */
+.picture-game-loading{ 
+  position:absolute; 
+  inset:0; z-index:2; 
+  pointer-events:none; }
+.picture-game-loading img{
+  position:absolute; 
+  width:min(18vmin,170px); 
+  aspect-ratio:16/10; 
+  object-fit:cover;
+  border-radius:8px; 
+  filter:drop-shadow(0 8px 18px rgba(0,0,0,.55)); 
+  opacity:.98;
+}
+
+/* Different sizes for some images */
+.picture-game-loading img:nth-child(1),
+.picture-game-loading img:nth-child(6),
+.picture-game-loading img:nth-child(8){ width: min(40vmin, 300px); }
+.picture-game-loading img:nth-child(2),
+.picture-game-loading img:nth-child(3),
+.picture-game-loading img:nth-child(4),
+.picture-game-loading img:nth-child(5),
+.picture-game-loading img:nth-child(7){ width: min(30vmin, 200px); }
+
+/* Position (approximately the image you sent) */
+.picture-game-loading img:nth-child(1){ left:5%;   top:12%; }
+.picture-game-loading img:nth-child(2){ left:15%;  top:35%; }
+.picture-game-loading img:nth-child(3){ left:6%;   top:52%; }
+.picture-game-loading img:nth-child(4){ left:14%;  top:68%; }
+
+.picture-game-loading img:nth-child(5){ right:15%; top:12%; }
+.picture-game-loading img:nth-child(6){ right:2%;  top:30%; }
+.picture-game-loading img:nth-child(7){ right:18%; top:52%; }
+.picture-game-loading img:nth-child(8){ right:6%;  top:70%; }
