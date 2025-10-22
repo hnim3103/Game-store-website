@@ -1,19 +1,19 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Lấy tất cả các câu hỏi FAQ
-    const faqQuestions = document.querySelectorAll('.faq-question');
+    const faqQuestions = document.querySelectorAll('.faq__question');
 
     faqQuestions.forEach(question => {
         question.addEventListener('click', function() {
-            // Lấy phần tử cha (faq-item)
+            // Lấy phần tử cha (faq__item)
             const faqItem = this.parentElement;
-            const faqAnswer = faqItem.querySelector('.faq-answer');
-            const toggleIcon = this.querySelector('.faq-toggle');
+            const faqAnswer = faqItem.querySelector('.faq__answer');
+            const toggleIcon = this.querySelector('.faq__toggle');
             const isActive = faqItem.classList.contains('active');
 
             // Đóng tất cả các item khác khi mở 1 item mới
-            document.querySelectorAll('.faq-item').forEach(item => {
-                const answer = item.querySelector('.faq-answer');
-                const icon = item.querySelector('.faq-toggle');
+            document.querySelectorAll('.faq__item').forEach(item => {
+                const answer = item.querySelector('.faq__answer');
+                const icon = item.querySelector('.faq__toggle');
                 if (item !== faqItem) {
                     item.classList.remove('active');
                     answer.style.maxHeight = null; // thu gọn mượt
