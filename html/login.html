@@ -8,9 +8,9 @@
     <link rel="stylesheet" href="/styles/login.css">
 
     <!-- Google Fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap" rel="stylesheet">
 
 </head>
 <body>
@@ -28,15 +28,24 @@
         </div>
 
         <!--Login form-->
+        <!--Login form-->
         <form class="login-form" novalidate>
             <h3>Sign In with...</h3>
-            <label for="email">Email Address
-                <input type="email" id="email" name="email" placeholder="Input Email Address" required>
-            </label>
+            <div class="input-group">
+                <label for="email">Email Address</label>
+                <div class="input-wrapper">
+                  <input type="text" id="email" name="email" placeholder="Input Email Address">
+                  <span class="error-message" id="email-error"></span>
+                </div>
+            </div>             
             <br>
-            <label for="password">Password
-                <input type="password" id="password" name="password" placeholder="Input Password" required>
-            </label>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <div class="input-wrapper"> 
+                    <input type="password" id="password" name="password" placeholder="Input Password">
+                    <span class="error-message" id="password-error"></span>
+                </div>
+            </div>
             <br>
             <button type="submit" class="submit">
                 <span>SIGN IN</span> 
