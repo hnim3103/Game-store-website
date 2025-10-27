@@ -44,7 +44,7 @@ document.getElementsByClassName("login-form")[0].addEventListener
         }
 
         if (valid) {
-            window.location.href = "homepage.html";
+            window.parent.postMessage("login-success", "*");
         }
     }
 );
