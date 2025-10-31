@@ -14,15 +14,13 @@
   --text-color: #ffffff;
 }
 
-
-
 body{         
-    background-color: #CDCDCD;                       
+    overflow: hidden;
+    background-color: transparent;                       
     display: flex;                 
     justify-content: center;       
     align-items: center;
     max-height: 100vh;   
-        
 }
 
 .main{
@@ -129,6 +127,35 @@ body{
     padding: 0 2%;                 
 }
 
+.input-group {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  width: 100%;
+  max-width: 720px; 
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+.input-wrapper {
+  display: flex;
+  flex-direction: column; 
+  width: 100%;
+  max-width: 465px; 
+  position: relative;
+}
+
+.input-wrapper input {
+  background-color: var(--dark-green-color);
+  border: 1px solid var(--green-color);
+  border-radius: 10px;
+  height: 60px;
+  width: 100%;
+  padding: 0 1%;
+  font-size: 24px;
+  color: var(--text-color);
+  box-sizing: border-box;
+}
 
 .register-form{
     font-size: 24px;
@@ -139,29 +166,6 @@ body{
     max-width: 720px;
     padding: 0 2%;
     box-sizing: border-box;
-}
-
-.register-form input{
-    background-color: var(--dark-green-color);
-    max-width: 465px;
-    width: 100%;
-    height: 60px;
-    border-radius: 10px;
-    border:1px solid var(--green-color);
-    font-size: 24px;
-    box-sizing: border-box;
-    padding: 0 1%;
-}
-
-.register-form label{
-    display: flex;
-    font-size: 26px;
-    color: var(--text-color);
-    font-weight: 500;
-    justify-content: space-between; 
-    align-items: center;        
-    width: 100%;                  
-
 }
 
 .hidden-checkbox{
@@ -187,6 +191,7 @@ body{
 
 .confirm-container{
     display: flex;
+    flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
     margin-top: 15px;
@@ -286,8 +291,34 @@ input{
 }
 
 
+.register-form label.error {
+  color: #ff4d4d;
+}
 
-.login-form input.error {
+
+.register-form input.error {
   border: 3px solid #ff4d4d;
+  background-color: rgba(212, 14, 14, 0.1);
+}
+
+
+.error-message {
+  color: #ff4d4d;
+  font-size: 18px;
+  font-weight: 500;
+  margin-top: 5px;
+  text-align: left; 
+  align-self: flex-start; 
+  display: none;
+}
+
+.error-message.show{
+  display: block;
+}
+
+
+.hidden-checkbox.error + .terms-label .custom-box1,
+.hidden-checkbox.error + .terms-label .custom-box2 {
+  border-color: #ff4d4d;
   background-color: rgba(212, 14, 14, 0.1);
 }
