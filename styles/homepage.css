@@ -27,7 +27,6 @@
 }
 
 body {
-  min-height: 1000vh;
   color: var(--text-color);
   background-color: var(--black-color);
   background-image: linear-gradient(
@@ -632,8 +631,240 @@ h1 {
 }
 
 .best-sellers{
-  border: 1px solid red;
   margin-top: 50px;
+}
+
+.best-sellers__game-list{
+  margin-left: 0;
+  width: 60%;
+  height: auto;
+}
+
+.best-sellers .game-card{
+  height: 100px;
+  background-color: var(--super-dark-green-color);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.best-sellers .game-card .game-card__image{
+  display: flex;
+  position: relative;
+  height: 80%;
+  width: 30%;
+  object-fit: cover;
+  float: left;
+  margin-left: 10px;
+}
+
+.best-sellers__container {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 20px; 
+}
+
+
+.best-sellers .game-card__content{
+  background-color: transparent;
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  padding-right: 10px;
+  margin: 10px;
+  align-items: center;
+}
+
+.best-sellers .game-card__short-infor{
+  margin-right: auto;
+  font-size: 1.3em;
+  line-height: 1.5em;
+  width: 65%;
+}
+
+.best-sellers .game-card__short-infor .game-card__game-name{
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.best-sellers .game-card__discount{
+  border-radius: 5px;
+  margin-right: auto;
+  font-size: 2.5em;
+  font-weight: 800;
+  padding: 6px 15px 6px 15px;
+  background-color: red;
+}
+
+.best-sellers .game-card__price{
+  font-size: 3em;
+  font-weight: 900;
+  color: var(--green-color);
+  letter-spacing: 1.3px;
+}
+
+.best-sellers__game-list .game-card:last-child {
+  margin-bottom: 0;
+}
+
+.best-sellers__game-info {
+  width: 38%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: var(--super-dark-green-color);
+  padding: 15px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+
+.game-info__title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--text-color);
+}
+
+.game-info__reviews {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  padding: 14px;
+}
+
+.game-info__stars {
+  color: black;
+  margin-right: 6px;
+  font-size: 2rem;
+  margin-right: 30px;
+  letter-spacing: 3px;
+}
+
+.game-info__rating {
+  color: #00C3FF;
+  margin-right: 4px;
+}
+
+.game-info__votes {
+  color: #CAD4D8;
+}
+
+.game-info__genres {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  max-width: 100%;
+  overflow: hidden;
+  height: 25px;
+}
+
+.game-info__genre {
+  background-color: #7D92A6;
+  color: var(--text-color);
+  padding: 4px 10px;
+  border-radius: 5px;
+  font-size: 1.3rem;
+  white-space: nowrap;
+}
+
+.game-info__reviews{
+  border-radius: 5px;
+  background: #5E6B7B;
+}
+
+.game-info__reviews p {
+  font-size: 1.5rem;
+  line-height: 1.5;
+  color: #ccc;
+}
+
+
+.game-info__images{
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.game-info__image{
+  height: 250px;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.game-info__image:last-child{
+  margin-bottom: 0;
+}
+
+footer {
+  margin-top: 200px;
+  height: 350px;
+  background-image: linear-gradient(
+    to bottom,
+    var(--black-color),
+    var(--dark-green-color)
+  );
+  padding: 80px 115px;
+}
+
+/* Border container */
+.footer__container {
+  border-top: 2px solid;
+  border-bottom: 2px solid;
+  border-image: linear-gradient(to right, #D177F4, #4AB9BD) 1;
+  width: 1400px;
+  max-width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center; 
+  gap: 20%; 
+  margin: auto;
+  padding: 20px 50px;
+}
+
+
+.footer-logo__logo-image {
+  width: 120px;
+  height: auto;
+  left: 0;
+}
+
+
+.footer__right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; 
+  text-align: center;
+}
+
+.footer-content {
+  font-family: "Roboto Flex";
+  font-size: 1.5rem;
+  font-weight: 400;
+  text-align: center;
+  color: #D2D9E3;
+  
+  background: linear-gradient(to right, #5ABABE, #AE71BF, #5ABABE);
+  -webkit-background-clip: text;
+  -webkit-text-stroke: 2px transparent;
+  position: relative;
+  margin-bottom: 15px;
+}
+
+
+
+.footer-icons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.footer-icon {
+  width: 20px;
+  height: 20px;
 }
 
 
