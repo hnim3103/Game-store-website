@@ -1,13 +1,12 @@
 // Reset Password Form Handling
-
-const resetForm = document.querySelector(".reset-form");
+const resetForm = document.querySelector(".phone__form");
 const phoneInput = document.getElementById("phone");
 const phoneError = document.getElementById("phone-error");
 
 resetForm.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  // PhonePatter
+  // Phone Pattern for Vietnam numbers
   const phonePattern = /^(?:\+84|0)(3|5|7|8|9)\d{8}$/;
 
   // Clear previous errors
@@ -19,7 +18,7 @@ resetForm.addEventListener("submit", (e) => {
     phoneInput.classList.add("error");
     phoneError.textContent = "Invalid phone number";
     phoneError.classList.add("show");
-    return; 
+    return;
   }
 
   // If valid, redirect to login page
@@ -36,20 +35,19 @@ resetForm.addEventListener("input", (e) => {
 });
 
 // Country Dropdown Handling
-
-const countrySelect = document.querySelector(".country-select");
-const countryList = document.querySelector(".country-list");
-const codeSpan = countrySelect.querySelector(".code");
-const flagImg = countrySelect.querySelector("img");
+const countrySelect = document.querySelector(".phone__country-select");
+const countryList = document.querySelector(".phone__country-list");
+const codeSpan = countrySelect.querySelector(".phone__country-code");
+const flagImg = countrySelect.querySelector(".phone__country-flag");
 
 // Toggle dropdown visibility
 countrySelect.addEventListener("click", (e) => {
   countryList.classList.toggle("show");
-  e.stopPropagation(); 
+  e.stopPropagation();
 });
 
 // Select a country
-countryList.querySelectorAll("li").forEach((li) => {
+countryList.querySelectorAll(".phone__country-item").forEach((li) => {
   li.addEventListener("click", () => {
     codeSpan.textContent = li.dataset.code;
     flagImg.src = `https://flagcdn.com/w40/${li.dataset.flag}.png`;
