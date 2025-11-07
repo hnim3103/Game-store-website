@@ -37,7 +37,7 @@
 }
 
 body {
-  min-height: 300vh;
+  min-height: 100vh;
   color: var(--text-color);
   background-color: var(--black-color);
   background-image: linear-gradient(
@@ -45,7 +45,7 @@ body {
     var(--black-color) 25%,
     var(--dark-green-color) 81%
   );
-
+  overflow-x: hidden;
 }
 
 /* ---------------------------------------------------
@@ -81,7 +81,7 @@ body {
 @media (max-width: 767px) {
   .main__container {
     grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto; 
+    grid-template-rows: auto auto auto;
     gap: 3rem 0;
     padding: 0 1.5rem;
     padding-bottom: 5rem;
@@ -146,8 +146,13 @@ body {
 
 @media (max-width: 767px) {
   .cart-item {
-    gap: 0.5rem 1rem;
-    padding: 1rem;
+    grid-template-columns: 80px 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      'image info'
+      'pricing delete';
+    gap: 1rem 1.5rem;
+    padding: 1.5rem;
   }
 }
 
@@ -158,8 +163,19 @@ body {
 }
 
 @media (max-width: 767px) {
+  .cart-item__image {
+    width: 80px;
+    align-self: start;
+    grid-area: image;
+  }
+}
+
+@media (max-width: 767px) {
   .cart-item__info {
     gap: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    grid-area: info;
   }
 }
 
@@ -186,7 +202,8 @@ body {
 }
 
 @media (max-width: 767px) {
-  .cart-item__genres, .cart-item__release {
+  .cart-item__genres,
+  .cart-item__release {
     font-size: 1.2rem;
   }
 }
@@ -202,6 +219,8 @@ body {
 @media (max-width: 767px) {
   .cart-item__pricing {
     gap: 0.8rem;
+    justify-content: flex-start;
+    grid-area: pricing;
   }
 }
 
@@ -216,9 +235,9 @@ body {
 }
 
 @media (max-width: 767px) {
-  .cart-item__discount { 
-    font-size: 1.6rem; 
-    padding: 0.5rem; 
+  .cart-item__discount {
+    font-size: 1.6rem;
+    padding: 0.5rem;
     border-radius: 5px;
   }
 }
@@ -230,6 +249,13 @@ body {
   height: auto;
   padding: 1rem;
   gap: 0.5rem;
+}
+
+@media (max-width: 767px) {
+  .cart-item__price-wrapper {
+    align-items: flex-start;
+    padding: 0;
+  }
 }
 
 .cart-item__price--old {
@@ -253,8 +279,9 @@ body {
 }
 
 @media (max-width: 767px) {
-  .cart-item__price--new, .cart-item__price { 
-    font-size: 1.8rem; 
+  .cart-item__price--new,
+  .cart-item__price {
+    font-size: 1.8rem;
     letter-spacing: 1px;
   }
 }
@@ -271,6 +298,9 @@ body {
 @media (max-width: 767px) {
   .cart-item__delete {
     padding: 0.5rem;
+    justify-self: flex-end;
+    align-self: center;
+    grid-area: delete;
   }
 }
 
@@ -358,15 +388,12 @@ body {
   font-size: 1.8rem;
   outline: none;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  width: 100%;
 }
 
 @media (max-width: 767px) {
   .voucher__input {
-    width: 80%;
-    position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    width: 100%;
     grid-row: 2;
   }
 }
@@ -385,11 +412,7 @@ body {
 
 @media (max-width: 767px) {
   .voucher__button {
-    position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 20%;
+    width: 100%;
     grid-row: 3;
     margin-right: 0;
     padding: 1.5rem;
@@ -426,8 +449,8 @@ body {
     grid-row: 3;
     position: static;
     min-height: auto;
-    padding-left: 12rem;
-    padding-right: 12rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 }
 
@@ -559,8 +582,7 @@ body {
 
 @media (max-width: 767px) {
   .summary__payment-icons {
-     padding-right: 0;
-     grid-template-columns: repeat(auto-fit, minmax(20px, 30px));
+    padding-right: 0;
   }
 }
 
@@ -576,14 +598,14 @@ body {
 
 @media (max-width: 1024px) {
   .recommendations {
-     padding: 0 2rem;
+    padding: 0 2rem;
   }
 }
 
 @media (max-width: 767px) {
   .recommendations {
-     padding: 0 1.5rem;
-     margin-top: 5rem;
+    padding: 0 1.5rem;
+    margin-top: 5rem;
   }
 }
 
@@ -649,13 +671,13 @@ body {
 
 @media (max-width: 767px) {
   .recommendations__arrow i {
-     font-size: 2.5rem;
+    font-size: 2.5rem;
   }
-  
+
   .recommendations__arrow-left {
     left: 0;
   }
-  
+
   .recommendations__arrow-right {
     right: 0;
   }
@@ -683,12 +705,14 @@ body {
     gap: 1.5rem;
     padding-top: 1rem;
     padding-bottom: 1.5rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
   }
 }
 
 @media (max-width: 767px) {
   .recommendations__list::-webkit-scrollbar {
-     display: none;
+    display: none;
   }
 }
 
@@ -706,7 +730,7 @@ body {
 @media (max-width: 767px) {
   .product-card {
     flex-shrink: 0;
-    width: 34rem; 
+    width: 34rem;
     scroll-snap-align: start;
   }
 }
