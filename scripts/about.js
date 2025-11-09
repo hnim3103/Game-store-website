@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // ===== Hiệu ứng hiện dần khi cuộn =====
-  const revealEls = document.querySelectorAll(".hero, .section");
+  const revealEls = document.querySelectorAll(".hero, .section, .showcase, .review, .partners");
+
   const reveal = () => {
     const trigger = window.innerHeight * 0.9;
     revealEls.forEach((el) => {
@@ -8,10 +8,10 @@ document.addEventListener("DOMContentLoaded", () => {
       if (top < trigger) el.classList.add("visible");
     });
   };
-  window.addEventListener("scroll", reveal);
-  reveal();
 
-  // ===== Hiệu ứng đổi chữ trong hero quote =====
+  window.addEventListener("scroll", reveal);
+  reveal(); 
+
   const quote = document.getElementById("quote-text");
   if (quote) {
     const quotes = [
@@ -23,10 +23,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     setInterval(() => {
       quote.classList.remove("fade");
-      void quote.offsetWidth; // reset animation
+      void quote.offsetWidth;
       index = (index + 1) % quotes.length;
       quote.textContent = quotes[index];
       quote.classList.add("fade");
-    }, 2000);
+    }, 2500);
   }
 });

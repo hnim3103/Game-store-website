@@ -224,7 +224,7 @@ body {
     transform: translateX(-50%);
     width: 80%;
     height: 1.5px;
-    background: var(--gray);
+    background: var(--green);
     opacity: 0.5;
   }
 
@@ -249,3 +249,8 @@ body {
   }
 }
 
+/* Fix font-size EN nhỏ giữa các trang */
+.header__language {
+  font-size: clamp(14px, 1.2vw, 16px);
+  min-width: 32px; 
+}

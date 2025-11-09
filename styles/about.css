@@ -105,7 +105,6 @@
 }
 
 .hero-banner__wrapper:hover {
-  transform: scale(1.01);
   box-shadow: 0 0 50px rgba(0, 225, 34, 0.2), 0 12px 40px rgba(0, 0, 0, 0.3);
 }
 
@@ -114,6 +113,11 @@
   height: auto;
   display: block;
   filter: brightness(1.1) contrast(1.05);
+  transition: transform 0.4s ease;
+}
+
+.hero-banner__wrapper:hover .hero-banner__img {
+  transform: scale(1.03);
 }
 
 .hero-banner__blur {
@@ -139,9 +143,7 @@
   pointer-events: none;
 }
 
-/* ============================================================
-   SECTION SHARED STYLES - Dùng chung cho Features, Customer, More
-============================================================ */
+/* ========== SECTION SHARED STYLES ========== */
 .section {
   text-align: center;
   color: #fff;
@@ -161,7 +163,7 @@
 }
 
 .section--customer {
-  margin-top: -38vh;
+  margin-top: -50vh;
 }
 
 .section--more {
@@ -268,110 +270,109 @@
   margin: 0 auto;
 }
 
-/* ============================================================
-   SHOWCASE SECTION
-============================================================ */
+/* ========== SHOWCASE SECTION ========== */
 .showcase {
   position: relative;
   width: 100%;
   z-index: 4;
+  margin: 0 auto;
 }
 
 .showcase__wrapper {
   position: relative;
   width: 100%;
+  height: 722px;
   display: flex;
   justify-content: center;
   align-items: flex-end;
   overflow: visible;
-  height: px;
+  margin: 0 auto 100px;
 }
 
 .showcase__container {
   position: relative;
   width: 100%;
   max-width: 1200px;
-  height: 820px;
-  left: 50%;
-  transform: translateX(-50%);
+  height: 740px;
+  left: 48%;
+  transform: translateX(-50%) scale(1);
+  transform-origin: center bottom;
   transition: transform 0.3s ease;
-  transform-origin: center center;
+  overflow: visible;
 }
 
 .showcase__img {
   position: absolute;
   border-radius: 6px;
-  box-shadow: 0 0 30px rgba(0,225,34,0.7);
+  box-shadow: 0 0 30px rgba(0, 225, 34, 0.7);
   transition: transform 0.3s ease;
 }
 
-/* Vị trí 7 ảnh */
+/* Vị trí 7 ảnh gốc */
 .showcase__img:nth-child(1) {
-  width: 282px; 
+  width: 282px;
   height: 143px;
-  left: 170px; 
+  left: 170px;
   top: 76px;
   filter: blur(4.5px);
   box-shadow: 0 0 60px rgba(0, 225, 34, 0.22);
 }
 
 .showcase__img:nth-child(2) {
-  width: 323px; 
+  width: 323px;
   height: 165px;
-  left: 0; 
+  left: 0;
   top: 183px;
   filter: blur(1.5px);
   box-shadow: 0 0 60px rgba(0, 225, 34, 0.5);
 }
 
 .showcase__img:nth-child(3) {
-  width: 268px; 
+  width: 268px;
   height: 135px;
-  left: 493px; 
+  left: 493px;
   top: 10px;
   filter: blur(3px);
   box-shadow: 0 0 60px rgba(0, 225, 34, 0.62);
 }
 
 .showcase__img:nth-child(4) {
-  width: 326px; 
+  width: 326px;
   height: 166px;
-  left: 405px; 
+  left: 405px;
   top: 556px;
   filter: blur(11px);
   box-shadow: 0 0 60px rgba(0, 225, 34, 0.5);
 }
 
 .showcase__img:nth-child(5) {
-  width: 420px; 
+  width: 420px;
   height: 213px;
-  left: 49px; 
+  left: 49px;
   top: 347px;
   filter: none;
   box-shadow: 0 0 80px rgba(0, 225, 34, 0.79);
 }
 
 .showcase__img:nth-child(6) {
-  width: 299px; 
+  width: 299px;
   height: 154px;
-  left: 527px; 
+  left: 527px;
   top: 330px;
   filter: blur(2.5px);
   box-shadow: 0 0 60px rgba(0, 225, 34, 0.35);
 }
 
 .showcase__img:nth-child(7) {
-  width: 383px; 
+  width: 383px;
   height: 209px;
-  left: 567px; 
+  left: 567px;
   top: 146px;
   filter: blur(2.5px);
   box-shadow: 0 0 60px rgba(0, 225, 34, 0.9);
 }
 
-/* ============================================================
-   REVIEW SHOWCASE SECTION
-============================================================ */
+/* ========== REVIEW SHOWCASE SECTION ========== */
 .review {
   position: relative;
   width: 100%;
@@ -432,9 +433,7 @@
   left: calc(50% + 235px);
 }
 
-/* ============================================================
-   PARTNERS SECTION
-============================================================ */
+/* ========== PARTNERS SECTION ========== */
 .partners {
   text-align: center;
   color: #fff;
@@ -480,60 +479,77 @@
   transform: scale(1.08);
 }
 
-/* ============================================================
-   RESPONSIVE
-============================================================ */
+/* ========== RESPONSIVE ========== */
 
-/* Hero Banner Responsive */
-@media (max-width: 1200px) {
-  .hero-banner {
-    height: auto;
-    min-height: 400px;
-  }
-  
-  .hero-banner__glow {
-    width: 100%;
-    height: 100%;
-    border-radius: 8px;
-    filter: blur(20px);
-  }
-  
-  .hero-banner__wrapper {
-    position: relative;
-    width: 95%;
-    left: auto;
-    top: auto;
-    margin: 20px auto;
-  }
-}
-
-@media (max-width: 768px) {
+/* ===== Tablet (≤ 1024px) ===== */
+@media (max-width: 1024px) {
+  /* HERO */
   .hero {
-    padding: 60px 15px 40px;
+    padding: 60px 20px 40px;
   }
   
   .hero-banner {
-    margin: 40px auto 60px;
-    min-height: 300px;
-    padding: 0 15px;
-  }
-  
-  .hero-banner__glow {
-    filter: blur(15px);
-    box-shadow: 0 0 40px rgba(0, 225, 34, 0.3);
+    min-height: 360px;
+    margin-bottom: 60px;
   }
   
   .hero-banner__wrapper {
-    width: 100%;
-    box-shadow: 0 0 30px rgba(255, 255, 255, 0.2), 0 4px 20px rgba(0, 0, 0, 0.2);
+    width: 95%;
+    margin: 0 auto;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.2),
+                0 4px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  /* SECTIONS */
+  .section {
+    margin: 80px auto;
+    padding: 0 20px;
   }
   
-  .hero-banner__blur {
-    height: 30%;
+  .section__grid {
+    gap: 24px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .section__card {
+    flex: 1 1 45%;
+    max-width: 420px;
+  }
+  
+
+  /* SHOWCASE */
+  .showcase__wrapper {
+    height: 540px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .showcase__container {
+    transform: translateX(-55%) scale(0.95);
+    transform-origin: center top;
+    height: 540px;
+  }
+
+  /* REVIEW */
+  .review__wrapper {
+    height: 420px;
+  }
+  
+  .review__container {
+    transform: translateX(-50%) scale(0.75);
+  }
+
+  /* PARTNERS */
+  .partners__logo {
+    width: 140px;
   }
 }
 
-@media (max-width: 480px) {
+/* ===== Mobile (≤ 576px) ===== */
+@media (max-width: 576px) {
+  /* HERO */
   .hero__title {
     font-size: 28px;
     line-height: 1.3;
@@ -542,214 +558,67 @@
   .hero__desc {
     font-size: 16px;
   }
-}
 
-/* Section Responsive - Áp dụng chung cho Features, Customer, More */
-@media (max-width: 1200px) {
-  .section--features {
-    margin-top: -22vh;
-  }
-  
-  .section--customer {
-    margin-top: -20vh;
-  }
-}
-
-@media (max-width: 992px) {
-  .section__grid {
-    gap: 32px;
-  }
-  
-  .section__card {
-    flex: 1 1 45%;
-    max-width: 480px;
-  }
-  
-  .section--features {
-    margin-top: -18vh;
-  }
-  
-  .section--customer {
-    margin-top: -18vh;
-  }
-}
-
-@media (max-width: 768px) {
+  /* SECTION */
   .section {
-    margin: 80px auto;
+    margin: 60px auto;
     padding: 0 15px;
-    transform: scale(0.97);
-    transform-origin: top center;
-  }
-  
-  .section__grid {
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
   }
   
   .section__card {
-    width: 100%;
-    max-width: 520px;
     flex: 1 1 100%;
-    padding: 24px 16px 20px;
+    max-width: 100%;
   }
   
   .section__card-title {
-    font-size: 22px;
+    font-size: 18px;
   }
   
   .section__card-text {
-    font-size: 17px;
-    line-height: 1.6;
-  }
-  
-  .section--features {
-    margin-top: -10vh;
-  }
-  
-  .section--customer {
-    margin-top: -10vh;
-  }
-}
-
-@media (max-width: 576px) {
-  .section {
-    transform: scale(0.93);
-  }
-  
-  .section__title {
-    font-size: 26px;
-  }
-  
-  .section__desc {
     font-size: 15px;
   }
   
-  .section--features {
-    margin-top: -6vh;
+
+  /* SHOWCASE */
+  .showcase {
+    display: none;
+  }
+
+  /* REVIEW */
+  .review__wrapper {
+    height: 320px;
   }
   
-  .section--customer {
-    margin-top: -6vh;
-  }
-}
-
-@media (max-width: 480px) {
-  .section__title {
-    font-size: 24px;
-  }
-  
-  .section__desc {
-    font-size: 18px;
-  }
-}
-
-/* Showcase Responsive */
-@media (max-width: 1200px) {
-  .showcase__container {
-    transform: translateX(-50%) scale(0.85);
-    transform-origin: bottom center;
-  }
-  .showcase__wrapper {
-    height: 780px;
-  }
-}
-@media (max-width: 992px) {
-  .showcase__container {
-    left: 50%;
-    transform: translateX(-50%) scale(0.8);
-    transform-origin: center center;
-  }
-}
-
-@media (max-width: 768px) {
-  .showcase__container {
-    left: 50%;
-    transform: translateX(-50%) scale(0.65);
-    transform-origin: center center; 
-  }
-}
-
-@media (max-width: 576px) {
-  .showcase__container {
-    left: 50%;
-    transform: translateX(-50%) scale(0.55);
-    transform-origin: center center; 
-}
-
-/* Review Responsive */
-@media (max-width: 1200px) {
-  .review__container {
-    transform: translateX(-50%) scale(0.85);
-    transform-origin: bottom center;
-  }
-  .review__wrapper {
-    height: 460px;
-  }
-}
-
-@media (max-width: 992px) {
-  .review__container {
-    transform: translateX(-50%) scale(0.7);
-    transform-origin: bottom center;
-  }
-  .review__wrapper {
-    height: 400px;
-  }
-}
-
-@media (max-width: 768px) {
   .review__container {
     transform: translateX(-50%) scale(0.55);
-    transform-origin: bottom center;
   }
-  .review__wrapper {
-    height: 200px;
-  }
-}
 
-@media (max-width: 576px) {
-  .review__container {
-    transform: translateX(-50%) scale(0.45);
-    transform-origin: bottom center;
-  }
-  .review__wrapper {
-    height: 200px;
-  }
-}
-
-/* Partners Responsive */
-@media (max-width: 992px) {
-  .partners__grid {
-    gap: 30px 20px;
-  }
-  .partners__logo {
-    width: 140px;
-  }
-}
-
-@media (max-width: 768px) {
-  .partners__title {
-    font-size: 20px;
-  }
-  .partners__grid {
-    gap: 24px;
-  }
-  .partners__logo {
-    width: 120px;
-  }
-}
-
-@media (max-width: 480px) {
+  /* PARTNERS */
   .partners {
     padding: 60px 15px;
   }
-  .partners__grid {
-    gap: 20px;
-  }
+  
   .partners__logo {
-    width: 90px;
+    width: 100px;
   }
 }
+
+.hero, .section, .showcase, .review, .partners {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.hero.visible, .section.visible, .showcase.visible, .review.visible, .partners.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#quote-text.fade {
+  animation: fadeIn 1.2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
