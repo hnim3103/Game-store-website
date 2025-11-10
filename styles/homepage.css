@@ -505,4 +505,49 @@ h1 {
   grid-template-columns: auto auto auto;
 }
 
+/* === Overlay Login === */
+.login-overlay {
+  display: none; /* ẩn mặc định */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(10, 10, 10, 0.85);
+  backdrop-filter: blur(4px);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.login-overlay.active {
+  display: flex;
+}
+
+.login-container {
+  background: #0F232C;
+  color: #fff;
+  border: 2px solid var(--green-color);
+  border-radius: 15px;
+  padding: 40px;
+  width: 90%;
+  max-width: 450px;
+  box-shadow: 0 0 15px var(--green-color);
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 28px;
+  background: none;
+  border: none;
+  color: var(--green-color);
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  filter: brightness(1.3);
+}
 
