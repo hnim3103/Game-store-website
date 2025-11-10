@@ -11,6 +11,7 @@
   --dark-green-color: #225557;
   --black-color: #070f1a;
   --text-color: #ffffff;
+  --super-dark-green-color: #0f232c;
 }
 
 body{  
@@ -20,7 +21,7 @@ body{
     justify-content: center;       
     align-items: center;
     height: 100vh; 
-
+    background-color: var(--dark-green-color);
 }
 
 .main{
