@@ -1,0 +1,229 @@
+/* ---------------------------------------------------
+  Google Font Import
+--------------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
+
+/* ---------------------------------------------------
+  Reset & Base Styles
+--------------------------------------------------- */
+* {
+  font-family: 'Roboto Flex', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  scroll-padding-top: 2rem;
+  scroll-behavior: smooth;
+}
+
+:root {
+  --green-color: #00e122;
+  --dark-green-color: #225557;
+  --black-color: #070f1a;
+  --text-color: #ffffff;
+  --super-dark-green-color: #0f232c;
+  font-size: 10px;
+}
+
+body {
+  height: auto;
+  color: var(--text-color);
+  background-color: var(--black-color);
+  background-image: linear-gradient(
+    180deg,
+    var(--black-color) 25%,
+    var(--dark-green-color) 81%
+  );
+  justify-content: center;
+  align-items: center;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+/* ---------------------------------------------------
+   FAQ Section
+--------------------------------------------------- */
+.faq {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* FAQ Logo */
+.faq__logo {
+  margin-bottom: 88px;
+  text-align: center;
+}
+
+.faq__logo img {
+  width: 404px;
+  height: auto;
+}
+
+/* FAQ Container */
+.faq__container {
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* FAQ Item */
+.faq__item {
+  background: linear-gradient(135deg, #225557 100%);
+  border-radius: 5px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  animation: fadeInUp 0.6s ease-out backwards;
+  border: 2px solid transparent;
+  border: 1px solid var(--green-color);
+}
+
+.faq__item:nth-child(1) { animation-delay: 0.1s; }
+.faq__item:nth-child(2) { animation-delay: 0.2s; }
+.faq__item:nth-child(3) { animation-delay: 0.3s; }
+.faq__item:nth-child(4) { animation-delay: 0.4s; }
+.faq__item:nth-child(5) { animation-delay: 0.5s; }
+.faq__item:nth-child(6) { animation-delay: 0.6s; }
+.faq__item:nth-child(7) { animation-delay: 0.7s; }
+.faq__item:nth-child(8) { animation-delay: 0.8s; }
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.faq__item:hover {
+  border-color: var(--green-color);
+  box-shadow: 0 5px 20px rgba(0, 255, 34, 0.2);
+  transform: translateY(-2px);
+}
+
+/* FAQ Question */
+.faq__question {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 20px 25px;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.3 ease;
+}
+
+.faq__question .faq__icon {
+  flex-shrink: 0;
+  margin-right: 15px;
+}
+
+.faq__text {
+  flex: 1;
+}
+
+.faq__question span {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--text-color);
+  display: inline-block;
+  width: fit-content;
+  width: fit-content;
+}
+
+.faq__question .faq__toggle {
+  font-size: 32px;
+  color: var(--green-color);
+  transition: transform 0.3 ease;
+  flex-shrink: 0;
+}
+
+/* FAQ Icons */
+.faq__icon {
+  font-size: 32px;
+  color: var(--green-color);
+  flex-shrink: 0;
+}
+
+.faq__toggle {
+  font-size: 32px;
+  color: var(--green-color);
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+/* FAQ Answer */
+.faq__answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+}
+
+.faq__answer p {
+  padding: 0 6rem 1rem 8rem;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.6;
+  color: var(--text-color);
+  margin: 0;
+}
+
+/* Active State */
+.faq__item.active .faq__answer {
+  max-height: 500px;
+}
+
+/* HighLight effect for active item title */
+.faq__item.active .faq__question span {
+  background: var(--green-color);
+  padding: 5px 15px;
+  border-radius: 5px;
+}
+
+/* ---------------------------------------------------
+   Responsive Design
+--------------------------------------------------- */
+@media (max-width: 768px) {
+  .faq__logo img {
+    width: 250px;
+  }
+
+  .faq__container {
+    padding: 0;
+    gap: 10px;
+  }
+  .faq__question {
+    padding: 10px;
+    gap: 0;
+  }
+
+  .faq__question span {
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .faq__icon, .faq__toggle {
+    font-size: 24px;
+  }
+
+  .faq__answer p {
+    font-size: 14px;
+    padding: 10px 20px;
+    font-weight: 400;
+  }
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles/phone-account.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <!--Box reset password-->
+    <div class ="main">
+        <!--Button mail and phone-->
+        <div class="button-group">
+            <a href="email-account.html" class="email-account">
+                <span>Email Account</span>
+            </a>
+
+            <a href="phone-account.html" class="phone-account">
+                <span>Phone Account</span>
+            </a>
+        </div>
+
+        <!--Request reset passoword-->
+        <form class="reset-form" novalidate>
+            <div>
+                <label for="phone">Phone Number</label>
+            </div>
+
+            <div class="reset-input">
+                <div class="phone-wrapper">
+                    <div class="country-select">
+                        <img src="https://flagcdn.com/w40/vn.png" alt="Vietnam flag">
+                        <span class="code">+84</span>
+                    </div>
+                    <div class="input-container">
+                        <input type="tel" id="phone" name="phone" placeholder="Enter phone number">
+                        <span class="error-message" id="phone-error"></span>
+                    </div>
+                </div>
+                
+                <ul class="country-list" >
+                    <li data-code="+84" data-flag="vn"><img src="https://flagcdn.com/w40/vn.png"> Vietnam (+84)</li>
+                    <li data-code="+1" data-flag="us"><img src="https://flagcdn.com/w40/us.png"> United States (+1)</li>
+                    <li data-code="+81" data-flag="jp"><img src="https://flagcdn.com/w40/jp.png"> Japan (+81)</li>
+                    <li data-code="+82" data-flag="kr"><img src="https://flagcdn.com/w40/kr.png"> South Korea (+82)</li>
+                    <li data-code="+65" data-flag="sg"><img src="https://flagcdn.com/w40/sg.png"> Singapore (+65)</li>
+                </ul>
+            </div>
+
+
+            <button type="submit" class="submit">
+                <span>RESET PASSWORD</span>
+            </button>
+
+            <a href="login.html" class="return-signin"><u>Return to Sign In</u></a>
+        </form>
+
+
+    </div>
+        <!--Java script-->
+    <script src="/scripts/phone-account.js"></script>
+</body>
+</html>

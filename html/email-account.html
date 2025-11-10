@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles/email-account.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <!--Box reset password-->
+    <div class ="main">
+        <!--Button mail and phone-->
+        <div class="button-group">
+            <a href="email-account.html" class="email-account">
+                <span>Email Account</span>
+            </a>
+
+            <a href="phone-account.html" class="phone-account">
+                <span>Phone Account</span>
+            </a>
+        </div>
+
+        <!--Request reset passoword-->
+        <form class="reset-form" novalidate>
+            <div>
+                <label for="email">Email Address</label> 
+            </div>
+            <div class="reset-input">
+                <input type="text" id="email" name="email" placeholder="Input Email Address">
+                <span class="error-message" id="email-error"></span>
+            </div>
+            <br>
+            <button type="submit" class="submit">
+                <span>RESET PASSWORD</span> 
+            </button>
+            <a href="login.html" class="return-signin">
+                <u>Return to Sign In</u>
+            </a>
+        </form>
+
+    </div>
+        <!--Java script-->
+    <script src="/scripts/email-account.js"></script>
+</body>
+</html>
