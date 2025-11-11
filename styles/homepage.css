@@ -729,75 +729,6 @@ h1 {
   margin-bottom: 0;
 }
 
-footer {
-  margin-top: 200px;
-  height: 350px;
-  background-image: linear-gradient(
-    to bottom,
-    var(--black-color),
-    var(--dark-green-color)
-  );
-  padding: 80px 115px;
-}
-
-/* Border container */
-.footer__container {
-  border-top: 2px solid;
-  border-bottom: 2px solid;
-  border-image: linear-gradient(to right, #D177F4, #4AB9BD) 1;
-  width: 1400px;
-  max-width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center; 
-  gap: 20%; 
-  margin: auto;
-  padding: 20px 50px;
-}
-
-
-.footer-logo__logo-image {
-  width: 120px;
-  height: auto;
-  left: 0;
-}
-
-
-.footer__right {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center; 
-  text-align: center;
-}
-
-.footer-content {
-  font-family: "Roboto Flex";
-  font-size: 1.5rem;
-  font-weight: 400;
-  text-align: center;
-  color: #D2D9E3;
-  
-  background: linear-gradient(to right, #5ABABE, #AE71BF, #5ABABE);
-  -webkit-background-clip: text;
-  -webkit-text-stroke: 2px transparent;
-  position: relative;
-  margin-bottom: 15px;
-}
-
-
-
-.footer-icons {
-  display: flex;
-  gap: 15px;
-  justify-content: center;
-}
-
-.footer-icon {
-  width: 20px;
-  height: 20px;
-}
-
 
 @media screen and (max-width: 1024px) {
   :root {
@@ -1056,22 +987,6 @@ footer {
   .upcoming__grid .game-card--large {
     height: 350px;
   }
-
-  footer {
-    margin-top: 100px;
-    height: auto;
-    padding: 40px 20px;
-  }
-
-  .footer__container {
-    flex-direction: column;
-    gap: 30px;
-    padding: 20px;
-  }
-
-  .footer-logo__logo-image {
-    width: 100px;
-  }
 }
 
 /* Mobile Portrait (480px and below) */
@@ -1301,16 +1216,6 @@ footer {
 
   .game-info__image {
     height: 180px;
-    margin-bottom: 10px;
-  }
-
-  footer {
-    margin-top: 80px;
-    padding: 30px 15px;
-  }
-
-  .footer-content {
-    font-size: 1.3rem;
     margin-bottom: 10px;
   }
 }
