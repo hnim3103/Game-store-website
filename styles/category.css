@@ -1,0 +1,178 @@
+/* ---------------------------------------------------
+  Google Font Import
+--------------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
+
+/* ---------------------------------------------------
+  Reset & Base Styles
+--------------------------------------------------- */
+* {
+  font-family: 'Roboto Flex', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  scroll-padding-top: 2rem;
+  scroll-behavior: smooth;
+}
+
+:root {
+  --green-color: #00e122;
+  --dark-green-color: #225557;
+  --black-color: #070f1a;
+  --text-color: #ffffff;
+  --super-dark-green-color: #0f232c;
+  font-size: 10px;
+}
+
+body {
+  color: var(--text-color);
+  background-color: var(--black-color);
+  background-image: linear-gradient(
+    180deg,
+    var(--black-color) 25%,
+    var(--dark-green-color) 81%
+  );
+  justify-content: center;
+  align-items: center;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+.main__section{
+  width: 1200px;
+  max-width: 100%;
+  margin: 50px auto;
+  position: relative;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid red;
+}
+
+.main__section .main__header{
+  display: flex;
+  padding-bottom: 9px;
+  justify-content: space-between;
+  align-items: center;
+  align-self: stretch;
+  border-bottom: 1px solid var(--dark-green-color);
+  color: var(--text-color);
+}
+
+.main__title{
+  color: var(--text-color);
+  font-size: 1.9rem;
+  font-weight: 700;
+}
+
+.main__search{
+  background-color: var(--dark-green-color);
+  padding: auto;
+  border: 2px solid var(--green-color);
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  height: 40px;
+  border-radius: 20px;
+  padding: 10.5px;
+  width: 500px;
+  font-size: 2rem;
+}
+
+.main__search-input{
+  width: 100%;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  color: var(--text-color);
+}
+
+.main__search-input::placeholder{
+  color: var(--text-color);
+}
+
+.main__content{
+  border: 1px solid yellow;
+  margin-top: 20px;
+  display: flex;
+}
+
+.game__selections{
+  border: 1px solid var(--green-color);
+  width: 25%;
+}
+
+.result__selections{
+  display: flex;
+  justify-content: space-between;
+} 
+
+.filter__bar{
+  border: 1px solid red;
+}
+
+.checkbox__label{
+  cursor: pointer;
+  display: flex;
+  font-size: 1.3rem;
+}
+
+input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  border: 2px solid var(--green-color);
+  border-radius: 2px;    
+  background-color: var(--dark-green-color); 
+  cursor: pointer;
+  position: absolute;
+  opacity: 0;
+}
+
+
+.checkbox__label::before{
+  content: "";
+  width: 1em;
+  height: 1em;
+  border: 2px solid var(--green-color);
+  border-radius: 2px;
+  margin-right: 4px;
+}
+
+.checkbox__label:hover::before,
+input[type='checkbox']:hover + span::before{
+  background-color: var(--green-color);
+  border-color: var(--dark-green-color);
+}
+
+input[type='checkbox']:checked + span::before{
+  content: '\002714';
+  background-color: var(--green-color);
+  border-color: var(--dark-green-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--super-dark-green-color);
+}
+
+.game__selection{
+  color: var(--text-color);
+  font-weight: 680;
+  font-size: 1.3rem;
+}
+
+#good-old-games{
+  background-color: var(--dark-green-color);
+  padding: 5px 10px;
+  text-align: center;
+  border-radius: 3px;
+  margin-top: -5px;
+}
