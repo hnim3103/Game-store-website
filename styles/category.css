@@ -163,10 +163,10 @@ input[type='checkbox']:checked + span::before{
   color: var(--super-dark-green-color);
 }
 
-.game__selection{
-  color: var(--text-color);
-  font-weight: 680;
+.checkbox__label{
   font-size: 1.3rem;
+  color: var(--text-color);
+  font-weight: 500;
 }
 
 #good-old-games{
@@ -175,4 +175,137 @@ input[type='checkbox']:checked + span::before{
   text-align: center;
   border-radius: 3px;
   margin-top: -5px;
+}
+
+.title__selections{
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-left: 4px;
+}
+
+.extend__selections{
+  margin-top: 16px;
+}
+
+.extend__header {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+.extend__header:hover {
+  color: var(--green-color);
+}
+
+.extend__header .arrow {
+  width: 16px;
+  transition: transform 0.3s ease;
+  filter: invert(93%) sepia(93%) saturate(30%) hue-rotate(143deg) brightness(107%)
+}
+
+.extend__selections.open .arrow {
+  transform: rotate(90deg);
+}
+
+.selections__container {
+  display: none;
+  margin-top: 16px;
+}
+
+.extend__selections.open .selections__container {
+  display: block;
+}
+
+.price__range  {
+    position: relative;
+    width: 80%;
+    height: 2px;
+      margin: 25px auto 40px auto; /* add bottom margin */
+    background-color: var(--green-color);
+}
+
+
+
+.price__range input {
+    position: absolute;
+    margin-bottom: 16px;
+    width: 100%;
+    background: none;
+    pointer-events: none;
+    top: 50%;
+    transform: translateY(-50%);
+    appearance: none;
+    outline: none;
+    border: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: linear-gradient(
+      to bottom,
+      var(--super-dark-green-color),
+      var(--dark-green-color)
+    );
+    pointer-events: auto;
+    appearance: none;
+    cursor: pointer;
+}
+
+.input-addon{
+  font-weight: 600;
+  font-size: 1.3rem;
+}
+
+.price__input-box {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 18px;
+}
+
+.min-box,
+.max-box {
+  width: 40%;
+}
+
+.input-wrap {
+  margin-top: 16px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: var(--dark-green-color);
+  height: 35px;
+  transition: border-color 0.2s ease;
+}
+
+.input-wrap:focus-within {
+  border-color: var(--text-color);
+}
+
+.input-addon {
+  font-weight: 600;
+  font-size: 1.6rem;
+  color: var(--green-color);
+  margin-right: 6px;
+}
+
+.input-field__min-input,
+.input-field__max-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: var(--text-color);
+  font-size: 1.3rem;
+  font-weight: 600;
+  text-align: right; 
+  letter-spacing: 0.5px;
+  padding-right: 5px;
+}
+
+#special{
+  margin-top: 60px;
 }
