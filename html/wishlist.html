@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GSW - WISHLIST</title>
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles/wishlist.css" />
+
+    <!-- Boxicons CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"
+    />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/img/logo.svg" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    />
+
+    <script
+      src="https://kit.fontawesome.com/546bf66050.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="header__container">
+        <a href="#" class="header__logo">
+          <img src="/img/logo.svg" class="header__logo-img" alt="GSW Logo" />
+        </a>
+
+        <!-- Search Bar -->
+        <div class="header__search">
+          <i class="bx bx-search"></i>
+          <input
+            type="text"
+            name="search-text"
+            class="header__search-input"
+            placeholder="Search..."
+          />
+        </div>
+
+        <!-- Menu icon -->
+        <div class="bx bx-menu header__menu-icon" id="menu-icon" hidden></div>
+
+        <!-- Navigation List -->
+        <nav>
+          <ul class="header__nav">
+            <li class="header__nav-item">
+              <a href="#home" class="header__nav-link">HOME</a>
+            </li>
+            <li class="header__nav-item">
+              <a href="#category" class="header__nav-link">CATEGORY</a>
+            </li>
+            <li class="header__nav-item">
+              <a href="#faq" class="header__nav-link">FAQ</a>
+            </li>
+            <li class="header__nav-item">
+              <a href="#about" class="header__nav-link">ABOUT</a>
+            </li>
+          </ul>
+        </nav>
+
+        <!-- Language setting -->
+        <div class="header__language">
+          <img
+            src="/img/icons/earth.svg"
+            class="header__language-icon"
+            alt="Language"
+          />
+          <span class="header__language-text">EN</span>
+        </div>
+
+        <!-- Cart -->
+        <a href="#cart" class="header__cart" aria-label="Cart">
+          <i class="bx bx-cart"></i>
+        </a>
+
+        <!-- Profile -->
+        <a
+          href="#profile"
+          class="header__profile header__profile--active"
+          aria-label="Profile"
+        >
+          <i class="bx bx-user-circle"></i>
+        </a>
+      </div>
+    </header>
+    <main class="whislist-page">
+      <div class="wishlist-page__container">
+        <!-- Profile Infomation -->
+        <section class="profile-bar">
+          <div class="profile-bar__info">
+            <img
+              src="/img/icons/Ellipse 2.svg"
+              alt="User Avatar"
+              class="profile-bar__avatar"
+            />
+            <div class="profile-bar__text">
+              <span class="profile-bar__username">KZy24</span>
+              <span class="profile-bar__fullname">Nguyen Khanh Vy</span>
+            </div>
+          </div>
+          <a href="#" class="profile-bar__signout">Sign Out</a>
+        </section>
+        <!-- Nav -->
+        <nav class="wishlist-nav">
+          <ul class="wishlist-nav__list">
+            <li class="wishlist-nav__item">
+              <a href="#" class="wishlist-nav__link">
+                <img src="/img/icons/whislist.svg" alt="" />
+                <span>WISHLIST</span>
+              </a>
+            </li>
+            <li class="wishlist-nav__item">
+              <a href="#" class="wishlist-nav__link">
+                <img src="/img/icons/purchase.png" alt="" />
+                <span>YOUR PURCHASE</span>
+              </a>
+            </li>
+            <li class="wishlist-nav__item">
+              <a href="#" class="wishlist-nav__link">
+                <img src="/img/icons/wallet.svg" alt="" />
+                <span>WALLET</span>
+              </a>
+            </li>
+            <li class="wishlist-nav__item">
+              <a href="#" class="wishlist-nav__link wishlist-nav__link--active">
+                <img src="/img/icons/setting.svg" alt="" />
+                <span>SETTINGS</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <!--introduce-->
+      <div class="wishlist-introduce">
+        <div class="wishlist-introduce__wrapper">
+          <div class="wishlist-introduce__heart">
+            <img src="/img/icons/heart.png" alt="Heart" />
+          </div>
+
+          <div class="wishlist-introduce__content">
+            <p>
+              Every Month One Lucky Opted-In
+              <strong class="highlight">Winner Will Win A Game</strong>
+              From Their Gaming Wishlist, So Get Wishlisting Today!
+            </p>
+            <p class="small-text">
+              Last Month S*** From USA Won Mandragora, Whispers Of The Witch
+              Tree, Shinobi Art Of Vengeance, And Two Point Museum.
+            </p>
+          </div>
+
+          <div class="wishlist-introduce__images">
+            <img src="/img/assets/game1.png" alt="" id="game-img-1" />
+            <img src="/img/assets/game2.png" alt="" id="game-img-2" />
+            <img src="/img/assets/game3.png" alt="" id="game-img-3" />
+          </div>
+        </div>
+      </div>
+
+      <!--Add wishlist-->
+      <div class="wishlist-add">
+        <p class="wishlist-add__divider">2 Games</p>
+        <!-- Add wislist box -->
+        <div class="wishlist-item-box">
+          <div class="wishlist-item-box__column wishlist-item-box__product">
+            <img
+              src="/img/assets/1.png"
+              alt="Game Cover"
+              class="wishlist-item-box__image"
+            />
+            <div class="wishlist-item-box__details">
+              <span class="wishlist-item-box__title">OUTLAST Trinity</span>
+              <span class="wishlist-item-box__info"
+                >Zombies, Action, Parkour, Open World</span
+              >
+              <span class="wishlist-item-box__info"
+                >Release Date: 19 Sep, 2024</span
+              >
+            </div>
+          </div>
+
+          <span class="wishlist-item-box__release-date">8 OCT 25</span>
+
+          <div class="wishlist-item-box__column wishlist-item-box__actions">
+            <div class="wishlist-item-box__price-tag">
+              <label class="discount-percent">-75%</label>
+              <div class="price-container">
+                <label class="price-original"><u>$19.99</u></label>
+                <label class="price-sale">$4.99</label>
+              </div>
+            </div>
+
+            <div class="action-buttons">
+              <a href="#" class="wishlist-item-box__button">ADD TO CART</a>
+              <img
+                src="/img/icons/bin.png"
+                alt="Remove"
+                class="wishlist-item-box__remove-icon"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="wishlist-item-box">
+          <div class="wishlist-item-box__column wishlist-item-box__product">
+            <img
+              src="/img/assets/1.png"
+              alt="Game Cover"
+              class="wishlist-item-box__image"
+            />
+            <div class="wishlist-item-box__details">
+              <span class="wishlist-item-box__title">OUTLAST Trinity</span>
+              <span class="wishlist-item-box__info"
+                >Zombies, Action, Parkour, Open World</span
+              >
+              <span class="wishlist-item-box__info"
+                >Release Date: 19 Sep, 2024</span
+              >
+            </div>
+          </div>
+
+          <span class="wishlist-item-box__release-date">8 OCT 25</span>
+
+          <div class="wishlist-item-box__column wishlist-item-box__actions">
+            <div class="wishlist-item-box__price-tag">
+              <label class="discount-percent">-75%</label>
+              <div class="price-container">
+                <label class="price-original"><u>$19.99</u></label>
+                <label class="price-sale">$4.99</label>
+              </div>
+            </div>
+
+            <div class="action-buttons">
+              <a href="#" class="wishlist-item-box__button">ADD TO CART</a>
+              <img
+                src="/img/icons/bin.png"
+                alt="Remove"
+                class="wishlist-item-box__remove-icon"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="whislist-add__button">
+          <img src="/img/icons/heart_plus.png" alt="add wishlist" />
+          <label>ADD MORE GAMES TO YOUR WISHLIST</label>
+        </div>
+      </div>
+      <!--slider-->
+      <div class="genres">
+        <h3 class="genres__title">You may also like</h3>
+        <div class="genres__grid">
+          <i class="fa-solid fa-angle-left" id="slider-prev"></i>
+          <article class="game-card">
+            <div class="game-card__image">
+              <img src="/img/assets/1.png" alt="Game" />
+            </div>
+            <div class="game-card__content">
+              <div class="game-card__price-wrapper">
+                <div class="game-card__price">
+                  <p>4.99$</p>
+                </div>
+              </div>
+              <div class="game-card__add-cart">
+                <i class="fa-solid fa-cart-plus"></i>
+                <a href="#cart">Add to cart</a>
+              </div>
+              <button class="game-card__wishlist" aria-label="Add to wishlist">
+                <i class="fa-regular fa-heart"></i>
+              </button>
+            </div>
+          </article>
+
+          <article class="game-card">
+            <div class="game-card__image">
+              <img src="/img/assets/2.jpg" alt="Game" />
+            </div>
+            <div class="game-card__content">
+              <div class="game-card__price-wrapper">
+                <div class="game-card__price">
+                  <p>4.99$</p>
+                </div>
+              </div>
+              <div class="game-card__add-cart">
+                <i class="fa-solid fa-cart-plus"></i>
+                <a href="#cart"
+                  ><span class="game-card__add-cart-text">Add to cart</span></a
+                >
+              </div>
+              <button class="game-card__wishlist" aria-label="Add to wishlist">
+                <i class="fa-regular fa-heart"></i>
+              </button>
+            </div>
+          </article>
+
+          <article class="game-card">
+            <div class="game-card__image">
+              <img src="/img/assets/3.jpg" alt="Game" />
+            </div>
+            <div class="game-card__content">
+              <div class="game-card__price-wrapper">
+                <div class="game-card__price">
+                  <p>4.99$</p>
+                </div>
+              </div>
+              <div class="game-card__add-cart">
+                <i class="fa-solid fa-cart-plus"></i>
+                <a href="#cart"
+                  ><span class="game-card__add-cart-text">Add to cart</span></a
+                >
+              </div>
+              <button class="game-card__wishlist" aria-label="Add to wishlist">
+                <i class="fa-regular fa-heart"></i>
+              </button>
+            </div>
+          </article>
+          <article class="game-card">
+            <div class="game-card__image">
+              <img src="/img/assets/1.png" alt="Game" />
+            </div>
+            <div class="game-card__content">
+              <div class="game-card__price-wrapper">
+                <div class="game-card__price">
+                  <p>4.99$</p>
+                </div>
+              </div>
+              <div class="game-card__add-cart">
+                <i class="fa-solid fa-cart-plus"></i>
+                <a href="#cart">Add to cart</a>
+              </div>
+              <button class="game-card__wishlist" aria-label="Add to wishlist">
+                <i class="fa-regular fa-heart"></i>
+              </button>
+            </div>
+          </article>
+
+          <article class="game-card">
+            <div class="game-card__image">
+              <img src="/img/assets/2.jpg" alt="Game" />
+            </div>
+            <div class="game-card__content">
+              <div class="game-card__price-wrapper">
+                <div class="game-card__price">
+                  <p>4.99$</p>
+                </div>
+              </div>
+              <div class="game-card__add-cart">
+                <i class="fa-solid fa-cart-plus"></i>
+                <a href="#cart"
+                  ><span class="game-card__add-cart-text">Add to cart</span></a
+                >
+              </div>
+              <button class="game-card__wishlist" aria-label="Add to wishlist">
+                <i class="fa-regular fa-heart"></i>
+              </button>
+            </div>
+          </article>
+
+          <i class="fa-solid fa-angle-right" id="slider-next"></i>
+        </div>
+      </div>
+    </main>
+    <!--JS-->
+    <script src="/scripts/wishlist.js"></script>
+  </body>
+</html>
