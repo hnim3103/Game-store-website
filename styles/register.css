@@ -15,43 +15,14 @@
   --text-color: #ffffff;
 }
 
-body {
-  overflow: hidden;
-  height: 100vh;
-  background-color: transparent;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.register {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 4.8vh 1.2%;
-  background-color: #0f232c;
-  border-radius: 6px;
-  width: clamp(320px, 30vw, 400px);
-}
-/* button register and login */
-.register__button-group {
-  display: flex;
-  gap: 6px;
-  width: 100%;
-}
-/* general setting button */
-.register__button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  padding: 3% 0%;
-  background-color: var(--dark-green-color);
-  color: var(--text-color);
-  border-radius: 6px;
-  font-size: clamp(13.2px, 2.4vw, 18px);
-  font-weight: 700;
-  transition: all 0.2s ease-in-out;
+body{         
+    overflow: hidden;
+    background-color: transparent;                       
+    display: flex;                 
+    justify-content: center;       
+    align-items: center;
+    max-height: 100vh;   
+    background-color: var(--dark-green-color);
 }
 
 .register__button--register {

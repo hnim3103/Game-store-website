@@ -49,120 +49,6 @@ h1 {
 }
 
 /* ---------------------------------------------------
-  Header & Navigation
---------------------------------------------------- */
-.header__container {
-  position: relative;
-  top: 0;
-  right: 0;
-  width: 1200px;
-  max-width: 100%;
-  height: 90px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px 15px;
-  background-color: transparent;
-  transition: 0.5s;
-  margin: auto;
-}
-
-/* Navbar */
-.header__nav {
-  display: flex;
-  column-gap: 1rem;
-}
-
-.header__nav-link {
-  color: var(--text-color);
-  font-size: 2rem;
-  font-weight: bold;
-  padding: 0.5rem 1rem;
-  transition: background 0.6s;
-}
-
-.header__nav-link:hover,
-.header__nav-link--active {
-  background-color: var(--green-color);
-  border-radius: 5rem;
-}
-
-/* Logo */
-.header__logo-img {
-  width: 100px;
-  height: 50px;
-}
-
-/* Menu Icon */
-.header__menu-icon {
-  font-size: 4rem;
-  cursor: pointer;
-  z-index: 10001;
-}
-
-/* ---------------------------------------------------
-  Language Settings
---------------------------------------------------- */
-.header__language {
-  position: relative;
-  align-items: center;
-}
-
-.header__language-icon {
-  width: 48px;
-  height: 44px;
-}
-
-.header__language-text {
-  position: absolute;
-  font-size: 2rem;
-  font-weight: bold;
-  padding-top: 10px;
-  padding-left: 5px;
-}
-
-/* ---------------------------------------------------
-  Search Bar
---------------------------------------------------- */
-.header__search {
-  position: relative;
-  width: 300px;
-  height: 46px;
-  background-color: #404044;
-  border: 5px solid var(--green-color);
-  border-radius: 60px;
-  align-items: center;
-  justify-content: center;
-}
-
-.header__search-input {
-  position: absolute;
-  width: 250px;
-  height: 30px;
-  font-size: 1.8rem;
-  background: transparent;
-  border: none;
-  outline: none;
-  color: var(--text-color);
-  padding: 8px 0 0 10px;
-}
-
-.header__search .bx-search {
-  font-size: 2.8rem;
-  padding-top: 5px;
-  padding-left: 10px;
-}
-
-/* ---------------------------------------------------
-  Header Icons
---------------------------------------------------- */
-.header__cart .bx-cart,
-.header__profile .bx-user-circle {
-  font-size: 5rem;
-  color: var(--text-color);
-}
-
-/* ---------------------------------------------------
    FAQ Section
 --------------------------------------------------- */
 .faq {
@@ -240,12 +126,15 @@ h1 {
   cursor: pointer;
   user-select: none;
   transition: all 0.3 ease;
-  position: relative;
 }
 
 .faq__question .faq__icon {
   flex-shrink: 0;
   margin-right: 15px;
+}
+
+.faq__text {
+  flex: 1;
 }
 
 .faq__question span {
@@ -258,13 +147,10 @@ h1 {
 }
 
 .faq__question .faq__toggle {
-  position: absolute;
-  right: 25px;
-  top: 50%;
-  transform: translateY(-50%);
   font-size: 32px;
   color: var(--green-color);
   transition: transform 0.3 ease;
+  flex-shrink: 0;
 }
 
 /* FAQ Icons */
@@ -318,15 +204,17 @@ h1 {
   }
 
   .faq__container {
-    padding: 0 10px;
+    padding: 0;
+    gap: 10px;
   }
   .faq__question {
-    padding: 15px 20px;
-    gap: 10px;
+    padding: 10px;
+    gap: 0;
   }
 
   .faq__question span {
-    font-size: 16px;
+    font-size: 14px;
+    font-weight: 600;
   }
 
   .faq__icon, .faq__toggle {
@@ -335,6 +223,7 @@ h1 {
 
   .faq__answer p {
     font-size: 14px;
-    padding: 0 20px;
+    padding: 10px 20px;
+    font-weight: 400;
   }
 }
