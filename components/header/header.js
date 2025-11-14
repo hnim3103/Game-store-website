@@ -26,7 +26,6 @@ document.addEventListener("DOMContentLoaded", () => {
     link.addEventListener("click", () => {
       navLinks.forEach((l) => l.classList.remove("active"));
       link.classList.add("active");
-      
       // Close mobile menu after clicking
       if (window.innerWidth <= 768) {
         nav.classList.remove("show");
@@ -65,5 +64,74 @@ document.addEventListener("DOMContentLoaded", () => {
         icon.classList.add("bx-menu");
       }
     });
+  }
+});
+// overlay login
+const profileBtn = document.querySelector(".header__signin");
+
+if (profileBtn) {
+  profileBtn.addEventListener("click", function (e) {
+    e.preventDefault();
+
+    // create overlay contain login box
+    const overlay = document.createElement("div");
+    overlay.classList.add("page-overlay");
+    Object.assign(overlay.style, {
+      position: "fixed",
+      top: 0,
+      left: 0,
+      width: "100vw",
+      height: "100vh",
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      overflow: "auto",
+      transition: "opacity 0.3s ease",
+      opacity: "0",
+      backgroundColor: "rgba(0, 0, 0, 0.6)",
+      zIndex: 99999,
+    });
+
+    // create iframe login box
+    const iframe = document.createElement("iframe");
+
+    // style iframe
+    Object.assign(iframe.style, {
+      width: "550px",
+      height: "600px",
+      border: "none",
+      borderRadius: "10px",
+      zIndex: "100000",
+    });
+
+    // click outside, close overlay
+    overlay.addEventListener("click", (event) => {
+      if (event.target === overlay) {
+        overlay.style.opacity = "0";
+        // Animation remove
+        setTimeout(() => {
+          overlay.remove();
+        }, 300);
+      }
+    });
+
+    overlay.appendChild(iframe);
+    document.body.appendChild(overlay);
+
+    iframe.onload = () => {
+      overlay.style.opacity = "1";
+    };
+    iframe.src = "login.html";
+  });
+}
+
+// login success, close overlay
+window.addEventListener("message", (event) => {
+  if (event.data === "login-success") {
+    const overlay = document.querySelector(".page-overlay");
+    if (overlay) {
+      overlay.style.opacity = "0";
+      setTimeout(() => overlay.remove(), 300); // Animation
+    }
   }
 });
