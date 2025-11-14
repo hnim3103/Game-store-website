@@ -1,9 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap");
 
 /* Reset & Base */
 * {
-  font-family: 'Roboto Flex', sans-serif;
+  font-family: "Roboto Flex", sans-serif;
   text-decoration: none;
+  box-sizing: border-box;
 }
 
 :root {
@@ -135,53 +136,58 @@ body{
 .reset-form input:focus {
   outline: none;
   border: 2px solid var(--green-color);
-  box-shadow: 0 0 4px var(--green-color); 
+  box-shadow: 0 0 4px var(--green-color);
 }
 
-.submit:hover {
-  background-color: var(--green-color);
+/* Hover States */
+.email__submit:hover {
   filter: brightness(1.2);
-  transform: scale(1.05); 
+  transform: scale(1.05);
   cursor: pointer;
 }
 
-.email-account:hover, .phone-account:hover{
+.email__button:hover {
   box-shadow: 0px 5px 8px var(--green-color);
   transform: scale(1.05);
   filter: brightness(1.2);
 }
 
-.return-signin:hover{
+.email__return:hover {
   color: var(--green-color);
   transform: scale(1.1);
 }
 
-.reset-input input:hover{
-  background-color: var(--dark-green-color);
+.email__input:hover {
   filter: brightness(1.2);
   border: 2px solid var(--green-color);
 }
 
-.reset-form label.error {
+/* Error  */
+.email__label.error {
   color: #ff4d4d;
 }
 
-/* Error styling cho input */
-.reset-form input.error {
+.email__input.error {
   border: 3px solid #ff4d4d;
   background-color: rgba(212, 14, 14, 0.1);
 }
 
-.error-message {
+.email__error {
   color: #ff4d4d;
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 500;
   margin-top: 5px;
-  text-align: left; 
-  align-self: flex-start; 
+  text-align: left;
+  align-self: flex-start;
   display: none;
 }
 
-.error-message.show{
+.email__error.show {
   display: block;
+}
+/* mobile */
+@media (max-width: 767px) {
+  .email {
+    padding: 2rem 1rem;
+  }
 }

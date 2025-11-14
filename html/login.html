@@ -1,88 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login</title>
     <!-- Styles -->
-    <link rel="stylesheet" href="/styles/login.css">
+    <link rel="stylesheet" href="/styles/login.css" />
 
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap" rel="stylesheet">
-
-</head>
-<body>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <!--Box sign-in-->
-    <div class ="main">
-        <!--Button Sign in and Register-->
-        <div class="button-group">
-            <a href="login.html" class="sign-in">
-                <span>Sign In</span>
-            </a>
+    <div class="login">
+      <!--Button Sign in and Register-->
+      <div class="login__button-group">
+        <a href="login.html" class="login__button login__button--signin">
+          <span>Sign In</span>
+        </a>
 
-            <a href="register.html" class="Register">
-                <span>Register</span>
-            </a>
+        <a href="register.html" class=" login__button login__button--register">
+          <span>Register</span>
+        </a>
+      </div>
+
+      <!--Login form-->
+      <!--Login form-->
+      <form class="login__form" novalidate>
+        <h3 class="login__title">Sign In with...</h3>
+        <div class="login__input-group">
+          <label class="login__label" for="email">Email Address</label>
+          <div class="login__input-wrapper">
+            <input
+              class="login__input"
+              type="text"
+              id="email"
+              placeholder="Input Email Address"
+            />
+            <span class="login__error" id="email-error"></span>
+          </div>
         </div>
+        <br />
 
-        <!--Login form-->
-        <!--Login form-->
-        <form class="login-form" novalidate>
-            <h3>Sign In with...</h3>
-            <div class="input-group">
-                <label for="email">Email Address</label>
-                <div class="input-wrapper">
-                  <input type="text" id="email" name="email" placeholder="Input Email Address">
-                  <span class="error-message" id="email-error"></span>
-                </div>
-            </div>             
-            <br>
-            <div class="input-group">
-                <label for="password">Password</label>
-                <div class="input-wrapper"> 
-                    <input type="password" id="password" name="password" placeholder="Input Password">
-                    <span class="error-message" id="password-error"></span>
-                </div>
-            </div>
-            <br>
-            <button type="submit" class="submit">
-                <span>SIGN IN</span> 
-            </button>
-            <a href="email-account.html" class="forgot-password">
-                Forgot Your Password?
-            </a>
-        </form>
-
-        <!--Devider-->
-        <div class="divider">
-            <span>OR</span>
+        <div class="login__input-group">
+          <label class="login__label" for="password">Password</label>
+          <div class="login__input-wrapper">
+            <input
+              class="login__input"
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Input Password"
+            />
+            <span class="login__error" id="password-error"></span>
+          </div>
         </div>
+        <br />
 
-        <!--Social Login-->
-        <div  class="social-login">
+        <button type="submit" class="login__submit">
+          <span>SIGN IN</span>
+        </button>
+        <a href="email-account.html" class="login__forgot-password">
+          Forgot Your Password?
+        </a>
+      </form>
 
-            <!--Login with Facebook-->
-            <button onclick="window.location.href='https'" class="facebook">
-                <img src="/img/icons/fb.png" alt="Facebook Icon">
-            </button>
-            <!--Login with Google-->
-            <button onclick="window.location.href='https'" class="Google">
-                <img src="/img/icons/gg.svg" alt="Google Icon">
-            </button>
-            <!--Login with LinkedIn-->
-            <button onclick="window.location.href='https'" class="LinkedIn">
-                <img src="/img/icons/linkedin.svg" alt="LinkedIn Icon">
-            </button>
-            <!--Login with Twitter-->
-            <button onclick="window.location.href='https'" class="Twitter">
-                <img src="/img/icons/twitter.svg" alt="Twitter Icon">
-            </button>
+      <!--Devider-->
+      <div class="login__divider">
+        <span>OR</span>
+      </div>
+
+      <!--Social Login-->
+      <div class="login__social">
+        <!--Login with Facebook-->
+        <button
+          onclick="window.location.href='https'"
+          class="login__social-btn login__social-btn--facebook"
+        >
+          <img class="login__social-icon" src="/img/icons/fb.png" alt="Facebook Icon" />
+        </button>
+        <!--Login with Google-->
+        <button
+          onclick="window.location.href='https'"
+          class="login__social-btn login__social-btn--google"
+        >
+          <img class="login__social-icon" src="/img/icons/gg.svg" alt="Google Icon" />
+        </button>
+        <!--Login with LinkedIn-->
+        <button
+          onclick="window.location.href='https'"
+          class="login__social-btn login__social-btn--linkedin"
+        >
+          <img class="login__social-icon" src="/img/icons/linkedin.svg" alt="LinkedIn Icon" />
+        </button>
+        <!--Login with Twitter-->
+        <button
+          onclick="window.location.href='https'"
+          class="login__social-btn login__social-btn--twitter"
+        >
+          <img class="login__social-icon" src="/img/icons/twitter.svg" alt="Twitter Icon" />
+        </button>
         </div>
-
+      </div>
     </div>
-        <!--Java script-->
+    <!--Java script-->
     <script src="/scripts/login.js"></script>
-</body>
+  </body>
 </html>
