@@ -14,16 +14,6 @@
   --super-dark-green-color: #0f232c;
 }
 
-<<<<<<< HEAD
-body{  
-    overflow: hidden;                   
-    background-color: transparent;           
-    display: flex;                 
-    justify-content: center;       
-    align-items: center;
-    height: 100vh; 
-    background-color: var(--dark-green-color);
-=======
 body {
   overflow: hidden;
   height: 100vh;
@@ -62,7 +52,6 @@ body {
   font-size: clamp(13.2px, 2.4vw, 18px);
   font-weight: 700;
   transition: all 0.2s ease-in-out;
->>>>>>> feat/GSW-register-login
 }
 
 .phone__button--phone {
