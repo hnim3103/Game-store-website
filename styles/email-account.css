@@ -15,122 +15,130 @@
   --super-dark-green-color: #0f232c;
 }
 
-body{  
-    overflow: hidden;                   
-    background-color: transparent;           
-    display: flex;                 
-    justify-content: center;       
-    align-items: center;
-    height: 100vh; 
-    background-color: var(--dark-green-color);
+body {
+  overflow: hidden;
+  height: 100vh;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.email {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4.8vh 1.2%;
+  background-color: #0f232c;
+  border-radius: 6px;
+  width: clamp(320px, 30vw, 400px);
+}
+/* button phone-account and email-account */
+.email__button-group {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+}
+/* general setting button */
+.email__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 5% 0%;
+  background-color: var(--dark-green-color);
+  color: var(--text-color);
+  border-radius: 6px;
+  font-size: clamp(13.2px, 2.4vw, 18px);
+  font-weight: 700;
+  transition: all 0.2s ease-in-out;
 }
 
-.main{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 5% 0% 5% 0%;
-    gap: 10px;
-    background-color: var(--super-dark-green-color);
-    border-radius: 10px;
-    width: 90%;         
-    max-width: 800px;
-    height: auto;
-    transform: scale(0.6);
-    transform-origin: center center;
-}
-
-.button-group{
-    display: flex;
-    gap: 10px;
-    width: 100%;
-    max-width: 720px;
-    padding: 0 2%;
-    box-sizing: border-box;
+.email__button--email {
+  margin-left: 1.3%;
+  box-shadow: 0px 5px 8px var(--green-color);
 }
 
 .email-account {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    max-height: 100vh;
-    width: 100%;
-    background-color: var(--dark-green-color);
-    color: var(--text-color);
-    border-radius: 10px;
-    font-size: 30px;
-    font-weight: 700;
-    box-shadow: 0px 5px 8px var(--green-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-height: 100vh;
+  width: 100%;
+  background-color: var(--dark-green-color);
+  color: var(--text-color);
+  border-radius: 10px;
+  font-size: 30px;
+  font-weight: 700;
+  box-shadow: 0px 5px 8px var(--green-color);
 }
 
-.phone-account{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100px;
-    width: 100%;
-    background-color: var(--dark-green-color);
-    color: var(--text-color);
-    border-radius: 10px;
-    font-size: 30px;
-    font-weight: 700;
-    box-shadow: 0px 2px 8px var(--black-color);
+.phone-account {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  width: 100%;
+  background-color: var(--dark-green-color);
+  color: var(--text-color);
+  border-radius: 10px;
+  font-size: 30px;
+  font-weight: 700;
+  box-shadow: 0px 2px 8px var(--black-color);
 }
 
-.reset-form{
-    font-size: 24px;
-    color: var(--text-color);
-    font-weight: 500;  
-    gap: 5px;
-    width: 100%;
-    max-width: 720px;
-    padding: 0 2%;
-    box-sizing: border-box;
-
+.reset-form {
+  font-size: 24px;
+  color: var(--text-color);
+  font-weight: 500;
+  gap: 5px;
+  width: 100%;
+  max-width: 720px;
+  padding: 0 2%;
+  box-sizing: border-box;
 }
 
 .reset-form label {
-    margin-top: 20px;;
-    margin-bottom: 20px;
-    display: block;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: block;
 }
 
 .reset-input input {
-    background-color: var(--dark-green-color);
-    border: 1px solid var(--green-color);
-    border-radius: 10px;
-    height: 60px;
-    width: 100%;
-    padding: 0 1%;
-    font-size: 24px;
-    color: var(--text-color);
-    box-sizing: border-box;
+  background-color: var(--dark-green-color);
+  border: 1px solid var(--green-color);
+  border-radius: 10px;
+  height: 60px;
+  width: 100%;
+  padding: 0 1%;
+  font-size: 24px;
+  color: var(--text-color);
+  box-sizing: border-box;
 }
 
-.submit{
-    width: 100%;
-    max-width: 720px;
-    height: 70px;
-    padding: 0 2%;;
-    background-color: var(--green-color);
-    color: var(--text-color);
-    border-radius: 10px; 
-    font-size: 30px;
-    font-weight: 700;
-    border: none;
+.submit {
+  width: 100%;
+  max-width: 720px;
+  height: 70px;
+  padding: 0 2%;
+  background-color: var(--green-color);
+  color: var(--text-color);
+  border-radius: 10px;
+  font-size: 30px;
+  font-weight: 700;
+  border: none;
 }
 
-.return-signin{
-    display: inline-block;
-    font-size: 20px;
-    color: var(--text-color);
-    background: transparent;
-    font-weight: 300;  
-    text-decoration: underline;
-    border: none;
-    margin-top: 13px;
-    margin-top: 20px;
+.return-signin {
+  display: inline-block;
+  font-size: 20px;
+  color: var(--text-color);
+  background: transparent;
+  font-weight: 300;
+  text-decoration: underline;
+  border: none;
+  margin-top: 13px;
+  margin-top: 20px;
 }
 
 .reset-form input:focus {

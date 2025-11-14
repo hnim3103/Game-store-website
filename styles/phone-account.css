@@ -14,85 +14,114 @@
   --super-dark-green-color: #0f232c;
 }
 
-body{  
-    overflow: hidden;                   
-    background-color: transparent;           
-    display: flex;                 
-    justify-content: center;       
-    align-items: center;
-    height: 100vh; 
-    background-color: var(--dark-green-color);
+body {
+  overflow: hidden;
+  height: 100vh;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* phone-account box */
+.phone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4.8vh 1.2%;
+  background-color: #0f232c;
+  border-radius: 6px;
+  width: clamp(320px, 30vw, 400px);
+}
+/* button phone-account and email-account */
+.phone__button-group {
+  display: flex;
+  gap: 6px;
+  width: 100%;
+}
+/* general setting button */
+.phone__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 4% 0%;
+  background-color: var(--dark-green-color);
+  color: var(--text-color);
+  border-radius: 6px;
+  font-size: clamp(13.2px, 2.4vw, 18px);
+  font-weight: 700;
+  transition: all 0.2s ease-in-out;
 }
 
-.main{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 5% 0% 5% 0%;
-    gap: 10px;
-    background-color: #0F232C;
-    border-radius: 10px;
-    width: 90%;         
-    max-width: 800px;
-    height: auto;
-    transform: scale(0.6);
-    transform-origin: center center;
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5% 0% 5% 0%;
+  gap: 10px;
+  background-color: #0f232c;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 800px;
+  height: auto;
+  transform: scale(0.6);
+  transform-origin: center center;
 }
 
-.button-group{
-    display: flex;
-    gap: 10px;
-    width: 100%;
-    max-width: 720px;
-    padding: 0 2%;
-    box-sizing: border-box;
+.button-group {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  max-width: 720px;
+  padding: 0 2%;
+  box-sizing: border-box;
 }
 
 .phone-account {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100px;
-    width: 100%;
-    background-color: var(--dark-green-color);
-    color: var(--text-color);
-    border-radius: 10px;
-    font-size: 30px;
-    font-weight: 700;
-    box-shadow: 0px 5px 8px var(--green-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  width: 100%;
+  background-color: var(--dark-green-color);
+  color: var(--text-color);
+  border-radius: 10px;
+  font-size: 30px;
+  font-weight: 700;
+  box-shadow: 0px 5px 8px var(--green-color);
 }
 
-.email-account{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100px;
-    width: 100%;
-    background-color: var(--dark-green-color);
-    color: var(--text-color);
-    border-radius: 10px;
-    font-size: 30px;
-    font-weight: 700;
-    box-shadow: 0px 5px 8px var(--black-color);
+.email-account {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  width: 100%;
+  background-color: var(--dark-green-color);
+  color: var(--text-color);
+  border-radius: 10px;
+  font-size: 30px;
+  font-weight: 700;
+  box-shadow: 0px 5px 8px var(--black-color);
 }
 
-.reset-form{
-    font-size: 24px;
-    color: var(--text-color);
-    font-weight: 500;  
-    gap: 5px;
-    width: 100%;
-    max-width: 720px;
-    padding: 0 2%;
-    box-sizing: border-box;
-
+.reset-form {
+  font-size: 24px;
+  color: var(--text-color);
+  font-weight: 500;
+  gap: 5px;
+  width: 100%;
+  max-width: 720px;
+  padding: 0 2%;
+  box-sizing: border-box;
 }
 
 .reset-form label {
-    margin-top: 20px;;
-    margin-bottom: 20px;
-    display: block;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: block;
 }
 
 .phone-wrapper {
@@ -256,6 +285,6 @@ body{
 /* mobile */
 @media (max-width: 767px) {
   .phone {
-    padding: 2rem 0.5rem;
+    padding: 2rem 1rem;
   }
 }
