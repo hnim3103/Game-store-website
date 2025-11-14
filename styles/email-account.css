@@ -59,71 +59,89 @@ body {
   box-shadow: 0px 5px 8px var(--green-color);
 }
 
-.email__button--phone {
-  margin-right: 1.3%;
-  box-shadow: 0px 5px 8px var(--black-color);
-}
-/* form */
-.email__form {
-  color: var(--text-color);
-  font-size: clamp(12px, 2.4vw, 16.8px);
-  font-weight: 600;
+.email-account {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-height: 100vh;
   width: 100%;
-  padding: 0 1.2%;
+  background-color: var(--dark-green-color);
+  color: var(--text-color);
+  border-radius: 10px;
+  font-size: 30px;
+  font-weight: 700;
+  box-shadow: 0px 5px 8px var(--green-color);
+}
+
+.phone-account {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  width: 100%;
+  background-color: var(--dark-green-color);
+  color: var(--text-color);
+  border-radius: 10px;
+  font-size: 30px;
+  font-weight: 700;
+  box-shadow: 0px 2px 8px var(--black-color);
+}
+
+.reset-form {
+  font-size: 24px;
+  color: var(--text-color);
+  font-weight: 500;
+  gap: 5px;
+  width: 100%;
+  max-width: 720px;
+  padding: 0 2%;
   box-sizing: border-box;
 }
 
-.email__label {
-  color: var(--text-color);
-  font-size: clamp(13px, 2.4vw, 18px);
-  font-weight: 700;
-  margin: 5% 0 4% 0;
+.reset-form label {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: block;
 }
 
-.email__input-group {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  position: relative;
-  gap: 5px;
-}
-/* input */
-.email__input {
+.reset-input input {
   background-color: var(--dark-green-color);
   border: 1px solid var(--green-color);
-  border-radius: 6px;
+  border-radius: 10px;
+  height: 60px;
   width: 100%;
-  height: 90%;
-  padding: 2.4% 0%;
-  font-size: clamp(12px, 2.4vw, 14.4px);
+  padding: 0 1%;
+  font-size: 24px;
   color: var(--text-color);
-  transition: all 0.2s ease-in-out;
+  box-sizing: border-box;
 }
 
-.email__submit {
+.submit {
   width: 100%;
-  padding: 3% 0%;
+  max-width: 720px;
+  height: 70px;
+  padding: 0 2%;
   background-color: var(--green-color);
   color: var(--text-color);
-  border-radius: 6px;
-  font-size: clamp(14px, 2.4vw, 18px);
+  border-radius: 10px;
+  font-size: 30px;
   font-weight: 700;
   border: none;
 }
 
-.email__return {
+.return-signin {
   display: inline-block;
-  font-size: clamp(7px, 3vw, 13px);
+  font-size: 20px;
   color: var(--text-color);
   background: transparent;
   font-weight: 300;
   text-decoration: underline;
   border: none;
-  margin-top: 12px;
+  margin-top: 13px;
+  margin-top: 20px;
 }
 
-/* Focus States */
-.email__input:focus {
+.reset-form input:focus {
   outline: none;
   border: 2px solid var(--green-color);
   box-shadow: 0 0 4px var(--green-color);
