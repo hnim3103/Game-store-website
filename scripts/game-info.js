@@ -1,147 +1,170 @@
 // Đảm bảo code chỉ chạy khi tài liệu (HTML) đã tải xong
 document.addEventListener("DOMContentLoaded", function() {
 
-    // Tìm các phần tử trong DOM
-    const toggleButton = document.querySelector(".js-toggle-btn");
-    const content = document.querySelector(".js-description-content");
+    // Hàm thu gọn/mở rộng Game Description
+    function initReadMore() {
+        const toggleButton = document.querySelector(".js-toggle-btn");
+        const content = document.querySelector(".js-description-content");
+        const collapsedHeight = getComputedStyle(content).maxHeight;
+        toggleButton.addEventListener("click", function() {
+            const isExpanded = content.classList.contains("is-expanded");
 
-    // Lấy chiều cao cố định ban đầu
-    const collapsedHeight = getComputedStyle(content).maxHeight;
-    toggleButton.addEventListener("click", function() {
-        // Kiểm tra xem nội dung có đang mở rộng hay không
-        const isExpanded = content.classList.contains("is-expanded");
-        if (isExpanded) {
-            // Thu gọn
-            content.classList.remove("is-expanded");
-            // Đặt lại max height về chiều cao thu gọn ban đầu
-            content.style.maxHeight = collapsedHeight;
-            toggleButton.textContent = "READ MORE";
-        } else {
-            // Mở rộng
-            content.classList.add("is-expanded");
-            // 'scrollHeight' là chiều cao thực tế của toàn bộ nội dung
-            content.style.maxHeight = content.scrollHeight + "px";
-            toggleButton.textContent = "SHOW LESS";
-        }
-    });
-
-    // Lấy các phần tử HTML
-    const mainImage = document.querySelector(".gallery__main-image");
-    const prevBtn = document.querySelector(".gallery__nav--prev");
-    const nextBtn = document.querySelector(".gallery__nav--next");
-    const thumbnails = document.querySelectorAll(".gallery__thumbnail");
-    const dotsContainer = document.querySelector(".gallery__dots");
-
-    // Lấy URL ảnh lớn và chỉ số hiện tại
-    const largeImageUrls = Array.from(thumbnails).map(thumb => thumb.dataset.largeSrc);
-    let currentImageIndex = Array.from(thumbnails).findIndex(thumb => 
-        thumb.classList.contains('gallery__thumbnail--active')
-    );
-    if (currentImageIndex === -1) {
-        currentImageIndex = 0;
+            if (isExpanded) {
+                content.classList.remove("is-expanded");
+                content.style.maxHeight = collapsedHeight;
+                toggleButton.textContent = "READ MORE";
+            } else {
+                content.classList.add("is-expanded");
+                content.style.maxHeight = content.scrollHeight + "px";
+                toggleButton.textContent = "SHOW LESS";
+            }
+        });
     }
 
-    // Tạo các dấu chấm (dots)
-    if (dotsContainer) {
-        largeImageUrls.forEach((_, index) => {
-            const dot = document.createElement("div");
-            dot.classList.add("gallery__dot");
-            dot.dataset.index = index;
-            dot.addEventListener("click", () => {
-                setActiveImage(index);
+    function initGallery() {
+        // Lấy các phần tử DOM cần thiết
+        const mainImage = document.querySelector(".gallery__main-image");
+        const mainVideo = document.querySelector(".gallery__main-video");
+        const prevBtn = document.querySelector(".gallery__nav--prev");
+        const nextBtn = document.querySelector(".gallery__nav--next");
+        const thumbnails = document.querySelectorAll(".gallery__thumbnail-wrapper");
+        const dotsContainer = document.querySelector(".gallery__dots");
+        const thumbnailContainer = document.querySelector(".gallery__thumbnails");
+        const swipeArea = document.querySelector('.gallery__main');
+
+        // Xây dựng mảng dữ liệu từ HTML
+        const galleryItems = Array.from(thumbnails).map(wrapper => {
+            return {
+                type: wrapper.dataset.type || 'image',
+                src: wrapper.dataset.largeSrc
+            };
+        });
+
+        let currentImageIndex = 0;
+        let touchStartX = 0;
+        let touchEndX = 0;
+        const swipeThreshold = 50;
+
+        // Hàm chuyển slide
+        function setActiveItem(index) {
+            // Kiểm tra: Không làm gì nếu item không tồn tại hoặc đang active
+            if (!galleryItems[index] || currentImageIndex === index) {
+            }
+            const item = galleryItems[index];
+            mainVideo.src = ''; 
+            // Nếu là video
+            if (item.type === 'video') {
+                mainImage.classList.add('is-hidden'); // ẩn ảnh
+                mainVideo.classList.remove('is-hidden'); // hiện video
+                mainVideo.src = item.src + '?autoplay=1&mute=0&controls=1';
+            // Ngược lại nếu là ảnh
+            } else { 
+                mainImage.classList.remove('is-hidden');
+                mainVideo.classList.add('is-hidden');
+                mainImage.style.transition = 'none'; 
+                mainImage.style.opacity = 0;
+                setTimeout(() => {
+                    mainImage.src = item.src;
+                    mainImage.style.transition = 'opacity 0.4s ease-in-out';
+                    void mainImage.offsetWidth; 
+                    mainImage.style.opacity = 1;
+                }, 50);
+            }
+            updateActiveUI(index, false);
+            currentImageIndex = index;
+        }
+
+        // Hàm cập nhật giao diện
+        function updateActiveUI(index, isInitialLoad = false) {
+            // Cập nhật viền
+            thumbnails.forEach((wrapper, i) => {
+                wrapper.classList.toggle('gallery__thumbnail--active', i === index);
             });
-            dotsContainer.appendChild(dot);
-        });
-    }
+            // Cập nhật chấm tròn cho mobile
+            if (dotsContainer) {
+                const allDots = dotsContainer.querySelectorAll(".gallery__dot");
+                allDots.forEach((dot, i) => {
+                    dot.classList.toggle('gallery__dot--active', i === index);
+                });
+            }
+            // Logic cuộn thumbnail vào giữa màn hình
+            const activeThumb = thumbnails[index];
+            if (activeThumb && thumbnailContainer) {
+                const containerWidth = thumbnailContainer.offsetWidth;
+                const thumbLeft = activeThumb.offsetLeft;
+                const thumbWidth = activeThumb.offsetWidth;
+                const newScrollLeft = thumbLeft - (containerWidth / 2) + (thumbWidth / 2);
 
-    // Hàm cập nhật UI
-    function updateActiveUI(index) {
-        // Cập nhật thumbnail
-        thumbnails.forEach((thumb, i) => {
-            thumb.classList.toggle('gallery__thumbnail--active', i === index);
-        });
+                thumbnailContainer.scrollTo({
+                    left: newScrollLeft,
+                    behavior: isInitialLoad ? 'auto' : 'smooth' 
+                });
+            }
+        }
+        
+        // Hàm khởi tạo để đồng bộ thumbnail
+        function initializeGallery() {
+            let activeIndex = Array.from(thumbnails).findIndex(wrapper => 
+                wrapper.classList.contains('gallery__thumbnail--active')
+            );
+            if (activeIndex === -1) {
+                activeIndex = 0;
+            }
+            currentImageIndex = activeIndex;
+            updateActiveUI(currentImageIndex, true);
+            if (dotsContainer) {
+                galleryItems.forEach((_, index) => {
+                    const dot = document.createElement("div");
+                    dot.classList.add("gallery__dot");
+                    dot.dataset.index = index;
+                    dot.addEventListener("click", () => {
+                        setActiveItem(index);
+                    });
+                    dotsContainer.appendChild(dot);
+                });
+                updateActiveUI(currentImageIndex, true);
+            }
+        }
 
-        // Cập nhật dots
-        if (dotsContainer) {
-            const allDots = document.querySelectorAll(".gallery__dot");
-            allDots.forEach((dot, i) => {
-                dot.classList.toggle('gallery__dot--active', i === index);
+        // Hàm điều khiển
+        function showNextImage() {
+            let nextIndex = (currentImageIndex + 1) % galleryItems.length;
+            setActiveItem(nextIndex);
+        }
+        
+        function showPrevImage() {
+            let prevIndex = (currentImageIndex - 1 + galleryItems.length) % galleryItems.length;
+            setActiveItem(prevIndex);
+        }
+
+        nextBtn.addEventListener("click", showNextImage);
+        prevBtn.addEventListener("click", showPrevImage);
+
+        thumbnails.forEach((wrapper, index) => {
+            wrapper.addEventListener("click", function() {
+                setActiveItem(index);
             });
-        }
-    }
-    
-    // Đặt ảnh active
-    function setActiveImage(index) {
-        // Kiểm tra nếu index hợp lệ và không phải là ảnh hiện tại
-        if (!largeImageUrls[index] || currentImageIndex === index) {
-            return;
-        }
-        mainImage.style.transition = 'none'; 
-        mainImage.style.opacity = 0;
-
-        setTimeout(() => {
-            mainImage.src = largeImageUrls[index];
-            mainImage.style.transition = 'opacity 0.4s ease-in-out';
-            mainImage.style.opacity = 1;
-        }, 50);
-
-        updateActiveUI(index);
-        
-        currentImageIndex = index;
-    }
-
-    // Hàm khởi tạo gallery
-    function initializeGallery() {
-        if (!largeImageUrls[currentImageIndex]) return;
-        // Đặt ảnh chính
-        mainImage.src = largeImageUrls[currentImageIndex];
-        // Cập nhật UI
-        updateActiveUI(currentImageIndex);
-    }
-
-    // Các hàm điều khiển
-    function showNextImage() {
-        let nextIndex = (currentImageIndex + 1) % largeImageUrls.length;
-        setActiveImage(nextIndex);
-    }
-    
-    function showPrevImage() {
-        let prevIndex = (currentImageIndex - 1 + largeImageUrls.length) % largeImageUrls.length;
-        setActiveImage(prevIndex);
-    }
-    nextBtn.addEventListener("click", showNextImage);
-    prevBtn.addEventListener("click", showPrevImage);
-    thumbnails.forEach((thumb, index) => {
-        thumb.addEventListener("click", function() {
-            setActiveImage(index);
         });
-    });
 
-    // Logic vuốt cho mobile
-    let touchStartX = 0;
-    let touchEndX = 0;
-    const swipeThreshold = 50;
+        // Gắn sự kiện vuốt
+        swipeArea.addEventListener("touchstart", (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
 
-    mainImage.addEventListener("touchstart", (e) => {
-        touchStartX = e.changedTouches[0].screenX;
-    }, { passive: true });
-
-    mainImage.addEventListener("touchend", (e) => {
-        touchEndX = e.changedTouches[0].screenX;
-        handleSwipe();
-    });
-
-    function handleSwipe() {
-        const swipeDiff = touchEndX - touchStartX;
-        
-        if (swipeDiff > swipeThreshold) {
-            showPrevImage();
-        } else if (swipeDiff < -swipeThreshold) {
-            showNextImage();
-        }
-        touchStartX = 0;
-        touchEndX = 0;
+        swipeArea.addEventListener("touchend", (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            
+            const swipeDiff = touchEndX - touchStartX;
+            if (swipeDiff > swipeThreshold) {
+                showPrevImage();
+            } else if (swipeDiff < -swipeThreshold) {
+                showNextImage();
+            }
+            touchStartX = 0;
+            touchEndX = 0;
+        });
+        initializeGallery();
     }
-
-    initializeGallery();
+    initReadMore();
+    initGallery();
 });

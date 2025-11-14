@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -21,6 +21,7 @@
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/img/logo.svg">
 
+    <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/546bf66050.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -50,28 +51,62 @@
 
                 <div class="gallery">
                     <div class="gallery__main">
-                        <button class="gallery__nav gallery__nav--prev">
+                        <button type="button" class="gallery__nav gallery__nav--prev" aria-label="Previous image">
                             <i class="fa-solid fa-chevron-left"></i>
                         </button>
-                        <img src="/img/game-info/gamess1.jpg" alt="Game Screenshot" class="gallery__main-image">
-                        <button class="gallery__nav gallery__nav--next">
+                        <iframe  
+                            class="gallery__main-video"
+                            src="https://www.youtube.com/embed/xeMA3O9pfiY?autoplay=1&mute=0&controls=1"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen>
+                        </iframe>
+                        <img src="/img/game-info/gamess1.jpg" alt="Game Screenshot" class="gallery__main-image is-hidden">
+                        
+                        <button type="button" class="gallery__nav gallery__nav--next" aria-label="Next image">
                             <i class="fa-solid fa-chevron-right"></i>
                         </button>
                     </div>
-                    
-                    <div class="gallery__thumbnails">
-                        <img src="/img/game-info/thumb1.jpg" alt="Thumbnail 1" class="gallery__thumbnail"
-                            data-large-src="/img/game-info/gamess1.jpg">
-                        <img src="/img/game-info/thumb2.jpg" alt="Thumbnail 2" class="gallery__thumbnail"
-                            data-large-src="/img/game-info/gamess2.jpg">
-                        <img src="/img/game-info/thumb3.jpg" alt="Thumbnail 3" class="gallery__thumbnail"
-                            data-large-src="/img/game-info/gamess3.jpg">
-                        <img src="/img/game-info/thumb4.jpg" alt="Thumbnail 4" class="gallery__thumbnail"
-                            data-large-src="/img/game-info/gamess4.jpg">
+                    <div class="gallery__thumbnails-container">
+                        <div class="gallery__thumbnails">
+                            <div class="gallery__thumbnail-wrapper gallery__thumbnail--video gallery__thumbnail--active" 
+                                 data-type="video" 
+                                 data-large-src="https://www.youtube.com/embed/xeMA3O9pfiY">
+                                <img 
+                                    src="/img/game-info/thumb-vid.jpg"
+                                    alt="Thumbnail Video" 
+                                    class="gallery__thumbnail">
+                                <div class="gallery__thumbnail-play-icon">
+                                    <i class="fa-solid fa-play"></i>
+                                </div>
+                            </div>
+                            <div class="gallery__thumbnail-wrapper" 
+                                 data-type="image" 
+                                 data-large-src="/img/game-info/gamess1.jpg">
+                                <img src="/img/game-info/thumb1.jpg" alt="Thumbnail 1" class="gallery__thumbnail">
+                            </div>
+                            <div class="gallery__thumbnail-wrapper" 
+                                 data-type="image" 
+                                 data-large-src="/img/game-info/gamess2.jpg">
+                                <img src="/img/game-info/thumb2.jpg" alt="Thumbnail 2" class="gallery__thumbnail">
+                            </div>
+                            <div class="gallery__thumbnail-wrapper" 
+                                 data-type="image" 
+                                 data-large-src="/img/game-info/gamess3.jpg">
+                                <img src="/img/game-info/thumb3.jpg" alt="Thumbnail 3" class="gallery__thumbnail">
+                            </div>
+                            <div class="gallery__thumbnail-wrapper" 
+                                 data-type="image" 
+                                 data-large-src="/img/game-info/gamess4.jpg">
+                                <img src="/img/game-info/thumb4.jpg" alt="Thumbnail 4" class="gallery__thumbnail">
+                            </div>
+                        </div>
                     </div>
                     <div class="gallery__dots"></div>
                 </div>
             </section>
+            
+            <!-- Sidebar -->
             <aside class="game-sidebar">
                 <!-- Game Cover -->
                 <div class="game-card">
@@ -85,12 +120,12 @@
                                 <span class="price__current">$4.99</span>
                             </div>
                         </div>
-                        <button class="wishlist">
+                        <button type="button" class="wishlist">
                             <i class="fa-regular fa-heart wishlist__icon"></i>
                         </button>
                     </div>
                     
-                    <button class="btn-cart">
+                    <button type="button" class="btn-cart">
                         <i class="fa-solid fa-cart-plus btn-cart__icon"></i>
                         <span class="btn-cart__text">Add to cart</span>
                     </button>
@@ -193,7 +228,7 @@
                     4 Use wired connection to experience full set of DualSense controller features in game.
                 </p>
 
-                <button class="game-description__toggle-btn js-toggle-btn">
+                <button type="button" class="game-description__toggle-btn js-toggle-btn">
                     READ MORE
                 </button>
             </div>
