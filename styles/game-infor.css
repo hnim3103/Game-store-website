@@ -23,9 +23,526 @@
   --dark-blue-color: #070F1A;
 }
 
+
 body {
   color: var(--text-color);
   background-color: var(--black-color);
   background-image: linear-gradient( 180deg, var(--black-color) 25%, var(--dark-green-color) 81% );
   line-height: 1.6;
+}
+
+/* GAME PC REQUIREMENTS SECTION*/
+.game-pc {
+  background: var(--super-dark-green-color);
+  border-radius: 16px;
+  padding: 30px;
+  margin: 60px auto 0;
+  max-width: 1000px;
+  width: 90%;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+}
+
+.game-pc__title {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+
+.game-pc__requirements {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(320px, 420px));
+  gap: 40px;
+  justify-items: center;
+  place-content: center;
+}
+
+.game-pc__subtitle {
+  font-size: 15px;
+  font-weight: 800;
+  margin-bottom: 16px;
+}
+
+.game-pc__list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.game-pc__item {
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.5;
+  word-wrap: break-word;
+}
+
+.game-pc__label {
+  font-weight: 600;
+  margin-right: 8px;
+}
+
+/* ==========================================================
+   RESPONSIVE — TABLET (≤1024px)
+========================================================== */
+@media (max-width: 1024px) {
+  .game-pc {
+    padding: 32px 28px;
+    margin-top: 50px;
+  }
+
+  .game-pc__title {
+    font-size: 28px;
+    margin-bottom: 32px;
+  }
+
+  .game-pc__requirements {
+    gap: 32px;
+  }
+
+  .game-pc__subtitle {
+    font-size: 14px;
+    margin-bottom: 12px;
+  }
+
+  .game-pc__item {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+}
+
+/* ==========================================================
+   RESPONSIVE — MOBILE (≤768px)
+========================================================== */
+@media (max-width: 768px) {
+  .game-pc {
+    padding: 24px 20px;
+    margin-top: 40px;
+  }
+
+  .game-pc__title {
+    font-size: 24px;
+    margin-bottom: 24px;
+  }
+
+  .game-pc__requirements {
+    grid-template-columns: 1fr; 
+    gap: 28px;
+  }
+
+  .game-pc__subtitle {
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+
+  .game-pc__item {
+    font-size: 13px;
+    line-height: 1.4;
+  }
+}
+
+/* ==========================================================
+   REVIEW SECTION – BEM Optimized
+========================================================== */
+.review {
+  max-width: 1200px;
+  margin: 80px auto;
+  padding: 0 20px;
+  color: var(--text-color);
+}
+
+/* Header */
+.review__header {
+  margin-bottom: 40px;
+}
+
+.review__title {
+  font-size: 28px;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+
+.review__divider {
+  height: 2px;
+  background: var(--dark-green-color);
+}
+
+/* Content Layout */
+.review__content {
+  display: flex;
+  gap: 60px;
+}
+
+.review__list {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.review__sidebar {
+  width: 260px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* ==========================================================
+   REVIEW CARD
+========================================================== */
+.review-card {
+  background: var(--super-dark-green-color);
+  padding: 24px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.review-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.45);
+}
+
+/* Card Header */
+.review-card__header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.review-card__avatar {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #d9d9d9;
+}
+
+.review-card__user-info {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.review-card__name {
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.review-card__date {
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+/* Card Rating */
+.review-card__rating {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 12px;
+}
+
+.review-card__star {
+  font-size: 20px;
+  color: var(--super-dark-green-color);
+  transition: color 0.2s ease;
+}
+
+.review-card__star--filled {
+  color: var(--green-color);
+}
+
+/* Card Title */
+.review-card__title {
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+/* Card Content */
+.review-card__content {
+  position: relative;
+}
+
+.review-card__text {
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 8px;
+}
+
+.review-card__text--full {
+  display: none;
+}
+
+.review-card__text--full.is-visible {
+  display: block;
+}
+
+.review-card__text--short.is-hidden {
+  display: none;
+}
+
+.review-card__toggle {
+  background: none;
+  border: none;
+  color: var(--green-color);
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 0;
+  transition: opacity 0.2s ease;
+}
+
+.review-card__toggle:hover {
+  opacity: 0.8;
+}
+
+/* Card Actions */
+.review-card__actions {
+  display: flex;
+  gap: 16px;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.review-card__action {
+  background: none;
+  border: none;
+  color: var(--text-color);
+  cursor: pointer;
+  font-size: 16px;
+  padding: 6px 12px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.review-card__action:hover {
+  background: rgba(0, 225, 34, 0.1);
+  color: var(--green-color);
+}
+
+.review-card__action.is-active {
+  color: var(--green-color);
+}
+
+.review-card__action--dislike.is-active {
+  color: var(--red-color);
+}
+
+/* ==========================================================
+   REVIEW SCORE
+========================================================== */
+.review-score {
+  background: var(--super-dark-green-color);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+.review-score__header {
+  background: var(--dark-green-color);
+  color: var(--green-color);
+  font-size: 18px;
+  font-weight: 800;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.review-score__body {
+  display: flex;
+  align-items: flex-end;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.review-score__number {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.review-score__info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.review-score__desc {
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.review-score__stars {
+  display: flex;
+  gap: 4px;
+}
+
+.review-score__star {
+  font-size: 16px;
+  color: var(--green-color);
+}
+
+.review-score__note {
+  font-size: 12px;
+  opacity: 0.8;
+  text-align: center;
+}
+
+/* ==========================================================
+   REVIEW RATING
+========================================================== */
+.review-rating {
+  background: var(--super-dark-green-color);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+.review-rating__header {
+  background: var(--dark-green-color);
+  color: var(--green-color);
+  font-size: 18px;
+  font-weight: 800;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.review-rating__list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.review-rating__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.review-rating__user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+}
+
+.review-rating__avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #d9d9d9;
+}
+
+.review-rating__name {
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.review-rating__stars {
+  display: flex;
+  gap: 4px;
+}
+
+.review-rating__star {
+  font-size: 14px;
+  color: var(--super-dark-green-color);
+}
+
+.review-rating__star--filled {
+  color: var(--green-color);
+}
+
+/* ==========================================================
+   RESPONSIVE – TABLET (≤1024px)
+========================================================== */
+@media (max-width: 1024px) {
+  .review {
+    margin: 60px auto;
+  }
+
+  .review__content {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .review__sidebar {
+    width: 100%;
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  .review-score,
+  .review-rating {
+    flex: 1;
+  }
+}
+
+/* ==========================================================
+   RESPONSIVE – MOBILE (≤768px)
+========================================================== */
+@media (max-width: 768px) {
+  .review {
+    margin: 40px auto;
+    padding: 0 16px;
+  }
+
+  .review__title {
+    font-size: 22px;
+  }
+
+  .review__content {
+    gap: 32px;
+  }
+
+  .review__list {
+    gap: 28px;
+  }
+
+  .review__sidebar {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .review-card {
+    padding: 20px;
+  }
+
+  .review-card__header {
+    flex-wrap: wrap;
+  }
+
+  .review-card__avatar {
+    width: 40px;
+    height: 40px;
+  }
+
+  .review-card__name {
+    font-size: 16px;
+  }
+
+  .review-card__title {
+    font-size: 16px;
+  }
+
+  .review-card__text {
+    font-size: 13px;
+  }
+
+  .review-card__actions {
+    gap: 12px;
+  }
 }
