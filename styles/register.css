@@ -23,7 +23,6 @@ body {
   justify-content: center;
   align-items: center;
 }
-
 .register {
   display: flex;
   flex-direction: column;
@@ -33,13 +32,13 @@ body {
   border-radius: 6px;
   width: clamp(320px, 30vw, 400px);
 }
-
+/* button register and login */
 .register__button-group {
   display: flex;
   gap: 6px;
   width: 100%;
 }
-
+/* general setting button */
 .register__button {
   display: flex;
   justify-content: center;
@@ -72,7 +71,7 @@ body {
   text-align: left;
   padding-left: 3%;
 }
-
+/* register with social */
 .register__social {
   display: flex;
   justify-content: center;
@@ -119,7 +118,7 @@ body {
   margin: 6% 1.26%;
   padding: 0 1.8%;
 }
-
+/* form */
 .register__form {
   color: var(--text-color);
   font-size: clamp(12px, 2.4vw, 16.8px);
@@ -151,7 +150,7 @@ body {
   max-width: 270px;
   position: relative;
 }
-
+/* input */
 .register__input {
   background-color: var(--dark-green-color);
   border: 1px solid var(--green-color);
@@ -188,7 +187,7 @@ body {
   margin: 1.8% 0;
   width: 100%;
 }
-
+/* custom checkbox */
 .register__checkbox-custom {
   width: 18px;
   height: 18px;
@@ -202,7 +201,7 @@ body {
 }
 
 .register__checkbox:checked
-  .register__terms-label
+  + .register__terms-label
   .register__checkbox-custom::after {
   content: "";
   width: 4.8px;
@@ -262,7 +261,7 @@ body {
   filter: brightness(1.2);
 }
 
-/* Error States */
+/* Error  */
 .register__label.error {
   color: #ff4d4d;
 }
@@ -291,13 +290,19 @@ body {
   background-color: rgba(212, 14, 14, 0.1);
 }
 
-/* Global Styles */
+/* placeholder and input syle */
 ::placeholder {
   font-family: "Roboto Flex", sans-serif;
-  font-size: 13.2px;
+  font-size: clamp(7.2px, 1.8vw, 12px);
 }
 
 input {
   color: var(--text-color);
   font-family: "Roboto Flex", sans-serif;
+}
+/* mobile */
+@media (max-width: 767px) {
+  .register {
+    padding: 2rem 1rem;
+  }
 }

@@ -21,7 +21,6 @@ body {
   align-items: center;
   min-height: 100vh;
 }
-
 .email {
   display: flex;
   flex-direction: column;
@@ -31,13 +30,13 @@ body {
   border-radius: 6px;
   width: clamp(320px, 30vw, 400px);
 }
-
+/* button phone-account and email-account */
 .email__button-group {
   display: flex;
   gap: 10px;
   width: 100%;
 }
-
+/* general setting button */
 .email__button {
   display: flex;
   justify-content: center;
@@ -62,7 +61,7 @@ body {
   margin-right: 1.3%;
   box-shadow: 0px 5px 8px var(--black-color);
 }
-
+/* form */
 .email__form {
   color: var(--text-color);
   font-size: clamp(12px, 2.4vw, 16.8px);
@@ -86,7 +85,7 @@ body {
   position: relative;
   gap: 5px;
 }
-
+/* input */
 .email__input {
   background-color: var(--dark-green-color);
   border: 1px solid var(--green-color);
@@ -147,12 +146,11 @@ body {
 }
 
 .email__input:hover {
-  /* [SỬA] Xóa background-color thừa */
   filter: brightness(1.2);
   border: 2px solid var(--green-color);
 }
 
-/* Error States */
+/* Error  */
 .email__label.error {
   color: #ff4d4d;
 }
@@ -164,7 +162,7 @@ body {
 
 .email__error {
   color: #ff4d4d;
-  font-size: 14px; /* [SỬA] Giảm font */
+  font-size: 14px;
   font-weight: 500;
   margin-top: 5px;
   text-align: left;
@@ -174,4 +172,10 @@ body {
 
 .email__error.show {
   display: block;
+}
+/* mobile */
+@media (max-width: 767px) {
+  .email {
+    padding: 2rem 1rem;
+  }
 }

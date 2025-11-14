@@ -22,23 +22,22 @@ body {
   justify-content: center;
   align-items: center;
 }
-
 .login {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 4.8vh 1.2%;
+  padding: 3rem 1rem;
   background-color: #0f232c;
   border-radius: 6px;
   width: clamp(320px, 30vw, 400px);
 }
-
+/* button register and login */
 .login__button-group {
   display: flex;
   gap: 6px;
   width: 100%;
 }
-
+/* general setting button */
 .login__button {
   display: flex;
   justify-content: center;
@@ -63,7 +62,7 @@ body {
   margin-right: 1.2%;
   box-shadow: 0px 1.2px 4.8px var(--black-color);
 }
-
+/* form */
 .login__form {
   color: var(--text-color);
   font-size: clamp(12px, 2.4vw, 16.8px);
@@ -100,7 +99,7 @@ body {
   max-width: 270px;
   position: relative;
 }
-
+/* input */
 .login__input {
   background-color: var(--dark-green-color);
   border: 1px solid var(--green-color);
@@ -155,7 +154,7 @@ body {
   margin: 3% 1.26%;
   padding: 0 1.8%;
 }
-
+/* social login */
 .login__social {
   display: flex;
   justify-content: center;
@@ -205,7 +204,7 @@ body {
 .login__social-btn:hover .login__social-icon {
   transform: scale(1.2);
 }
-
+/* setting general for placeholder and input box */
 ::placeholder {
   font-family: "Roboto Flex", sans-serif;
   font-size: clamp(7.2px, 1.8vw, 12px);
@@ -227,7 +226,7 @@ input {
   box-shadow: 0 0 2.4px var(--green-color);
 }
 
-/* Error styling cho input */
+/* Error styling for input */
 .login__label.error {
   color: #ff4d4d;
 }
@@ -249,4 +248,10 @@ input {
 
 .login__error.show {
   display: block;
+}
+/* Mobile */
+@media (max-width: 767px) {
+  .login {
+    padding: 2rem 1rem;
+  }
 }
