@@ -55,7 +55,6 @@ h1 {
   height: fit-content;
   display: flex;
   flex-direction: column;
-  border: 1px solid red;
 }
 
 .main__section .main__header{
@@ -101,23 +100,12 @@ h1 {
 }
 
 .main__content{
-  border: 1px solid yellow;
   margin-top: 20px;
   display: flex;
 }
 
 .game__selections{
-  border: 1px solid var(--green-color);
-  width: 25%;
-}
-
-.result__selections{
-  display: flex;
-  justify-content: space-between;
-} 
-
-.filter__bar{
-  border: 1px solid red;
+  width: 20%;
 }
 
 .checkbox__label{
@@ -201,7 +189,12 @@ input[type='checkbox']:checked + span::before{
 .extend__header .arrow {
   width: 16px;
   transition: transform 0.3s ease;
-  filter: invert(93%) sepia(93%) saturate(30%) hue-rotate(143deg) brightness(107%)
+  filter: 
+    invert(93%) 
+    sepia(93%) 
+    saturate(30%) 
+    hue-rotate(143deg) 
+    brightness(107%);
 }
 
 .extend__selections.open .arrow {
@@ -308,4 +301,146 @@ input[type="range"]::-webkit-slider-thumb {
 
 #special{
   margin-top: 60px;
+}
+
+.result__selections{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: fit-content;
+}
+
+.pagination__bar{
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+}
+
+.pagination__bar a{
+  font-size: 2rem;
+  color: var(--text-color);
+}
+
+.pagination__bar a:hover{
+  color: var(--green-color);
+}
+
+.pagination__bar a:first-child{
+  color: grey;
+  margin-right: 15px;
+}
+
+.pagination__bar a:last-child{
+  margin-left: 15px;
+}
+
+.pagination__bar span{
+  margin: 10px;
+}
+
+.pagination__bar .current-page{
+  color: var(--green-color)
+}
+
+.sort__dropdown button{
+  background-color: transparent;
+  color: var(--green-color);
+  border: none;
+  margin-left: 10px;
+  font-size: 1.4rem;
+  width: 100px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.sort__bar{
+  display: flex;
+}
+
+.sort__bar span{
+  display: block;
+}
+
+.sort__selection{
+  display: flex;
+  font-size: 1.4rem;
+  margin: auto;
+}
+
+.dropdown__container{
+  position: absolute;
+  margin-left: 10px;
+  line-height: 1.6rem;
+  z-index: 1000;
+  background-color: var(--dark-green-color);
+}
+
+.dropdown__container a{
+  color: var(--text-color);
+}
+
+.dropdown__container a:hover,
+.dropdown__container a:active{
+  color: var(--green-color);
+}
+
+.sort__mode{
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 50px;
+}
+
+.grid-icon{
+  width: 20px;
+  filter: 
+    invert(56%) 
+    sepia(79%) 
+    saturate(1987%) 
+    hue-rotate(86deg) 
+    brightness(102%) 
+    contrast(112%);
+}
+
+.list-icon{
+  width: 16px;
+  filter: 
+    invert(93%) 
+    sepia(93%) 
+    saturate(30%) 
+    hue-rotate(143deg) 
+    brightness(107%);
+}
+
+.list-icon:hover{
+  filter: 
+    invert(56%) 
+    sepia(79%) 
+    saturate(1987%) 
+    hue-rotate(86deg) 
+    brightness(102%) 
+    contrast(112%);
+}
+
+.game-display__container{
+  width: 80%;
+}
+
+
+.game-grid__container{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 50px;
+}
+
+#bottom.pagination__bar{
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+#bottom.pagination__bar a{
+  font-size: 1.6rem;
+  letter-spacing: 15px;
 }

@@ -10,7 +10,7 @@
   <script src="/scripts/category.js" defer></script>
   <!-- Styles -->
   <link rel="stylesheet" href="/styles/category.css">
-
+  <link rel="stylesheet" href="/styles/homepage.css">
   <!-- Boxicons CDN -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
 
@@ -217,13 +217,286 @@
           </div>
         </form>
       </aside>
-
-      <div class="result__selections">
+      <div class="game-display__container">
+        <div class="result__selections">
         <div class="pagination__bar">
-          Lorem ipsum dolor sit amet.
+          <a href="#">
+            &lt;
+          </a>
+          <span class="current-page">1</span>
+          <span>of</span>
+          <span class="max-page">3</span>
+          <a href="#">
+            &gt;
+          </a>
         </div>
-        <div class="filter__bar">
-          Lorem ipsum dolor sit ametaaaaaaaaaaaaaaa.
+        <div class="sort__bar">
+          <div class="sort__selection">
+            <span>
+              Sort by: 
+            </span>
+            <div class="sort__dropdown">
+              <button>
+                Bestselling
+                <svg xmlns="http://www.w3.org/2000/svg" height="10" width="10" viewBox="0 0 640 640"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path fill="#ffffff" d="M297.4 438.6C309.9 451.1 330.2 451.1 342.7 438.6L502.7 278.6C515.2 266.1 515.2 245.8 502.7 233.3C490.2 220.8 469.9 220.8 457.4 233.3L320 370.7L182.6 233.4C170.1 220.9 149.8 220.9 137.3 233.4C124.8 245.9 124.8 266.2 137.3 278.7L297.3 438.7z"/></svg>
+              </button>
+              <div class="dropdown__container" hidden>
+                <ul class="droppdown__hidden">
+                  <li>
+                    <a href="#">Bestselling</a>
+                  </li>
+                  <li>
+                    <a href="#">Lowest Price</a>
+                  </li>
+                  <li>
+                    <a href="#">Highest Price</a>
+                  </li>
+                  <li>
+                    <a href="#">User Reviews</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="sort__mode">
+            <a href="#">
+              <img src="/img/icons/grid_x_gap_fill_icon_185590.svg" class="grid-icon">
+            </a>
+            <a href="#">
+              <img src="/img/icons/list_icon-icons.com_70929.svg" class="list-icon">
+            </a>
+          </div>
+        </div>
+        </div>
+
+        <div class="game-grid__container">
+          <article class="game-card">
+          <div class="game-card__image"><img src="/img/assets/1.png" alt="Trending 4" loading="lazy" /></div>
+          <div class="game-card__content">
+            <div class="game-card__price-wrapper"><div class="game-card__price"><p>4.99$</p></div></div>
+            <div class="game-card__add-cart"><i class="fa-solid fa-cart-plus" aria-hidden="true"></i><a href="#cart">Add to cart</a></div>
+            <button class="game-card__wishlist" aria-label="Add to wishlist"><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
+          </div>
+          </article>
+
+          <article class="game-card">
+          <div class="game-card__image"><img src="/img/assets/1.png" alt="Trending 4" loading="lazy" /></div>
+          <div class="game-card__content">
+            <div class="game-card__price-wrapper"><div class="game-card__price"><p>4.99$</p></div></div>
+            <div class="game-card__add-cart"><i class="fa-solid fa-cart-plus" aria-hidden="true"></i><a href="#cart">Add to cart</a></div>
+            <button class="game-card__wishlist" aria-label="Add to wishlist"><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
+          </div>
+          </article>
+
+          <article class="game-card">
+          <div class="game-card__image"><img src="/img/assets/1.png" alt="Trending 4" loading="lazy" /></div>
+          <div class="game-card__content">
+            <div class="game-card__price-wrapper"><div class="game-card__price"><p>4.99$</p></div></div>
+            <div class="game-card__add-cart"><i class="fa-solid fa-cart-plus" aria-hidden="true"></i><a href="#cart">Add to cart</a></div>
+            <button class="game-card__wishlist" aria-label="Add to wishlist"><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
+          </div>
+          </article>
+
+          <article class="game-card">
+          <div class="game-card__image"><img src="/img/assets/1.png" alt="Trending 4" loading="lazy" /></div>
+          <div class="game-card__content">
+            <div class="game-card__price-wrapper"><div class="game-card__price"><p>4.99$</p></div></div>
+            <div class="game-card__add-cart"><i class="fa-solid fa-cart-plus" aria-hidden="true"></i><a href="#cart">Add to cart</a></div>
+            <button class="game-card__wishlist" aria-label="Add to wishlist"><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
+          </div>
+          </article>
+
+          <article class="game-card">
+          <div class="game-card__image"><img src="/img/assets/1.png" alt="Trending 4" loading="lazy" /></div>
+          <div class="game-card__content">
+            <div class="game-card__price-wrapper"><div class="game-card__price"><p>4.99$</p></div></div>
+            <div class="game-card__add-cart"><i class="fa-solid fa-cart-plus" aria-hidden="true"></i><a href="#cart">Add to cart</a></div>
+            <button class="game-card__wishlist" aria-label="Add to wishlist"><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
+          </div>
+          </article>
+
+          <article class="game-card">
+          <div class="game-card__image"><img src="/img/assets/1.png" alt="Trending 4" loading="lazy" /></div>
+          <div class="game-card__content">
+            <div class="game-card__price-wrapper"><div class="game-card__price"><p>4.99$</p></div></div>
+            <div class="game-card__add-cart"><i class="fa-solid fa-cart-plus" aria-hidden="true"></i><a href="#cart">Add to cart</a></div>
+            <button class="game-card__wishlist" aria-label="Add to wishlist"><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
+          </div>
+          </article>
+
+          <article class="game-card">
+          <div class="game-card__image"><img src="/img/assets/1.png" alt="Trending 4" loading="lazy" /></div>
+          <div class="game-card__content">
+            <div class="game-card__price-wrapper"><div class="game-card__price"><p>4.99$</p></div></div>
+            <div class="game-card__add-cart"><i class="fa-solid fa-cart-plus" aria-hidden="true"></i><a href="#cart">Add to cart</a></div>
+            <button class="game-card__wishlist" aria-label="Add to wishlist"><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
+          </div>
+          </article>
+
+          <article class="game-card">
+          <div class="game-card__image"><img src="/img/assets/1.png" alt="Trending 4" loading="lazy" /></div>
+          <div class="game-card__content">
+            <div class="game-card__price-wrapper"><div class="game-card__price"><p>4.99$</p></div></div>
+            <div class="game-card__add-cart"><i class="fa-solid fa-cart-plus" aria-hidden="true"></i><a href="#cart">Add to cart</a></div>
+            <button class="game-card__wishlist" aria-label="Add to wishlist"><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
+          </div>
+          </article>
+
+          <article class="game-card">
+          <div class="game-card__image"><img src="/img/assets/1.png" alt="Trending 4" loading="lazy" /></div>
+          <div class="game-card__content">
+            <div class="game-card__price-wrapper"><div class="game-card__price"><p>4.99$</p></div></div>
+            <div class="game-card__add-cart"><i class="fa-solid fa-cart-plus" aria-hidden="true"></i><a href="#cart">Add to cart</a></div>
+            <button class="game-card__wishlist" aria-label="Add to wishlist"><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
+          </div>
+          </article>
+
+          <article class="game-card">
+          <div class="game-card__image"><img src="/img/assets/1.png" alt="Trending 4" loading="lazy" /></div>
+          <div class="game-card__content">
+            <div class="game-card__price-wrapper"><div class="game-card__price"><p>4.99$</p></div></div>
+            <div class="game-card__add-cart"><i class="fa-solid fa-cart-plus" aria-hidden="true"></i><a href="#cart">Add to cart</a></div>
+            <button class="game-card__wishlist" aria-label="Add to wishlist"><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
+          </div>
+          </article>
+
+          <article class="game-card">
+          <div class="game-card__image"><img src="/img/assets/1.png" alt="Trending 4" loading="lazy" /></div>
+          <div class="game-card__content">
+            <div class="game-card__price-wrapper"><div class="game-card__price"><p>4.99$</p></div></div>
+            <div class="game-card__add-cart"><i class="fa-solid fa-cart-plus" aria-hidden="true"></i><a href="#cart">Add to cart</a></div>
+            <button class="game-card__wishlist" aria-label="Add to wishlist"><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
+          </div>
+          </article>
+
+          <article class="game-card">
+          <div class="game-card__image"><img src="/img/assets/1.png" alt="Trending 4" loading="lazy" /></div>
+          <div class="game-card__content">
+            <div class="game-card__price-wrapper"><div class="game-card__price"><p>4.99$</p></div></div>
+            <div class="game-card__add-cart"><i class="fa-solid fa-cart-plus" aria-hidden="true"></i><a href="#cart">Add to cart</a></div>
+            <button class="game-card__wishlist" aria-label="Add to wishlist"><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
+          </div>
+          </article>
+
+          <article class="game-card">
+          <div class="game-card__image"><img src="/img/assets/1.png" alt="Trending 4" loading="lazy" /></div>
+          <div class="game-card__content">
+            <div class="game-card__price-wrapper"><div class="game-card__price"><p>4.99$</p></div></div>
+            <div class="game-card__add-cart"><i class="fa-solid fa-cart-plus" aria-hidden="true"></i><a href="#cart">Add to cart</a></div>
+            <button class="game-card__wishlist" aria-label="Add to wishlist"><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
+          </div>
+          </article>
+
+          <article class="game-card">
+          <div class="game-card__image"><img src="/img/assets/1.png" alt="Trending 4" loading="lazy" /></div>
+          <div class="game-card__content">
+            <div class="game-card__price-wrapper"><div class="game-card__price"><p>4.99$</p></div></div>
+            <div class="game-card__add-cart"><i class="fa-solid fa-cart-plus" aria-hidden="true"></i><a href="#cart">Add to cart</a></div>
+            <button class="game-card__wishlist" aria-label="Add to wishlist"><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
+          </div>
+          </article>
+
+          <article class="game-card">
+          <div class="game-card__image"><img src="/img/assets/1.png" alt="Trending 4" loading="lazy" /></div>
+          <div class="game-card__content">
+            <div class="game-card__price-wrapper"><div class="game-card__price"><p>4.99$</p></div></div>
+            <div class="game-card__add-cart"><i class="fa-solid fa-cart-plus" aria-hidden="true"></i><a href="#cart">Add to cart</a></div>
+            <button class="game-card__wishlist" aria-label="Add to wishlist"><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
+          </div>
+          </article>
+
+          <article class="game-card">
+          <div class="game-card__image"><img src="/img/assets/1.png" alt="Trending 4" loading="lazy" /></div>
+          <div class="game-card__content">
+            <div class="game-card__price-wrapper"><div class="game-card__price"><p>4.99$</p></div></div>
+            <div class="game-card__add-cart"><i class="fa-solid fa-cart-plus" aria-hidden="true"></i><a href="#cart">Add to cart</a></div>
+            <button class="game-card__wishlist" aria-label="Add to wishlist"><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
+          </div>
+          </article>
+
+          <article class="game-card">
+          <div class="game-card__image"><img src="/img/assets/1.png" alt="Trending 4" loading="lazy" /></div>
+          <div class="game-card__content">
+            <div class="game-card__price-wrapper"><div class="game-card__price"><p>4.99$</p></div></div>
+            <div class="game-card__add-cart"><i class="fa-solid fa-cart-plus" aria-hidden="true"></i><a href="#cart">Add to cart</a></div>
+            <button class="game-card__wishlist" aria-label="Add to wishlist"><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
+          </div>
+          </article>
+
+          <article class="game-card">
+          <div class="game-card__image"><img src="/img/assets/1.png" alt="Trending 4" loading="lazy" /></div>
+          <div class="game-card__content">
+            <div class="game-card__price-wrapper"><div class="game-card__price"><p>4.99$</p></div></div>
+            <div class="game-card__add-cart"><i class="fa-solid fa-cart-plus" aria-hidden="true"></i><a href="#cart">Add to cart</a></div>
+            <button class="game-card__wishlist" aria-label="Add to wishlist"><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
+          </div>
+          </article>
+
+          <article class="game-card">
+          <div class="game-card__image"><img src="/img/assets/1.png" alt="Trending 4" loading="lazy" /></div>
+          <div class="game-card__content">
+            <div class="game-card__price-wrapper"><div class="game-card__price"><p>4.99$</p></div></div>
+            <div class="game-card__add-cart"><i class="fa-solid fa-cart-plus" aria-hidden="true"></i><a href="#cart">Add to cart</a></div>
+            <button class="game-card__wishlist" aria-label="Add to wishlist"><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
+          </div>
+          </article>
+
+          <article class="game-card">
+          <div class="game-card__image"><img src="/img/assets/1.png" alt="Trending 4" loading="lazy" /></div>
+          <div class="game-card__content">
+            <div class="game-card__price-wrapper"><div class="game-card__price"><p>4.99$</p></div></div>
+            <div class="game-card__add-cart"><i class="fa-solid fa-cart-plus" aria-hidden="true"></i><a href="#cart">Add to cart</a></div>
+            <button class="game-card__wishlist" aria-label="Add to wishlist"><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
+          </div>
+          </article>
+
+          <article class="game-card">
+          <div class="game-card__image"><img src="/img/assets/1.png" alt="Trending 4" loading="lazy" /></div>
+          <div class="game-card__content">
+            <div class="game-card__price-wrapper"><div class="game-card__price"><p>4.99$</p></div></div>
+            <div class="game-card__add-cart"><i class="fa-solid fa-cart-plus" aria-hidden="true"></i><a href="#cart">Add to cart</a></div>
+            <button class="game-card__wishlist" aria-label="Add to wishlist"><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
+          </div>
+          </article>
+
+          <article class="game-card">
+          <div class="game-card__image"><img src="/img/assets/1.png" alt="Trending 4" loading="lazy" /></div>
+          <div class="game-card__content">
+            <div class="game-card__price-wrapper"><div class="game-card__price"><p>4.99$</p></div></div>
+            <div class="game-card__add-cart"><i class="fa-solid fa-cart-plus" aria-hidden="true"></i><a href="#cart">Add to cart</a></div>
+            <button class="game-card__wishlist" aria-label="Add to wishlist"><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
+          </div>
+          </article>
+
+          <article class="game-card">
+          <div class="game-card__image"><img src="/img/assets/1.png" alt="Trending 4" loading="lazy" /></div>
+          <div class="game-card__content">
+            <div class="game-card__price-wrapper"><div class="game-card__price"><p>4.99$</p></div></div>
+            <div class="game-card__add-cart"><i class="fa-solid fa-cart-plus" aria-hidden="true"></i><a href="#cart">Add to cart</a></div>
+            <button class="game-card__wishlist" aria-label="Add to wishlist"><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
+          </div>
+          </article>
+
+          <article class="game-card">
+          <div class="game-card__image"><img src="/img/assets/1.png" alt="Trending 4" loading="lazy" /></div>
+          <div class="game-card__content">
+            <div class="game-card__price-wrapper"><div class="game-card__price"><p>4.99$</p></div></div>
+            <div class="game-card__add-cart"><i class="fa-solid fa-cart-plus" aria-hidden="true"></i><a href="#cart">Add to cart</a></div>
+            <button class="game-card__wishlist" aria-label="Add to wishlist"><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
+          </div>
+          </article>
+        </div>
+
+        <div class="pagination__bar" id="bottom">
+          <a href="#">
+            &lt;
+          </a>
+          <a class="current-page" href="#">1</span>
+          <a href="#">2</a>
+          <a href="#">3</a>
+          <a href="#">
+            &gt;
+          </a>
         </div>
       </div>
     </div>
@@ -234,8 +507,9 @@
       header.addEventListener('click', () => {
         const parent = header.parentElement;
         parent.classList.toggle('open');
-      });
+        });
     });
   </script>
+  <script src="/scripts/include-footer.js" defer></script>
 </body>
 </html>

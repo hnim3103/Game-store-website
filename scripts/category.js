@@ -62,3 +62,31 @@ maxInput.addEventListener("change", () => {
 
 // Initialize
 syncInputs();
+
+
+//dropdown button handler
+const dropdownBtn = document.querySelector(".sort__dropdown button");
+const dropdownContainer = document.querySelector(".dropdown__container");
+const options = document.querySelectorAll(".dropdown__container li a");
+
+// toggle dropdown
+dropdownBtn.addEventListener("click", (e) => {
+  e.stopPropagation();
+  dropdownContainer.style.display =
+    dropdownContainer.style.display === "block" ? "none" : "block";
+});
+
+// change button text on select
+options.forEach(option => {
+  option.addEventListener("click", (e) => {
+    dropdownBtn.childNodes[0].textContent = e.target.textContent + " ";
+    dropdownContainer.style.display = "none";
+  });
+});
+
+// close dropdown on outside click
+document.addEventListener("click", () => {
+  dropdownContainer.style.display = "none";
+});
+
+
