@@ -13,21 +13,20 @@ function animateFloatZoom(images) {
   });
 }
 
-// Hiệu ứng nhịp thở cho logo
-function animateBreath(el) {
-  let angle = 0;
-  function tick() {
-    angle += 0.01;
-    const s = 1 + Math.sin(angle) * 0.03;
-    el.style.transform = `translate(-50%, -50%) scale(${s})`;
-    requestAnimationFrame(tick);
+// Hiệu ứng cho logo
+function animateBreath(el) { 
+  function tick()  { 
+    angle += 0.01; 
+    const s = 1 + Math.sin(angle) * 0.03; 
+    el.style.transform = `translate(-50%, -50%) scale(${s})`; 
+    requestAnimationFrame(tick); 
   }
-  requestAnimationFrame(tick);
+  requestAnimationFrame(tick); 
 }
 
 // Chuyển sang trang homepage
 function exitLoading() {
-  setTimeout(() => (location.href = 'homepage.html'), 1000);
+  setTimeout(() => (location.href = '../../html/homepage.html'), 1000);
 }
 
 // Khi trang sẵn sàng
@@ -38,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
   animateFloatZoom(thumbs);
   if (logo) animateBreath(logo);
 
-  // Chuyển trang sau 1s hoặc khi click
+  // tự động chuyển trang homepage sau 1s khi người dùng không chịu thao tác click :(
   document.addEventListener('click', exitLoading);
   setTimeout(exitLoading, 1000);
 });
