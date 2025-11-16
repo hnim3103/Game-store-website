@@ -1,6 +1,5 @@
-// ==========================================================
+
 // REVIEW CARDS: READ MORE / LIKE / DISLIKE
-// ==========================================================
 
 function initReviewCard(card) {
   if (!card) return;
@@ -87,121 +86,181 @@ function initReviewCard(card) {
 // Khởi tạo cho các review có sẵn
 document.querySelectorAll(".review-card").forEach(initReviewCard);
 
-// ==========================================================
 // GAME DESCRIPTION TOGGLE – READ MORE / SHOW LESS
-// ==========================================================
-const descContent = document.querySelector(".js-description-content");
-const descBtn = document.querySelector(".js-toggle-btn");
+function initReadMore() {
+  const descContent = document.querySelector(".js-description-content");
+  const descBtn = document.querySelector(".js-toggle-btn");
 
-if (descContent && descBtn) {
-  const collapsedHeight = getComputedStyle(descContent).maxHeight;
+  if (descContent && descBtn) {
+    const collapsedHeight = getComputedStyle(descContent).maxHeight;
 
-  descBtn.addEventListener("click", () => {
-    const expanded = descContent.classList.toggle("is-expanded");
+    descBtn.addEventListener("click", () => {
+      const expanded = descContent.classList.toggle("is-expanded");
 
-    if (expanded) {
-      descContent.style.maxHeight = descContent.scrollHeight + "px";
-      descBtn.textContent = "SHOW LESS";
-    } else {
-      descContent.style.maxHeight = collapsedHeight;
-      descBtn.textContent = "READ MORE";
-    }
-  });
-}
-
-// ==========================================================
-// IMAGE GALLERY
-// ==========================================================
-const mainImage = document.querySelector(".gallery__main-image");
-const prevBtn = document.querySelector(".gallery__nav--prev");
-const nextBtn = document.querySelector(".gallery__nav--next");
-const thumbs = document.querySelectorAll(".gallery__thumbnail");
-const dotsContainer = document.querySelector(".gallery__dots");
-
-if (mainImage && thumbs.length > 0) {
-  const imageList = Array.from(thumbs).map(t => t.dataset.largeSrc);
-  let currentIndex = 0;
-
-  // Tạo các chấm điều hướng
-  if (dotsContainer) {
-    imageList.forEach((_, i) => {
-      const dot = document.createElement("div");
-      dot.className = "gallery__dot";
-      dot.dataset.index = i;
-      dot.addEventListener("click", () => setImage(i));
-      dotsContainer.appendChild(dot);
+      if (expanded) {
+        descContent.style.maxHeight = descContent.scrollHeight + "px";
+        descBtn.textContent = "SHOW LESS";
+      } else {
+        descContent.style.maxHeight = collapsedHeight;
+        descBtn.textContent = "READ MORE";
+      }
     });
   }
-
-  // Cập nhật UI đang active
-  const updateUI = (index) => {
-    thumbs.forEach((t, i) =>
-      t.classList.toggle("gallery__thumbnail--active", i === index)
-    );
-    if (dotsContainer) {
-      dotsContainer.querySelectorAll(".gallery__dot").forEach((dot, i) =>
-        dot.classList.toggle("gallery__dot--active", i === index)
-      );
-    }
-  };
-
-  // Đổi ảnh
-  const setImage = (index) => {
-    if (index === currentIndex || !imageList[index]) return;
-
-    mainImage.style.opacity = 0;
-
-    setTimeout(() => {
-      mainImage.src = imageList[index];
-      mainImage.style.opacity = 1;
-    }, 150);
-
-    currentIndex = index;
-    updateUI(index);
-  };
-
-  // Next / Prev
-  const nextImage = () => setImage((currentIndex + 1) % imageList.length);
-  const prevImage = () =>
-    setImage((currentIndex - 1 + imageList.length) % imageList.length);
-
-  if (nextBtn) nextBtn.addEventListener("click", nextImage);
-  if (prevBtn) prevBtn.addEventListener("click", prevImage);
-
-  // Click thumbnail
-  thumbs.forEach((thumb, i) =>
-    thumb.addEventListener("click", () => setImage(i))
-  );
-
-  // Vuốt trên mobile
-  let startX = 0;
-  let endX = 0;
-
-  mainImage.addEventListener(
-    "touchstart",
-    e => (startX = e.changedTouches[0].screenX),
-    { passive: true }
-  );
-
-  mainImage.addEventListener(
-    "touchend",
-    e => {
-      endX = e.changedTouches[0].screenX;
-      const diff = endX - startX;
-
-      if (diff > 50) prevImage();
-      else if (diff < -50) nextImage();
-    },
-    { passive: true }
-  );
-
-  // Khởi tạo
-  setImage(0);
 }
 
-// ==========================================================
+// IMAGE GALLERY
+function initGallery() {
+  // Lấy các phần tử DOM cần thiết
+  const mainImage = document.querySelector(".gallery__main-image");
+  const mainVideo = document.querySelector(".gallery__main-video");
+  const prevBtn = document.querySelector(".gallery__nav--prev");
+  const nextBtn = document.querySelector(".gallery__nav--next");
+  const thumbnails = document.querySelectorAll(".gallery__thumbnail-wrapper");
+  const dotsContainer = document.querySelector(".gallery__dots");
+  const thumbnailContainer = document.querySelector(".gallery__thumbnails");
+  const swipeArea = document.querySelector('.gallery__main');
+
+  if (!mainImage || thumbnails.length === 0) return;
+
+  // Xây dựng mảng dữ liệu từ HTML
+  const galleryItems = Array.from(thumbnails).map(wrapper => {
+    return {
+      type: wrapper.dataset.type || 'image',
+      src: wrapper.dataset.largeSrc
+    };
+  });
+
+  let currentImageIndex = 0;
+  let touchStartX = 0;
+  let touchEndX = 0;
+  const swipeThreshold = 50;
+
+  // Hàm chuyển slide
+  function setActiveItem(index) {
+    // Kiểm tra: Không làm gì nếu item không tồn tại hoặc đang active
+    if (!galleryItems[index] || currentImageIndex === index) return;
+    
+    const item = galleryItems[index];
+    if (mainVideo) mainVideo.src = ''; 
+    
+    // Nếu là video
+    if (item.type === 'video' && mainVideo) {
+      mainImage.classList.add('is-hidden'); // ẩn ảnh
+      mainVideo.classList.remove('is-hidden'); // hiện video
+      mainVideo.src = item.src + '?autoplay=1&mute=0&controls=1';
+    // Ngược lại nếu là ảnh
+    } else { 
+      mainImage.classList.remove('is-hidden');
+      if (mainVideo) mainVideo.classList.add('is-hidden');
+      mainImage.style.transition = 'none'; 
+      mainImage.style.opacity = 0;
+      setTimeout(() => {
+        mainImage.src = item.src;
+        mainImage.style.transition = 'opacity 0.4s ease-in-out';
+        void mainImage.offsetWidth; 
+        mainImage.style.opacity = 1;
+      }, 50);
+    }
+    updateActiveUI(index, false);
+    currentImageIndex = index;
+  }
+
+  // Hàm cập nhật giao diện
+  function updateActiveUI(index, isInitialLoad = false) {
+    // Cập nhật viền
+    thumbnails.forEach((wrapper, i) => {
+      wrapper.classList.toggle('gallery__thumbnail--active', i === index);
+    });
+    // Cập nhật chấm tròn cho mobile
+    if (dotsContainer) {
+      const allDots = dotsContainer.querySelectorAll(".gallery__dot");
+      allDots.forEach((dot, i) => {
+        dot.classList.toggle('gallery__dot--active', i === index);
+      });
+    }
+    // Logic cuộn thumbnail vào giữa màn hình
+    const activeThumb = thumbnails[index];
+    if (activeThumb && thumbnailContainer) {
+      const containerWidth = thumbnailContainer.offsetWidth;
+      const thumbLeft = activeThumb.offsetLeft;
+      const thumbWidth = activeThumb.offsetWidth;
+      const newScrollLeft = thumbLeft - (containerWidth / 2) + (thumbWidth / 2);
+
+      thumbnailContainer.scrollTo({
+        left: newScrollLeft,
+        behavior: isInitialLoad ? 'auto' : 'smooth' 
+      });
+    }
+  }
+  
+  // Hàm khởi tạo để đồng bộ thumbnail
+  function initializeGallery() {
+    let activeIndex = Array.from(thumbnails).findIndex(wrapper => 
+      wrapper.classList.contains('gallery__thumbnail--active')
+    );
+    if (activeIndex === -1) {
+      activeIndex = 0;
+    }
+    currentImageIndex = activeIndex;
+    updateActiveUI(currentImageIndex, true);
+    if (dotsContainer) {
+      galleryItems.forEach((_, index) => {
+        const dot = document.createElement("div");
+        dot.classList.add("gallery__dot");
+        dot.dataset.index = index;
+        dot.addEventListener("click", () => {
+          setActiveItem(index);
+        });
+        dotsContainer.appendChild(dot);
+      });
+      updateActiveUI(currentImageIndex, true);
+    }
+  }
+
+  // Hàm điều khiển
+  function showNextImage() {
+    let nextIndex = (currentImageIndex + 1) % galleryItems.length;
+    setActiveItem(nextIndex);
+  }
+  
+  function showPrevImage() {
+    let prevIndex = (currentImageIndex - 1 + galleryItems.length) % galleryItems.length;
+    setActiveItem(prevIndex);
+  }
+
+  if (nextBtn) nextBtn.addEventListener("click", showNextImage);
+  if (prevBtn) prevBtn.addEventListener("click", showPrevImage);
+
+  thumbnails.forEach((wrapper, index) => {
+    wrapper.addEventListener("click", function() {
+      setActiveItem(index);
+    });
+  });
+
+  // Gắn sự kiện vuốt
+  if (swipeArea) {
+    swipeArea.addEventListener("touchstart", (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    swipeArea.addEventListener("touchend", (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      
+      const swipeDiff = touchEndX - touchStartX;
+      if (swipeDiff > swipeThreshold) {
+        showPrevImage();
+      } else if (swipeDiff < -swipeThreshold) {
+        showNextImage();
+      }
+      touchStartX = 0;
+      touchEndX = 0;
+    });
+  }
+  
+  initializeGallery();
+}
+
 // RATE & REVIEW FLOW
-// ==========================================================
 const rateSection = document.getElementById("rateSection");
 const rateStarsContainer = document.getElementById("rateStars");
 const rateStars = rateStarsContainer ? rateStarsContainer.querySelectorAll("i") : [];
@@ -227,7 +286,7 @@ const ratingTextMap = {
   5: "Excellent",
 };
 
-// ----- chọn sao -----
+// chọn sao 
 if (rateStars.length) {
   rateStars.forEach(star => {
     star.addEventListener("click", () => {
@@ -366,3 +425,7 @@ if (submitReviewBtn) {
     }
   });
 }
+
+// INITIALIZE ALL FUNCTIONS
+initReadMore();
+initGallery();
