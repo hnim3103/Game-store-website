@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap");
 
 /* Reset & Base */
 * {
-  font-family: 'Roboto Flex', sans-serif;
+  font-family: "Roboto Flex", sans-serif;
   text-decoration: none;
 }
 
@@ -11,87 +11,117 @@
   --dark-green-color: #225557;
   --black-color: #070f1a;
   --text-color: #ffffff;
+  --super-dark-green-color: #0f232c;
 }
 
-body{  
-    overflow: hidden;                   
-    background-color: transparent;           
-    display: flex;                 
-    justify-content: center;       
-    align-items: center;
-    height: 100vh; 
-
+body {
+  overflow: hidden;
+  height: 100vh;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* phone-account box */
+.phone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4.8vh 1.2%;
+  background-color: #0f232c;
+  border-radius: 6px;
+  width: clamp(320px, 30vw, 400px);
+}
+/* button phone-account and email-account */
+.phone__button-group {
+  display: flex;
+  gap: 6px;
+  width: 100%;
+}
+/* general setting button */
+.phone__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 4% 0%;
+  background-color: var(--dark-green-color);
+  color: var(--text-color);
+  border-radius: 6px;
+  font-size: clamp(13.2px, 2.4vw, 18px);
+  font-weight: 700;
+  transition: all 0.2s ease-in-out;
 }
 
-.main{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 5% 0% 5% 0%;
-    gap: 10px;
-    background-color: #0F232C;
-    border-radius: 10px;
-    width: 90%;         
-    max-width: 800px;
-    height: auto;
-    transform: scale(0.6);
-    transform-origin: center center;
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5% 0% 5% 0%;
+  gap: 10px;
+  background-color: #0f232c;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 800px;
+  height: auto;
+  transform: scale(0.6);
+  transform-origin: center center;
 }
 
-.button-group{
-    display: flex;
-    gap: 10px;
-    width: 100%;
-    max-width: 720px;
-    padding: 0 2%;
-    box-sizing: border-box;
+.button-group {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  max-width: 720px;
+  padding: 0 2%;
+  box-sizing: border-box;
 }
 
 .phone-account {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100px;
-    width: 100%;
-    background-color: var(--dark-green-color);
-    color: var(--text-color);
-    border-radius: 10px;
-    font-size: 30px;
-    font-weight: 700;
-    box-shadow: 0px 5px 8px var(--green-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  width: 100%;
+  background-color: var(--dark-green-color);
+  color: var(--text-color);
+  border-radius: 10px;
+  font-size: 30px;
+  font-weight: 700;
+  box-shadow: 0px 5px 8px var(--green-color);
 }
 
-.email-account{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100px;
-    width: 100%;
-    background-color: var(--dark-green-color);
-    color: var(--text-color);
-    border-radius: 10px;
-    font-size: 30px;
-    font-weight: 700;
-    box-shadow: 0px 5px 8px var(--black-color);
+.email-account {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  width: 100%;
+  background-color: var(--dark-green-color);
+  color: var(--text-color);
+  border-radius: 10px;
+  font-size: 30px;
+  font-weight: 700;
+  box-shadow: 0px 5px 8px var(--black-color);
 }
 
-.reset-form{
-    font-size: 24px;
-    color: var(--text-color);
-    font-weight: 500;  
-    gap: 5px;
-    width: 100%;
-    max-width: 720px;
-    padding: 0 2%;
-    box-sizing: border-box;
-
+.reset-form {
+  font-size: 24px;
+  color: var(--text-color);
+  font-weight: 500;
+  gap: 5px;
+  width: 100%;
+  max-width: 720px;
+  padding: 0 2%;
+  box-sizing: border-box;
 }
 
 .reset-form label {
-    margin-top: 20px;;
-    margin-bottom: 20px;
-    display: block;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: block;
 }
 
 .phone-wrapper {
@@ -101,23 +131,25 @@ body{
   position: relative;
 }
 
-.input-container {
+.phone__input-container {
   display: flex;
   flex-direction: column;
   flex: 1;
 }
-
-.input-container input {
-  border: 1px solid var(--green-color);
-  border-radius: 5px;
+/* input */
+.phone__input {
   background-color: var(--dark-green-color);
+  border: 1px solid var(--green-color);
+  border-radius: 6px;
+  width: 100%;
+  height: 90%;
+  padding: 2.4% 0%;
+  font-size: clamp(12px, 2.4vw, 14.4px);
   color: var(--text-color);
-  font-size: 18px;
-  outline: none;
-  height: 60px ;
+  transition: all 0.2s ease-in-out;
 }
-
-.country-select {
+/* custome select country */
+.phone__country-select {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -126,30 +158,30 @@ body{
   border-radius: 8px;
   padding: 5px 10px;
   cursor: pointer;
-  min-width: 80px;
-  height: 60px;
+  height: 90%;
+  padding: 2% 2%;
   box-sizing: border-box;
   margin-right: 10px;
 }
-
-.country-select img {
-  width: 28px;
-  height: 20px;
+/* flag country */
+.phone__country-flag {
+  width: 22px;
+  height: 18px;
   border-radius: 3px;
   margin-right: 5px;
 }
 
-.country-select .code {
+.phone__country-code {
   color: var(--text-color);
   font-weight: 600;
 }
 
-.country-list {
+.phone__country-list {
   list-style: none;
   margin: 5px 0 0;
   padding: 0;
   display: none;
-  background-color: #0F232C;
+  background-color: #0f232c;
   border: 1px solid var(--green-color);
   border-radius: 8px;
   position: absolute;
@@ -157,12 +189,12 @@ body{
   width: 200px;
   pointer-events: auto;
 }
-
-.country-list.show {
+/* hide box select */
+.phone__country-list.show {
   display: block;
 }
 
-.country-list li {
+.phone__country-item {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -171,85 +203,88 @@ body{
   cursor: pointer;
 }
 
-.country-list li:hover {
+.phone__country-item:hover {
   background-color: var(--dark-green-color);
 }
 
-.submit{
-    width: 100%;
-    max-width: 720px;
-    height: 70px;
-    padding: 0 2%;;
-    background-color: var(--green-color);
-    color: var(--text-color);
-    border-radius: 10px; 
-    font-size: 30px;
-    font-weight: 700;
-    border: none;
-    margin-top: 30px;
+.phone__submit {
+  width: 100%;
+  padding: 3% 0%;
+  background-color: var(--green-color);
+  color: var(--text-color);
+  border-radius: 6px;
+  font-size: clamp(14px, 2.4vw, 18px);
+  font-weight: 700;
+  border: none;
 }
 
-.return-signin{
-    display: inline-block;
-    font-size: 20px;
-    color: var(--text-color);
-    background: transparent;
-    font-weight: 300;  
-    text-decoration: underline;
-    border: none;
-    margin-top: 20px;
+.phone__return {
+  display: inline-block;
+  font-size: clamp(7px, 4vw, 13px);
+  color: var(--text-color);
+  background: transparent;
+  font-weight: 300;
+  text-decoration: underline;
+  border: none;
+  margin-top: 12px;
 }
 
-.reset-form input:focus {
+/* Hover States */
+.phone__input:focus {
   outline: none;
   border: 2px solid var(--green-color);
-  box-shadow: 0 0 4px var(--green-color); 
+  box-shadow: 0 0 4px var(--green-color);
 }
 
-.submit:hover {
+.phone__submit:hover {
   background-color: var(--green-color);
   filter: brightness(1.2);
-  transform: scale(1.05); 
+  transform: scale(1.05);
   cursor: pointer;
 }
 
-.email-account:hover, .phone-account:hover{
+.phone__button:hover {
   box-shadow: 0px 5px 8px var(--green-color);
   transform: scale(1.05);
   filter: brightness(1.2);
 }
 
-.return-signin:hover{
+.phone__return:hover {
   color: var(--green-color);
   transform: scale(1.1);
 }
 
-.input-container input:hover{
-  background-color: var(--dark-green-color);
+.phone__input:hover {
   filter: brightness(1.2);
   border: 2px solid var(--green-color);
 }
 
-.reset-form label.error {
+/* Error */
+.phone__label.error {
   color: #ff4d4d;
 }
 
-/* Error styling cho input */
-.reset-form input.error {
+.phone__input.error {
   border: 3px solid #ff4d4d;
   background-color: rgba(212, 14, 14, 0.1);
 }
 
-.error-message {
+.phone__error {
   color: #ff4d4d;
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 500;
   margin-top: 5px;
-  text-align: left; 
-  align-self: flex-start; 
+  text-align: left;
+  align-self: flex-start;
   display: none;
 }
 
-.error-message.show{
+.phone__error.show {
   display: block;
+}
+/* mobile */
+@media (max-width: 767px) {
+  .phone {
+    padding: 2rem 1rem;
+  }
 }

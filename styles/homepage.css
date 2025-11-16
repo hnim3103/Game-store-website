@@ -27,7 +27,6 @@
 }
 
 body {
-  min-height: 1000vh;
   color: var(--text-color);
   background-color: var(--black-color);
   background-image: linear-gradient(
@@ -261,7 +260,11 @@ h1 {
   display: block;
 }
 
-.genres__header, .new-releases__header, .upcoming__header, .trending__header{
+.genres__header, 
+.new-releases__header, 
+.upcoming__header, 
+.trending__header,
+.best-sellers__header{
   height: 70px;
   width: 100%;
   display: flex;
@@ -269,13 +272,21 @@ h1 {
   border-bottom: 3px solid var(--green-color);
 }
 
-.genres__link, .new-releases__link, .upcoming__link, .trending__link {
+.genres__link, 
+.new-releases__link, 
+.upcoming__link, 
+.trending__link,
+.best-sellers__link {
   font-size: 1.5rem;
   color: var(--text-color);
   margin-left: auto;
 }
 
-.genres__link:hover, .new-releases__link:hover, .upcoming__link:hover, .trending__link:hover {
+.genres__link:hover, 
+.new-releases__link:hover, 
+.upcoming__link:hover, 
+.trending__link:hover,
+.best-sellers__link:hover {
   color: var(--green-color);
 }
 
@@ -550,4 +561,716 @@ h1 {
 .close-btn:hover {
   filter: brightness(1.3);
 }
+.best-sellers{
+  margin-top: 50px;
+}
 
+.best-sellers__game-list{
+  margin-left: 0;
+  width: 60%;
+  height: auto;
+}
+
+.best-sellers .game-card{
+  height: 100px;
+  background-color: var(--super-dark-green-color);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.best-sellers .game-card .game-card__image{
+  display: flex;
+  position: relative;
+  height: 80%;
+  width: 30%;
+  object-fit: cover;
+  float: left;
+  margin-left: 10px;
+}
+
+.best-sellers__container {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 20px; 
+}
+
+
+.best-sellers .game-card__content{
+  background-color: transparent;
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  padding-right: 10px;
+  margin: 10px;
+  align-items: center;
+}
+
+.best-sellers .game-card__short-infor{
+  margin-right: auto;
+  font-size: 1.3em;
+  line-height: 1.5em;
+  width: 65%;
+}
+
+.best-sellers .game-card__short-infor .game-card__game-name{
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.best-sellers .game-card__discount{
+  border-radius: 5px;
+  margin-right: auto;
+  font-size: 2.5em;
+  font-weight: 800;
+  padding: 6px 15px 6px 15px;
+  background-color: red;
+}
+
+.best-sellers .game-card__price{
+  font-size: 3em;
+  font-weight: 900;
+  color: var(--green-color);
+  letter-spacing: 1.3px;
+}
+
+.best-sellers__game-list .game-card:last-child {
+  margin-bottom: 0;
+}
+
+.best-sellers__game-info {
+  width: 38%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: var(--super-dark-green-color);
+  padding: 15px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+
+.game-info__title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--text-color);
+}
+
+.game-info__reviews {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  padding: 14px;
+}
+
+.game-info__stars {
+  color: black;
+  margin-right: 6px;
+  font-size: 2rem;
+  margin-right: 30px;
+  letter-spacing: 3px;
+}
+
+.game-info__rating {
+  color: #00C3FF;
+  margin-right: 4px;
+}
+
+.game-info__votes {
+  color: #CAD4D8;
+}
+
+.game-info__genres {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  max-width: 100%;
+  overflow: hidden;
+  height: 25px;
+}
+
+.game-info__genre {
+  background-color: #7D92A6;
+  color: var(--text-color);
+  padding: 4px 10px;
+  border-radius: 5px;
+  font-size: 1.3rem;
+  white-space: nowrap;
+}
+
+.game-info__reviews{
+  border-radius: 5px;
+  background: #5E6B7B;
+}
+
+.game-info__reviews p {
+  font-size: 1.5rem;
+  line-height: 1.5;
+  color: #ccc;
+}
+
+
+.game-info__images{
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.game-info__image{
+  height: 250px;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.game-info__image:last-child{
+  margin-bottom: 0;
+}
+
+
+@media screen and (max-width: 1024px) {
+  :root {
+    font-size: 9px;
+  }
+
+  .header__container {
+    width: 100%;
+    padding: 15px 20px;
+  }
+
+  .slider {
+    height: 350px;
+  }
+
+  .slider__card-image {
+    width: 600px;
+    height: 350px;
+  }
+
+  .slider__btn--prev {
+    left: calc(50% - 320px);
+  }
+
+  .slider__btn--next {
+    right: calc(50% - 320px);
+  }
+
+  .main {
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  .genres__grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .genres__bottom-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .upcoming__grid {
+    margin: 50px 20px;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 30px;
+  }
+
+  .best-sellers__game-list {
+    width: 55%;
+  }
+
+  .best-sellers__game-info {
+    width: 42%;
+  }
+}
+
+/* Tablet Portrait (768px and below) */
+@media screen and (max-width: 768px) {
+  :root {
+    font-size: 8px;
+  }
+
+  /* Header adjustments */
+  .header__container {
+    flex-wrap: wrap;
+    height: auto;
+    padding: 10px 15px;
+  }
+
+  .header__nav {
+    order: 5;
+    width: 100%;
+    margin-top: 10px;
+    justify-content: center;
+    column-gap: 0.5rem;
+  }
+
+  .header__nav-link {
+    font-size: 1.6rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .header__search {
+    width: 200px;
+    height: 40px;
+  }
+
+  .header__search-input {
+    width: 150px;
+    font-size: 1.5rem;
+  }
+
+  .header__cart .bx-cart,
+  .header__profile .bx-user-circle {
+    font-size: 4rem;
+  }
+
+  /* Slider adjustments */
+  .slider {
+    height: 280px;
+  }
+
+  .slider__card-image {
+    width: 450px;
+    height: 280px;
+  }
+
+  .slider__card-content {
+    bottom: 60px;
+    width: 300px;
+    font-size: 1.6rem;
+    height: 50px;
+  }
+
+  .slider__btn {
+    font-size: 5rem;
+    top: 140px;
+  }
+
+  .slider__btn--prev {
+    left: 10px;
+  }
+
+  .slider__btn--next {
+    right: 10px;
+  }
+
+  /* Grid adjustments */
+  .genres__grid,
+  .trending__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .genres__bottom-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .upcoming__grid {
+    grid-template-columns: repeat(2, 1fr);
+    margin: 30px 10px;
+    column-gap: 20px;
+  }
+
+  .upcoming__grid .game-card--large {
+    grid-row: 1/2;
+    grid-column: 1/3;
+    height: 400px;
+    width: 100%;
+  }
+
+  /* Best sellers adjustments */
+  .best-sellers__container {
+    flex-direction: column;
+  }
+
+  .best-sellers__game-list {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .best-sellers__game-info {
+    width: 100%;
+  }
+
+  .best-sellers .game-card__short-infor {
+    font-size: 1.2em;
+  }
+
+  .best-sellers .game-card__discount {
+    font-size: 2em;
+  }
+
+  .best-sellers .game-card__price {
+    font-size: 2.5em;
+  }
+}
+
+/* Mobile Landscape & Small Tablets (640px and below) */
+@media screen and (max-width: 640px) {
+  :root {
+    font-size: 7px;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  .header__logo-img {
+    width: 80px;
+    height: 40px;
+  }
+
+  .header__search {
+    width: 180px;
+    height: 36px;
+  }
+
+  .header__search-input {
+    width: 130px;
+  }
+
+  .header__language-icon {
+    width: 36px;
+    height: 33px;
+  }
+
+  .slider {
+    height: 220px;
+  }
+
+  .slider__card-image {
+    width: 350px;
+    height: 220px;
+  }
+
+  .slider__card-content {
+    bottom: 40px;
+    width: 250px;
+    font-size: 1.4rem;
+  }
+
+  .slider__btn {
+    font-size: 4rem;
+    top: 110px;
+  }
+
+  .genres__grid,
+  .trending__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .game-card--large {
+    grid-column: 1 / 3;
+    grid-row: 1 / 3;
+  }
+
+  .genres__bottom-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .new-releases__slider {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .new-releases__slider .game-card {
+    width: 48%;
+    margin: 5px 0;
+  }
+
+  .upcoming__grid {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 10px;
+  }
+
+  .upcoming__grid .game-card--large {
+    height: 350px;
+  }
+}
+
+/* Mobile Portrait (480px and below) */
+@media screen and (max-width: 480px) {
+  :root {
+    font-size: 6px;
+  }
+
+  .header__container {
+    padding: 10px;
+  }
+
+  .header__nav {
+    column-gap: 0.3rem;
+  }
+
+  .header__nav-link {
+    font-size: 1.4rem;
+    padding: 0.3rem 0.6rem;
+  }
+
+  .header__search {
+    width: 150px;
+    height: 32px;
+  }
+
+  .header__search-input {
+    width: 110px;
+    font-size: 1.4rem;
+  }
+
+  .header__cart .bx-cart,
+  .header__profile .bx-user-circle {
+    font-size: 3.5rem;
+  }
+
+  .slider {
+    height: 180px;
+    margin-top: 10px;
+  }
+
+  .slider__card-image {
+    width: 280px;
+    height: 180px;
+  }
+
+  .slider__card-content {
+    bottom: 30px;
+    width: 200px;
+    font-size: 1.2rem;
+    height: 40px;
+    margin-right: -50px;
+  }
+
+  .slider__discount,
+  .upcoming .game-card--large .game-card__discount {
+    height: 30px;
+  }
+
+  .slider__discount-percent,
+  .upcoming .game-card--large .game-card__discount-percent {
+    font-size: 2rem;
+  }
+
+  .slider__price,
+  .upcoming .game-card--large .game-card__price {
+    height: 40px;
+  }
+
+  .slider__price-original,
+  .upcoming .game-card--large .game-card__price-original {
+    font-size: 1.6rem;
+  }
+
+  .slider__price-discounted,
+  .upcoming .game-card--large .game-card__price-discounted {
+    font-size: 2rem;
+  }
+
+  .slider__wishlist .fa-heart,
+  .game-card__wishlist .fa-heart {
+    font-size: 3rem;
+  }
+
+  .slider__add-cart,
+  .upcoming .game-card--large .game-card__add-cart {
+    width: 120px;
+    height: 30px;
+    font-size: 1.4rem;
+  }
+
+  .slider__btn {
+    font-size: 3.5rem;
+    top: 90px;
+  }
+
+  .main {
+    padding: 0 10px;
+  }
+
+  .genres__grid,
+  .trending__grid {
+    margin-top: 3rem;
+    gap: 8px;
+  }
+
+  .genres__bottom-grid {
+    margin-top: 20px;
+    gap: 8px;
+  }
+
+  .game-card__price-wrapper {
+    font-size: 1.6rem;
+    height: 5rem;
+    padding-left: 1rem;
+  }
+
+  .game-card__add-cart {
+    font-size: 1.4rem;
+    height: 4rem;
+    padding: 1rem;
+  }
+
+  .game-card__wishlist .fa-heart {
+    font-size: 3rem;
+  }
+
+  .game-card--large .game-card__price-wrapper {
+    height: 7rem;
+    font-size: 2.4rem;
+  }
+
+  .game-card--large .game-card__add-cart {
+    height: 6rem;
+    font-size: 1.8rem;
+  }
+
+  .game-card--large .game-card__wishlist .fa-heart {
+    font-size: 5rem;
+  }
+
+  .new-releases,
+  .upcoming,
+  .trending,
+  .best-sellers {
+    margin-top: 30px;
+  }
+
+  .new-releases__slider .game-card,
+  .upcoming__grid .game-card {
+    width: 160px;
+    height: 240px;
+    margin: 5px;
+  }
+
+  .new-releases__slider .game-card__add-cart,
+  .upcoming__grid .game-card__add-cart {
+    font-size: 1.2rem;
+  }
+
+  .upcoming__grid {
+    grid-template-columns: 1fr;
+    margin: 30px 5px;
+  }
+
+  .upcoming__grid .game-card--large {
+    grid-row: 1/2;
+    grid-column: 1/2;
+    height: 300px;
+    width: 100%;
+  }
+
+  .upcoming .game-card--large .game-card__content {
+    bottom: 30px;
+    padding-right: 15px;
+  }
+
+  .upcoming .game-card--large .game-card__add-cart {
+    font-size: 1.6rem;
+  }
+
+  .best-sellers .game-card {
+    height: 80px;
+  }
+
+  .best-sellers .game-card .game-card__image {
+    width: 25%;
+    margin-left: 5px;
+  }
+
+  .best-sellers .game-card__short-infor {
+    font-size: 1em;
+    line-height: 1.3em;
+  }
+
+  .best-sellers .game-card__short-infor .game-card__game-name {
+    font-size: 1.3em;
+  }
+
+  .best-sellers .game-card__discount {
+    font-size: 1.8em;
+    padding: 4px 10px;
+  }
+
+  .best-sellers .game-card__price {
+    font-size: 2em;
+  }
+
+  .game-info__title {
+    font-size: 2rem;
+  }
+
+  .game-info__reviews {
+    font-size: 1.3rem;
+    padding: 10px;
+  }
+
+  .game-info__stars {
+    font-size: 1.6rem;
+    margin-right: 15px;
+  }
+
+  .game-info__genre {
+    font-size: 1.1rem;
+    padding: 3px 8px;
+  }
+
+  .game-info__image {
+    height: 180px;
+    margin-bottom: 10px;
+  }
+}
+
+/* Extra Small Mobile (360px and below) */
+@media screen and (max-width: 360px) {
+  :root {
+    font-size: 5.5px;
+  }
+
+  .header__nav-link {
+    font-size: 1.3rem;
+    padding: 0.3rem 0.5rem;
+  }
+
+  .slider {
+    height: 150px;
+  }
+
+  .slider__card-image {
+    width: 240px;
+    height: 150px;
+  }
+
+  .slider__card-content {
+    bottom: 20px;
+    width: 180px;
+    font-size: 1rem;
+  }
+
+  .slider__btn {
+    font-size: 3rem;
+    top: 75px;
+  }
+
+  .genres__grid,
+  .trending__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .game-card--large {
+    grid-column: 1 / 2;
+  }
+
+  .genres__bottom-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .new-releases__slider {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .new-releases__slider .game-card {
+    width: 90%;
+    margin: 10px auto;
+  }
+}
