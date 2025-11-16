@@ -23,15 +23,17 @@
                 <span>Sign In</span>
             </a>
 
-            <button class="Register">
+            <a href="register.html" class="register">
                 <span>Register</span>
-            </button>
+            </a>
         </div>
 
         <!--Register form-->
-        <div>
+        <div class="register-with">
             <h3>Register with... </h3>
         </div>
+        
+        
 
         <!--Social Register-->
         <div class="social-register">            
@@ -59,22 +61,38 @@
         </div>
 
         <!--Register form-->
-        <form class="register-form">
-            <label for="name">Username
-                <input type="name" id="name" name="name" placeholder="Input Username" required>
-            </label>
+        <form class="register-form" novalidate>
+            <div class="input-group">
+                <label for="name">UserName</label>
+                <div class="input-wrapper">
+                  <input type="text" id="name" name="name" placeholder="Input UserName">
+                  <span class="error-message" id="name-error"></span>
+                </div>
+            </div>
             <br>
-            <label for="email">Email Address
-                <input type="email" id="email" name="email" placeholder="Input Email Address" required>
-            </label>
+            <div class="input-group">
+                <label for="email">Email Address</label>
+                <div class="input-wrapper">
+                  <input type="text" id="email" name="email" placeholder="Input Email Address">
+                  <span class="error-message" id="email-error"></span>
+                </div>
+            </div>
             <br>
-            <label for="password">Password
-                <input type="password" id="password" name="password" placeholder="Input Password" required>
-            </label>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <div class="input-wrapper"> 
+                    <input type="password" id="password" name="password" placeholder="Input Password">
+                    <span class="error-message" id="password-error"></span>
+                </div>
+            </div>
             <br>
-            <label for="dob">Date of Birth
-                <input type="text" id="dob" name="dob" placeholder="DD/MM/YYYY" required>
-            </label>
+            <div class="input-group">
+                <label for="dob">Date of Birth</label>
+                <div class="input-wrapper"> 
+                    <input type="text" id="dob" name="dob" placeholder="DD/MM/YYYY">
+                    <span class="error-message" id="date-error"></span>
+                </div>
+            </div>
 
             <div class="confirm-container"> 
                 <input type="checkbox" id="terms" class="hidden-checkbox"> 
@@ -82,6 +100,7 @@
                     <span class="custom-box1"></span> 
                     <span class="term-text">I Accept The <u>Terms And Conditions, Cookie Policy And Privacy Policy.</u> </span>
                 </label>
+                <span class="error-message" id="terms-error"></span>
             </div> 
 
             <div class="confirm-container"> 
@@ -90,6 +109,7 @@
                     <span class="custom-box2"></span> 
                     <span class="term-text">IConditions, Cookie Policy And Privacy Policy.</span>
                 </label>
+                <span class="error-message" id="promotions-error"></span>
             </div> 
 
             <div>

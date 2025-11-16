@@ -126,12 +126,15 @@ h1 {
   cursor: pointer;
   user-select: none;
   transition: all 0.3 ease;
-  position: relative;
 }
 
 .faq__question .faq__icon {
   flex-shrink: 0;
   margin-right: 15px;
+}
+
+.faq__text {
+  flex: 1;
 }
 
 .faq__question span {
@@ -144,13 +147,10 @@ h1 {
 }
 
 .faq__question .faq__toggle {
-  position: absolute;
-  right: 25px;
-  top: 50%;
-  transform: translateY(-50%);
   font-size: 32px;
   color: var(--green-color);
   transition: transform 0.3 ease;
+  flex-shrink: 0;
 }
 
 /* FAQ Icons */
@@ -204,15 +204,17 @@ h1 {
   }
 
   .faq__container {
-    padding: 0 10px;
+    padding: 0;
+    gap: 10px;
   }
   .faq__question {
-    padding: 15px 20px;
-    gap: 10px;
+    padding: 10px;
+    gap: 0;
   }
 
   .faq__question span {
-    font-size: 16px;
+    font-size: 14px;
+    font-weight: 600;
   }
 
   .faq__icon, .faq__toggle {
@@ -221,6 +223,7 @@ h1 {
 
   .faq__answer p {
     font-size: 14px;
-    padding: 0 20px;
+    padding: 10px 20px;
+    font-weight: 400;
   }
 }
