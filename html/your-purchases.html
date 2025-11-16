@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GSW – Purchases</title>
+
+  <!-- Main Styles -->
+  <link rel="stylesheet" href="../styles/your-purchases.css" />
+
+  <!-- Fonts & Icons -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Flex:wght@400;600;700&display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+  <script src="https://kit.fontawesome.com/546bf66050.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <div id="header"></div>
+
+  <main class="purchases-page">
+    <div class="purchases-container">
+
+      <!-- USER PROFILE -->
+      <section class="profile-bar">
+        <div class="profile-bar__info">
+          <img src="../img/icons/Ellipse 2.svg" class="profile-bar__avatar" />
+          <div class="profile-bar__text">
+            <span class="profile-bar__username">KZy24</span>
+            <span class="profile-bar__fullname">Nguyen Khanh Vy</span>
+          </div>
+        </div>
+        <a class="profile-bar__signout">Sign Out</a>
+      </section>
+
+      <!-- PROFILE NAVIGATION -->
+      <nav class="user-nav">
+        <ul class="user-nav__list">
+          <li><a href="./wishlist.html" class="user-nav__link"><img src="../img/icons/whislist.svg"><span>WISHLIST</span></a></li>
+          <li><a href="./purchases.html" class="user-nav__link user-nav__link--active"><img src="../img/icons/purchase.png"><span>YOUR PURCHASES</span></a></li>
+          <li><a href="./wallet.html" class="user-nav__link"><img src="../img/icons/wallet.svg"><span>WALLET</span></a></li>
+          <li><a href="./setting.html" class="user-nav__link"><img src="../img/icons/setting.svg"><span>SETTINGS</span></a></li>
+        </ul>
+      </nav>
+
+      <!-- ORDER HISTORY -->
+      <section class="order-history">
+        <h2 class="section-title">Order History</h2>
+
+        <!-- Item -->
+        <div class="order-card">
+          <img src="../img/assets/1.png" class="order-card__image" />
+          <div class="order-card__details">
+            <h3 class="order-card__title">OUTLAST Trinity</h3>
+            <p class="order-card__genre">Zombies, Action, Parkour, Open World</p>
+            <p class="order-card__date">Release Date: 19 Sep, 2024</p>
+          </div>
+          <span class="order-card__time">8 OCT 25</span>
+        </div>
+
+        <div class="order-card">
+          <img src="../img/assets/game1.jpg" class="order-card__image" />
+          <div class="order-card__details">
+            <h3 class="order-card__title">DYING LIGHT</h3>
+            <p class="order-card__genre">Zombies, Action, Parkour, Open World</p>
+            <p class="order-card__date">Release Date: 19 Sep, 2024</p>
+          </div>
+          <span class="order-card__time">8 OCT 25</span>
+        </div>
+      </section>
+
+      <!-- RECENT ACTIVITY -->
+      <section class="recent">
+        <div class="recent__header">
+          <h2 class="section-title">Recent Activity</h2>
+          <a class="recent__see-more">See more</a>
+        </div>
+
+        <!-- Card -->
+        <div class="activity-card">
+          <img src="../img/assets/game1.jpg" class="activity-card__image" />
+          <div class="activity-card__content">
+            <h3 class="activity-card__title">Dying Light: The Beast</h3>
+            <p class="activity-card__genre">Zombies, Action, Parkour, Open World</p>
+            <p class="activity-card__date">Release Date: 19 Sep, 2025</p>
+
+            <div class="progress-box">
+              <span>Achievement Progress</span>
+              <span class="progress-count">1 of 50</span>
+              <div class="progress-bar">
+                <div class="progress-fill"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="activity-card__info">
+            <p>0.5 hrs on record</p>
+            <p>last played on 9 Aug</p>
+          </div>
+        </div>
+
+        <!-- Card -->
+        <div class="activity-card">
+          <img src="../img/assets/game1.jpg" class="activity-card__image" />
+          <div class="activity-card__content">
+            <h3 class="activity-card__title">Dying Light: The Beast</h3>
+            <p class="activity-card__genre">Zombies, Action, Parkour, Open World</p>
+            <p class="activity-card__date">Release Date: 19 Sep, 2025</p>
+
+            <div class="progress-box">
+              <span>Achievement Progress</span>
+              <span class="progress-count">1 of 50</span>
+              <div class="progress-bar">
+                <div class="progress-fill"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="activity-card__info">
+            <p>0.5 hrs on record</p>
+            <p>last played on 9 Aug</p>
+          </div>
+        </div>
+        <!--Cart-->
+                <div class="activity-card">
+          <img src="../img/assets/game1.jpg" class="activity-card__image" />
+          <div class="activity-card__content">
+            <h3 class="activity-card__title">Dying Light: The Beast</h3>
+            <p class="activity-card__genre">Zombies, Action, Parkour, Open World</p>
+            <p class="activity-card__date">Release Date: 19 Sep, 2025</p>
+
+            <div class="progress-box">
+              <span>Achievement Progress</span>
+              <span class="progress-count">1 of 50</span>
+              <div class="progress-bar">
+                <div class="progress-fill"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="activity-card__info">
+            <p>0.5 hrs on record</p>
+            <p>last played on 9 Aug</p>
+          </div>
+        </div>
+        <!-- Copy thêm card nếu cần -->
+      </section>
+
+    </div>
+
+    <!-- RECOMMENDATIONS -->
+    <section class="recommendations">
+      <h2 class="recommendations__title">You may also like</h2>
+
+      <div class="recommendations__slider">
+
+        <button class="recommendations__arrow" id="rec-prev">
+          <i class="bx bx-chevron-left"></i>
+        </button>
+
+        <div class="recommendations__list" id="rec-list">
+
+          <!-- Product -->
+          <div class="product-card">
+            <img src="../img/assets/game1.jpg" class="product-card__image">
+            <div class="product-card__content">
+
+              <p class="product-card__price">$19.99</p>
+
+              <div class="product-card__add-cart">
+                <i class="fa-solid fa-cart-plus"></i>
+                <span>Add to cart</span>
+              </div>
+
+              <button class="product-card__wishlist">
+                <i class="fa-regular fa-heart"></i>
+              </button>
+
+            </div>
+          </div>
+                    <!-- Product -->
+          <div class="product-card">
+            <img src="../img/assets/game1.jpg" class="product-card__image">
+            <div class="product-card__content">
+
+              <p class="product-card__price">$19.99</p>
+
+              <div class="product-card__add-cart">
+                <i class="fa-solid fa-cart-plus"></i>
+                <span>Add to cart</span>
+              </div>
+
+              <button class="product-card__wishlist">
+                <i class="fa-regular fa-heart"></i>
+              </button>
+
+            </div>
+          </div>
+                    <!-- Product -->
+          <div class="product-card">
+            <img src="../img/assets/game1.jpg" class="product-card__image">
+            <div class="product-card__content">
+
+              <p class="product-card__price">$19.99</p>
+
+              <div class="product-card__add-cart">
+                <i class="fa-solid fa-cart-plus"></i>
+                <span>Add to cart</span>
+              </div>
+
+              <button class="product-card__wishlist">
+                <i class="fa-regular fa-heart"></i>
+              </button>
+
+            </div>
+          </div>
+
+        </div>
+
+        <button class="recommendations__arrow" id="rec-next">
+          <i class="bx bx-chevron-right"></i>
+        </button>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <div id="footer"></div>
+  <script src="../scripts/purchases.js"></script>
+  <script src="../scripts/include-header.js"></script>
+  <script src="../scripts/include-footer.js"></script>
+</body>
+
+</html>

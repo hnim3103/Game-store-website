@@ -1,0 +1,249 @@
+/* global variables and resets */
+:root {
+  --green: #00e122;
+  --white: #ffffff;
+  --text: #bfcdd4;
+  --bg-dark: #051423;
+}
+
+body {
+  margin: 0;
+  font-family: "Roboto Flex", sans-serif;
+  background: linear-gradient(to bottom, #051423, #09303b, #0d3c48);
+  color: var(--white);
+}
+
+/* page layout */
+.wallet-page {
+  padding-top: 40px;
+  padding-bottom: 140px;
+}
+
+.wallet-container,
+.wallet-content {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* profile bar */
+.profile-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 35px 0 25px 0;
+}
+
+.profile-bar__info {
+  display: flex;
+  align-items: center;
+  gap: 1.8rem;
+}
+
+.profile-bar__avatar {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 3px solid var(--green);
+}
+
+.profile-bar__text {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-bar__username {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--white);
+}
+
+.profile-bar__fullname {
+  font-size: 16px;
+  color: var(--text);
+}
+
+.profile-bar__signout {
+  color: #ffffff;
+  text-decoration: underline;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.profile-bar__signout:hover {
+  color: var(--green);
+}
+
+/* user navigation */
+.user-nav {
+  border-top: 2px solid rgba(0, 225, 34, 0.35);
+  border-bottom: 2px solid rgba(0, 225, 34, 0.35);
+  padding: 18px 0;
+  margin-bottom: 35px;
+}
+
+.user-nav__list {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Link */
+.user-nav__link {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+  text-decoration: none;
+  color: var(--text);
+  font-size: 15px;
+  font-weight: 500;
+  transition: 0.25s;
+}
+
+/* Icon */
+.user-nav__link img {
+  width: 42px;
+  height: 42px;
+  opacity: 0.85;
+  transition: 0.25s;
+}
+
+/* Hover */
+.user-nav__link:hover span {
+  color: var(--green);
+}
+
+.user-nav__link:hover img {
+  transform: scale(1.1);
+}
+
+/* Active */
+.user-nav__link--active span {
+  color: var(--green);
+  font-weight: 700;
+}
+
+.user-nav__link--active img {
+  opacity: 1;
+  filter: brightness(1.7) saturate(1.4);
+}
+
+/* wallet content */
+.wallet-balance {
+  font-size: 22px;
+  margin-bottom: 25px;
+  font-weight: 500;
+}
+
+.balance-amount {
+  color: var(--green);
+  font-weight: 700;
+}
+
+/* voucher and gift card form */
+.voucher {
+  margin-top: 10px;
+}
+
+.voucher__title {
+  font-size: 22px;
+  margin-bottom: 14px;
+  font-weight: 600;
+}
+
+.voucher__input-wrapper {
+  background: #0d2f34;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 18px;
+  border-radius: 6px;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.voucher__label {
+  width: 150px;
+  font-size: 14px;
+  color: var(--text);
+}
+
+.voucher__input {
+  flex: 1;
+  background: #5c6366;
+  border: none;
+  padding: 10px;
+  border-radius: 3px;
+  color: white;
+  font-size: 15px;
+}
+
+.voucher__button {
+  background: #2a6c6e;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--white);
+  transition: 0.2s;
+}
+
+.voucher__button:hover {
+  background: #3aa7a9;
+}
+
+/* gift card history */
+.history {
+  margin-top: 40px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.history__title {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.empty-text {
+  color: var(--text);
+  font-size: 14px;
+}
+
+/* footer */
+#footer {
+  margin-top: 90px;
+}
+/* click effect */
+.button--clicked {
+  background: #1c4d4e !important;
+  transform: scale(0.96);
+  transition: 0.15s;
+}
+
+/* shake when error */
+.button--shake {
+  animation: shake 0.3s ease;
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-3px); }
+  50% { transform: translateX(3px); }
+  75% { transform: translateX(-3px); }
+  100% { transform: translateX(0); }
+}
+
+/* fix gradient */
+body {
+  background: linear-gradient(
+    180deg,
+    #070F1A 25%,
+    #225557 81%
+  ) !important;
+  color: var(--text-color);
+}
