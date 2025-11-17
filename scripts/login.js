@@ -1,13 +1,7 @@
-/* === TOÀN BỘ FILE login.js (ĐÃ SỬA LỖI) === */
-
 const loginForm = document.querySelector(".login__form");
 
-// === THÊM KIỂM TRA NÀY ===
 if (loginForm) {
-  // 1. Tìm nút submit
   const submitButton = loginForm.querySelector(".login__submit");
-
-  // 2. Gắn sự kiện submit
   loginForm.addEventListener("submit", function (event) {
     event.preventDefault();
 
@@ -54,34 +48,23 @@ if (loginForm) {
     }
 
     if (valid) {
-      const emailValue = email.value.trim(); // email từ input
-
-      // Lưu email vào localStorage
+      const emailValue = email.value.trim();
+      // Save email on local storage
       localStorage.setItem("userEmail", emailValue);
       setLoggedIn(true);
-
-      // Cập nhật header
       updateHeaderAuth();
-
-      // Đóng popup
       closePopup();
-
-      // Dispatch sự kiện login-success
       window.dispatchEvent(new CustomEvent("login-success", { bubbles: true }));
     }
   });
 
-  // 3. (QUAN TRỌNG) Kích hoạt nút submit VÌ JS ĐÃ SẴN SÀNG
-  // (Bạn cần thêm "disabled" vào nút submit trong login.html)
   if (submitButton) {
-    // submitButton.disabled = false; // (Bỏ comment dòng này nếu bạn thêm 'disabled' vào HTML)
+    submitButton.disabled = false;
   }
-} // <-- ĐÓNG IF
-
-// Fix event listener (cho input)
+}
 const form = document.querySelector(".login__form");
 
-// === THÊM KIỂM TRA NÀY ===
+// === REMOVE ERROR ===
 if (form) {
   form.addEventListener("input", (e) => {
     if (e.target.classList.contains("error")) {
@@ -100,4 +83,4 @@ if (form) {
       }
     }
   });
-} // <-- ĐÓNG IF
+}

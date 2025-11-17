@@ -1,6 +1,4 @@
 const registerForm = document.querySelector(".register__form");
-
-// === THÊM KIỂM TRA NÀY ===
 if (registerForm) {
   registerForm.addEventListener("submit", function (event) {
     event.preventDefault();

@@ -249,7 +249,7 @@ body {
   }
 }
 
-/* Fix font-size EN nhỏ giữa các trang */
+/* Fix font-size EN */
 .header__language {
   font-size: clamp(14px, 1.2vw, 16px);
   min-width: 32px;
@@ -257,10 +257,8 @@ body {
 
 /* POP UP */
 .gsw-popup-overlay {
-  /* Ẩn mặc định */
   display: none;
   opacity: 0;
-
   position: fixed;
   top: 0;
   left: 0;
@@ -268,22 +266,16 @@ body {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.6);
   z-index: 99999;
-
-  /* Dùng flex để căn giữa */
   justify-content: center;
   align-items: center;
-
   transition: opacity 0.3s ease;
 }
 
 .gsw-popup-overlay.active {
-  display: flex; /* Hiện */
+  display: flex;
   opacity: 1;
 }
 
-/* * Thêm animation cho box .login (từ login.css) 
- * khi nó xuất hiện bên trong overlay
-*/
 .gsw-popup-overlay .login {
   opacity: 0;
 }
@@ -293,7 +285,7 @@ body {
   opacity: 1;
 }
 
-/* Nút logout trong header */
+/* User */
 .header__user {
   position: relative;
   display: flex;

@@ -1,5 +1,3 @@
-/* === TOÀN BỘ FILE header.js (ĐÃ SỬA LỖI) === */
-
 // Search box focus effects
 const searchInput = document.querySelector(".header__search-input");
 const searchBox = document.querySelector(".header__search");
@@ -66,8 +64,9 @@ if (toggle && nav && icon) {
     }
   });
 }
+
 // ==================== POPUP OVERLAY ====================
-// Tạo overlay HOẶC dùng overlay có sẵn trong HTML
+// Create overlay
 let overlay = document.getElementById("global-popup-overlay");
 
 if (!overlay) {
@@ -76,7 +75,6 @@ if (!overlay) {
   overlay.id = "global-popup-overlay";
   document.body.appendChild(overlay);
 } else {
-  // Nếu dùng overlay có sẵn, đảm bảo nó có class đúng
   overlay.className = "gsw-popup-overlay";
 }
 
@@ -92,17 +90,14 @@ const closePopup = () => {
 
 // ==================== OPEN POPUP ====================
 const openPopup = (url, scriptSrc, cssSrc, contentSelector) => {
-  // Xóa CSS cũ
   document.getElementById("dynamic-popup-css")?.remove();
 
-  // Tải CSS mới
   const link = document.createElement("link");
   link.id = "dynamic-popup-css";
   link.rel = "stylesheet";
   link.href = cssSrc;
   document.head.appendChild(link);
 
-  // Tải HTML
   fetch(url)
     .then((response) => response.text())
     .then((html) => {
@@ -112,17 +107,13 @@ const openPopup = (url, scriptSrc, cssSrc, contentSelector) => {
 
       if (content) {
         overlay.innerHTML = "";
-        overlay.appendChild(content); // Sửa: Dùng content gốc
-
-        // Tải JS
+        overlay.appendChild(content);
         document.getElementById("dynamic-popup-script")?.remove();
         const script = document.createElement("script");
         script.id = "dynamic-popup-script";
         script.src = scriptSrc;
         script.defer = true;
         document.body.appendChild(script);
-
-        // Hiện popup
         overlay.classList.add("active");
       } else {
         console.error(`Không tìm thấy "${contentSelector}" trong ${url}`);
@@ -145,11 +136,9 @@ if (profileBtn) {
   });
 }
 
-// =============================================================
-
 // ==================== EVENT: CLICK BÊN TRONG OVERLAY ====================
 overlay.addEventListener("click", (e) => {
-  // Chuyển sang Register
+  // login to register
   if (e.target.closest(".login__button--register")) {
     e.preventDefault();
     openPopup(
@@ -159,7 +148,7 @@ overlay.addEventListener("click", (e) => {
       ".register"
     );
   }
-  // Từ Register về Login
+  // Register to login
   else if (e.target.closest(".register__button--signin")) {
     e.preventDefault();
     openPopup(
@@ -169,7 +158,7 @@ overlay.addEventListener("click", (e) => {
       ".login"
     );
   }
-  // Forgot Password
+  // Sign in to Forgot Password
   else if (e.target.closest(".login__forgot-password")) {
     e.preventDefault();
     openPopup(
@@ -179,7 +168,7 @@ overlay.addEventListener("click", (e) => {
       ".email"
     );
   }
-  // Chuyển sang Phone
+  // Email account to Phone account
   else if (e.target.closest(".email__button--phone")) {
     e.preventDefault();
     openPopup(
@@ -189,7 +178,7 @@ overlay.addEventListener("click", (e) => {
       ".phone"
     );
   }
-  // Chuyển sang Email
+  // Phone account to Email account
   else if (e.target.closest(".phone__button--email")) {
     e.preventDefault();
     openPopup(
@@ -199,7 +188,7 @@ overlay.addEventListener("click", (e) => {
       ".email"
     );
   }
-  // Quay về Login
+  // Return login
   else if (
     e.target.closest(".email__return") ||
     e.target.closest(".phone__return")
@@ -212,7 +201,7 @@ overlay.addEventListener("click", (e) => {
       ".login"
     );
   }
-  // Click vào overlay (bên ngoài box) để đóng
+  // Close overlay
   else if (e.target === overlay) {
     closePopup();
   }
@@ -277,17 +266,16 @@ window.updateHeaderAuth = () => {
   } else {
     signinBtn.style.display = "inline-block";
     userBox.style.display = "none";
-    logoutBtn.style.display = "none"; // khi chưa login thì ẩn luôn logout
+    logoutBtn.style.display = "none";
   }
 };
 
-// gọi ngay khi load trang
 updateHeaderAuth();
-
+//Cart
 document.querySelectorAll(".header__cart").forEach((btn) => {
   btn.addEventListener("click", (e) => {
     if (!isLoggedIn()) {
-      e.preventDefault(); // ngăn đi đến cart
+      e.preventDefault();
       openPopup(
         "/html/login.html",
         "/scripts/login.js",
