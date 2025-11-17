@@ -90,3 +90,11 @@ document.addEventListener("click", () => {
 });
 
 
+const wishlists = document.querySelectorAll('.game-card__wishlist');
+wishlists.forEach(wishlist => {
+  wishlist.addEventListener('click', () => {
+    wishlist.classList.toggle('active');
+  });
+});
+
+
