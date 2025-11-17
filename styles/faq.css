@@ -172,6 +172,7 @@ h1 {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.4s ease, padding 0.4s ease;
+  margin-bottom: 15px;
 }
 
 .faq__answer p {
@@ -181,7 +182,7 @@ h1 {
   letter-spacing: 0.8px;
   line-height: 1.6;
   color: var(--text-color);
-  margin-bottom: 15px;
+  margin: 0;
 }
 
 /* Active State */

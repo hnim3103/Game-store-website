@@ -41,6 +41,8 @@ body {
 img {
   width: 100%;
   height: auto;
+  align-items: center;
+  justify-content: center;
 }
 
 h1 {
@@ -51,7 +53,7 @@ h1 {
   Slider Section
 --------------------------------------------------- */
 .slider {
-  margin-top: 20px;
+  margin: 20px 0;
   height: 450px;
   position: relative;
   overflow: hidden;
@@ -219,10 +221,16 @@ h1 {
   Slider Navigation Arrows
 --------------------------------------------------- */
 .slider__btn {
-  font-size: 6rem;
-  background: transparent;
+  font-size: 4rem;
+  background-color: var(--super-dark-green-color);
   color: var(--green-color);
   border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: absolute;
   transform: translateY(-50%);
   cursor: pointer;
