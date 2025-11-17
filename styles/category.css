@@ -110,6 +110,7 @@ h1 {
 
 .game__selections{
   width: 20%;
+  margin-right: 5px;
 }
 
 .checkbox__label{
