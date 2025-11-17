@@ -41,6 +41,8 @@ body {
 img {
   width: 100%;
   height: auto;
+  align-items: center;
+  justify-content: center;
 }
 
 h1 {
@@ -51,8 +53,8 @@ h1 {
   Slider Section
 --------------------------------------------------- */
 .slider {
-  margin-top: 20px;
-  height: 450px;
+  margin: 20px 0;
+  height: 550px;
   position: relative;
   overflow: hidden;
   display: flex;
@@ -71,15 +73,15 @@ h1 {
 }
 
 .slider__card-image {
-  width: 750px;
-  height: 450px;
+  width: 950px;
+  height: 550px;
   object-fit: cover;
   border-radius: 10px;
 }
 
 .slider__card-content{
   position: absolute;
-  bottom: 100px;
+  bottom: 50px;
   width: 400px;
   font-weight: bold;
   font-size: 2rem;
@@ -101,14 +103,14 @@ h1 {
 
 .slider__card.prev {
   visibility: visible;
-  transform: translate(-150%, -50%) scale(0.85);
+  transform: translate(-145%, -50%) scale(0.85);
   opacity: 0.8;
   z-index: 2;
 }
 
 .slider__card.next {
   visibility: visible;
-  transform: translate(50%, -50%) scale(0.85);
+  transform: translate(45%, -50%) scale(0.85);
   opacity: 0.8;
   z-index: 2;
 }
@@ -219,23 +221,29 @@ h1 {
   Slider Navigation Arrows
 --------------------------------------------------- */
 .slider__btn {
-  font-size: 6rem;
-  background: transparent;
+  font-size: 4rem;
+  background-color: var(--super-dark-green-color);
   color: var(--green-color);
   border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: absolute;
-  transform: translateY(-50%);
+  transform: translateY(50%);
   cursor: pointer;
   top: 225px;
   z-index: 5;
 }
 
 .slider__btn--prev {
-  left: calc(50% - 400px);
+  left: calc(50% - 510px);
 }
 
 .slider__btn--next {
-  right: calc(50% - 400px);
+  right: calc(50% - 510px);
 }
 
 /* ---------------------------------------------------
@@ -750,11 +758,11 @@ h1 {
   }
 
   .slider__btn--prev {
-    left: calc(50% - 320px);
+    left: calc(50% - 420px);
   }
 
   .slider__btn--next {
-    right: calc(50% - 320px);
+    right: calc(50% - 420px);
   }
 
   .main {
@@ -845,7 +853,7 @@ h1 {
 
   .slider__btn {
     font-size: 5rem;
-    top: 140px;
+    top: 240px;
   }
 
   .slider__btn--prev {

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GSW – Wallet</title>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="../styles/wallet.css">
+
+  <!-- Fonts & Icons -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Flex:wght@400;600;700&display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+  <script src="https://kit.fontawesome.com/546bf66050.js" crossorigin="anonymous"></script>
+</head>
+
+
+<body>
+
+  <!-- HEADER -->
+  <div id="header"></div>
+
+  <main class="wallet-page">
+
+    <div class="wallet-container">
+
+      <!-- Profile -->
+      <section class="profile-bar">
+        <div class="profile-bar__info">
+          <img src="../img/icons/Ellipse 2.svg" alt="User Avatar" class="profile-bar__avatar">
+
+          <div class="profile-bar__text">
+            <span class="profile-bar__username">KZy24</span>
+            <span class="profile-bar__fullname">Nguyen Khanh Vy</span>
+          </div>
+        </div>
+
+        <a href="#" class="profile-bar__signout">Sign Out</a>
+      </section>
+
+      <!-- Navigation -->
+      <nav class="user-nav">
+        <ul class="user-nav__list">
+
+          <li class="user-nav__item">
+            <a href="./wishlist.html" class="user-nav__link">
+              <img src="../img/icons/whislist.svg" alt="">
+              <span>WISHLIST</span>
+            </a>
+          </li>
+
+          <li class="user-nav__item">
+            <a href="./your-purchases.html" class="user-nav__link">
+              <img src="../img/icons/purchase.png" alt="">
+              <span>YOUR PURCHASE</span>
+            </a>
+          </li>
+
+          <li class="user-nav__item">
+            <a href="./wallet.html" class="user-nav__link user-nav__link--active">
+              <img src="../img/icons/wallet.svg" alt="">
+              <span>WALLET</span>
+            </a>
+          </li>
+
+          <li class="user-nav__item">
+            <a href="./setting.html" class="user-nav__link">
+              <img src="../img/icons/setting.svg" alt="">
+              <span>SETTINGS</span>
+            </a>
+          </li>
+
+        </ul>
+      </nav>
+
+    </div>
+
+    <!-- WALLET CONTENT -->
+    <section class="wallet-content">
+
+      <!-- Balance -->
+      <p class="wallet-balance">
+        Credit Balance = <span class="balance-amount">$0.00</span>
+      </p>
+
+      <!-- Voucher -->
+      <section class="voucher">
+        <h2 class="voucher__title">Redeem Gift Card</h2>
+
+        <div class="voucher__input-wrapper">
+          <label for="voucher-code" class="voucher__label">Redeem Gift Card</label>
+          <input type="text" id="voucher-code" class="voucher__input">
+          <button class="voucher__button">APPLY</button>
+        </div>
+      </section>
+
+      <!-- History -->
+      <section class="history">
+        <h2 class="history__title">Gift Card History</h2>
+        <p class="empty-text">You haven't redeemed any Gift Cards yet</p>
+      </section>
+
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <div id="footer"></div>
+
+  <!-- Scripts -->
+  <script src="../scripts/wallet.js"></script>
+  <script src="../scripts/include-header.js"></script>
+  <script src="../scripts/include-footer.js"></script>
+
+</body>
+</html>

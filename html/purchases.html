@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GSW – Purchases</title>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="../styles/purchases.css">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+  <script src="https://kit.fontawesome.com/546bf66050.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <div id="header"></div>
+
+  <main class="purchases-page">
+
+    <div class="purchases-container">
+
+      <!-- Profile -->
+      <section class="profile-bar">
+        <div class="profile-bar__info">
+          <img src="../img/icons/Ellipse 2.svg" class="profile-bar__avatar">
+
+          <div class="profile-bar__text">
+            <span class="profile-bar__username">KZy24</span>
+            <span class="profile-bar__fullname">Nguyen Khanh Vy</span>
+          </div>
+        </div>
+
+        <a href="#" class="profile-bar__signout">Sign Out</a>
+      </section>
+
+      <!-- Navigation -->
+      <nav class="user-nav">
+        <ul class="user-nav__list">
+
+          <li class="user-nav__item">
+            <a href="./wishlist.html" class="user-nav__link">
+              <img src="../img/icons/whislist.svg" alt="">
+              <span>WISHLIST</span>
+            </a>
+          </li>
+
+          <li class="user-nav__item">
+            <a href="./purchases.html" class="user-nav__link user-nav__link--active">
+              <img src="../img/icons/purchase.png" alt="">
+              <span>YOUR PURCHASE</span>
+            </a>
+          </li>
+
+          <li class="user-nav__item">
+            <a href="./wallet.html" class="user-nav__link">
+              <img src="../img/icons/wallet.svg" alt="">
+              <span>WALLET</span>
+            </a>
+          </li>
+
+          <li class="user-nav__item">
+            <a href="./setting.html" class="user-nav__link">
+              <img src="../img/icons/setting.svg" alt="">
+              <span>SETTINGS</span>
+            </a>
+          </li>
+
+        </ul>
+      </nav>
+
+      <!-- EMPTY MESSAGE -->
+      <section class="notification">
+        <h2 class="notification__title">You don’t have any orders</h2>
+        <p class="empty-text">… yet :)</p>
+      </section>
+
+    </div>
+
+    <!-- Recommendations Section -->
+    <section class="recommendations">
+      <h2 class="recommendations__title">You may also like</h2>
+
+      <div class="recommendations__slider">
+
+        <button class="recommendations__arrow recommendations__arrow-left" id="rec-prev">
+          <i class="bx bx-chevron-left"></i>
+        </button>
+
+        <div class="recommendations__list" id="rec-list">
+
+          <div class="product-card">
+            <img src="../img/assets/game1.jpg" class="product-card__image">
+            <div class="product-card__content">
+
+              <p class="product-card__price">$19.99</p>
+
+              <div class="product-card__add-cart">
+                <i class="fa-solid fa-cart-plus"></i>
+                <span>Add to cart</span>
+              </div>
+
+              <button class="product-card__wishlist">
+                <i class="fa-regular fa-heart"></i>
+              </button>
+
+            </div>
+          </div>
+
+          <div class="product-card">
+            <img src="../img/assets/game1.jpg" class="product-card__image">
+            <div class="product-card__content">
+
+              <p class="product-card__price">$19.99</p>
+
+              <div class="product-card__add-cart">
+                <i class="fa-solid fa-cart-plus"></i>
+                <span>Add to cart</span>
+              </div>
+
+              <button class="product-card__wishlist">
+                <i class="fa-regular fa-heart"></i>
+              </button>
+
+            </div>
+          </div>
+
+          <div class="product-card">
+            <img src="../img/assets/game1.jpg" class="product-card__image">
+            <div class="product-card__content">
+
+              <p class="product-card__price">$19.99</p>
+
+              <div class="product-card__add-cart">
+                <i class="fa-solid fa-cart-plus"></i>
+                <span>Add to cart</span>
+              </div>
+
+              <button class="product-card__wishlist">
+                <i class="fa-regular fa-heart"></i>
+              </button>
+
+            </div>
+          </div>
+
+        </div>
+
+        <button class="recommendations__arrow recommendations__arrow-right" id="rec-next">
+          <i class="bx bx-chevron-right"></i>
+        </button>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <div id="footer"></div>
+
+  <!-- Scripts -->
+  <script src="../scripts/purchases.js"></script>
+  <script src="../scripts/include-header.js"></script>
+  <script src="../scripts/include-footer.js"></script>
+
+</body>
+
+</html>
