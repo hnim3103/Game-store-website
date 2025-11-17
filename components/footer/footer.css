@@ -15,11 +15,12 @@ footer {
         var(--black-color),
         var(--dark-green-color)
     );
-    padding: 80px 115px;
+    padding: 30px 15px;
 }
 
 /* Border container */
 .footer__container {
+
     border-top: 2px solid;
     border-bottom: 2px solid;
     border-image: linear-gradient(to right, #D177F4, #4AB9BD) 1;
@@ -74,15 +75,16 @@ footer {
 /* Responsive */
 /* Tablet */
 @media screen and (max-width: 1024px) {
-    footer {
+
+    footer{
         height: auto;
-        padding: 40px 20px;
     }
 
     .footer__container {
         flex-direction: column;
         gap: 30px;
-        padding: 20px;
+        margin: auto;
+        height: auto;
     }
 
     .footer-logo__logo-image {
@@ -92,10 +94,6 @@ footer {
 
 /* Mobile */
 @media screen and (max-width: 768px) {
-    footer {
-        padding: 30px 15px;
-    }
-
     .footer-content {
         font-size: 1.3rem;
         margin-bottom: 10px;
