@@ -20,7 +20,9 @@
     <nav class="header__nav-wrapper">
       <ul class="header__nav">
         <li><a href="/html/homepage.html" class="header__nav-link">HOME</a></li>
-        <li><a href="/html/category.html" class="header__nav-link">CATEGORY</a></li>
+        <li>
+          <a href="/html/category.html" class="header__nav-link">CATEGORY</a>
+        </li>
         <li><a href="/html/faq.html" class="header__nav-link">FAQ</a></li>
         <li><a href="/html/about.html" class="header__nav-link">ABOUT</a></li>
       </ul>
@@ -35,7 +37,18 @@
 
       <a href="#cart" class="header__cart"><i class="bx bx-cart"></i></a>
 
-      <button class="header__signin">Sign In</button>
+      <div class="header__auth">
+        <a href="#" class="header__signin">Sign In</a>
+        <div class="header__user" style="display: none">
+          <img
+            src="/img/icons/Ellipse 2.svg"
+            alt="Avatar"
+            class="header__avatar"
+          />
+          <span class="header__username"></span>
+          <button class="header__logout" style="display: none">Logout</button>
+        </div>
+      </div>
 
       <div class="header__menu-toggle">
         <i class="bx bx-menu"></i>
@@ -43,3 +56,7 @@
     </div>
   </div>
 </header>
+
+<div class="popup-overlay" id="global-popup-overlay"></div>
+
+<script src="/scripts/setting.js"></script>

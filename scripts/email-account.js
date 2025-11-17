@@ -25,7 +25,9 @@ document
     }
 
     if (valid) {
-      window.location.href = "login.html";
+      window.dispatchEvent(
+        new CustomEvent("password-reset-success", { bubbles: true })
+      );
     }
   });
 
