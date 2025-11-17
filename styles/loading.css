@@ -1,0 +1,87 @@
+/* RESET: Thiết lập lại trình duyệt*/
+* { box-sizing: border-box; margin: 0; padding: 0; } /* Loại bỏ khoảng cách và padding mặc định */
+body {
+  height: 100vh; /* Chiều cao viewport */
+  font-family: system-ui, Arial, sans-serif; /* Font chung */
+  background: #051423;
+  overflow: hidden; /* Ẩn thanh cuộn khi tải trang */
+}
+
+/* ảnh background */
+.loading-background {
+  position: fixed; /* Cố định nền khi cuộn */
+  inset: 0; /* Giữ nền */
+  background: url("../../img/loading/loading_bgr.png") center/cover no-repeat; /* Ảnh nền phủ toàn bộ */
+  z-index: -1; /* ảnh nằm dưới cùng */
+}
+
+/* LOGO TRUNG TÂM */
+.loading-logo {
+  position: fixed;
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+  display: flex; /* Sử dụng flexbox để căn giữa */
+  flex-direction: column; /* Cột dọc */
+  justify-content: center; /* Căn giữa theo chiều dọc */
+  align-items: center; /* Căn giữa theo chiều ngang */
+  z-index: 10;
+  pointer-events: none; /* Vô hiệu hóa tương tác chuột */
+  width: 100%;
+  text-align: center;
+}
+/* ẢNH LOGO */
+.loading-logo img {
+  width: clamp(140px, 25vw, 360px); /* co giãn theo màn hình */
+  height: auto;
+  max-width: 90vw; /* không tràn trên mobile */
+  filter: drop-shadow(0 0 16px rgba(124,243,255,.85)) 
+          drop-shadow(0 6px 24px rgba(0,0,0,.6)); /* bling bling và đổ bóng cho logo */
+  transition: transform 0.3s ease; /* Hiệu ứng chuyển đổi mượt như sunsilk */
+  
+}
+
+/* Các ảnh xung quanh */
+/* Giữ ảnh trong một vùng quy định */
+.picture-game-loading {
+  position: absolute; 
+  inset: 0; 
+}
+
+.picture-game-loading img {
+  position: absolute; 
+  width: min(18vmin, 150px); 
+  border-radius: 8px; 
+  object-fit: cover; 
+  transition: transform 0.4s ease;
+}
+
+.picture-game-loading img:hover {
+  transform: scale(1.05); /* Phóng to nhẹ khi hover */
+}
+
+/* Chia đất cho các ảnh xung quanh */
+.picture-game-loading img:nth-child(1){ left:5%;  top:12%; }
+.picture-game-loading img:nth-child(2){ left:15%; top:35%; }
+.picture-game-loading img:nth-child(3){ left:6%;  top:52%; }
+.picture-game-loading img:nth-child(4){ left:14%; top:68%; }
+.picture-game-loading img:nth-child(5){ right:15%; top:12%; }
+.picture-game-loading img:nth-child(6){ right:2%;  top:30%; }
+.picture-game-loading img:nth-child(7){ right:18%; top:52%; }
+.picture-game-loading img:nth-child(8){ right:6%;  top:70%; }
+
+/* Tương thích với nhiều thiết bị */
+@media (max-width: 1024px) {
+  .loading-logo img { width: clamp(160px, 25vw, 300px); }
+  .picture-game-loading img { width: min(24vmin, 130px); }
+}
+
+@media (max-width: 768px) {
+  .loading-logo img { width: clamp(180px, 30vw, 260px); }
+  .picture-game-loading img { width: min(28vmin, 110px); }
+}
+
+@media (max-width: 480px) {
+  .loading-logo img { width: clamp(200px, 38vw, 230px); }
+  .picture-game-loading img { width: min(35vmin, 100px); }
+}

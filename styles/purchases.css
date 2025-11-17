@@ -1,0 +1,275 @@
+/* PURCHASES PAGE STYLES */
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap"); /* Roboto Flex font */
+
+* {
+  font-family: "Roboto Flex", sans-serif; /* Apply Roboto Flex font */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+
+:root {
+  --green-color: #00e122;
+  --dark-green-color: #225557;
+  --black-color: #070f1a;
+  --text-color: #ffffff;
+  --super-dark-green-color: #0f232c;
+  font-size: 10px;
+}
+
+body {
+  background: linear-gradient(180deg, #051423 25%, #0f232c 85%); /* Gradient nền */
+  color: var(--text-color);
+}
+/*container*/
+.purchases-page {
+  padding: 40px 0 120px 0; /* Padding cho trang purchases */
+}
+
+.purchases-container {
+  max-width: 1100px; /* Giới hạn chiều rộng của container */
+  margin: auto; /* Căn giữa container */
+  padding: 0 1.5rem; /* Padding bên trong container */
+}
+/*profile bar*/
+.profile-bar {
+  display: flex; /* Hiển thị flex cho thanh profile */
+  justify-content: space-between; /* Căn đều khoảng cách giữa các phần tử */
+  align-items: center; /* Căn giữa theo chiều dọc */
+  padding: 35px 0 25px 0; /* Padding cho thanh profile */
+}
+
+.profile-bar__info {
+  display: flex; /* Hiển thị flex cho phần thông tin profile */
+  align-items: center; /* Căn giữa theo chiều dọc */
+  gap: 1.8rem; /* Khoảng cách giữa các phần tử */
+}
+
+.profile-bar__avatar {
+  width: 70px; /* Chiều rộng avatar */
+  height: 70px; /* Chiều cao avatar */
+  border-radius: 50%; /* Bo tròn avatar thành hình tròn */
+  border: 3px solid var(--green-color); /* Viền xa lánh */
+}
+
+.profile-bar__text {
+  display: flex; /* Hiển thị flex cho phần text profile */
+  flex-direction: column;  /* Sắp xếp theo cột */
+}
+
+.profile-bar__username {
+  font-size: 24px; /* Kích thước font cho username */
+  font-weight: 700; /* In đậm */
+  color: var(--white); 
+}
+
+.profile-bar__fullname {
+  font-size: 16px; /* Kích thước font cho fullname */
+  color: var(--text); 
+}
+
+.profile-bar__signout {
+  color: #ffffff;
+  text-decoration: underline;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.profile-bar__signout:hover {
+  color: var(--green-color); /* Màu xanh lá khi hover */
+}
+
+/* user navigation */
+.user-nav {
+  border-top: 2px solid rgba(0, 225, 34, 0.35);
+  border-bottom: 2px solid rgba(0, 225, 34, 0.35);
+  padding: 18px 0;
+  margin-bottom: 35px;
+}
+
+.user-nav__list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.user-nav__link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  color: var(--text-color);
+  font-size: 1.5rem;
+  transition: 0.25s;
+}
+
+.user-nav__link img {
+  width: 42px;
+  height: 42px;
+  opacity: 0.85;
+  transition: 0.25s;
+}
+
+.user-nav__link:hover span {
+  color: var(--green-color);
+}
+
+.user-nav__link:hover img {
+  transform: scale(1.1);
+}
+
+.user-nav__link--active span {
+  color: var(--green-color);
+  font-weight: 700;
+}
+
+.user-nav__link--active img {
+  opacity: 1;
+  filter: brightness(1.7) saturate(1.4);
+}
+
+/* empty massage */
+.notification {
+  text-align: center;
+  margin-top: 3rem;
+  margin-bottom: 5rem;
+}
+
+.notification__title {
+  font-size: 2.2rem;
+  font-weight: 600;
+}
+
+.empty-text {
+  font-size: 1.6rem;
+  margin-top: 1rem;
+  color: #c7d2da;
+}
+/*recommendations*/
+.recommendations {
+  margin-top: 6rem;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.recommendations__title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 2.5rem;
+}
+
+.recommendations__slider {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.recommendations__list {
+  display: flex;
+  overflow: hidden;
+  gap: 2rem;
+  scroll-behavior: smooth;
+}
+
+.recommendations__arrow {
+  background: none;
+  border: none;
+  color: var(--green-color);
+  font-size: 3.5rem;
+  cursor: pointer;
+  padding: 0 10px;
+}
+
+/* PRODUCT CARD */
+.product-card {
+  min-width: 32%;
+  background: #0f232c;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+}
+
+.product-card__image {
+  width: 100%;
+  height: auto;
+}
+
+/* CONTENT */
+.product-card__content {
+  padding: 1.2rem;
+  position: relative;
+}
+
+.product-card__price {
+  color: var(--green-color);
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+/* ADD TO CART */
+.product-card__add-cart {
+  margin-top: 8px;
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+  font-size: 1.4rem;
+  color: var(--text-color);
+}
+
+.product-card__add-cart:hover {
+  color: var(--green-color);
+  cursor: pointer;
+}
+
+/* WISHLIST HEART */
+.product-card__wishlist {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  background: none;
+  border: none;
+  color: var(--text-color);
+  cursor: pointer;
+  font-size: 1.8rem;
+}
+
+.product-card__wishlist:hover {
+  color: var(--green-color);
+}
+/* FIX GRADIENT */
+body {
+  background: linear-gradient(
+    180deg,
+    #070F1A 25%,
+    #225557 81%
+  ) !important;
+  color: var(--text-color);
+}
+
+/* all container layers */
+.purchases-page,
+.purchases-container,
+.order-history,
+.recent,
+.activity-card {
+  background: transparent !important; /* Loại bỏ nền mặc định */
+}
+
+/* background cho order và recent */
+.order-card {
+  background: rgba(29, 74, 77, 0.55) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.activity-card {
+  background: rgba(255,255,255,0.03) !important;
+  border: 1px solid rgba(255,255,255,0.06);
+}
