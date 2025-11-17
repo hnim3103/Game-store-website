@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GSW-Setting</title>
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles/setting.css" />
+
+    <!-- Boxicons CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"
+    />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/img/logo.svg" />
+
+    <script
+      src="https://kit.fontawesome.com/546bf66050.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="header__container">
+        <a href="#" class="header__logo">
+          <img src="/img/logo.svg" class="header__logo-img" alt="GSW Logo" />
+        </a>
+
+        <!-- Search Bar -->
+        <div class="header__search">
+          <i class="bx bx-search"></i>
+          <input
+            type="text"
+            name="search-text"
+            class="header__search-input"
+            placeholder="Search..."
+          />
+        </div>
+
+        <!-- Menu icon -->
+        <div class="bx bx-menu header__menu-icon" id="menu-icon" hidden></div>
+
+        <!-- Navigation List -->
+        <nav>
+          <ul class="header__nav">
+            <li class="header__nav-item">
+              <a href="#home" class="header__nav-link">HOME</a>
+            </li>
+            <li class="header__nav-item">
+              <a href="#category" class="header__nav-link">CATEGORY</a>
+            </li>
+            <li class="header__nav-item">
+              <a href="#faq" class="header__nav-link">FAQ</a>
+            </li>
+            <li class="header__nav-item">
+              <a href="#about" class="header__nav-link">ABOUT</a>
+            </li>
+          </ul>
+        </nav>
+
+        <!-- Language setting -->
+        <div class="header__language">
+          <img
+            src="/img/icons/earth.svg"
+            class="header__language-icon"
+            alt="Language"
+          />
+          <span class="header__language-text">EN</span>
+        </div>
+
+        <!-- Cart -->
+        <a href="#cart" class="header__cart" aria-label="Cart">
+          <i class="bx bx-cart"></i>
+        </a>
+
+        <!-- Profile -->
+        <a
+          href="#profile"
+          class="header__profile header__profile--active"
+          aria-label="Profile"
+        >
+          <i class="bx bx-user-circle"></i>
+        </a>
+      </div>
+    </header>
+    <!--Setting page-->
+    <main class="settings-page">
+      <div class="settings-page__container">
+        <!-- Proifile Bar -->
+        <section class="profile-bar">
+          <div class="profile-bar__info">
+            <img
+              src="/img/icons/Ellipse 2.svg"
+              alt="User Avatar"
+              class="profile-bar__avatar"
+            />
+            <div class="profile-bar__text">
+              <span class="profile-bar__username">KZy24</span>
+              <span class="profile-bar__fullname">Nguyen Khanh Vy</span>
+            </div>
+          </div>
+          <a href="#" class="profile-bar__signout">Sign Out</a>
+        </section>
+        <!-- Setting nav -->
+        <nav class="settings-nav">
+          <ul class="settings-nav__list">
+            <li class="settings-nav__item">
+              <a href="wishlist.html" class="settings-nav__link">
+                <img src="/img/icons/whislist.svg" alt="" />
+                <span>WISHLIST</span>
+              </a>
+            </li>
+            <li class="settings-nav__item">
+              <a href="purchases.html" class="settings-nav__link">
+                <img src="/img/icons/purchase.png" alt="" />
+                <span>YOUR PURCHASE</span>
+              </a>
+            </li>
+            <li class="settings-nav__item">
+              <a href="wallet.html" class="settings-nav__link">
+                <img src="/img/icons/wallet.svg" alt="" />
+                <span>WALLET</span>
+              </a>
+            </li>
+            <li class="settings-nav__item">
+              <a
+                href="setting.html"
+                class="settings-nav__link settings-nav__link--active"
+              >
+                <img src="/img/icons/setting.svg" alt="" />
+                <span>SETTINGS</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <!-- Setting content -->
+        <section class="settings-content">
+          <!-- left section -->
+          <div class="settings-content__column">
+            <!-- Box content 1 -->
+            <h3 class="settings-box__title">Communications</h3>
+
+            <div class="settings-box">
+              <div class="communication-setting">
+                <div class="communication-setting__row">
+                  <img
+                    src="/img/icons/mail.png"
+                    alt="Email Icon"
+                    class="communication-setting__icon"
+                  />
+                  <label
+                    for="promo-emails"
+                    class="communication-setting__description"
+                  >
+                    Promotional Emails (Offers & Updates)
+                  </label>
+                </div>
+                <div class="communication-setting__row">
+                  <input
+                    type="checkbox"
+                    id="promo-emails"
+                    class="setting-item__toggle"
+                    checked
+                  />
+                  <label
+                    for="promo-emails"
+                    class="communication-setting__description"
+                  >
+                    Send me emails to get targeted vouchers, early access to VIP
+                    deals, discounts on new releases and plenty of other
+                    awesomeness.
+                  </label>
+                </div>
+              </div>
+            </div>
+            <!-- Box content 2 -->
+            <h3 class="settings-box__title">Personal Details</h3>
+            <div class="settings-box">
+              <div class="setting-item">
+                <div class="setting-item__text">
+                  <label>User Name</label>
+                  <span>KZy2402</span>
+                </div>
+              </div>
+              <div class="setting-item">
+                <div class="setting-item__text">
+                  <label>Date Of Birth</label>
+                  <span>February 24, 2005</span>
+                </div>
+              </div>
+              <div class="setting-item">
+                <div class="setting-item__text">
+                  <label>Email Address</label>
+                  <span id="static-email">khanhvynvx@gmail.com</span>
+                </div>
+                <a href="#" class="setting-item__action open-update-overlay"
+                  >Update</a
+                >
+              </div>
+              <div class="setting-item">
+                <div class="setting-item__text">
+                  <label>Password</label>
+                  <span id="static-password">........</span>
+                </div>
+                <a href="#" class="setting-item__action open-update-overlay"
+                  >Update</a
+                >
+              </div>
+            </div>
+            <!-- Box content 3 -->
+            <h3 class="settings-box__title">Payment Details</h3>
+            <div class="settings-box">
+              <div class="setting-item">
+                <div class="setting-item__billing">
+                  <label>Billing Address</label>
+                  <span id="static-address"></span>
+                </div>
+                <a href="#" class="setting-item__action open-update-overlay"
+                  >Update</a
+                >
+              </div>
+            </div>
+          </div>
+          <!-- right section -->
+          <div class="settings-content__column">
+            <!-- Box content 4 -->
+            <h3 class="settings-box__title">Community Settings</h3>
+            <div class="settings-box">
+              <div class="setting-item">
+                <div class="setting-item__text">
+                  <label>Profile Setting</label>
+                  <span id="static-profile">Public</span>
+                </div>
+                <a href="#" class="setting-item__action open-update-overlay"
+                  >Update</a
+                >
+              </div>
+              <div class="setting-item">
+                <div class="setting-item__connect">
+                  <img src="/img/icons/fb.png" alt="" />
+                  <span>Facebook</span>
+                </div>
+                <a href="#" class="setting-item__button">Connect</a>
+              </div>
+              <div class="setting-item">
+                <div class="setting-item__connect">
+                  <img src="/img/icons/fb.png" alt="" />
+                  <span>Facebook</span>
+                </div>
+                <a href="#" class="setting-item__button">Connect</a>
+              </div>
+              <div class="setting-item">
+                <div class="setting-item__connect">
+                  <img src="/img/icons/fb.png" alt="" />
+                  <span>Facebook</span>
+                </div>
+                <a href="#" class="setting-item__button">Connect</a>
+              </div>
+            </div>
+            <!-- Box content 5 -->
+            <h3 class="settings-box__title">Preferences</h3>
+            <div class="settings-box">
+              <div class="setting-item">
+                <div class="setting-item__text">
+                  <label>Primary Language</label>
+                  <span id="static-language">English</span>
+                </div>
+                <a href="#" class="setting-item__action open-update-overlay"
+                  >Update</a
+                >
+              </div>
+              <div class="setting-item setting-item--toggle">
+                <div class="setting-item__text">
+                  <label for="autoplay-videos">Auto-play Videos</label>
+                </div>
+                <input
+                  type="checkbox"
+                  id="autoplay-videos"
+                  class="setting-item__toggle"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+    <!-- Pop up update Information -->
+    <div class="update-overlay">
+      <div class="update-overlay__content">
+        <h1>Update Information</h1>
+        <form id="update-email-form" novalidate>
+          <div class="form-group">
+            <label for="new-email">New Email Address:</label>
+            <input
+              type="email"
+              id="new-email"
+              placeholder="New Email Address"
+            />
+            <span class="form-error-message" id="new-email-error"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="new-password">New Password</label>
+            <input
+              type="password"
+              id="new-password"
+              placeholder="New Password"
+            />
+            <span class="form-error-message" id="new-password-error"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="new-address">New Billing Address:</label>
+            <input
+              type="text"
+              id="new-address"
+              placeholder="New Billing Address"
+            />
+            <span class="form-error-message" id="new-address-error"></span>
+          </div>
+
+          <label>Profile Setting:</label>
+          <div class="radio-group">
+            <input
+              type="radio"
+              id="profile-public"
+              name="profile_setting"
+              value="public"
+            />
+            <label for="profile-public" class="radio-group__label"
+              >Public</label
+            >
+            <input
+              type="radio"
+              id="profile-private"
+              name="profile_setting"
+              value="private"
+              checked
+            />
+            <label for="profile-private" class="radio-group__label"
+              >Private</label
+            >
+          </div>
+
+          <label for="language-select">Language:</label>
+          <select id="language-select" name="language">
+            <option value="en">English</option>
+            <option value="zh">China</option>
+            <option value="hi">India</option>
+          </select>
+
+          <div class="update-overlay__actions">
+            <button
+              type="button"
+              class="btn btn--cancel"
+              id="cancel-email-overlay"
+            >
+              Cancel
+            </button>
+
+            <button type="submit" class="btn btn--save">Save Changes</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!--footer-->
+
+    <script src="/scripts/setting.js"></script>
+  </body>
+</html>

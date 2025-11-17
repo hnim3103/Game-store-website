@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles/phone-account.css" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!--Box reset password-->
+    <div class="phone">
+      <!--Button mail and phone-->
+      <div class="phone__button-group">
+        <a href="email-account.html" class="phone__button phone__button--email">
+          <span>Email Account</span>
+        </a>
+
+        <a href="phone-account.html" class="phone__button phone__button--phone">
+          <span>Phone Account</span>
+        </a>
+      </div>
+
+      <!--Request reset passoword-->
+      <form class="phone__form" novalidate>
+        <div class="phone__label">
+          <label for="phone">Phone Number</label>
+        </div>
+
+        <div class="phone__input-group">
+          <div class="phone__input-wrapper">
+            <div class="phone__country-select">
+              <img
+                src="https://flagcdn.com/w40/vn.png"
+                alt="Vietnam flag"
+                class="phone__country-flag"
+              />
+              <span class="phone__country-code">+84</span>
+            </div>
+            <div class="phone__input-container">
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="Enter phone number"
+                class="phone__input"
+              />
+              <span class="phone__error" id="phone-error"></span>
+            </div>
+          </div>
+
+          <ul class="phone__country-list">
+            <li class="phone__country-item" data-code="+84" data-flag="vn">
+              <img
+                src="https://flagcdn.com/w40/vn.png"
+                class="phone__country-flag"
+              />
+              Vietnam (+84)
+            </li>
+            <li class="phone__country-item" data-code="+1" data-flag="us">
+              <img
+                src="https://flagcdn.com/w40/us.png"
+                class="phone__country-flag"
+              />
+              United States (+1)
+            </li>
+            <li class="phone__country-item" data-code="+81" data-flag="jp">
+              <img
+                src="https://flagcdn.com/w40/jp.png"
+                class="phone__country-flag"
+              />
+              Japan (+81)
+            </li>
+            <li class="phone__country-item" data-code="+82" data-flag="kr">
+              <img
+                src="https://flagcdn.com/w40/kr.png"
+                class="phone__country-flag"
+              />
+              South Korea (+82)
+            </li>
+            <li class="phone__country-item" data-code="+65" data-flag="sg">
+              <img
+                src="https://flagcdn.com/w40/sg.png"
+                class="phone__country-flag"
+              />
+              Singapore (+65)
+            </li>
+          </ul>
+        </div>
+        <br />
+        <button type="submit" class="phone__submit">
+          <span>RESET PASSWORD</span>
+        </button>
+
+        <a href="login.html" class="phone__return"><u>Return to Sign In</u></a>
+      </form>
+    </div>
+    <!--Java script-->
+    <script src="/scripts/phone-account.js"></script>
+  </body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Payment Options</title>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles/payment.css">
+    
+    <!-- Boxicons CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/img/logo.svg">
+
+    <script src="https://kit.fontawesome.com/546bf66050.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- Main Content -->
+    <main class="main">
+        
+        <div class="main__container">
+            <h1 class="payment__title">Payment Options</h1>
+            <!-- Payment Options Section -->
+            <section class="payment">
+                <!-- Payment Options -->
+                <div class="payment-option" data-payment="paypal">
+                    <div class="payment-option__header">
+                        <div class="payment-option__info">
+                            <h3 class="payment-option__name">PayPal</h3>
+                            <img src="/img/payment-icons/paypal.png" alt="PayPal" class="payment-option__logo">
+                        </div>
+                        <button class="payment-option__toggle" aria-label="Toggle payment option">
+                            <i class="bx bx-chevron-down payment-option__icon"></i>
+                        </button>
+                    </div>
+                    <div class="payment-option__content">
+                        <p class="payment-option__description">
+                            After clicking on 'Place order', you will be redirected to the page to finish your transaction.
+                        </p>
+                        <label class="payment-option__checkbox">
+                            <input type="checkbox" class="payment-option__checkbox-input">
+                            <span class="payment-option__checkbox-custom"></span>
+                            <span class="payment-option__checkbox-label">Save payment details for faster checkout next time</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="payment-option" data-payment="card">
+                    <div class="payment-option__header">
+                        <div class="payment-option__info">
+                            <h3 class="payment-option__name">Card</h3>
+                            <div class="payment-option__logos">
+                                <img src="/img/payment-icons/jcb.png" alt="JCB" class="payment-option__logo">
+                                <img src="/img/payment-icons/jcb.png" alt="UnionPay" class="payment-option__logo">
+                                <img src="/img/payment-icons/mastercard.png" alt="Maestro" class="payment-option__logo">
+                                <img src="/img/payment-icons/mastercard.png" alt="Mastercard" class="payment-option__logo">
+                            </div>
+                        </div>
+                        <button class="payment-option__toggle" aria-label="Toggle payment option">
+                            <i class="bx bx-chevron-down payment-option__icon"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="payment-option" data-payment="googlepay">
+                    <div class="payment-option__header">
+                        <div class="payment-option__info">
+                            <h3 class="payment-option__name">Google Pay</h3>
+                            <img src="/img/payment-icons/google-pay.png" alt="Google Pay" class="payment-option__logo">
+                        </div>
+                        <button class="payment-option__toggle" aria-label="Toggle payment option">
+                            <i class="bx bx-chevron-down payment-option__icon"></i>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Cart Summary Section -->
+            <aside class="summary">
+                <h2 class="summary__title">Cart Summary</h2>
+
+                <div class="summary__details">
+                    <div class="summary__row">
+                        <span class="summary__label summary__label--full-price">Full price</span>
+                        <span class="summary__value summary__value--full-price">$25.98</span>
+                    </div>
+                    
+                    <div class="summary__row summary__row--divider">
+                        <span class="summary__label">Your Discount</span>
+                        <span class="summary__value">-$15</span>
+                    </div>
+                    
+                    <div class="summary__row summary__row--save">
+                        <span class="summary__label">You Save</span>
+                        <span class="summary__value">-$15</span>
+                    </div>
+                    
+                    <div class="summary__row summary__row--total">
+                        <span class="summary__label">TOTAL</span>
+                        <span class="summary__value summary__value--total">$10.98</span>
+                    </div>
+                </div>
+
+                <button class="summary__button" id="placeOrderBtn">PLACE ORDER</button>
+
+                <div class="summary__terms">
+                    <p class="summary__terms-text">
+                        By purchasing a digital product, you are granted a license to use the product on the specified DRM platform.
+                    </p>
+                    <p class="summary__terms-text">
+                        For more information, please see our <a href="#" class="summary__link">terms and conditions.</a>
+                    </p>
+                    <p class="summary__terms-text">
+                        By clicking Place Order, you accept our <a href="#" class="summary__link">refund policy.</a>
+                    </p>
+                </div>
+
+                <div class="summary__payment">
+                    <p class="summary__payment-title">We accept</p>
+                    <div class="summary__payment-icons">
+                        <img src="/img/payment-icons/paypal.png" alt="PayPal" class="summary__payment-icon">
+                        <img src="/img/payment-icons/jcb.png" alt="JCB" class="summary__payment-icon">
+                        <img src="/img/payment-icons/mastercard.png" alt="Mastercard" class="summary__payment-icon">
+                        <img src="/img/payment-icons/google-pay.png" alt="Google Pay" class="summary__payment-icon">
+                        <img src="/img/payment-icons/paypal.png" alt="PayPal" class="summary__payment-icon">
+                        <img src="/img/payment-icons/google-pay.png" alt="Google Pay" class="summary__payment-icon">
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <!-- JavaScript -->
+     <script src="/scripts/cart-payment.js"></script>
+     <script src="/scripts/include-footer.js" defer></script>
+</body>
+</html>

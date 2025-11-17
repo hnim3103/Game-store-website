@@ -1,32 +1,71 @@
-document.getElementsByClassName("login-form")[0].addEventListener
-("submit", function(event) 
-    {
-        event.preventDefault(); // Prevent the form from submitting immediately
+document
+  .querySelector(".login__form")
+  .addEventListener("submit", function (event) {
+    event.preventDefault();
 
+    // Get user input values
+    const email = document.getElementById("email");
+    const password = document.getElementById("password");
+    const emailError = document.getElementById("email-error");
+    const passwordError = document.getElementById("password-error");
 
-        // Get user input values
-        const emailInput = document.getElementById("email");
-        const passwordInput = document.getElementById("password");
+    // Get labels
+    const emailLabel = email
+      .closest(".login__input-group")
+      .querySelector(".login__label");
+    const passwordLabel = password
+      .closest(".login__input-group")
+      .querySelector(".login__label");
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
+    let valid = true;
 
-        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailPattern.test(emailInput.value.trim())) {
-            alert("Email không hợp lệ!");
-            emailInput.classList.add("error");
-            emailInput.focus();
-            return;
-        }
+    // Clear previous errors
+    [email, password].forEach((i) => i.classList.remove("error"));
+    [emailLabel, passwordLabel].forEach((i) => i.classList.remove("error"));
+    [emailError, passwordError].forEach((i) => {
+      i.classList.remove("show");
+      i.textContent = "";
+    });
 
-        if (passwordInput.value.length < 6) {
-            alert("Mật khẩu phải có ít nhất 6 ký tự!");
-            passwordInput.classList.add("error");
-            passwordInput.focus();
-            return;
-        }
-
-        // If all validations pass
-        alert("Đăng nhập thành công!");
-        window.location.href = "index.html";
-        
+    // Validation logic remains the same
+    if (!emailPattern.test(email.value.trim())) {
+      email.classList.add("error");
+      emailLabel.classList.add("error");
+      emailError.textContent = "Invalid Email";
+      emailError.classList.add("show");
+      valid = false;
     }
-);
+
+    if (password.value.length < 6) {
+      password.classList.add("error");
+      passwordLabel.classList.add("error");
+      passwordError.textContent = "Password must be at least 6 characters";
+      passwordError.classList.add("show");
+      valid = false;
+    }
+
+    if (valid) {
+      window.parent.postMessage("login-success", "*");
+    }
+  });
+
+// Fix event listener
+const form = document.querySelector(".login__form");
+form.addEventListener("input", (e) => {
+  if (e.target.classList.contains("error")) {
+    e.target.classList.remove("error");
+    const label = e.target
+      .closest(".login__input-group")
+      .querySelector(".login__label");
+    const errorMessage = e.target
+      .closest(".login__input-wrapper")
+      .querySelector(".login__error");
+
+    if (label) label.classList.remove("error");
+    if (errorMessage) {
+      errorMessage.classList.remove("show");
+      errorMessage.textContent = "";
+    }
+  }
+});

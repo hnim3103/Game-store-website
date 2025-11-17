@@ -1,64 +1,131 @@
+document
+  .querySelector(".register__form")
+  .addEventListener("submit", function (event) {
+    event.preventDefault();
 
-    document.getElementsByClassName("register-form")[0].addEventListener("submit", function(event) {
-    event.preventDefault(); // Prevent the form from submitting immediately
+    // Get user input values
+    const name = document.getElementById("name");
+    const email = document.getElementById("email");
+    const password = document.getElementById("password");
+    const dob = document.getElementById("dob");
+    const terms = document.getElementById("terms");
+    const promotions = document.getElementById("promotions");
+    const nameError = document.getElementById("name-error");
+    const emailError = document.getElementById("email-error");
+    const passwordError = document.getElementById("password-error");
+    const dobError = document.getElementById("date-error");
+    const termsError = document.getElementById("terms-error");
+    const promotionsError = document.getElementById("promotions-error");
 
-    // get user input values
-    const nameInput = document.getElementById("name");
-    const emailInput = document.getElementById("email");
-    const passwordInput = document.getElementById("password");
-    const dobInput = document.getElementById("dob");
-    const termsInput = document.getElementById("terms");
-    const promotionsInput = document.getElementById("promotions");
+    // Get labels
+    const nameLabel = name
+      .closest(".register__input-group")
+      .querySelector(".register__label");
+    const emailLabel = email
+      .closest(".register__input-group")
+      .querySelector(".register__label");
+    const passwordLabel = password
+      .closest(".register__input-group")
+      .querySelector(".register__label");
+    const dobLabel = dob
+      .closest(".register__input-group")
+      .querySelector(".register__label");
 
-    // Check if inputs are valid
-    if (nameInput.value.trim().length < 5) {
-        alert("Username phải có ít nhất 5 ký tự!");
-        nameInput.classList.add("error");
-        nameInput.focus();
-        return;
+    let valid = true;
+
+    // Clear previous errors
+    [name, email, password, dob, terms].forEach((i) =>
+      i.classList.remove("error")
+    );
+    [nameLabel, emailLabel, passwordLabel, dobLabel].forEach((i) =>
+      i.classList.remove("error")
+    );
+    [nameError, emailError, passwordError, dobError, termsError].forEach(
+      (i) => {
+        i.classList.remove("show");
+        i.textContent = "";
+      }
+    );
+
+    // Name validation
+    if (name.value.trim().length < 4) {
+      name.classList.add("error");
+      nameLabel.classList.add("error");
+      nameError.textContent = "Username must be at least 2 characters";
+      nameError.classList.add("show");
+      valid = false;
     }
 
+    // Email validation
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailPattern.test(emailInput.value.trim())) {
-        alert("Email không hợp lệ!");
-        emailInput.classList.add("error");
-        emailInput.focus();
-        return;
+    if (!emailPattern.test(email.value.trim())) {
+      email.classList.add("error");
+      emailLabel.classList.add("error");
+      emailError.textContent = "Invalid Email";
+      emailError.classList.add("show");
+      valid = false;
     }
 
-    if (passwordInput.value.length < 6) {
-        alert("Mật khẩu phải có ít nhất 6 ký tự!");
-        passwordInput.classList.add("error");
-        passwordInput.focus();
-        return;
+    // Password validation
+    const passwordPattern =
+      /^(?=.*[A-Z])(?=.*[!@#$%^&*()_+{}\[\]:;<>,.?~\\/-]).{6,}$/;
+    if (!passwordPattern.test(password.value.trim())) {
+      password.classList.add("error");
+      passwordLabel.classList.add("error");
+      passwordError.textContent =
+        "Password must contain at least 6 characters, 1 uppercase letter, and 1 special character";
+      passwordError.classList.add("show");
+      valid = false;
     }
+
+    // Date of birth validation
     const dobPattern = /^(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[0-2])\/\d{4}$/;
-    if (!dobInput.value) {
-        alert("Ngày sinh không hợp lệ. Vui lòng chọn ngày sinh theo định dạng DD/MM/YYYY.");
-        dobInput.classList.add("error");
-        dobInput.focus();
-        return;
-    }
-    if (!dobPattern.test(dobInput.value.trim())) {
-        alert("Ngày sinh không hợp lệ. Vui lòng nhập theo định dạng DD/MM/YYYY.");
-        dobInput.classList.add("error");
-        dobInput.focus();
-        return;
+    if (!dobPattern.test(dob.value.trim())) {
+      dob.classList.add("error");
+      dobLabel.classList.add("error");
+      dobError.textContent = "Invalid date format. Please use DD/MM/YYYY";
+      dobError.classList.add("show");
+      valid = false;
     }
 
-    if (!termsInput.checked) {
-        alert("Bạn phải đồng ý với điều khoản trước khi đăng ký!");
-        termsInput.focus();
-        return;
+    // Terms validation
+    if (!terms.checked) {
+      terms.classList.add("error");
+      termsError.textContent = "You must accept the terms and conditions";
+      termsError.classList.add("show");
+      valid = false;
     }
 
-     if (!promotionsInput.checked) {
-        alert("Bạn phải đồng ý với điều khoản trước khi đăng ký!");
-        termsInput.focus();
-        return;
+    // Promotions validation
+    if (!promotions.checked) {
+      promotions.classList.add("error");
+      promotionsError.textContent = "You must accept the terms and conditions";
+      promotionsError.classList.add("show");
+      valid = false;
     }
 
-    // if all validations pass
-    alert("Đăng ký thành công!");
-    window.location.href = "login.html";
-    });
+    // If all validations pass
+    if (valid) {
+      window.location.href = "login.html";
+    }
+  });
+
+// Remove error on input
+const form = document.querySelector(".register__form");
+form.addEventListener("input", (e) => {
+  if (e.target.classList.contains("error")) {
+    e.target.classList.remove("error");
+    const label = e.target
+      .closest(".register__input-group")
+      .querySelector(".register__label");
+    const errorMessage = e.target
+      .closest(".register__input-wrapper")
+      .querySelector(".register__error");
+
+    if (label) label.classList.remove("error");
+    if (errorMessage) {
+      errorMessage.classList.remove("show");
+      errorMessage.textContent = "";
+    }
+  }
+});
