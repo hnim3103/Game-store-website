@@ -254,3 +254,23 @@ body {
   font-size: clamp(14px, 1.2vw, 16px);
   min-width: 32px; 
 }
+
+.category__collabsible{
+  border: 1px solid red;
+  position: absolute;
+  width: 90%;
+  display: flex;
+  left: 5%;
+  margin: auto;
+  margin-top: 30px;
+}
+
+.category__selections{
+  border: 1px solid blue;
+  width: 30%;
+}
+
+.category__game-container{
+  border: 1px solid yellow;
+  width: 70%;
+}
