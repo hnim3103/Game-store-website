@@ -71,8 +71,8 @@ const Auth = {
           console.log("User confirmed logout");
           this.logout();
 
-          if (window.location.pathname !== "/html/homepage.html") {
-            window.location.href = "/html/homepage.html";
+          if (window.location.pathname !== "/index.html") {
+            window.location.href = "/index.html";
           } else {
             console.log("Reloading homepage");
             window.location.reload();

@@ -26,7 +26,7 @@ function animateBreath(el) {
 
 // Chuyển sang trang homepage
 function exitLoading() {
-  setTimeout(() => (location.href = '../../html/homepage.html'), 1000);
+  setTimeout(() => (location.href = '../../index.html'), 1000);
 }
 
 // Khi trang sẵn sàng

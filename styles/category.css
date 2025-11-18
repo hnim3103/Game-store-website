@@ -456,14 +456,22 @@ input[type="range"]::-webkit-slider-thumb {
   border-radius: 5px;
 }
 
+.game-card__image{
+  overflow: hidden;
+  height: 150px;
+}
+
 .game-card img{
   width: 100%;
+  height: 100%;
   border-radius:5px 5px 0px 0px;
   vertical-align: middle;
+  object-fit: fill;
 }
 
 .game-card__content{
   background-color: var(--black-color);
+  z-index: 20;
 }
 
 .game-card__price-wrapper{
