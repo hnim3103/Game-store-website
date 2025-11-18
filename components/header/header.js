@@ -158,3 +158,17 @@ window.addEventListener("register-success", () => {
 window.addEventListener("password-reset-success", () => {
   showPopup("login");
 });
+
+const nameBtn = document.getElementById("userBtn");
+const userMenu = document.getElementById("userMenu");
+
+nameBtn.addEventListener("click", function (e) {
+  e.stopPropagation();
+  userMenu.classList.toggle("show");
+});
+
+document.addEventListener("click", function (e) {
+  if (!userMenu.contains(e.target) && !nameBtn.contains(e.target)) {
+    userMenu.classList.remove("show");
+  }
+});

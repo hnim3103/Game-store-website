@@ -41,16 +41,36 @@
 
       <div class="header__auth">
         <a href="#" class="header__signin">Sign In</a>
-        <div class="header__user" style="display: none">
-          <a href="/html/setting.html">
-            <img
-              src="/img/icons/Ellipse 2.svg"
-              alt="Avatar"
-              class="header__avatar"
-            />
-          </a>
-          <span class="header__username"></span>
-          <button class="header__logout" style="display: none">Logout</button>
+        <div class="header__user" id="userBtn" style="display: none">
+          <img
+            src="/img/icons/Ellipse 2.svg"
+            alt="Avatar"
+            class="header__avatar"
+          />
+          <span class="header__username"> </span>
+
+          <ul class="profile" id="userMenu">
+            <li class="profile__header">
+              <img
+                src="/img/icons/Ellipse 2.svg"
+                alt="Avatar"
+                class="header__avatar"
+              />
+              <div class="profile__info">
+                <span class="info__label">Your Account</span>
+                <span class="header__username"></span>
+              </div>
+            </li>
+
+            <li><a href="/html/setting.html">Account Setting</a></li>
+            <li><a href="/html/wishlist.html">Wishlist</a></li>
+            <li><a href="/html/purchases.html">Your Purchases</a></li>
+            <li><a href="/html/wallet.html">Your Wallet</a></li>
+
+            <li>
+              <a class="header__logout">Sign out</a>
+            </li>
+          </ul>
         </div>
       </div>
 

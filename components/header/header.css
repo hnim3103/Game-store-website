@@ -296,7 +296,6 @@ body {
 
 /* CHỈ HIỆN BOX NÀO CÓ CLASS .ACTIVE */
 .popup-box.active {
-  /* Dùng flex để giữ nguyên cấu trúc .login */
   display: flex;
   flex-direction: column;
   opacity: 1;
@@ -305,7 +304,7 @@ body {
 
 /* AVT */
 .header__user {
-  display: none; /* Hidden by default */
+  display: none;
   align-items: center;
   gap: 10px;
   position: relative;
@@ -321,7 +320,7 @@ body {
 }
 
 .header__username {
-  color: #fff;
+  color: var(--green);
   font-size: 14px;
   font-weight: 500;
   max-width: 150px;
@@ -330,24 +329,102 @@ body {
   white-space: nowrap;
 }
 
-.header__logout {
-  display: none; /* Hidden by default */
-  background: #ff4444;
-  color: #fff;
-  border: none;
-  padding: 6px 12px;
-  border-radius: 4px;
-  font-size: 12px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.header__logout:hover {
-  background: #cc0000;
-}
 .header__auth {
   display: flex;
   align-items: center;
   gap: 10px;
+}
+.header__username {
+  cursor: pointer;
+}
+
+#userBtn {
+  position: relative;
+}
+
+.profile {
+  position: absolute;
+  top: 120%;
+  left: 0;
+  background-color: #0f242c;
+  z-index: 10;
+  list-style: none;
+  padding: 15px;
+  border-radius: 8px;
+  width: 190px;
+  display: none;
+}
+
+.profile.show {
+  display: block;
+}
+
+.profile li {
+  padding: 15px 0;
+  border-bottom: 1px solid #009928;
+}
+
+.profile li:last-child {
+  border-bottom: none;
+  padding-bottom: 15px;
+}
+
+.profile li a,
+.header__logout {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+  display: block;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  text-align: left;
+  padding: 0 8px;
+}
+
+.profile__header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: -10px;
+}
+
+.header__avatar {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: #fff;
+  padding: 2px;
+}
+
+.profile__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.info__label {
+  font-size: 13px;
+  color: var(--text);
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.header__username {
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.profile li:hover {
+  background-color: #009928;
+  cursor: pointer;
+}
+.profile li:first-child:hover {
+  background-color: #0f242c;
+  cursor: default;
 }
