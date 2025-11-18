@@ -53,11 +53,11 @@ h1 {
   Slider Section
 --------------------------------------------------- */
 .slider {
-  margin-top: 20px;
   height: 550px;
   position: relative;
   overflow: hidden;
   display: flex;
+  margin-top: 25px;
 }
 
 .slider__card {
@@ -421,7 +421,7 @@ h1 {
   display: flex;
   justify-content: left;
   background-color: var(--super-dark-green-color);
-  height: 6rem;
+  height: 5rem;
   padding-left: 1.5rem;
   align-items: center;
 }
@@ -468,7 +468,7 @@ h1 {
 }
 
 .game-card--large .game-card__price-wrapper {
-  height: 9rem;
+  height: 6.7rem;
   font-size: 3rem;
 }
 
