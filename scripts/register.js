@@ -4,18 +4,18 @@ if (registerForm) {
     event.preventDefault();
 
     // Get user input values
-    const name = document.getElementById("name");
-    const email = document.getElementById("email");
-    const password = document.getElementById("password");
-    const dob = document.getElementById("dob");
-    const terms = document.getElementById("terms");
-    const promotions = document.getElementById("promotions");
-    const nameError = document.getElementById("name-error");
-    const emailError = document.getElementById("email-error");
-    const passwordError = document.getElementById("password-error");
-    const dobError = document.getElementById("date-error");
-    const termsError = document.getElementById("terms-error");
-    const promotionsError = document.getElementById("promotions-error");
+    const name = registerForm.querySelector("#name");
+    const email = registerForm.querySelector("#email");
+    const password = registerForm.querySelector("#password");
+    const dob = registerForm.querySelector("#dob");
+    const terms = registerForm.querySelector("#terms");
+    const promotions = registerForm.querySelector("#promotions");
+    const nameError = registerForm.querySelector("#name-error");
+    const emailError = registerForm.querySelector("#email-error");
+    const passwordError = registerForm.querySelector("#password-error");
+    const dobError = registerForm.querySelector("#date-error");
+    const termsError = registerForm.querySelector("#terms-error");
+    const promotionsError = registerForm.querySelector("#promotions-error");
 
     // Get labels
     const nameLabel = name
@@ -103,7 +103,9 @@ if (registerForm) {
 
     // If all validations pass
     if (valid) {
-      window.dispatchEvent(new CustomEvent("register-success"));
+      window.dispatchEvent(
+        new CustomEvent("register-success", { bubbles: true })
+      );
     }
   });
 

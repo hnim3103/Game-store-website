@@ -48,13 +48,18 @@ if (loginForm) {
     }
 
     if (valid) {
-      const emailValue = email.value.trim();
-      // Save email on local storage
-      localStorage.setItem("userEmail", emailValue);
-      setLoggedIn(true);
-      updateHeaderAuth();
-      closePopup();
+      if (window.Auth) {
+        window.Auth.setUser(email.value.trim());
+      } else {
+        // Fallback if Auth not loaded
+        localStorage.setItem("loggedInUserEmail", email.value.trim());
+      }
+
+      // Dispatch success event
       window.dispatchEvent(new CustomEvent("login-success", { bubbles: true }));
+
+      // Reset form
+      loginForm.reset();
     }
   });
 

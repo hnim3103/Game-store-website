@@ -1,3 +1,5 @@
+/* === UPDATED header.js WITH AUTH INTEGRATION === */
+
 // Search box focus effects
 const searchInput = document.querySelector(".header__search-input");
 const searchBox = document.querySelector(".header__search");
@@ -65,223 +67,94 @@ if (toggle && nav && icon) {
   });
 }
 
-// ==================== POPUP OVERLAY ====================
-// Create overlay
-let overlay = document.getElementById("global-popup-overlay");
+// ===== POPUP MANAGEMENT =====
+const overlay = document.querySelector(".gsw-popup-overlay");
+const allPopupBoxes = document.querySelectorAll(".popup-box");
+const profileBtn = document.querySelector(".header__signin");
+const cartButton = document.querySelector(".header__cart");
 
-if (!overlay) {
-  overlay = document.createElement("div");
-  overlay.className = "gsw-popup-overlay";
-  overlay.id = "global-popup-overlay";
-  document.body.appendChild(overlay);
-} else {
-  overlay.className = "gsw-popup-overlay";
-}
+// Hàm HIỆN 1 box cụ thể
+const showPopup = (targetData) => {
+  // Ẩn tất cả các box khác
+  allPopupBoxes.forEach((box) => {
+    box.classList.remove("active");
+  });
 
-// ==================== CLOSE POPUP ====================
+  // search và hiện pop up mong muốn
+  const targetBox = document.querySelector(
+    `.popup-box[data-popup="${targetData}"]`
+  );
+  if (targetBox) {
+    targetBox.classList.add("active");
+    overlay.classList.add("active");
+  } else {
+    console.error(`Không tìm thấy popup box: ${targetData}`);
+  }
+};
+
 const closePopup = () => {
   overlay.classList.remove("active");
-  setTimeout(() => {
-    overlay.innerHTML = "";
-    document.getElementById("dynamic-popup-script")?.remove();
-    document.getElementById("dynamic-popup-css")?.remove();
-  }, 300);
+  allPopupBoxes.forEach((box) => {
+    box.classList.remove("active");
+  });
 };
 
-// ==================== OPEN POPUP ====================
-const openPopup = (url, scriptSrc, cssSrc, contentSelector) => {
-  document.getElementById("dynamic-popup-css")?.remove();
+// ===== CART ACCESS CONTROL (UPDATED) =====
+if (cartButton) {
+  cartButton.addEventListener("click", (e) => {
+    e.preventDefault();
+    e.stopPropagation();
 
-  const link = document.createElement("link");
-  link.id = "dynamic-popup-css";
-  link.rel = "stylesheet";
-  link.href = cssSrc;
-  document.head.appendChild(link);
+    const isLoggedIn = window.Auth
+      ? window.Auth.isLoggedIn()
+      : localStorage.getItem("loggedInUserEmail");
 
-  fetch(url)
-    .then((response) => response.text())
-    .then((html) => {
-      const parser = new DOMParser();
-      const doc = parser.parseFromString(html, "text/html");
-      const content = doc.querySelector(contentSelector);
+    if (!isLoggedIn) {
+      alert("You need to login to view cart!");
+      showPopup("login");
+    } else {
+      // Navigate to cart only if logged in
+      window.location.href = "/html/cart.html";
+    }
+  });
+}
 
-      if (content) {
-        overlay.innerHTML = "";
-        overlay.appendChild(content);
-        document.getElementById("dynamic-popup-script")?.remove();
-        const script = document.createElement("script");
-        script.id = "dynamic-popup-script";
-        script.src = scriptSrc;
-        script.defer = true;
-        document.body.appendChild(script);
-        overlay.classList.add("active");
-      } else {
-        console.error(`Không tìm thấy "${contentSelector}" trong ${url}`);
-      }
-    })
-    .catch((err) => console.error(`Lỗi tải ${url}:`, err));
-};
-
-// ==================== EVENT: SIGN IN BUTTON ====================
-const profileBtn = document.querySelector(".header__signin");
+// ===== SIGN IN BUTTON =====
 if (profileBtn) {
   profileBtn.addEventListener("click", (e) => {
     e.preventDefault();
-    openPopup(
-      "/html/login.html",
-      "/scripts/login.js",
-      "/styles/login.css",
-      ".login"
-    );
+    showPopup("login");
   });
 }
 
-// ==================== EVENT: CLICK BÊN TRONG OVERLAY ====================
+// ===== OVERLAY CLICK HANDLING =====
 overlay.addEventListener("click", (e) => {
-  // login to register
-  if (e.target.closest(".login__button--register")) {
-    e.preventDefault();
-    openPopup(
-      "/html/register.html",
-      "/scripts/register.js",
-      "/styles/register.css",
-      ".register"
-    );
-  }
-  // Register to login
-  else if (e.target.closest(".register__button--signin")) {
-    e.preventDefault();
-    openPopup(
-      "/html/login.html",
-      "/scripts/login.js",
-      "/styles/login.css",
-      ".login"
-    );
-  }
-  // Sign in to Forgot Password
-  else if (e.target.closest(".login__forgot-password")) {
-    e.preventDefault();
-    openPopup(
-      "/html/email-account.html",
-      "/scripts/email-account.js",
-      "/styles/email-account.css",
-      ".email"
-    );
-  }
-  // Email account to Phone account
-  else if (e.target.closest(".email__button--phone")) {
-    e.preventDefault();
-    openPopup(
-      "/html/phone-account.html",
-      "/scripts/phone-account.js",
-      "/styles/phone-account.css",
-      ".phone"
-    );
-  }
-  // Phone account to Email account
-  else if (e.target.closest(".phone__button--email")) {
-    e.preventDefault();
-    openPopup(
-      "/html/email-account.html",
-      "/scripts/email-account.js",
-      "/styles/email-account.css",
-      ".email"
-    );
-  }
-  // Return login
-  else if (
-    e.target.closest(".email__return") ||
-    e.target.closest(".phone__return")
-  ) {
-    e.preventDefault();
-    openPopup(
-      "/html/login.html",
-      "/scripts/login.js",
-      "/styles/login.css",
-      ".login"
-    );
-  }
-  // Close overlay
-  else if (e.target === overlay) {
+  if (e.target === overlay) {
     closePopup();
+    return;
+  }
+
+  const navLink = e.target.closest(".popup-nav");
+  if (navLink) {
+    e.preventDefault();
+    const target = navLink.dataset.target;
+    showPopup(target);
   }
 });
 
-// ==================== EVENT: WINDOW EVENTS ====================
+// ===== EVENT LISTENERS FOR AUTH EVENTS =====
 window.addEventListener("login-success", () => {
   closePopup();
+  // Update UI using Auth manager if available
+  if (window.Auth) {
+    window.Auth.updateUI();
+  }
 });
 
 window.addEventListener("register-success", () => {
-  openPopup(
-    "/html/login.html",
-    "/scripts/login.js",
-    "/styles/login.css",
-    ".login"
-  );
+  showPopup("login");
 });
 
 window.addEventListener("password-reset-success", () => {
-  openPopup(
-    "/html/login.html",
-    "/scripts/login.js",
-    "/styles/login.css",
-    ".login"
-  );
-});
-// Logout
-window.setLoggedIn = (value) => {
-  localStorage.setItem("isLoggedIn", value ? "true" : "false");
-};
-
-window.isLoggedIn = () => localStorage.getItem("isLoggedIn") === "true";
-
-window.updateHeaderAuth = () => {
-  const signinBtn = document.querySelector(".header__signin");
-  const userBox = document.querySelector(".header__user");
-  const userNameEl = document.querySelector(".header__username");
-  const logoutBtn = document.querySelector(".header__logout");
-
-  if (window.isLoggedIn()) {
-    signinBtn.style.display = "none";
-    userBox.style.display = "flex";
-
-    if (userNameEl) {
-      userNameEl.textContent = localStorage.getItem("userEmail") || "User";
-      if (userNameEl && logoutBtn) {
-        // toggle logout menu
-        userNameEl.addEventListener("click", () => {
-          logoutBtn.style.display =
-            logoutBtn.style.display === "none" ? "block" : "none";
-        });
-
-        // click logout
-        logoutBtn.addEventListener("click", () => {
-          setLoggedIn(false);
-          localStorage.removeItem("userEmail");
-          updateHeaderAuth();
-        });
-      }
-    }
-  } else {
-    signinBtn.style.display = "inline-block";
-    userBox.style.display = "none";
-    logoutBtn.style.display = "none";
-  }
-};
-
-updateHeaderAuth();
-//Cart
-document.querySelectorAll(".header__cart").forEach((btn) => {
-  btn.addEventListener("click", (e) => {
-    if (!isLoggedIn()) {
-      e.preventDefault();
-      openPopup(
-        "/html/login.html",
-        "/scripts/login.js",
-        "/styles/login.css",
-        ".login"
-      );
-    }
-  });
+  showPopup("login");
 });

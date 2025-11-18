@@ -76,4 +76,17 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
+  // Sign-Out
+  const signOutButton = document.querySelector(".profile-bar__signout");
+  if (signOutButton) {
+    signOutButton.addEventListener("click", (e) => {
+      e.preventDefault();
+
+      // Xóa đúng cái Key đã lưu
+      localStorage.removeItem("loggedInUserEmail"); // <-- SỬA DÒNG NÀY
+
+      alert("You have logged out.");
+      window.location.href = "/html/homepage.html";
+    });
+  }
 });

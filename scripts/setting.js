@@ -127,7 +127,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // Xóa đúng cái Key đã lưu
       localStorage.removeItem("loggedInUserEmail"); // <-- SỬA DÒNG NÀY
 
-      alert("Bạn đã đăng xuất.");
+      alert("You have logged out.");
       window.location.href = "/html/homepage.html";
     });
   }

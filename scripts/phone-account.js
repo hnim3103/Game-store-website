@@ -1,8 +1,10 @@
 // Reset Password Form Handling
 const resetForm = document.querySelector(".phone__form");
-const phoneInput = document.getElementById("phone");
-const phoneError = document.getElementById("phone-error");
+
 if (resetForm) {
+  const phoneInput = resetForm.querySelector("#phone");
+  const phoneError = resetForm.querySelector("#phone-error");
+
   resetForm.addEventListener("submit", (e) => {
     e.preventDefault();
 
@@ -21,12 +23,10 @@ if (resetForm) {
       return;
     }
 
-    // If valid, redirect to login page
-    if (valid) {
-      window.dispatchEvent(
-        new CustomEvent("password-reset-success", { bubbles: true })
-      );
-    }
+    // If valid, dispatch event (removed undefined 'valid' variable)
+    window.dispatchEvent(
+      new CustomEvent("password-reset-success", { bubbles: true })
+    );
   });
 
   // Clear error when user starts typing
@@ -39,28 +39,31 @@ if (resetForm) {
   });
 
   // Country Dropdown Handling
-  const countrySelect = document.querySelector(".phone__country-select");
-  const countryList = document.querySelector(".phone__country-list");
-  const codeSpan = countrySelect.querySelector(".phone__country-code");
-  const flagImg = countrySelect.querySelector(".phone__country-flag");
+  const countrySelect = resetForm.querySelector(".phone__country-select");
+  const countryList = resetForm.querySelector(".phone__country-list");
+  const codeSpan = countrySelect?.querySelector(".phone__country-code");
+  const flagImg = countrySelect?.querySelector(".phone__country-flag");
 
-  // Toggle dropdown visibility
-  countrySelect.addEventListener("click", (e) => {
-    countryList.classList.toggle("show");
-    e.stopPropagation();
-  });
+  if (countrySelect && countryList) {
+    // Toggle dropdown visibility
+    countrySelect.addEventListener("click", (e) => {
+      countryList.classList.toggle("show");
+      e.stopPropagation();
+    });
 
-  // Select a country
-  countryList.querySelectorAll(".phone__country-item").forEach((li) => {
-    li.addEventListener("click", () => {
-      codeSpan.textContent = li.dataset.code;
-      flagImg.src = `https://flagcdn.com/w40/${li.dataset.flag}.png`;
+    // Select a country
+    countryList.querySelectorAll(".phone__country-item").forEach((li) => {
+      li.addEventListener("click", () => {
+        if (codeSpan) codeSpan.textContent = li.dataset.code;
+        if (flagImg)
+          flagImg.src = `https://flagcdn.com/w40/${li.dataset.flag}.png`;
+        countryList.classList.remove("show");
+      });
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener("click", () => {
       countryList.classList.remove("show");
     });
-  });
-
-  // Close dropdown when clicking outside
-  document.addEventListener("click", () => {
-    countryList.classList.remove("show");
-  });
+  }
 }

@@ -1,576 +1,892 @@
 <!DOCTYPE html>
 <html lang="vi">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>UNCHARTED: Legacy Of Thieves Collection</title>
-    
+    <script src="/scripts/include-header.js" defer></script>
     <!-- Styles -->
-    <link rel="stylesheet" href="/styles/game-infor.css">
-    
+    <link rel="stylesheet" href="/styles/game-infor.css" />
+    <link rel="stylesheet" href="/styles/login.css" />
+    <link rel="stylesheet" href="/styles/register.css" />
+    <link rel="stylesheet" href="/styles/email-account.css" />
+    <link rel="stylesheet" href="/styles/phone-account.css" />
     <!-- Boxicons CDN -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
-    
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"
+    />
+
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap" rel="stylesheet">
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="/img/logo.svg">
+    <link rel="icon" type="image/x-icon" href="/img/logo.svg" />
 
     <!-- Font Awesome -->
-    <script src="https://kit.fontawesome.com/546bf66050.js" crossorigin="anonymous"></script>
-</head>
-<body>
+    <script
+      src="https://kit.fontawesome.com/546bf66050.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
     <div class="main">
-        <!-- Main Content -->
-        <div class="game-content">
-            <!-- Gallery Section -->
-            <section class="game-details">
-                <h1 class="game-title">UNCHARTED: Legacy Of Thieves Collection</h1>
-                
-                <div class="game-rating-bar">
-                    <div class="rating">
-                        <span class="rating__score">9.0</span>
-                        <div class="rating__stars">
-                            <i class="fa-solid fa-star rating__star"></i>
-                            <i class="fa-solid fa-star rating__star"></i>
-                            <i class="fa-solid fa-star rating__star"></i>
-                            <i class="fa-solid fa-star rating__star"></i>
-                            <i class="fa-solid fa-star rating__star"></i>
-                        </div>
-                    </div>
-                    <span class="game-rating-bar__rate-text">RATE THIS GAME</span>
-                    <span class="game-rating-bar__separator">|</span>
-                    <span class="game-rating-bar__release">RELEASED: OCT 19 2022</span>
-                    <img class="game-rating-bar__social" src="/img/game-info/facebook-icon.png" alt="Facebook">
-                </div>
+      <!-- Main Content -->
+      <div class="game-content">
+        <!-- Gallery Section -->
+        <section class="game-details">
+          <h1 class="game-title">UNCHARTED: Legacy Of Thieves Collection</h1>
 
-                <div class="gallery">
-                    <div class="gallery__main">
-                        <button type="button" class="gallery__nav gallery__nav--prev" aria-label="Previous image">
-                            <i class="fa-solid fa-chevron-left"></i>
-                        </button>
-                        <iframe  
-                            class="gallery__main-video"
-                            src="https://www.youtube.com/embed/xeMA3O9pfiY?autoplay=1&mute=0&controls=1"
-                            frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen>
-                        </iframe>
-                        <img src="/img/game-info/gamess1.jpg" alt="Game Screenshot" class="gallery__main-image is-hidden">
-                        
-                        <button type="button" class="gallery__nav gallery__nav--next" aria-label="Next image">
-                            <i class="fa-solid fa-chevron-right"></i>
-                        </button>
-                    </div>
-                    <div class="gallery__thumbnails-container">
-                        <div class="gallery__thumbnails">
-                            <div class="gallery__thumbnail-wrapper gallery__thumbnail--video gallery__thumbnail--active" 
-                                 data-type="video" 
-                                 data-large-src="https://www.youtube.com/embed/xeMA3O9pfiY">
-                                <img 
-                                    src="/img/game-info/thumb-vid.jpg"
-                                    alt="Thumbnail Video" 
-                                    class="gallery__thumbnail">
-                                <div class="gallery__thumbnail-play-icon">
-                                    <i class="fa-solid fa-play"></i>
-                                </div>
-                            </div>
-                            <div class="gallery__thumbnail-wrapper" 
-                                 data-type="image" 
-                                 data-large-src="/img/game-info/gamess1.jpg">
-                                <img src="/img/game-info/thumb1.jpg" alt="Thumbnail 1" class="gallery__thumbnail">
-                            </div>
-                            <div class="gallery__thumbnail-wrapper" 
-                                 data-type="image" 
-                                 data-large-src="/img/game-info/gamess2.jpg">
-                                <img src="/img/game-info/thumb2.jpg" alt="Thumbnail 2" class="gallery__thumbnail">
-                            </div>
-                            <div class="gallery__thumbnail-wrapper" 
-                                 data-type="image" 
-                                 data-large-src="/img/game-info/gamess3.jpg">
-                                <img src="/img/game-info/thumb3.jpg" alt="Thumbnail 3" class="gallery__thumbnail">
-                            </div>
-                            <div class="gallery__thumbnail-wrapper" 
-                                 data-type="image" 
-                                 data-large-src="/img/game-info/gamess4.jpg">
-                                <img src="/img/game-info/thumb4.jpg" alt="Thumbnail 4" class="gallery__thumbnail">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="gallery__dots"></div>
-                </div>
-            </section>
-            
-            <!-- Sidebar -->
-            <aside class="game-sidebar">
-                <!-- Game Cover -->
-                <div class="game-card">
-                    <img src="/img/game-info/game-cover.jpg" alt="Game Cover" class="game-card__cover">
-                    
-                    <div class="game-card__actions">
-                        <div class="price">
-                            <span class="price__discount">-75%</span>
-                            <div class="price__values">
-                                <span class="price__original">$19.99</span>
-                                <span class="price__current">$4.99</span>
-                            </div>
-                        </div>
-                        <button type="button" class="wishlist">
-                            <i class="fa-regular fa-heart wishlist__icon"></i>
-                        </button>
-                    </div>
-                    
-                    <button type="button" class="btn-cart">
-                        <i class="fa-solid fa-cart-plus btn-cart__icon"></i>
-                        <span class="btn-cart__text">Add to cart</span>
-                    </button>
-                </div>
-
-                <!-- Game Information -->
-                <div class="game-info">
-                    <h2 class="game-info__title">GAME INFORMATION</h2>
-                    
-                    <div class="game-info__item">
-                        <span class="game-info__label">Publisher</span>
-                        <span class="game-info__separator">|</span>
-                        <span class="game-info__value">Playstation Publishing LLC</span>
-                    </div>
-                    
-                    <div class="game-info__item">
-                        <span class="game-info__label">Age Rating</span>
-                        <span class="game-info__separator">|</span>
-                        <span class="game-info__value">16+</span>
-                    </div>
-                    
-                    <div class="game-info__item">
-                        <span class="game-info__label">Developer</span>
-                        <span class="game-info__separator">|</span>
-                        <span class="game-info__value">Naughty Dog LLC, Iron Galaxy Studios</span>
-                    </div>
-                    
-                    <div class="game-info__item">
-                        <span class="game-info__label">Platform</span>
-                        <span class="game-info__separator">|</span>
-                        <span class="game-info__value">PC | Steam Deck Verified</span>
-                    </div>
-                    
-                    <div class="game-info__item">
-                        <span class="game-info__label">Released</span>
-                        <span class="game-info__separator">|</span>
-                        <span class="game-info__value">Wednesday, October 19, 2022</span>
-                    </div>
-                </div>
-            </aside>
-        </div>
-        
-        <!-- Game Description -->
-        <section class="game-description">
-            <h2 class="game-description__title">GAME DESCRIPTION</h2>
-            <!-- Content -->
-            <div class="game-description__content js-description-content">
-                <h4 class="game-description__subtitle">Are You Ready To Seek Your Fortune?</h4>
-                <p class="game-description__paragraph">
-                    Seek your fortune and leave your mark on the map in the UNCHARTED: Legacy of Thieves Collection. Uncover the thrilling cinematic storytelling and the largest blockbuster action set pieces in the UNCHARTED franchise, packed with all the wit, cunning, and over the top moments of the beloved thieves - Nathan Drake and Chloe Frazer.<br/>
-                    In an experience delivered by award winning developer Naughty Dog can, the UNCHARTED: Legacy of Thieves Collection includes the two critically-acclaimed, globe-trotting single player adventures from UNCHARTED™ 4: A Thief’s End and UNCHARTED™: The Lost Legacy. Each story is filled with laughs, drama, high octane combat, and a sense of wonder – remastered to be even more immersive.<br/>
-                </p>
-
-                <h4 class="game-description__subtitle">Discover the breath-taking sights</h4>
-                <p class="game-description__paragraph">
-                    From thick jungles to snow-capped mountains, exotic islands to rain-soaked streets, explore every inch of stunningly beautiful environments in spectacular detail. Immerse yourself in the cinematic storytelling with super-sharp 4K resolution1, and Ultra-Wide Monitor support2. Enjoy a host of enhanced graphical adjustment features such as adjustable Texture and Model Quality, Anisotropic Filtering, Shadows, Reflections and Ambient Occlusion.
-                </p>
-
-                <h4 class="game-description__subtitle">Feel the thrilling gameplay in your hands</h4>
-                <p class="game-description__paragraph">
-                    Experience haptic feedback and dynamic trigger effects designed for UNCHARTED: Legacy of Thieves Collection by playing with the DualSense™ controller through a wired connection to your PC. With full control remapping and support for the DualShock®4 controller 3, XInput Game Controllers, and a wide range of other gamepads and keyboard and mouse, you can leave your mark on the map any way you like. For those that want to brighten things up even more, try out RGB support for Razer Chroma peripherals and Chroma Link compatible devices, as well as for Logitech and Corsair models.
-                </p>
-
-                <h4 class="game-description__subtitle">Optimize the adventure</h4>
-                <p class="game-description__paragraph">
-                    Unearth a wide variety of modes and PC-centric enhancements such as improved UI for game options, reimagined user interfaces, the addition of scale sliders for some menus, GPU and VRAM detection and management options, as well as adding Auto Pause, Minimize in Background and Variable Load Speed support along with a host of other additions.
-                </p>
-
-                <h4 class="game-description__subtitle">AMD Fidelity FX Super Resolution 2</h4>
-                <p class="game-description__paragraph">
-                    Supercharge your framerates as you seek your fortune as Nathan and Chloe with next-level temporal upscaling technology from AMD. FSR 2 uses cutting-edge algorithms to boost your framerates and deliver high-quality, high-resolution game experiences in UNCHARTED across a wide range of compatible graphics cards.
-                </p>
-
-                <h4 class="game-description__subtitle">UNCHARTED 4: A Thief’s End</h4>
-                <p class="game-description__paragraph">
-                    Winner of over 150 Game of the Year awards.<br/>
-                    Several years after his last adventure, retired fortune hunter Nathan Drake, is forced back into the world of thieves. Fate comes calling when Sam, Drake’s presumed dead brother, resurfaces seeking his help to save his own life and offering an adventure Drake can’t resist. Drake’s greatest adventure will test his physical limits, his resolve, and ultimately what he’s willing to sacrifice to save the ones he loves.<br/>
-                    On the hunt for Captain Henry Avery’s long-lost treasure, Sam and Drake set off to find Libertalia, the pirate utopia deep in the forests of Madagascar – leading to a journey around the globe through jungle isles, far-flung cities, and snowcapped peaks on the search for Avery’s fortune.<br/>
-                </p>
-                <ul class="game-description__list">
-                    <li class="game-description__list-item">A globe-trotting adventure with the largest and most detailed environments in the UNCHARTED franchise.</li>
-                    <li class="game-description__list-item">A more personal story for Nathan Drake, raising the stakes for the award-winning storytelling of Naughty Dog.</li>
-                    <li class="game-description__list-item">Fluid combat and traversal with the use of the grapple hook creates even more dynamic and thrilling action set pieces.</li>
-                </ul>
-
-                <h4 class="game-description__subtitle">UNCHARTED: The Lost Legacy</h4>
-                <p class="game-description__paragraph">
-                    In order to recover an ancient artifact and keep it out of the hands of a ruthless warmonger, Chloe Frazer must enlist the aid of renowned mercenary Nadine Ross and venture to India’s Western Ghats to locate the Golden Tusk of Ganesh. In Chloe’s greatest journey yet, she must confront her past and decide what she’s willing to sacrifice to forge her own legacy.
-                </p>
-                <ul class="game-description__list">
-                    <li class="game-description__list-item">An all-new setting for adventure in the southwestern coast of the Indian peninsula, featuring an exotic mix of urban, jungle, and ancient ruins environments.</li>
-                    <li class="game-description__list-item">The action-packed set pieces and captivating narrative that fans have come to expect from Naughty Dog and the UNCHARTED series.</li>
-                    <li class="game-description__list-item">Builds on the acclaimed UNCHARTED franchise gameplay with updated systems and refinements, including cinematic combat, exploration, and traversal of jaw-dropping environments, complex puzzles and more.</li>
-                </ul>
-
-                <p class="game-description__paragraph game-description__paragraph--footnotes">
-                    1 Compatible PC and 4K display device required.<br/>
-                    2 Compatible PC and display device required.<br/>
-                    3 Use DUALSHOCK 4 USB wireless adaptor or a compatible micro-USB cable to connect to PC.<br/>
-                    4 Use wired connection to experience full set of DualSense controller features in game.
-                </p>
-
-                <button type="button" class="game-description__toggle-btn js-toggle-btn">
-                    READ MORE
-                </button>
+          <div class="game-rating-bar">
+            <div class="rating">
+              <span class="rating__score">9.0</span>
+              <div class="rating__stars">
+                <i class="fa-solid fa-star rating__star"></i>
+                <i class="fa-solid fa-star rating__star"></i>
+                <i class="fa-solid fa-star rating__star"></i>
+                <i class="fa-solid fa-star rating__star"></i>
+                <i class="fa-solid fa-star rating__star"></i>
+              </div>
             </div>
+            <span class="game-rating-bar__rate-text">RATE THIS GAME</span>
+            <span class="game-rating-bar__separator">|</span>
+            <span class="game-rating-bar__release">RELEASED: OCT 19 2022</span>
+            <img
+              class="game-rating-bar__social"
+              src="/img/game-info/facebook-icon.png"
+              alt="Facebook"
+            />
+          </div>
+
+          <div class="gallery">
+            <div class="gallery__main">
+              <button
+                type="button"
+                class="gallery__nav gallery__nav--prev"
+                aria-label="Previous image"
+              >
+                <i class="fa-solid fa-chevron-left"></i>
+              </button>
+              <iframe
+                class="gallery__main-video"
+                src="https://www.youtube.com/embed/xeMA3O9pfiY?autoplay=1&mute=0&controls=1"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              >
+              </iframe>
+              <img
+                src="/img/game-info/gamess1.jpg"
+                alt="Game Screenshot"
+                class="gallery__main-image is-hidden"
+              />
+
+              <button
+                type="button"
+                class="gallery__nav gallery__nav--next"
+                aria-label="Next image"
+              >
+                <i class="fa-solid fa-chevron-right"></i>
+              </button>
+            </div>
+            <div class="gallery__thumbnails-container">
+              <div class="gallery__thumbnails">
+                <div
+                  class="gallery__thumbnail-wrapper gallery__thumbnail--video gallery__thumbnail--active"
+                  data-type="video"
+                  data-large-src="https://www.youtube.com/embed/xeMA3O9pfiY"
+                >
+                  <img
+                    src="/img/game-info/thumb-vid.jpg"
+                    alt="Thumbnail Video"
+                    class="gallery__thumbnail"
+                  />
+                  <div class="gallery__thumbnail-play-icon">
+                    <i class="fa-solid fa-play"></i>
+                  </div>
+                </div>
+                <div
+                  class="gallery__thumbnail-wrapper"
+                  data-type="image"
+                  data-large-src="/img/game-info/gamess1.jpg"
+                >
+                  <img
+                    src="/img/game-info/thumb1.jpg"
+                    alt="Thumbnail 1"
+                    class="gallery__thumbnail"
+                  />
+                </div>
+                <div
+                  class="gallery__thumbnail-wrapper"
+                  data-type="image"
+                  data-large-src="/img/game-info/gamess2.jpg"
+                >
+                  <img
+                    src="/img/game-info/thumb2.jpg"
+                    alt="Thumbnail 2"
+                    class="gallery__thumbnail"
+                  />
+                </div>
+                <div
+                  class="gallery__thumbnail-wrapper"
+                  data-type="image"
+                  data-large-src="/img/game-info/gamess3.jpg"
+                >
+                  <img
+                    src="/img/game-info/thumb3.jpg"
+                    alt="Thumbnail 3"
+                    class="gallery__thumbnail"
+                  />
+                </div>
+                <div
+                  class="gallery__thumbnail-wrapper"
+                  data-type="image"
+                  data-large-src="/img/game-info/gamess4.jpg"
+                >
+                  <img
+                    src="/img/game-info/thumb4.jpg"
+                    alt="Thumbnail 4"
+                    class="gallery__thumbnail"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="gallery__dots"></div>
+          </div>
         </section>
+
+        <!-- Sidebar -->
+        <aside class="game-sidebar">
+          <!-- Game Cover -->
+          <div class="game-card">
+            <img
+              src="/img/game-info/game-cover.jpg"
+              alt="Game Cover"
+              class="game-card__cover"
+            />
+
+            <div class="game-card__actions">
+              <div class="price">
+                <span class="price__discount">-75%</span>
+                <div class="price__values">
+                  <span class="price__original">$19.99</span>
+                  <span class="price__current">$4.99</span>
+                </div>
+              </div>
+              <button type="button" class="wishlist">
+                <i class="fa-regular fa-heart wishlist__icon"></i>
+              </button>
+            </div>
+
+            <button type="button" class="btn-cart">
+              <i class="fa-solid fa-cart-plus btn-cart__icon"></i>
+              <span class="btn-cart__text">Add to cart</span>
+            </button>
+          </div>
+
+          <!-- Game Information -->
+          <div class="game-info">
+            <h2 class="game-info__title">GAME INFORMATION</h2>
+
+            <div class="game-info__item">
+              <span class="game-info__label">Publisher</span>
+              <span class="game-info__separator">|</span>
+              <span class="game-info__value">Playstation Publishing LLC</span>
+            </div>
+
+            <div class="game-info__item">
+              <span class="game-info__label">Age Rating</span>
+              <span class="game-info__separator">|</span>
+              <span class="game-info__value">16+</span>
+            </div>
+
+            <div class="game-info__item">
+              <span class="game-info__label">Developer</span>
+              <span class="game-info__separator">|</span>
+              <span class="game-info__value"
+                >Naughty Dog LLC, Iron Galaxy Studios</span
+              >
+            </div>
+
+            <div class="game-info__item">
+              <span class="game-info__label">Platform</span>
+              <span class="game-info__separator">|</span>
+              <span class="game-info__value">PC | Steam Deck Verified</span>
+            </div>
+
+            <div class="game-info__item">
+              <span class="game-info__label">Released</span>
+              <span class="game-info__separator">|</span>
+              <span class="game-info__value">Wednesday, October 19, 2022</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+      <!-- Game Description -->
+      <section class="game-description">
+        <h2 class="game-description__title">GAME DESCRIPTION</h2>
+        <!-- Content -->
+        <div class="game-description__content js-description-content">
+          <h4 class="game-description__subtitle">
+            Are You Ready To Seek Your Fortune?
+          </h4>
+          <p class="game-description__paragraph">
+            Seek your fortune and leave your mark on the map in the UNCHARTED:
+            Legacy of Thieves Collection. Uncover the thrilling cinematic
+            storytelling and the largest blockbuster action set pieces in the
+            UNCHARTED franchise, packed with all the wit, cunning, and over the
+            top moments of the beloved thieves - Nathan Drake and Chloe
+            Frazer.<br />
+            In an experience delivered by award winning developer Naughty Dog
+            can, the UNCHARTED: Legacy of Thieves Collection includes the two
+            critically-acclaimed, globe-trotting single player adventures from
+            UNCHARTED™ 4: A Thief’s End and UNCHARTED™: The Lost Legacy. Each
+            story is filled with laughs, drama, high octane combat, and a sense
+            of wonder – remastered to be even more immersive.<br />
+          </p>
+
+          <h4 class="game-description__subtitle">
+            Discover the breath-taking sights
+          </h4>
+          <p class="game-description__paragraph">
+            From thick jungles to snow-capped mountains, exotic islands to
+            rain-soaked streets, explore every inch of stunningly beautiful
+            environments in spectacular detail. Immerse yourself in the
+            cinematic storytelling with super-sharp 4K resolution1, and
+            Ultra-Wide Monitor support2. Enjoy a host of enhanced graphical
+            adjustment features such as adjustable Texture and Model Quality,
+            Anisotropic Filtering, Shadows, Reflections and Ambient Occlusion.
+          </p>
+
+          <h4 class="game-description__subtitle">
+            Feel the thrilling gameplay in your hands
+          </h4>
+          <p class="game-description__paragraph">
+            Experience haptic feedback and dynamic trigger effects designed for
+            UNCHARTED: Legacy of Thieves Collection by playing with the
+            DualSense™ controller through a wired connection to your PC. With
+            full control remapping and support for the DualShock®4 controller 3,
+            XInput Game Controllers, and a wide range of other gamepads and
+            keyboard and mouse, you can leave your mark on the map any way you
+            like. For those that want to brighten things up even more, try out
+            RGB support for Razer Chroma peripherals and Chroma Link compatible
+            devices, as well as for Logitech and Corsair models.
+          </p>
+
+          <h4 class="game-description__subtitle">Optimize the adventure</h4>
+          <p class="game-description__paragraph">
+            Unearth a wide variety of modes and PC-centric enhancements such as
+            improved UI for game options, reimagined user interfaces, the
+            addition of scale sliders for some menus, GPU and VRAM detection and
+            management options, as well as adding Auto Pause, Minimize in
+            Background and Variable Load Speed support along with a host of
+            other additions.
+          </p>
+
+          <h4 class="game-description__subtitle">
+            AMD Fidelity FX Super Resolution 2
+          </h4>
+          <p class="game-description__paragraph">
+            Supercharge your framerates as you seek your fortune as Nathan and
+            Chloe with next-level temporal upscaling technology from AMD. FSR 2
+            uses cutting-edge algorithms to boost your framerates and deliver
+            high-quality, high-resolution game experiences in UNCHARTED across a
+            wide range of compatible graphics cards.
+          </p>
+
+          <h4 class="game-description__subtitle">UNCHARTED 4: A Thief’s End</h4>
+          <p class="game-description__paragraph">
+            Winner of over 150 Game of the Year awards.<br />
+            Several years after his last adventure, retired fortune hunter
+            Nathan Drake, is forced back into the world of thieves. Fate comes
+            calling when Sam, Drake’s presumed dead brother, resurfaces seeking
+            his help to save his own life and offering an adventure Drake can’t
+            resist. Drake’s greatest adventure will test his physical limits,
+            his resolve, and ultimately what he’s willing to sacrifice to save
+            the ones he loves.<br />
+            On the hunt for Captain Henry Avery’s long-lost treasure, Sam and
+            Drake set off to find Libertalia, the pirate utopia deep in the
+            forests of Madagascar – leading to a journey around the globe
+            through jungle isles, far-flung cities, and snowcapped peaks on the
+            search for Avery’s fortune.<br />
+          </p>
+          <ul class="game-description__list">
+            <li class="game-description__list-item">
+              A globe-trotting adventure with the largest and most detailed
+              environments in the UNCHARTED franchise.
+            </li>
+            <li class="game-description__list-item">
+              A more personal story for Nathan Drake, raising the stakes for the
+              award-winning storytelling of Naughty Dog.
+            </li>
+            <li class="game-description__list-item">
+              Fluid combat and traversal with the use of the grapple hook
+              creates even more dynamic and thrilling action set pieces.
+            </li>
+          </ul>
+
+          <h4 class="game-description__subtitle">UNCHARTED: The Lost Legacy</h4>
+          <p class="game-description__paragraph">
+            In order to recover an ancient artifact and keep it out of the hands
+            of a ruthless warmonger, Chloe Frazer must enlist the aid of
+            renowned mercenary Nadine Ross and venture to India’s Western Ghats
+            to locate the Golden Tusk of Ganesh. In Chloe’s greatest journey
+            yet, she must confront her past and decide what she’s willing to
+            sacrifice to forge her own legacy.
+          </p>
+          <ul class="game-description__list">
+            <li class="game-description__list-item">
+              An all-new setting for adventure in the southwestern coast of the
+              Indian peninsula, featuring an exotic mix of urban, jungle, and
+              ancient ruins environments.
+            </li>
+            <li class="game-description__list-item">
+              The action-packed set pieces and captivating narrative that fans
+              have come to expect from Naughty Dog and the UNCHARTED series.
+            </li>
+            <li class="game-description__list-item">
+              Builds on the acclaimed UNCHARTED franchise gameplay with updated
+              systems and refinements, including cinematic combat, exploration,
+              and traversal of jaw-dropping environments, complex puzzles and
+              more.
+            </li>
+          </ul>
+
+          <p
+            class="game-description__paragraph game-description__paragraph--footnotes"
+          >
+            1 Compatible PC and 4K display device required.<br />
+            2 Compatible PC and display device required.<br />
+            3 Use DUALSHOCK 4 USB wireless adaptor or a compatible micro-USB
+            cable to connect to PC.<br />
+            4 Use wired connection to experience full set of DualSense
+            controller features in game.
+          </p>
+
+          <button
+            type="button"
+            class="game-description__toggle-btn js-toggle-btn"
+          >
+            READ MORE
+          </button>
+        </div>
+      </section>
     </div>
-    
+
     <section class="game-pc">
-  <h2 class="game-pc__title">PC</h2>
-  <div class="game-pc__requirements">
-    <!-- Minimum -->
-    <div class="game-pc__column">
-      <h3 class="game-pc__subtitle">Minimum Requirements:</h3>
-      <ul class="game-pc__list">
-        <li class="game-pc__item"><span class="game-pc__label">OS:</span> Windows 10 64-bit</li>
-        <li class="game-pc__item"><span class="game-pc__label">Processor:</span> Intel i5-4430 / AMD Ryzen 3 1200</li>
-        <li class="game-pc__item"><span class="game-pc__label">Memory:</span> 8 GB RAM</li>
-        <li class="game-pc__item"><span class="game-pc__label">Graphics:</span> NVIDIA GTX 960 (4 GB) / AMD R9 290X (4 GB)</li>
-        <li class="game-pc__item"><span class="game-pc__label">Disk Space:</span> 126 GB available space</li>
-        <li class="game-pc__item"><span class="game-pc__label">Performance:</span> 30 FPS @ 720p Medium Settings</li>
-      </ul>
-    </div>
+      <h2 class="game-pc__title">PC</h2>
+      <div class="game-pc__requirements">
+        <!-- Minimum -->
+        <div class="game-pc__column">
+          <h3 class="game-pc__subtitle">Minimum Requirements:</h3>
+          <ul class="game-pc__list">
+            <li class="game-pc__item">
+              <span class="game-pc__label">OS:</span> Windows 10 64-bit
+            </li>
+            <li class="game-pc__item">
+              <span class="game-pc__label">Processor:</span> Intel i5-4430 / AMD
+              Ryzen 3 1200
+            </li>
+            <li class="game-pc__item">
+              <span class="game-pc__label">Memory:</span> 8 GB RAM
+            </li>
+            <li class="game-pc__item">
+              <span class="game-pc__label">Graphics:</span> NVIDIA GTX 960 (4
+              GB) / AMD R9 290X (4 GB)
+            </li>
+            <li class="game-pc__item">
+              <span class="game-pc__label">Disk Space:</span> 126 GB available
+              space
+            </li>
+            <li class="game-pc__item">
+              <span class="game-pc__label">Performance:</span> 30 FPS @ 720p
+              Medium Settings
+            </li>
+          </ul>
+        </div>
 
-    <!-- Recommended -->
-    <div class="game-pc__column">
-      <h3 class="game-pc__subtitle">Recommended Requirements:</h3>
-      <ul class="game-pc__list">
-        <li class="game-pc__item"><span class="game-pc__label">OS:</span> Windows 10 64-bit</li>
-        <li class="game-pc__item"><span class="game-pc__label">Processor:</span> Intel i7-4770 / AMD Ryzen 5 1500X</li>
-        <li class="game-pc__item"><span class="game-pc__label">Memory:</span> 16 GB RAM</li>
-        <li class="game-pc__item"><span class="game-pc__label">Graphics:</span> NVIDIA GTX 1060 (6 GB) / AMD RX 570 (4 GB)</li>
-        <li class="game-pc__item"><span class="game-pc__label">Disk Space:</span> 126 GB available space</li>
-        <li class="game-pc__item"><span class="game-pc__label">Performance:</span> 30 FPS @ 1080p Medium Settings</li>
-      </ul>
-    </div>
-  </div>
-</section>
+        <!-- Recommended -->
+        <div class="game-pc__column">
+          <h3 class="game-pc__subtitle">Recommended Requirements:</h3>
+          <ul class="game-pc__list">
+            <li class="game-pc__item">
+              <span class="game-pc__label">OS:</span> Windows 10 64-bit
+            </li>
+            <li class="game-pc__item">
+              <span class="game-pc__label">Processor:</span> Intel i7-4770 / AMD
+              Ryzen 5 1500X
+            </li>
+            <li class="game-pc__item">
+              <span class="game-pc__label">Memory:</span> 16 GB RAM
+            </li>
+            <li class="game-pc__item">
+              <span class="game-pc__label">Graphics:</span> NVIDIA GTX 1060 (6
+              GB) / AMD RX 570 (4 GB)
+            </li>
+            <li class="game-pc__item">
+              <span class="game-pc__label">Disk Space:</span> 126 GB available
+              space
+            </li>
+            <li class="game-pc__item">
+              <span class="game-pc__label">Performance:</span> 30 FPS @ 1080p
+              Medium Settings
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-<!-- Reviews Section -->
-<section class="reviews-section">
-    <h2 class="reviews-section__title">REVIEW FOR UNCHARTED: LEGACY OF THIEVES COLLECTION</h2>
+    <!-- Reviews Section -->
+    <section class="reviews-section">
+      <h2 class="reviews-section__title">
+        REVIEW FOR UNCHARTED: LEGACY OF THIEVES COLLECTION
+      </h2>
 
-    <div class="reviews-layout">
-
+      <div class="reviews-layout">
         <!-- LEFT COLUMN — REVIEW LIST -->
         <div class="reviews-list">
-
-            <!-- Review 1 -->
-            <div class="review-card">
-                <div class="review-card__header">
-                    <div class="review-card__avatar"><i class="fa-solid fa-user"></i></div>
-                    <span class="review-card__username">KZy</span>
-                    <span class="review-card__date">3/10/2025</span>
-                </div>
-
-                <div class="review-card__toprow">
-                    <div class="review-card__stars">
-                        <i class="fa-solid fa-star review-card__star"></i>
-                        <i class="fa-solid fa-star review-card__star"></i>
-                        <i class="fa-solid fa-star review-card__star"></i>
-                        <i class="fa-solid fa-star review-card__star"></i>
-                        <i class="fa-solid fa-star review-card__star review-card__star--empty"></i>
-                    </div>
-
-                    <div class="review-card__actions">
-                        <button class="review-card__action review-card__action--like"><i class="fa-solid fa-thumbs-up"></i></button>
-                        <button class="review-card__action review-card__action--dislike"><i class="fa-solid fa-thumbs-down"></i></button>
-                    </div>
-                </div>
-
-                <div class="review-card__content">
-                    <h4 class="review-card__title">We need Uncharted 1-3</h4>
-                    <p class="review-card__body">
-                        I think Uncharted 4 and Lost Legacy’s biggest weakness isn’t about the games themselves, but Sony’s unwillingness to port the first three games to PC. I never played them because I never owned Playstation after 2, but I heard these games are self contained, and while that is somewhat true for the main adventure itself, and the secondary main character, Nathan’s brother Sam, as well as the villains are first introduced in this game as I understand, there’s still a lot of history with the characters that you just don’t get from just these games. Particularly with the relationship between Nathan and his wife Elena, the things they talk to each other, and especially the ending I feel like would’ve hit harder if I had played 1-3. As it was it was just kinda nice but they clearly try to go for this feeling of having these big adventures in Nathan’s past, discovering lost cities and ancient treasures etc. but for PC only players there’s not that much context to it. The games themselves are still excellent though. Gunplay is maybe the weakest aspect but the combat is still fun, and a lot of encounters can be done entirely in stealth. Puzzles are just involved enough to have some variety to the gameplay but they’re not actually hard or require much thinking. These are very linear, they’re not like the new Tomb Raider games that have quite a bit of side content and more open world design, Lost Legacy has a bit more open area with one optional quest but these are largely go from A to B to C type, though with a lot of collectibles hidden in nooks and crannies. The setpieces are varied and fun, and there’s just this great feeling of adventure as you’re traveling all over the world, discovering these ancient places and their history and piecing together what happened. These are very much worth playing, I just think they’d be even better if we had Uncharted 1-3.
-                    </p>
-
-                    <button class="review-card__toggle">READ MORE</button>
-                </div>
+          <!-- Review 1 -->
+          <div class="review-card">
+            <div class="review-card__header">
+              <div class="review-card__avatar">
+                <i class="fa-solid fa-user"></i>
+              </div>
+              <span class="review-card__username">KZy</span>
+              <span class="review-card__date">3/10/2025</span>
             </div>
 
-            <!-- Review 2 -->
-            <div class="review-card">
-                <div class="review-card__header">
-                    <div class="review-card__avatar"><i class="fa-solid fa-user"></i></div>
-                    <span class="review-card__username">HoangYen</span>
-                    <span class="review-card__date">3/10/2025</span>
-                </div>
+            <div class="review-card__toprow">
+              <div class="review-card__stars">
+                <i class="fa-solid fa-star review-card__star"></i>
+                <i class="fa-solid fa-star review-card__star"></i>
+                <i class="fa-solid fa-star review-card__star"></i>
+                <i class="fa-solid fa-star review-card__star"></i>
+                <i
+                  class="fa-solid fa-star review-card__star review-card__star--empty"
+                ></i>
+              </div>
 
-                <div class="review-card__toprow">
-                    <div class="review-card__stars">
-                        <i class="fa-solid fa-star review-card__star"></i>
-                        <i class="fa-solid fa-star review-card__star"></i>
-                        <i class="fa-solid fa-star review-card__star"></i>
-                        <i class="fa-solid fa-star review-card__star"></i>
-                        <i class="fa-solid fa-star review-card__star review-card__star--empty"></i>
-                    </div>
-
-                    <div class="review-card__actions">
-                        <button class="review-card__action review-card__action--like"><i class="fa-solid fa-thumbs-up"></i></button>
-                        <button class="review-card__action review-card__action--dislike"><i class="fa-solid fa-thumbs-down"></i></button>
-                    </div>
-                </div>
-
-                <div class="review-card__content">
-                    <h4 class="review-card__title">Amazing game, but missing emotional context</h4>
-                    <p class="review-card__body">
-                     The game itself is phenomenal, but it’s obvious that a lot of the emotional impact relies on events from Uncharted 1–3. As someone who hasn't played the older titles, I constantly felt like I was missing something in Nate and Elena’s relationship.
-                     Despite that, the level design, music, and action sequences are top-tier. The Madagascar scene alone made the entire experience worth it.
-                    </p>
-
-                    <button class="review-card__toggle">READ MORE</button>
-                </div>
+              <div class="review-card__actions">
+                <button class="review-card__action review-card__action--like">
+                  <i class="fa-solid fa-thumbs-up"></i>
+                </button>
+                <button
+                  class="review-card__action review-card__action--dislike"
+                >
+                  <i class="fa-solid fa-thumbs-down"></i>
+                </button>
+              </div>
             </div>
 
-            <!-- Review 3 -->
-            <div class="review-card">
-                <div class="review-card__header">
-                    <div class="review-card__avatar"><i class="fa-solid fa-user"></i></div>
-                    <span class="review-card__username">NhutMinh</span>
-                    <span class="review-card__date">3/10/2025</span>
-                </div>
+            <div class="review-card__content">
+              <h4 class="review-card__title">We need Uncharted 1-3</h4>
+              <p class="review-card__body">
+                I think Uncharted 4 and Lost Legacy’s biggest weakness isn’t
+                about the games themselves, but Sony’s unwillingness to port the
+                first three games to PC. I never played them because I never
+                owned Playstation after 2, but I heard these games are self
+                contained, and while that is somewhat true for the main
+                adventure itself, and the secondary main character, Nathan’s
+                brother Sam, as well as the villains are first introduced in
+                this game as I understand, there’s still a lot of history with
+                the characters that you just don’t get from just these games.
+                Particularly with the relationship between Nathan and his wife
+                Elena, the things they talk to each other, and especially the
+                ending I feel like would’ve hit harder if I had played 1-3. As
+                it was it was just kinda nice but they clearly try to go for
+                this feeling of having these big adventures in Nathan’s past,
+                discovering lost cities and ancient treasures etc. but for PC
+                only players there’s not that much context to it. The games
+                themselves are still excellent though. Gunplay is maybe the
+                weakest aspect but the combat is still fun, and a lot of
+                encounters can be done entirely in stealth. Puzzles are just
+                involved enough to have some variety to the gameplay but they’re
+                not actually hard or require much thinking. These are very
+                linear, they’re not like the new Tomb Raider games that have
+                quite a bit of side content and more open world design, Lost
+                Legacy has a bit more open area with one optional quest but
+                these are largely go from A to B to C type, though with a lot of
+                collectibles hidden in nooks and crannies. The setpieces are
+                varied and fun, and there’s just this great feeling of adventure
+                as you’re traveling all over the world, discovering these
+                ancient places and their history and piecing together what
+                happened. These are very much worth playing, I just think they’d
+                be even better if we had Uncharted 1-3.
+              </p>
 
-                <div class="review-card__toprow">
-                    <div class="review-card__stars">
-                        <i class="fa-solid fa-star review-card__star"></i>
-                        <i class="fa-solid fa-star review-card__star"></i>
-                        <i class="fa-solid fa-star review-card__star"></i>
-                        <i class="fa-solid fa-star review-card__star"></i>
-                        <i class="fa-solid fa-star review-card__star review-card__star--empty"></i>
-                    </div>
+              <button class="review-card__toggle">READ MORE</button>
+            </div>
+          </div>
 
-                    <div class="review-card__actions">
-                        <button class="review-card__action review-card__action--like"><i class="fa-solid fa-thumbs-up"></i></button>
-                        <button class="review-card__action review-card__action--dislike"><i class="fa-solid fa-thumbs-down"></i></button>
-                    </div>
-                </div>
-
-                <div class="review-card__content">
-                    <h4 class="review-card__title">Runs great on mid-range hardware</h4>
-                    <p class="review-card__body">
-                        Surprisingly well optimized. I’m playing on a GTX 1660 Super + Ryzen 5 3600 and consistently getting 70–90 FPS on high settings.
-                        The loading times are super fast, the cutscenes are gorgeous, and the HDR support looks fantastic.
-                        There are still a few micro-stutters when entering new areas, but overall the port quality is excellent.
-                    </p>
-
-                    <button class="review-card__toggle">READ MORE</button>
-                </div>
+          <!-- Review 2 -->
+          <div class="review-card">
+            <div class="review-card__header">
+              <div class="review-card__avatar">
+                <i class="fa-solid fa-user"></i>
+              </div>
+              <span class="review-card__username">HoangYen</span>
+              <span class="review-card__date">3/10/2025</span>
             </div>
 
-            <!-- Review 4 -->
-            <div class="review-card">
-                <div class="review-card__header">
-                    <div class="review-card__avatar"><i class="fa-solid fa-user"></i></div>
-                    <span class="review-card__username">HuuHuy</span>
-                    <span class="review-card__date">3/10/2025</span>
-                </div>
+            <div class="review-card__toprow">
+              <div class="review-card__stars">
+                <i class="fa-solid fa-star review-card__star"></i>
+                <i class="fa-solid fa-star review-card__star"></i>
+                <i class="fa-solid fa-star review-card__star"></i>
+                <i class="fa-solid fa-star review-card__star"></i>
+                <i
+                  class="fa-solid fa-star review-card__star review-card__star--empty"
+                ></i>
+              </div>
 
-                <div class="review-card__toprow">
-                    <div class="review-card__stars">
-                        <i class="fa-solid fa-star review-card__star"></i>
-                        <i class="fa-solid fa-star review-card__star"></i>
-                        <i class="fa-solid fa-star review-card__star"></i>
-                        <i class="fa-solid fa-star review-card__star"></i>
-                        <i class="fa-solid fa-star review-card__star review-card__star--empty"></i>
-                    </div>
-
-                    <div class="review-card__actions">
-                        <button class="review-card__action review-card__action--like"><i class="fa-solid fa-thumbs-up"></i></button>
-                        <button class="review-card__action review-card__action--dislike"><i class="fa-solid fa-thumbs-down"></i></button>
-                    </div>
-                </div>
-
-                <div class="review-card__content">
-                    <h4 class="review-card__title">We need Uncharted 1-3</h4>
-                    <p class="review-card__body">
-                    I think Uncharted 4 and Lost Legacy’s biggest weakness isn’t about the games themselves, but Sony’s unwillingness to port the first three games to PC. I never played them because I never owned Playstation after 2, but I heard these games are self contained, and while that is somewhat true for the main adventure itself, and the secondary main character, Nathan’s brother Sam, as well as the villains are first introduced in this game as I understand, there’s still a lot of history with the characters that you just don’t get from just these games. Particularly with the relationship between Nathan and his wife Elena, the things they talk to each other, and especially the ending I feel like would’ve hit harder if I had played 1-3. As it was it was just kinda nice but they clearly try to go for this feeling of having these big adventures in Nathan’s past, discovering lost cities and ancient treasures etc. but for PC only players there’s not that much context to it. The games themselves are still excellent though. Gunplay is maybe the weakest aspect but the combat is still fun, and a lot of encounters can be done entirely in stealth. Puzzles are just involved enough to have some variety to the gameplay but they’re not actually hard or require much thinking. These are very linear, they’re not like the new Tomb Raider games that have quite a bit of side content and more open world design, Lost Legacy has a bit more open area with one optional quest but these are largely go from A to B to C type, though with a lot of collectibles hidden in nooks and crannies. The setpieces are varied and fun, and there’s just this great feeling of adventure as you’re traveling all over the world, discovering these ancient places and their history and piecing together what happened. These are very much worth playing, I just think they’d be even better if we had Uncharted 1-3.
-                    </p>
-
-                    <button class="review-card__toggle">READ MORE</button>
-                </div>
+              <div class="review-card__actions">
+                <button class="review-card__action review-card__action--like">
+                  <i class="fa-solid fa-thumbs-up"></i>
+                </button>
+                <button
+                  class="review-card__action review-card__action--dislike"
+                >
+                  <i class="fa-solid fa-thumbs-down"></i>
+                </button>
+              </div>
             </div>
 
-        </div> <!-- END .reviews-list -->
+            <div class="review-card__content">
+              <h4 class="review-card__title">
+                Amazing game, but missing emotional context
+              </h4>
+              <p class="review-card__body">
+                The game itself is phenomenal, but it’s obvious that a lot of
+                the emotional impact relies on events from Uncharted 1–3. As
+                someone who hasn't played the older titles, I constantly felt
+                like I was missing something in Nate and Elena’s relationship.
+                Despite that, the level design, music, and action sequences are
+                top-tier. The Madagascar scene alone made the entire experience
+                worth it.
+              </p>
+
+              <button class="review-card__toggle">READ MORE</button>
+            </div>
+          </div>
+
+          <!-- Review 3 -->
+          <div class="review-card">
+            <div class="review-card__header">
+              <div class="review-card__avatar">
+                <i class="fa-solid fa-user"></i>
+              </div>
+              <span class="review-card__username">NhutMinh</span>
+              <span class="review-card__date">3/10/2025</span>
+            </div>
+
+            <div class="review-card__toprow">
+              <div class="review-card__stars">
+                <i class="fa-solid fa-star review-card__star"></i>
+                <i class="fa-solid fa-star review-card__star"></i>
+                <i class="fa-solid fa-star review-card__star"></i>
+                <i class="fa-solid fa-star review-card__star"></i>
+                <i
+                  class="fa-solid fa-star review-card__star review-card__star--empty"
+                ></i>
+              </div>
+
+              <div class="review-card__actions">
+                <button class="review-card__action review-card__action--like">
+                  <i class="fa-solid fa-thumbs-up"></i>
+                </button>
+                <button
+                  class="review-card__action review-card__action--dislike"
+                >
+                  <i class="fa-solid fa-thumbs-down"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="review-card__content">
+              <h4 class="review-card__title">
+                Runs great on mid-range hardware
+              </h4>
+              <p class="review-card__body">
+                Surprisingly well optimized. I’m playing on a GTX 1660 Super +
+                Ryzen 5 3600 and consistently getting 70–90 FPS on high
+                settings. The loading times are super fast, the cutscenes are
+                gorgeous, and the HDR support looks fantastic. There are still a
+                few micro-stutters when entering new areas, but overall the port
+                quality is excellent.
+              </p>
+
+              <button class="review-card__toggle">READ MORE</button>
+            </div>
+          </div>
+
+          <!-- Review 4 -->
+          <div class="review-card">
+            <div class="review-card__header">
+              <div class="review-card__avatar">
+                <i class="fa-solid fa-user"></i>
+              </div>
+              <span class="review-card__username">HuuHuy</span>
+              <span class="review-card__date">3/10/2025</span>
+            </div>
+
+            <div class="review-card__toprow">
+              <div class="review-card__stars">
+                <i class="fa-solid fa-star review-card__star"></i>
+                <i class="fa-solid fa-star review-card__star"></i>
+                <i class="fa-solid fa-star review-card__star"></i>
+                <i class="fa-solid fa-star review-card__star"></i>
+                <i
+                  class="fa-solid fa-star review-card__star review-card__star--empty"
+                ></i>
+              </div>
+
+              <div class="review-card__actions">
+                <button class="review-card__action review-card__action--like">
+                  <i class="fa-solid fa-thumbs-up"></i>
+                </button>
+                <button
+                  class="review-card__action review-card__action--dislike"
+                >
+                  <i class="fa-solid fa-thumbs-down"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="review-card__content">
+              <h4 class="review-card__title">We need Uncharted 1-3</h4>
+              <p class="review-card__body">
+                I think Uncharted 4 and Lost Legacy’s biggest weakness isn’t
+                about the games themselves, but Sony’s unwillingness to port the
+                first three games to PC. I never played them because I never
+                owned Playstation after 2, but I heard these games are self
+                contained, and while that is somewhat true for the main
+                adventure itself, and the secondary main character, Nathan’s
+                brother Sam, as well as the villains are first introduced in
+                this game as I understand, there’s still a lot of history with
+                the characters that you just don’t get from just these games.
+                Particularly with the relationship between Nathan and his wife
+                Elena, the things they talk to each other, and especially the
+                ending I feel like would’ve hit harder if I had played 1-3. As
+                it was it was just kinda nice but they clearly try to go for
+                this feeling of having these big adventures in Nathan’s past,
+                discovering lost cities and ancient treasures etc. but for PC
+                only players there’s not that much context to it. The games
+                themselves are still excellent though. Gunplay is maybe the
+                weakest aspect but the combat is still fun, and a lot of
+                encounters can be done entirely in stealth. Puzzles are just
+                involved enough to have some variety to the gameplay but they’re
+                not actually hard or require much thinking. These are very
+                linear, they’re not like the new Tomb Raider games that have
+                quite a bit of side content and more open world design, Lost
+                Legacy has a bit more open area with one optional quest but
+                these are largely go from A to B to C type, though with a lot of
+                collectibles hidden in nooks and crannies. The setpieces are
+                varied and fun, and there’s just this great feeling of adventure
+                as you’re traveling all over the world, discovering these
+                ancient places and their history and piecing together what
+                happened. These are very much worth playing, I just think they’d
+                be even better if we had Uncharted 1-3.
+              </p>
+
+              <button class="review-card__toggle">READ MORE</button>
+            </div>
+          </div>
+        </div>
+        <!-- END .reviews-list -->
 
         <!-- RIGHT COLUMN — SIDEBAR -->
         <aside class="reviews-sidebar">
-
-            <!-- User Score -->
-            <div class="score-card">
-                <div class="score-card__header"><h3 class="score-card__title">User Score</h3></div>
-
-                <div class="score-card__content">
-                    <div class="score-card__number">9.0</div>
-                    <div class="score-card__details">
-                        <span class="score-card__label">Excellent</span>
-                        <div class="score-card__stars">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <p class="score-card__info">Overall score based on 36 Ratings</p>
+          <!-- User Score -->
+          <div class="score-card">
+            <div class="score-card__header">
+              <h3 class="score-card__title">User Score</h3>
             </div>
 
-            <!-- User Rating -->
-            <div class="rating-card">
-                <div class="rating-card__header"><h3 class="rating-card__title">User Rating</h3></div>
-
-                <div class="rating-card__list">
-
-                    <div class="rating-item">
-                        <div class="rating-item__avatar"><i class="fa-solid fa-user"></i></div>
-                        <div class="rating-item__content">
-                            <span class="rating-item__username">KZy</span>
-                            <div class="rating-item__stars">
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="rating-item">
-                        <div class="rating-item__avatar"><i class="fa-solid fa-user"></i></div>
-                        <div class="rating-item__content">
-                            <span class="rating-item__username">HoangYen</span>
-                            <div class="rating-item__stars">
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star rating-item__star--empty"></i>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="rating-item">
-                        <div class="rating-item__avatar"><i class="fa-solid fa-user"></i></div>
-                        <div class="rating-item__content">
-                            <span class="rating-item__username">DucHuy</span>
-                            <div class="rating-item__stars">
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star rating-item__star--empty"></i>
-                                <i class="fa-solid fa-star rating-item__star--empty"></i>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="rating-item">
-                        <div class="rating-item__avatar"><i class="fa-solid fa-user"></i></div>
-                        <div class="rating-item__content">
-                            <span class="rating-item__username">Huu Huy</span>
-                            <div class="rating-item__stars">
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="rating-item">
-                        <div class="rating-item__avatar"><i class="fa-solid fa-user"></i></div>
-                        <div class="rating-item__content">
-                            <span class="rating-item__username">NhatMinh</span>
-                            <div class="rating-item__stars">
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star rating-item__star--empty"></i>
-                            </div>
-                        </div>
-                    </div>
-
+            <div class="score-card__content">
+              <div class="score-card__number">9.0</div>
+              <div class="score-card__details">
+                <span class="score-card__label">Excellent</span>
+                <div class="score-card__stars">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
                 </div>
+              </div>
             </div>
 
+            <p class="score-card__info">Overall score based on 36 Ratings</p>
+          </div>
+
+          <!-- User Rating -->
+          <div class="rating-card">
+            <div class="rating-card__header">
+              <h3 class="rating-card__title">User Rating</h3>
+            </div>
+
+            <div class="rating-card__list">
+              <div class="rating-item">
+                <div class="rating-item__avatar">
+                  <i class="fa-solid fa-user"></i>
+                </div>
+                <div class="rating-item__content">
+                  <span class="rating-item__username">KZy</span>
+                  <div class="rating-item__stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                  </div>
+                </div>
+              </div>
+
+              <div class="rating-item">
+                <div class="rating-item__avatar">
+                  <i class="fa-solid fa-user"></i>
+                </div>
+                <div class="rating-item__content">
+                  <span class="rating-item__username">HoangYen</span>
+                  <div class="rating-item__stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star rating-item__star--empty"></i>
+                  </div>
+                </div>
+              </div>
+
+              <div class="rating-item">
+                <div class="rating-item__avatar">
+                  <i class="fa-solid fa-user"></i>
+                </div>
+                <div class="rating-item__content">
+                  <span class="rating-item__username">DucHuy</span>
+                  <div class="rating-item__stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star rating-item__star--empty"></i>
+                    <i class="fa-solid fa-star rating-item__star--empty"></i>
+                  </div>
+                </div>
+              </div>
+
+              <div class="rating-item">
+                <div class="rating-item__avatar">
+                  <i class="fa-solid fa-user"></i>
+                </div>
+                <div class="rating-item__content">
+                  <span class="rating-item__username">Huu Huy</span>
+                  <div class="rating-item__stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                  </div>
+                </div>
+              </div>
+
+              <div class="rating-item">
+                <div class="rating-item__avatar">
+                  <i class="fa-solid fa-user"></i>
+                </div>
+                <div class="rating-item__content">
+                  <span class="rating-item__username">NhatMinh</span>
+                  <div class="rating-item__stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star rating-item__star--empty"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </aside>
+      </div>
+      <!-- END reviews-layout -->
+    </section>
+    <!-- RATE & REVIEW SECTION -->
+    <section class="rate-review" id="rateSection">
+      <h2 class="rate-review__title">RATE & REVIEW</h2>
+      <p class="rate-review__subtitle">
+        Simply rate this game out of 5 stars and submit.
+      </p>
 
-    </div> <!-- END reviews-layout -->
-</section>
-<!-- RATE & REVIEW SECTION -->
-<section class="rate-review" id="rateSection">
-    <h2 class="rate-review__title">RATE & REVIEW</h2>
-    <p class="rate-review__subtitle">Simply rate this game out of 5 stars and submit.</p>
-
-    <div class="rate-review__stars" id="rateStars">
+      <div class="rate-review__stars" id="rateStars">
         <i class="fa-regular fa-star" data-star="1"></i>
         <i class="fa-regular fa-star" data-star="2"></i>
         <i class="fa-regular fa-star" data-star="3"></i>
         <i class="fa-regular fa-star" data-star="4"></i>
         <i class="fa-regular fa-star" data-star="5"></i>
-    </div>
+      </div>
 
-    <p class="rate-review__label" id="rateLabel"></p>
+      <p class="rate-review__label" id="rateLabel"></p>
 
-    <button class="rate-review__submit" id="rateSubmit">SUBMIT</button>
+      <button class="rate-review__submit" id="rateSubmit">SUBMIT</button>
 
-    <p class="rate-review__add" id="addReviewLink">
+      <p class="rate-review__add" id="addReviewLink">
         Want to share your opinion of this game with the community?
         <a href="#" id="openReviewForm">Add a review now.</a>
-    </p>
-</section>
+      </p>
+    </section>
 
-<!-- REVIEW FORM -->
-<section class="review-form" id="reviewForm">
-    <h2 class="review-form__title">Write a Review</h2>
+    <!-- REVIEW FORM -->
+    <section class="review-form" id="reviewForm">
+      <h2 class="review-form__title">Write a Review</h2>
 
-    <div class="review-form__field">
+      <div class="review-form__field">
         <label class="review-form__label">Title</label>
-        <input type="text" id="reviewTitle" class="review-form__input" placeholder="Enter a snappy title for your review">
-    </div>
+        <input
+          type="text"
+          id="reviewTitle"
+          class="review-form__input"
+          placeholder="Enter a snappy title for your review"
+        />
+      </div>
 
-    <div class="review-form__field">
+      <div class="review-form__field">
         <label class="review-form__label">Review</label>
-        <textarea id="reviewContent" class="review-form__textarea" placeholder="Played the game? Let us know your thoughts"></textarea>
-    </div>
+        <textarea
+          id="reviewContent"
+          class="review-form__textarea"
+          placeholder="Played the game? Let us know your thoughts"
+        ></textarea>
+      </div>
 
-    <div class="review-form__actions">
+      <div class="review-form__actions">
         <button class="review-form__submit" id="submitReviewBtn">SUBMIT</button>
-        <button class="review-form__cancel" id="cancelReviewForm">Cancel</button>
-    </div>
-</section>
+        <button class="review-form__cancel" id="cancelReviewForm">
+          Cancel
+        </button>
+      </div>
+    </section>
 
-<!-- THANK YOU SCREEN -->
-<section class="rate-thanks" id="rateThanks">
-    <div class="rate-thanks__content">
+    <!-- THANK YOU SCREEN -->
+    <section class="rate-thanks" id="rateThanks">
+      <div class="rate-thanks__content">
         <i class="fa-solid fa-circle-check rate-thanks__icon"></i>
         <h2 class="rate-thanks__title">Thanks for rating!</h2>
-        <p class="rate-thanks__message">Your feedback helps other gamers make informed decisions.</p>
-    </div>
-</section>
+        <p class="rate-thanks__message">
+          Your feedback helps other gamers make informed decisions.
+        </p>
+      </div>
+    </section>
     <!-- JavaScript -->
-<script src="../scripts/game-info.js"></script>
-</body>
+    <script src="../scripts/game-info.js"></script>
+    <script src="/scripts/include-footer.js" defer></script>
+  </body>
 </html>
