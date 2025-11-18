@@ -311,6 +311,22 @@ function initGallery() {
     }
   }
 
+  function restrictAddToWishlist() {
+    const addToWishlisttBtn = document.querySelector(".wishlist");
+
+    if (addToWishlisttBtn) {
+      addToWishlisttBtn.addEventListener("click", function (e) {
+        if (!isLoggedIn()) {
+          e.preventDefault();
+          e.stopPropagation();
+          alert("You need to login to add products to wishlist!");
+          showLoginPopup();
+        } else {
+          alert("Added to Wishlist!");
+        }
+      });
+    }
+  }
   // ===== RESTRICT RATING STARS =====
   function restrictRating() {
     const rateStarsContainer = document.getElementById("rateStars");
@@ -387,7 +403,7 @@ function initGallery() {
         if (!isLoggedIn()) {
           e.preventDefault();
           e.stopPropagation();
-          alert("Bạn cần đăng nhập để gửi đánh giá!");
+          alert("You must be logged in to post a bid!");
           showLoginPopup();
           return false;
         }
@@ -549,6 +565,7 @@ function initGallery() {
   // ===== INITIALIZE ALL RESTRICTIONS =====
   function initAuthRestrictions() {
     restrictAddToCart();
+    restrictAddToWishlist();
     restrictRating();
     restrictSubmitRating();
     restrictAddReviewLink();

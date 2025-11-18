@@ -20,7 +20,11 @@
 }
 
 body {
-  background: linear-gradient(180deg, #051423 25%, #0f232c 85%); /* Gradient nền */
+  background: linear-gradient(
+    180deg,
+    #051423 25%,
+    #0f232c 85%
+  ); /* Gradient nền */
   color: var(--text-color);
 }
 /*container*/
@@ -36,7 +40,7 @@ body {
 /*profile bar*/
 .profile-bar {
   display: flex; /* Hiển thị flex cho thanh profile */
-  justify-content: space-between; /* Căn đều khoảng cách giữa các phần tử */
+  justify-content: space-around; /* Căn đều khoảng cách giữa các phần tử */
   align-items: center; /* Căn giữa theo chiều dọc */
   padding: 35px 0 25px 0; /* Padding cho thanh profile */
 }
@@ -56,18 +60,18 @@ body {
 
 .profile-bar__text {
   display: flex; /* Hiển thị flex cho phần text profile */
-  flex-direction: column;  /* Sắp xếp theo cột */
+  flex-direction: column; /* Sắp xếp theo cột */
 }
 
 .profile-bar__username {
   font-size: 24px; /* Kích thước font cho username */
   font-weight: 700; /* In đậm */
-  color: var(--white); 
+  color: var(--white);
 }
 
 .profile-bar__fullname {
   font-size: 16px; /* Kích thước font cho fullname */
-  color: var(--text); 
+  color: var(--text);
 }
 
 .profile-bar__signout {
@@ -91,7 +95,7 @@ body {
 
 .user-nav__list {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 }
 
@@ -246,11 +250,7 @@ body {
 }
 /* FIX GRADIENT */
 body {
-  background: linear-gradient(
-    180deg,
-    #070F1A 25%,
-    #225557 81%
-  ) !important;
+  background: linear-gradient(180deg, #070f1a 25%, #225557 81%) !important;
   color: var(--text-color);
 }
 
@@ -270,6 +270,6 @@ body {
 }
 
 .activity-card {
-  background: rgba(255,255,255,0.03) !important;
-  border: 1px solid rgba(255,255,255,0.06);
+  background: rgba(255, 255, 255, 0.03) !important;
+  border: 1px solid rgba(255, 255, 255, 0.06);
 }

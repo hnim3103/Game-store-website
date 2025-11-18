@@ -23,7 +23,6 @@ body {
   color: var(--text-color);
 }
 
-
 .purchases-page {
   padding-top: 40px;
   padding-bottom: 120px;
@@ -93,7 +92,7 @@ body {
 
 .user-nav__list {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 }
 
@@ -141,7 +140,7 @@ body {
 }
 
 .order-card {
-  background: #1D4A4D;
+  background: #1d4a4d;
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 4px;
   padding: 14px;
@@ -189,7 +188,7 @@ body {
 .recent__header {
   display: flex;
   justify-content: space-between; /* Căn đều khoảng cách giữa các phần tử */
-  align-items: center; 
+  align-items: center;
 }
 
 .recent__see-more {
@@ -375,11 +374,7 @@ body {
 }
 /* fix gradient background */
 body {
-  background: linear-gradient(
-    180deg,
-    #070F1A 25%,
-    #225557 81%
-  ) !important;
+  background: linear-gradient(180deg, #070f1a 25%, #225557 81%) !important;
   color: var(--text-color);
 }
 
@@ -399,6 +394,6 @@ body {
 }
 
 .activity-card {
-  background: rgba(255,255,255,0.03) !important;
-  border: 1px solid rgba(255,255,255,0.06);
+  background: rgba(255, 255, 255, 0.03) !important;
+  border: 1px solid rgba(255, 255, 255, 0.06);
 }

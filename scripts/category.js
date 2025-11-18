@@ -1,4 +1,3 @@
-
 const minRange = document.querySelector(".min-val");
 const maxRange = document.querySelector(".max-val");
 const minInput = document.querySelector(".input-field__min-input");
@@ -63,7 +62,6 @@ maxInput.addEventListener("change", () => {
 // Initialize
 syncInputs();
 
-
 //dropdown button handler
 const dropdownBtn = document.querySelector(".sort__dropdown button");
 const dropdownContainer = document.querySelector(".dropdown__container");
@@ -77,7 +75,7 @@ dropdownBtn.addEventListener("click", (e) => {
 });
 
 // change button text on select
-options.forEach(option => {
+options.forEach((option) => {
   option.addEventListener("click", (e) => {
     dropdownBtn.childNodes[0].textContent = e.target.textContent + " ";
     dropdownContainer.style.display = "none";
@@ -89,4 +87,83 @@ document.addEventListener("click", () => {
   dropdownContainer.style.display = "none";
 });
 
+// Hàm kiểm tra đăng nhập (Giả lập hoặc lấy từ localStorage thực tế)
+function isLoggedIn() {
+  return window.Auth
+    ? window.Auth.isLoggedIn()
+    : localStorage.getItem("loggedInUserEmail") !== null;
+}
 
+// Hàm hiện Popup Login
+function showLoginPopup() {
+  const overlay =
+    document.querySelector(".gsw-popup-overlay") ||
+    document.getElementById("overlay-container");
+  const loginBox = document.querySelector('.popup-box[data-popup="login"]');
+
+  if (loginBox) {
+    loginBox.classList.add("active");
+    if (overlay) overlay.classList.add("active");
+  } else {
+    console.log(
+      "Chưa tìm thấy Login Popup trong DOM, chuyển hướng trang login..."
+    );
+    window.location.href = "/login.html";
+  }
+}
+
+function restrictAddToCart() {
+  const cartBtns = document.querySelectorAll(".game-card__add-cart");
+
+  cartBtns.forEach((btn) => {
+    btn.addEventListener("click", function (e) {
+      if (!isLoggedIn()) {
+        e.preventDefault();
+        e.stopPropagation();
+        alert("You need to login to add products to cart!");
+        showLoginPopup();
+      } else {
+        alert("Added to cart!");
+      }
+    });
+  });
+}
+
+function restrictAddToWishlist() {
+  const wishlistBtns = document.querySelectorAll(" .game-card__wishlist");
+
+  wishlistBtns.forEach((btn) => {
+    const newBtn = btn.cloneNode(true);
+    btn.parentNode.replaceChild(newBtn, btn);
+
+    newBtn.addEventListener("click", function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+
+      if (!isLoggedIn()) {
+        alert("You need to login to add products to wishlist!");
+        showLoginPopup();
+      } else {
+        const icon = newBtn.querySelector("i");
+        if (icon) {
+          if (icon.classList.contains("fa-regular")) {
+            icon.classList.remove("fa-regular");
+            icon.classList.add("fa-solid");
+            icon.style.color = "#00e122";
+          } else {
+            icon.classList.add("fa-regular");
+            icon.classList.remove("fa-solid");
+            icon.style.color = "";
+          }
+        }
+        alert("Added to Wishlist!");
+      }
+    });
+  });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  restrictAddToCart();
+  restrictAddToWishlist();
+  console.log("Homepage restrictions initialized");
+});
