@@ -239,9 +239,44 @@
         <span>EN</span>
       </div>
 
-      <a href="/html/cart.html" class="header__cart"><i class="bx bx-cart"></i></a>
+      <button type="button" class="header__cart">
+        <i class="bx bx-cart"></i>
+      </button>
 
-      <button class="header__signin">Sign In</button>
+      <div class="header__auth">
+        <a href="#" class="header__signin">Sign In</a>
+        <div class="header__user" id="userBtn" style="display: none">
+          <img
+            src="/img/icons/Ellipse 2.svg"
+            alt="Avatar"
+            class="header__avatar"
+          />
+          <span class="header__username"> </span>
+
+          <ul class="profile" id="userMenu">
+            <li class="profile__header">
+              <img
+                src="/img/icons/Ellipse 2.svg"
+                alt="Avatar"
+                class="header__avatar"
+              />
+              <div class="profile__info">
+                <span class="info__label">Your Account</span>
+                <span class="header__username"></span>
+              </div>
+            </li>
+
+            <li><a href="/html/setting.html">Account Setting</a></li>
+            <li><a href="/html/wishlist.html">Wishlist</a></li>
+            <li><a href="/html/purchases.html">Your Purchases</a></li>
+            <li><a href="/html/wallet.html">Your Wallet</a></li>
+
+            <li>
+              <a class="header__logout">Sign out</a>
+            </li>
+          </ul>
+        </div>
+      </div>
 
       <div class="header__menu-toggle">
         <i class="bx bx-menu"></i>
@@ -249,3 +284,428 @@
     </div>
   </div>
 </header>
+
+<div class="gsw-popup-overlay" id="global-popup-overlay">
+  <div class="login popup-box" data-popup="login">
+    <div class="login__button-group">
+      <a
+        href="#"
+        class="login__button login__button--signin popup-nav"
+        data-target="login"
+      >
+        <span>Sign In</span>
+      </a>
+
+      <a
+        href="#"
+        class="login__button login__button--register popup-nav"
+        data-target="register"
+      >
+        <span>Register</span>
+      </a>
+    </div>
+    <!--Login form-->
+    <form class="login__form" novalidate>
+      <h3 class="login__title">Sign In with...</h3>
+      <div class="login__input-group">
+        <label class="login__label" for="email">Email Address</label>
+        <div class="login__input-wrapper">
+          <input
+            class="login__input"
+            type="text"
+            id="email"
+            placeholder="Input Email Address"
+          />
+          <span class="login__error" id="email-error"></span>
+        </div>
+      </div>
+      <br />
+
+      <div class="login__input-group">
+        <label class="login__label" for="password">Password</label>
+        <div class="login__input-wrapper">
+          <input
+            class="login__input"
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Input Password"
+          />
+          <span class="login__error" id="password-error"></span>
+        </div>
+      </div>
+      <br />
+
+      <button type="submit" class="login__submit">
+        <span>SIGN IN</span>
+      </button>
+      <a
+        href="#"
+        class="login__forgot-password popup-nav"
+        data-target="email-account"
+      >
+        Forgot Your Password?
+      </a>
+    </form>
+
+    <!--Devider-->
+    <div class="login__divider">
+      <span>OR</span>
+    </div>
+
+    <!--Social Login-->
+    <div class="login__social">
+      <!--Login with Facebook-->
+      <button
+        onclick="window.location.href='https'"
+        class="login__social-btn login__social-btn--facebook"
+      >
+        <img
+          class="login__social-icon"
+          src="/img/icons/fb.png"
+          alt="Facebook Icon"
+        />
+      </button>
+      <!--Login with Google-->
+      <button
+        onclick="window.location.href='https'"
+        class="login__social-btn login__social-btn--google"
+      >
+        <img
+          class="login__social-icon"
+          src="/img/icons/gg.svg"
+          alt="Google Icon"
+        />
+      </button>
+      <!--Login with LinkedIn-->
+      <button
+        onclick="window.location.href='https'"
+        class="login__social-btn login__social-btn--linkedin"
+      >
+        <img
+          class="login__social-icon"
+          src="/img/icons/linkedin.svg"
+          alt="LinkedIn Icon"
+        />
+      </button>
+
+      <!--Login with Twitter-->
+      <button
+        onclick="window.location.href='https'"
+        class="login__social-btn login__social-btn--twitter"
+      >
+        <img
+          class="login__social-icon"
+          src="/img/icons/twitter.svg"
+          alt="Twitter Icon"
+        />
+      </button>
+    </div>
+  </div>
+
+  <div class="register popup-box" data-popup="register">
+    <div class="register__button-group">
+      <a
+        href="#"
+        class="register__button register__button--signin popup-nav"
+        data-target="login"
+      >
+        <span>Sign In</span>
+      </a>
+
+      <a
+        href="#"
+        class="register__button register__button--register popup-nav"
+        data-target="register"
+      >
+        <span>Register</span>
+      </a>
+    </div>
+
+    <!--Register form-->
+    <div class="register__heading">
+      <h3>Register with...</h3>
+    </div>
+
+    <!--Social Register-->
+    <div class="register__social">
+      <!--register with Facebook-->
+      <button
+        onclick="window.location.href='https'"
+        class="register__social-btn register__social-btn--facebook"
+      >
+        <img
+          class="register__social-icon"
+          src="/img/icons/fb.png"
+          alt="Facebook Icon"
+        />
+      </button>
+      <!--register with Google-->
+      <button
+        onclick="window.location.href='https'"
+        class="register__social-btn register__social-btn--google"
+      >
+        <img
+          class="register__social-icon"
+          src="/img/icons/gg.svg"
+          alt="Google Icon"
+        />
+      </button>
+      <!--register with LinkedIn-->
+      <button
+        onclick="window.location.href='https'"
+        class="register__social-btn register__social-btn--linkedin"
+      >
+        <img
+          class="register__social-icon"
+          src="/img/icons/linkedin.svg"
+          alt="LinkedIn Icon"
+        />
+      </button>
+      <!--register with Twitter-->
+      <button
+        onclick="window.location.href='https'"
+        class="register__social-btn register__social-btn--twitter"
+      >
+        <img
+          class="register__social-icon"
+          src="/img/icons/twitter.svg"
+          alt="Twitter Icon"
+        />
+      </button>
+    </div>
+
+    <!--Devider-->
+    <div class="register__divider">
+      <span>OR</span>
+    </div>
+
+    <!--Register form-->
+    <form class="register__form" novalidate>
+      <div class="register__input-group">
+        <label class="register__label" for="name">UserName</label>
+        <div class="register__input-wrapper">
+          <input
+            class="register__input"
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Input UserName"
+          />
+          <span class="register__error" id="name-error"></span>
+        </div>
+      </div>
+      <br />
+      <div class="register__input-group">
+        <label class="register__label" for="email">Email Address</label>
+        <div class="register__input-wrapper">
+          <input
+            class="register__input"
+            type="text"
+            id="email"
+            name="email"
+            placeholder="Input Email Address"
+          />
+          <span class="register__error" id="email-error"></span>
+        </div>
+      </div>
+      <br />
+      <div class="register__input-group">
+        <label class="register__label" for="password">Password</label>
+        <div class="register__input-wrapper">
+          <input
+            class="register__input"
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Input Password"
+          />
+          <span class="register__error" id="password-error"></span>
+        </div>
+      </div>
+      <br />
+      <div class="register__input-group">
+        <label class="register__label" for="dob">Date of Birth</label>
+        <div class="register__input-wrapper">
+          <input
+            class="register__input"
+            type="text"
+            id="dob"
+            name="dob"
+            placeholder="DD/MM/YYYY"
+          />
+          <span class="register__error" id="date-error"></span>
+        </div>
+      </div>
+
+      <div class="register__confirm">
+        <input type="checkbox" id="terms" class="register__checkbox" />
+        <label for="terms" class="register__terms-label">
+          <span class="register__checkbox-custom"></span>
+          <span class="register__terms-text"
+            >I Accept The
+            <u>Terms And Conditions, Cookie Policy And Privacy Policy.</u></span
+          >
+        </label>
+        <span class="register__error" id="terms-error"></span>
+      </div>
+
+      <div class="register__confirm">
+        <input type="checkbox" id="promotions" class="register__checkbox" />
+        <label for="promotions" class="register__terms-label">
+          <span class="register__checkbox-custom"></span>
+          <span class="register__terms-text"
+            >IConditions, Cookie Policy And Privacy Policy.</span
+          >
+        </label>
+        <span class="register__error" id="promotions-error"></span>
+      </div>
+
+      <div>
+        <button type="submit" class="register__submit">
+          <span>REGISTER</span>
+        </button>
+      </div>
+    </form>
+  </div>
+
+  <div class="email popup-box" data-popup="email-account">
+    <div class="email__button-group">
+      <a
+        href="#"
+        class="email__button email__button--email popup-nav"
+        data-target="email-account"
+      >
+        <span>Email Account</span>
+      </a>
+
+      <a
+        href="#"
+        class="email__button email__button--phone popup-nav"
+        data-target="phone-account"
+      >
+        <span>Phone Account</span>
+      </a>
+    </div>
+
+    <!--Request reset passoword-->
+    <form class="email__form" novalidate>
+      <div class="email__label">
+        <label for="email">Email Address</label>
+      </div>
+      <div class="email__input-group">
+        <input
+          type="text"
+          id="email"
+          name="email"
+          placeholder="Input Email Address"
+          class="email__input"
+        />
+        <span class="email__error" id="email-error"></span>
+      </div>
+      <br />
+      <button type="submit" class="email__submit">
+        <span>RESET PASSWORD</span>
+      </button>
+      <a href="#" class="email__return popup-nav" data-target="login">
+        <u>Return to Sign In</u>
+      </a>
+    </form>
+  </div>
+
+  <div class="phone popup-box" data-popup="phone-account">
+    <div class="phone__button-group">
+      <a
+        href="#"
+        class="phone__button phone__button--email popup-nav"
+        data-target="email-account"
+      >
+        <span>Email Account</span>
+      </a>
+
+      <a
+        href="#"
+        class="phone__button phone__button--phone popup-nav"
+        data-target="phone-account"
+      >
+        <span>Phone Account</span>
+      </a>
+    </div>
+
+    <!--Request reset passoword-->
+    <form class="phone__form" novalidate>
+      <div class="phone__label">
+        <label for="phone">Phone Number</label>
+      </div>
+
+      <div class="phone__input-group">
+        <div class="phone__input-wrapper">
+          <div class="phone__country-select">
+            <img
+              src="https://flagcdn.com/w40/vn.png"
+              alt="Vietnam flag"
+              class="phone__country-flag"
+            />
+            <span class="phone__country-code">+84</span>
+          </div>
+          <div class="phone__input-container">
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              placeholder="Enter phone number"
+              class="phone__input"
+            />
+            <span class="phone__error" id="phone-error"></span>
+          </div>
+        </div>
+
+        <ul class="phone__country-list">
+          <li class="phone__country-item" data-code="+84" data-flag="vn">
+            <img
+              src="https://flagcdn.com/w40/vn.png"
+              class="phone__country-flag"
+            />
+            Vietnam (+84)
+          </li>
+          <li class="phone__country-item" data-code="+1" data-flag="us">
+            <img
+              src="https://flagcdn.com/w40/us.png"
+              class="phone__country-flag"
+            />
+            United States (+1)
+          </li>
+          <li class="phone__country-item" data-code="+81" data-flag="jp">
+            <img
+              src="https://flagcdn.com/w40/jp.png"
+              class="phone__country-flag"
+            />
+            Japan (+81)
+          </li>
+          <li class="phone__country-item" data-code="+82" data-flag="kr">
+            <img
+              src="https://flagcdn.com/w40/kr.png"
+              class="phone__country-flag"
+            />
+            South Korea (+82)
+          </li>
+          <li class="phone__country-item" data-code="+65" data-flag="sg">
+            <img
+              src="https://flagcdn.com/w40/sg.png"
+              class="phone__country-flag"
+            />
+            Singapore (+65)
+          </li>
+        </ul>
+      </div>
+      <br />
+      <button type="submit" class="phone__submit">
+        <span>RESET PASSWORD</span>
+      </button>
+
+      <a href="#" class="phone__return popup-nav" data-target="login"
+        ><u>Return to Sign In</u></a
+      >
+    </form>
+  </div>
+</div>

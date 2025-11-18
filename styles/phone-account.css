@@ -16,17 +16,6 @@
   --bg2: #225557;
 }
 
-body {
-  overflow: hidden;
-  height: 100vh;
-  background: linear-gradient(180deg, var(--bg1) 5%, #0b2a2e 45%, var(--bg2) 95%);
-  background-attachment: fixed;
-  overflow-x: hidden;
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 /* phone-account box */
 .phone {
   display: flex;
@@ -59,77 +48,33 @@ body {
   transition: all 0.2s ease-in-out;
 }
 
-.main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 5% 0% 5% 0%;
-  gap: 10px;
-  background-color: #0f232c;
-  border-radius: 10px;
-  width: 90%;
-  max-width: 800px;
-  height: auto;
-  transform: scale(0.6);
-  transform-origin: center center;
+.phone__button--phone {
+  margin-right: 1.3%;
+  box-shadow: 0px 3px 4.8px var(--green-color);
 }
 
-.button-group {
-  display: flex;
-  gap: 10px;
-  width: 100%;
-  max-width: 720px;
-  padding: 0 2%;
-  box-sizing: border-box;
-}
-
-.phone-account {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100px;
-  width: 100%;
-  background-color: var(--dark-green-color);
-  color: var(--text-color);
-  border-radius: 10px;
-  font-size: 30px;
-  font-weight: 700;
-  box-shadow: 0px 5px 8px var(--green-color);
-}
-
-.email-account {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100px;
-  width: 100%;
-  background-color: var(--dark-green-color);
-  color: var(--text-color);
-  border-radius: 10px;
-  font-size: 30px;
-  font-weight: 700;
+.phone__button--email {
+  margin-left: 1.3%;
   box-shadow: 0px 5px 8px var(--black-color);
 }
-
-.reset-form {
-  font-size: 24px;
+/* form */
+.phone__form {
   color: var(--text-color);
-  font-weight: 500;
-  gap: 5px;
+  font-size: clamp(12px, 2.4vw, 16.8px);
+  font-weight: 600;
   width: 100%;
-  max-width: 720px;
-  padding: 0 2%;
+  padding: 0 1.2%;
   box-sizing: border-box;
 }
 
-.reset-form label {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  display: block;
+.phone__label {
+  color: var(--text-color);
+  font-size: clamp(15px, 2.4vw, 21px);
+  font-weight: 700;
+  margin: 3% 0;
 }
 
-.phone-wrapper {
+.phone__input-wrapper {
   display: flex;
   align-items: center;
   gap: 5px;
@@ -152,6 +97,7 @@ body {
   font-size: clamp(12px, 2.4vw, 14.4px);
   color: var(--text-color);
   transition: all 0.2s ease-in-out;
+  padding-left: 5px;
 }
 /* custome select country */
 .phone__country-select {
@@ -290,6 +236,6 @@ body {
 /* mobile */
 @media (max-width: 767px) {
   .phone {
-    padding: 2rem 1rem;
+    padding: 2rem 0.5rem;
   }
 }

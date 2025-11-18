@@ -66,10 +66,10 @@ document.addEventListener("DOMContentLoaded", () => {
       //Check pasword
       const passwordPattern =
         /^(?=.*[A-Z])(?=.*[!@#$%^&*()_+{}\[\]:;<>,.?~\\/-]).{6,}$/;
-      if (!passwordPattern.test(newPass.value.trim())) {
+      if (newPass.value.length < 6) {
         newPass.classList.add("error");
         newPassError.textContent =
-          "Password must contain at least 6 characters, 1 uppercase letter, and 1 special character";
+          "Password must contain at least 6 characters";
         newPassError.classList.add("active");
         isValid = false;
       }
@@ -92,7 +92,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // update fe
         document.getElementById("static-email").textContent = newEmailValue;
-        document.getElementById("static-address").textContent = newAddressValue;
         const profileText = newProfileValue === "public" ? "Public" : "Private";
         document.getElementById("static-profile").textContent = profileText;
         const langText =
@@ -116,6 +115,18 @@ document.addEventListener("DOMContentLoaded", () => {
           errorMessage.textContent = "";
         }
       }
+    });
+  }
+  // Sign-Out
+  const signOutButton = document.querySelector(".profile-bar__signout");
+  if (signOutButton) {
+    signOutButton.addEventListener("click", (e) => {
+      e.preventDefault();
+
+      localStorage.removeItem("loggedInUserEmail");
+
+      alert("You have logged out.");
+      window.location.href = "/html/homepage.html";
     });
   }
 });

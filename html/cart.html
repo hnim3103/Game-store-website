@@ -1,151 +1,246 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Shopping Cart</title>
-    
+    <script src="/scripts/include-header.js" defer></script>
     <!-- Styles -->
-    <link rel="stylesheet" href="/styles/cart.css">
-    
+    <link rel="stylesheet" href="/styles/cart.css" />
+
     <!-- Boxicons CDN -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
-    
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"
+    />
+
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap" rel="stylesheet">
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="/img/logo.svg">
+    <link rel="icon" type="image/x-icon" href="/img/logo.svg" />
 
     <script src="https://kit.fontawesome.com/546bf66050.js" crossorigin="anonymous"></script>
+
+    <!-- Header include -->
+  <script src="/scripts/include-header.js" defer></script>
 </head>
 
-<body>
+  <body>
     <!-- Main Content -->
     <main class="main">
-        <div class="main__container">
-            <h1 class="cart__title">YOUR CART</h1>
-            <!-- Cart Section -->
-            <section class="cart">
-                <!-- Cart Items -->
-                <div class="cart__items">
-                    <!-- Cart Item 1 -->
-                    <div class="cart-item">
-                        <img src="/img/assets/game1.jpg" alt="Game Cover" class="cart-item__image">
-                        <div class="cart-item__info">
-                            <h3 class="cart-item__title">Dying Light: The Beast</h3>
-                            <p class="cart-item__genres">Zombies, Action, Parkour, Open World</p>
-                            <p class="cart-item__release">Realease Date: 19 Sep, 2025</p>
-                        </div>
-                        <div class="cart-item__pricing">
-                            <span class="cart-item__discount">-75%</span>
-                            <div class="cart-item__price-wrapper">
-                                <span class="cart-item__price--old">$19.99</span>
-                                <span class="cart-item__price--new">$4.99</span>
-                            </div>
-                        </div>
-                        <button class="cart-item__delete" aria-label="Remove item">
-                            <i class="bx bx-trash cart-item__delete-icon"></i>
-                        </button>
-                    </div>
-
-                    <!-- Cart Item 2 -->
-                    <div class="cart-item">
-                        <img src="/img/assets/game1.jpg" alt="Game Cover" class="cart-item__image">
-                        <div class="cart-item__info">
-                            <h3 class="cart-item__title">Dying Light: The Beast</h3>
-                            <p class="cart-item__genres">Zombies, Action, Parkour, Open World</p>
-                            <p class="cart-item__release">Release Date: 19 Sep, 2025</p>
-                        </div>
-                        <div class="cart-item__pricing">
-                            <span class="cart-item__price">$5.99</span>
-                        </div>
-                        <button class="cart-item__delete" aria-label="Remove item">
-                            <i class="bx bx-trash cart-item__delete-icon"></i>
-                        </button>
-                    </div>
+      <div class="main__container">
+        <h1 class="cart__title">YOUR CART</h1>
+        <!-- Cart Section -->
+        <section class="cart">
+          <!-- Cart Items -->
+          <div class="cart__items">
+            <!-- Cart Item 1 -->
+            <div class="cart-item">
+              <img
+                src="/img/assets/game1.jpg"
+                alt="Game Cover"
+                class="cart-item__image"
+              />
+              <div class="cart-item__info">
+                <h3 class="cart-item__title">Dying Light: The Beast</h3>
+                <p class="cart-item__genres">
+                  Zombies, Action, Parkour, Open World
+                </p>
+                <p class="cart-item__release">Realease Date: 19 Sep, 2025</p>
+              </div>
+              <div class="cart-item__pricing">
+                <span class="cart-item__discount">-75%</span>
+                <div class="cart-item__price-wrapper">
+                  <span class="cart-item__price--old">$19.99</span>
+                  <span class="cart-item__price--new">$4.99</span>
                 </div>
+              </div>
+              <button class="cart-item__delete" aria-label="Remove item">
+                <i class="bx bx-trash cart-item__delete-icon"></i>
+              </button>
+            </div>
 
-                <!-- Voucher Section -->
-                <section class="voucher">
-                    <h2 class="voucher__title">Vouchers & Gift Cards</h2>
-                    <div class="voucher__input-wrapper">
-                        <label for="voucher-code" class="voucher__label">Enter your code</label>
-                        <input type="text" id="voucher-code" class="voucher__input" placeholder="">
-                        <button class="voucher__button">APPLY</button>
-                    </div>
-                </section>
-            </section>
+            <!-- Cart Item 2 -->
+            <div class="cart-item">
+              <img
+                src="/img/assets/game1.jpg"
+                alt="Game Cover"
+                class="cart-item__image"
+              />
+              <div class="cart-item__info">
+                <h3 class="cart-item__title">Dying Light: The Beast</h3>
+                <p class="cart-item__genres">
+                  Zombies, Action, Parkour, Open World
+                </p>
+                <p class="cart-item__release">Release Date: 19 Sep, 2025</p>
+              </div>
+              <div class="cart-item__pricing">
+                <span class="cart-item__price">$5.99</span>
+              </div>
+              <button class="cart-item__delete" aria-label="Remove item">
+                <i class="bx bx-trash cart-item__delete-icon"></i>
+              </button>
+            </div>
+          </div>
 
-            <!-- Cart Summary Section -->
-            <aside class="summary">
-                <h2 class="summary__title">Cart Summary</h2>
+          <!-- Voucher Section -->
+          <section class="voucher">
+            <h2 class="voucher__title">Vouchers & Gift Cards</h2>
+            <div class="voucher__input-wrapper">
+              <label for="voucher-code" class="voucher__label"
+                >Enter your code</label
+              >
+              <input
+                type="text"
+                id="voucher-code"
+                class="voucher__input"
+                placeholder=""
+              />
+              <button class="voucher__button">APPLY</button>
+            </div>
+          </section>
+        </section>
 
-                <div class="summary__details">
-                    <div class="summary__row">
-                        <span class="summary__label summary__label--full-price">Full price</span>
-                        <span class="summary__value summary__value--full-price">$25.98</span>
-                    </div>
-                    
-                    <div class="summary__row summary__row--divider">
-                        <span class="summary__label">Your Discount</span>
-                        <span class="summary__value">-$15</span>
-                    </div>
-                    
-                    <div class="summary__row summary__row--save">
-                        <span class="summary__label">You Save</span>
-                        <span class="summary__value">-$15</span>
-                    </div>
-                    
-                    <div class="summary__row summary__row--total">
-                        <span class="summary__label">TOTAL</span>
-                        <span class="summary__value summary__value--total">$10.98</span>
-                    </div>
+        <!-- Cart Summary Section -->
+        <aside class="summary">
+          <h2 class="summary__title">Cart Summary</h2>
+
+          <div class="summary__details">
+            <div class="summary__row">
+              <span class="summary__label summary__label--full-price"
+                >Full price</span
+              >
+              <span class="summary__value summary__value--full-price"
+                >$25.98</span
+              >
+            </div>
+
+            <div class="summary__row summary__row--divider">
+              <span class="summary__label">Your Discount</span>
+              <span class="summary__value">-$15</span>
+            </div>
+
+            <div class="summary__row summary__row--save">
+              <span class="summary__label">You Save</span>
+              <span class="summary__value">-$15</span>
+            </div>
+
+            <div class="summary__row summary__row--total">
+              <span class="summary__label">TOTAL</span>
+              <span class="summary__value summary__value--total">$10.98</span>
+            </div>
+          </div>
+
+          <button
+            class="summary__button"
+            onclick="window.location.href='payment.html'"
+          >
+            PROCEED TO PAYMENT
+          </button>
+
+          <div class="summary__terms">
+            <p class="summary__terms-text">
+              By purchasing a digital product, you are granted a license to use
+              the product on the specified DRM platform.
+            </p>
+            <p class="summary__terms-text">
+              For more information, please see our
+              <a href="#" class="summary__link">terms and conditions.</a>
+            </p>
+            <p class="summary__terms-text">
+              By clicking Place Order, you accept our
+              <a href="#" class="summary__link">refund policy.</a>
+            </p>
+          </div>
+
+          <div class="summary__payment">
+            <p class="summary__payment-title">We accept</p>
+            <div class="summary__payment-icons">
+              <img
+                src="/img/payment-icons/paypal.png"
+                alt="PayPal"
+                class="summary__payment-icon"
+              />
+              <img
+                src="/img/payment-icons/jcb.png"
+                alt="JCB"
+                class="summary__payment-icon"
+              />
+              <img
+                src="/img/payment-icons/google-pay.png"
+                alt="Google Pay"
+                class="summary__payment-icon"
+              />
+              <img
+                src="/img/payment-icons/mastercard.png"
+                alt="Mastercard"
+                class="summary__payment-icon"
+              />
+              <img
+                src="/img/payment-icons/paypal.png"
+                alt="PayPal"
+                class="summary__payment-icon"
+              />
+              <img
+                src="/img/payment-icons/google-pay.png"
+                alt="Google Pay"
+                class="summary__payment-icon"
+              />
+            </div>
+          </div>
+        </aside>
+      </div>
+
+      <!-- Recommendations Section -->
+      <section class="recommendations">
+        <h2 class="recommendations__title">You may also like</h2>
+
+        <!-- Slider -->
+        <div class="recommendations__slider">
+          <button class="recommendations__arrow recommendations__arrow-left">
+            <i class="bx bx-chevron-left"></i>
+          </button>
+
+          <div class="recommendations__list">
+            <div class="product-card">
+              <img
+                src="/img/assets/game1.jpg"
+                alt="Dying Light: The Beast"
+                class="product-card__image"
+              />
+              <div class="product-card__content">
+                <div class="product-card__price-wrapper">
+                  <div class="product-card__price">
+                    <p>$19.99</p>
+                  </div>
                 </div>
-
-                <button class="summary__button" onclick="window.location.href='payment.html'">PROCEED TO PAYMENT</button>
-
-                <div class="summary__terms">
-                    <p class="summary__terms-text">
-                        By purchasing a digital product, you are granted a license to use the product on the specified DRM platform.
-                    </p>
-                    <p class="summary__terms-text">
-                        For more information, please see our <a href="#" class="summary__link">terms and conditions.</a>
-                    </p>
-                    <p class="summary__terms-text">
-                        By clicking Place Order, you accept our <a href="#" class="summary__link">refund policy.</a>
-                    </p>
+                <div class="product-card__add-cart">
+                  <i class="fa-solid fa-cart-plus"></i>
+                  <a href="#"
+                    ><span class="product-card__add-cart-text"
+                      >Add to cart</span
+                    ></a
+                  >
                 </div>
-
-                <div class="summary__payment">
-                    <p class="summary__payment-title">We accept</p>
-                    <div class="summary__payment-icons">
-                        <img src="/img/payment-icons/paypal.png" alt="PayPal" class="summary__payment-icon">
-                        <img src="/img/payment-icons/jcb.png" alt="JCB" class="summary__payment-icon">
-                        <img src="/img/payment-icons/google-pay.png" alt="Google Pay" class="summary__payment-icon">
-                        <img src="/img/payment-icons/mastercard.png" alt="Mastercard" class="summary__payment-icon">
-                        <img src="/img/payment-icons/paypal.png" alt="PayPal" class="summary__payment-icon">
-                        <img src="/img/payment-icons/google-pay.png" alt="Google Pay" class="summary__payment-icon">
-                    </div>
-                </div>
-            </aside>
-        </div>
-
-        <!-- Recommendations Section -->
-        <section class="recommendations">
-            <h2 class="recommendations__title">You may also like</h2>
-
-            <!-- Slider -->
-            <div class="recommendations__slider">
-                <button class="recommendations__arrow recommendations__arrow-left">
-                    <i class="bx bx-chevron-left"></i>
+                <button
+                  class="product-card__wishlist"
+                  aria-label="Add to wishlist"
+                >
+                  <i class="fa-regular fa-heart"></i>
                 </button>
+              </div>
+            </div>
 
                 <div class="recommendations__list">
+
                     <div class="product-card">
                         <img src="/img/assets/game1.jpg" alt="Dying Light: The Beast" class="product-card__image">
                         <div class="product-card__content">
@@ -156,7 +251,7 @@
                             </div>
                             <div class="product-card__add-cart">
                                 <i class="fa-solid fa-cart-plus"></i>
-                                <a href="#"><span class="product-card__add-cart-text">Add to cart</span></a>
+                                <span class="product-card__add-cart-text">Add to cart</span>
                             </div>
                             <button class="product-card__wishlist" aria-label="Add to wishlist">
                                 <i class="fa-regular fa-heart"></i>
@@ -174,7 +269,7 @@
                             </div>
                             <div class="product-card__add-cart">
                                 <i class="fa-solid fa-cart-plus"></i>
-                                <a href="#"><span class="product-card__add-cart-text">Add to cart</span></a>
+                                <span class="product-card__add-cart-text">Add to cart</span>
                             </div>
                             <button class="product-card__wishlist" aria-label="Add to wishlist">
                                 <i class="fa-regular fa-heart"></i>
@@ -192,7 +287,7 @@
                             </div>
                             <div class="product-card__add-cart">
                                 <i class="fa-solid fa-cart-plus"></i>
-                                <a href="#"><span class="product-card__add-cart-text">Add to cart</span></a>
+                                <span class="product-card__add-cart-text">Add to cart</span>
                             </div>
                             <button class="product-card__wishlist" aria-label="Add to wishlist">
                                 <i class="fa-regular fa-heart"></i>
@@ -200,13 +295,59 @@
                         </div>
                     </div>             
                 </div>
-
-                <button class="recommendations__arrow recommendations__arrow-right">
-                    <i class="bx bx-chevron-right"></i>
+                <div class="product-card__add-cart">
+                  <i class="fa-solid fa-cart-plus"></i>
+                  <a href="#"
+                    ><span class="product-card__add-cart-text"
+                      >Add to cart</span
+                    ></a
+                  >
+                </div>
+                <button
+                  class="product-card__wishlist"
+                  aria-label="Add to wishlist"
+                >
+                  <i class="fa-regular fa-heart"></i>
                 </button>
+              </div>
             </div>
-        </section>
+
+            <div class="product-card">
+              <img
+                src="/img/assets/game1.jpg"
+                alt="Dying Light: The Beast"
+                class="product-card__image"
+              />
+              <div class="product-card__content">
+                <div class="product-card__price-wrapper">
+                  <div class="product-card__price">
+                    <p>$19.99</p>
+                  </div>
+                </div>
+                <div class="product-card__add-cart">
+                  <i class="fa-solid fa-cart-plus"></i>
+                  <a href="#"
+                    ><span class="product-card__add-cart-text"
+                      >Add to cart</span
+                    ></a
+                  >
+                </div>
+                <button
+                  class="product-card__wishlist"
+                  aria-label="Add to wishlist"
+                >
+                  <i class="fa-regular fa-heart"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <button class="recommendations__arrow recommendations__arrow-right">
+            <i class="bx bx-chevron-right"></i>
+          </button>
+        </div>
+      </section>
     </main>
     <script src="/scripts/include-footer.js" defer></script>
-</body>
+  </body>
 </html>
