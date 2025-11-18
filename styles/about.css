@@ -15,7 +15,7 @@
   margin: 0;
 }
 
-/* ========== HERO ========== */
+/*  HERO */
 .hero {
   text-align: center;
   padding: clamp(60px, 8vw, 100px) 20px clamp(40px, 6vw, 80px);
@@ -70,7 +70,7 @@
   }
 }
 
-/* ========== HERO BANNER ========== */
+/*  HERO BANNER */
 .hero-banner {
   position: relative;
   display: flex;
@@ -143,7 +143,7 @@
   pointer-events: none;
 }
 
-/* ========== SECTION SHARED STYLES ========== */
+/*SECTION SHARED STYLES */
 .section {
   text-align: center;
   color: #fff;
@@ -270,7 +270,7 @@
   margin: 0 auto;
 }
 
-/* ========== SHOWCASE SECTION ========== */
+/* SHOWCASE SECTION */
 .showcase {
   position: relative;
   width: 100%;
@@ -372,7 +372,7 @@
   box-shadow: 0 0 60px rgba(0, 225, 34, 0.9);
 }
 
-/* ========== REVIEW SHOWCASE SECTION ========== */
+/* REVIEW SHOWCASE SECTION  */
 .review {
   position: relative;
   width: 100%;
@@ -479,9 +479,9 @@
   transform: scale(1.08);
 }
 
-/* ========== RESPONSIVE ========== */
+/*RESPONSIVE*/
 
-/* ===== Tablet (≤ 1024px) ===== */
+/*  Tablet (≤ 1024px) */
 @media (max-width: 1024px) {
   /* HERO */
   .hero {
@@ -547,8 +547,8 @@
   }
 }
 
-/* ===== Mobile (≤ 576px) ===== */
-@media (max-width: 576px) {
+/* Mobile (≤ 768px)*/
+@media (max-width: 768px) {
   /* HERO */
   .hero__title {
     font-size: 28px;
@@ -577,7 +577,6 @@
   .section__card-text {
     font-size: 15px;
   }
-  
 
   /* SHOWCASE */
   .showcase {
@@ -603,6 +602,7 @@
   }
 }
 
+/* REVEAL ANIMATION */
 .hero, .section, .showcase, .review, .partners {
   opacity: 0;
   transform: translateY(30px);
@@ -614,6 +614,7 @@
   transform: translateY(0);
 }
 
+/* QUOTE FADE */
 #quote-text.fade {
   animation: fadeIn 1.2s ease;
 }
@@ -621,4 +622,16 @@
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+html, body {
+  overflow-x: hidden !important;
+  scrollbar-width: none; /* Ẩn thanh cuộn trên Firefox */
+  -ms-overflow-style: none; /* Ẩn thanh cuộn trên IE và Edge */
+}
+
+/* Ẩn thanh cuộn trên Chrome, Safari, Opera */
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
 }

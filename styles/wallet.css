@@ -4,12 +4,17 @@
   --white: #ffffff;
   --text: #bfcdd4;
   --bg-dark: #051423;
+  --bg1: #070F1A;
+  --bg2: #225557;
 }
 
 body {
   margin: 0;
   font-family: "Roboto Flex", sans-serif;
-  background: linear-gradient(to bottom, #051423, #09303b, #0d3c48);
+  background: linear-gradient(180deg, var(--bg1) 5%, #0b2a2e 45%, var(--bg2) 95%);
+  background-attachment: fixed;
+  overflow-x: hidden;
+  margin: 0;
   color: var(--white);
 }
 
@@ -134,14 +139,16 @@ body {
 
 /* wallet content */
 .wallet-balance {
-  font-size: 22px;
+  font-size: 25px;
   margin-bottom: 25px;
-  font-weight: 500;
+  font-weight: 200;
+  letter-spacing: 2px;
 }
 
 .balance-amount {
   color: var(--green);
-  font-weight: 700;
+  font-weight: 200;
+  letter-spacing: 2px;
 }
 
 /* voucher and gift card form */
@@ -150,16 +157,17 @@ body {
 }
 
 .voucher__title {
-  font-size: 22px;
+  font-size: 25px;
   margin-bottom: 14px;
   font-weight: 600;
 }
 
 .voucher__input-wrapper {
-  background: #0d2f34;
+  background: #757575;
   border: 1px solid rgba(255, 255, 255, 0.15);
   padding: 18px;
   border-radius: 6px;
+  max-width: 730px;
 
   display: flex;
   align-items: center;
@@ -167,51 +175,62 @@ body {
 }
 
 .voucher__label {
-  width: 150px;
-  font-size: 14px;
+  width: 160px;
+  font-size: 20px;
   color: var(--text);
 }
 
 .voucher__input {
   flex: 1;
-  background: #5c6366;
+  background: #D9D9D9;
   border: none;
   padding: 10px;
   border-radius: 3px;
-  color: white;
-  font-size: 15px;
+  color: black;
+  font-size: 20px;
+
+  box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.15);
+}
+
+.voucher__input:focus {
+  outline: none;
 }
 
 .voucher__button {
-  background: #2a6c6e;
+  background: #757575;
   border: none;
   padding: 10px 22px;
   border-radius: 4px;
   font-weight: 600;
+  font-size: 20px;
   cursor: pointer;
   color: var(--white);
   transition: 0.2s;
 }
 
 .voucher__button:hover {
-  background: #3aa7a9;
+  background: #225557;
 }
 
 /* gift card history */
 .history {
-  margin-top: 40px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+  margin-top: 60px;
 }
 
 .history__title {
-  font-size: 22px;
+  font-size: 25px;
+  font-weight: 200;
+  letter-spacing: 2px;
   margin-bottom: 10px;
+
+  padding-bottom: 20px;
+  border-bottom: 2px solid #225557;
 }
 
 .empty-text {
+  margin-top: 20px;
   color: var(--text);
-  font-size: 14px;
+  font-size: 20px;
 }
 
 /* footer */

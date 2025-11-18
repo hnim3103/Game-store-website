@@ -16,16 +16,11 @@
   --black-color: #070f1a;
   --text-color: #ffffff;
   --super-dark-green-color: #0f232c;
-  --bg1: #070F1A;
-  --bg2: #225557;
   font-size: 10px;
 }
 
 body {
-  background: linear-gradient(180deg, var(--bg1) 5%, #0b2a2e 45%, var(--bg2) 95%);
-  background-attachment: fixed;
-  overflow-x: hidden;
-  margin: 0;
+  background: linear-gradient(180deg, #051423 25%, #0f232c 85%); /* Gradient nền */
   color: var(--text-color);
 }
 /*container*/
@@ -138,24 +133,23 @@ body {
 /* empty massage */
 .notification {
   text-align: center;
-  margin-top: 50px;
-  margin-bottom: 20px;
+  margin-top: 3rem;
+  margin-bottom: 5rem;
 }
 
 .notification__title {
-  font-size: 30px;
-  font-weight: 200;
-  letter-spacing: 2px;
+  font-size: 2.2rem;
+  font-weight: 600;
 }
 
 .empty-text {
-  font-size: 25px;
-  margin-top: 20px;
+  font-size: 1.6rem;
+  margin-top: 1rem;
   color: #c7d2da;
 }
 /*recommendations*/
 .recommendations {
-  margin-top: 100px;
+  margin-top: 6rem;
   max-width: 1100px;
   margin-left: auto;
   margin-right: auto;
