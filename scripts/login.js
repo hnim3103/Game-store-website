@@ -1,6 +1,8 @@
-document
-  .querySelector(".login__form")
-  .addEventListener("submit", function (event) {
+const loginForm = document.querySelector(".login__form");
+
+if (loginForm) {
+  const submitButton = loginForm.querySelector(".login__submit");
+  loginForm.addEventListener("submit", function (event) {
     event.preventDefault();
 
     // Get user input values
@@ -46,26 +48,44 @@ document
     }
 
     if (valid) {
-      window.parent.postMessage("login-success", "*");
+      if (window.Auth) {
+        window.Auth.setUser(email.value.trim());
+      } else {
+        // Fallback if Auth not loaded
+        localStorage.setItem("loggedInUserEmail", email.value.trim());
+      }
+
+      // Dispatch success event
+      window.dispatchEvent(new CustomEvent("login-success", { bubbles: true }));
+
+      // Reset form
+      loginForm.reset();
     }
   });
 
-// Fix event listener
-const form = document.querySelector(".login__form");
-form.addEventListener("input", (e) => {
-  if (e.target.classList.contains("error")) {
-    e.target.classList.remove("error");
-    const label = e.target
-      .closest(".login__input-group")
-      .querySelector(".login__label");
-    const errorMessage = e.target
-      .closest(".login__input-wrapper")
-      .querySelector(".login__error");
-
-    if (label) label.classList.remove("error");
-    if (errorMessage) {
-      errorMessage.classList.remove("show");
-      errorMessage.textContent = "";
-    }
+  if (submitButton) {
+    submitButton.disabled = false;
   }
-});
+}
+const form = document.querySelector(".login__form");
+
+// === REMOVE ERROR ===
+if (form) {
+  form.addEventListener("input", (e) => {
+    if (e.target.classList.contains("error")) {
+      e.target.classList.remove("error");
+      const label = e.target
+        .closest(".login__input-group")
+        .querySelector(".login__label");
+      const errorMessage = e.target
+        .closest(".login__input-wrapper")
+        .querySelector(".login__error");
+
+      if (label) label.classList.remove("error");
+      if (errorMessage) {
+        errorMessage.classList.remove("show");
+        errorMessage.textContent = "";
+      }
+    }
+  });
+}

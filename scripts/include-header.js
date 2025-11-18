@@ -1,52 +1,63 @@
+/* === TOÀN BỘ FILE include-header.js (ĐÃ SỬA LỖI THỨ TỰ) === */
+
 document.addEventListener("DOMContentLoaded", function () {
+  // 1. Tải HTML (header.html chứa TẤT CẢ các box popup)
   fetch("/components/header/header.html")
     .then((response) => response.text())
     .then((data) => {
       document.body.insertAdjacentHTML("afterbegin", data);
-      const headerCSS = document.createElement("link");
-      headerCSS.rel = "stylesheet";
-      headerCSS.href = "/components/header/header.css";
-      document.head.appendChild(headerCSS);
-      const initMenuToggle = () => {
-        const toggle = document.querySelector(".header__menu-toggle");
-        const nav = document.querySelector(".header__nav");
-        const icon = toggle?.querySelector("i");
 
-        if (!toggle || !nav) {
-          console.warn("Không tìm thấy menu toggle hoặc nav — kiểm tra lại class trong header.html");
-          return;
+      const cssFiles = ["/components/header/header.css"];
+
+      cssFiles.forEach((cssFile) => {
+        const link = document.createElement("link");
+        link.rel = "stylesheet";
+        link.href = cssFile;
+        document.head.appendChild(link);
+      });
+
+      loadScriptsInOrder([
+        "/scripts/auth.js", // 1. Auth manager FIRST
+        "/components/header/header.js", // 2. Header logic SECOND
+        "/scripts/login.js", // 3. Login form
+        "/scripts/register.js", // 4. Register form
+        "/scripts/email-account.js", // 5. Email reset
+        "/scripts/phone-account.js", // 6. Phone reset
+      ]).then(() => {
+        // 5. CRITICAL: Update UI after all scripts load
+        // This ensures the auth state is reflected even on page reload
+        if (window.Auth) {
+          window.Auth.updateUI();
+          console.log("✓ Auth UI updated on page load");
         }
-
-        toggle.addEventListener("click", () => {
-          nav.classList.toggle("show");
-          icon?.classList.toggle("bx-x");
-        });
-        document.addEventListener("click", (e) => {
-          if (
-            !e.target.closest(".header__nav") &&
-            !e.target.closest(".header__menu-toggle")
-          ) {
-            nav.classList.remove("show");
-            icon?.classList.remove("bx-x");
-          }
-        });
-
-        console.log("Menu toggle initialized");
-      };
-      setTimeout(initMenuToggle, 100);
-
-      const headerJS = document.createElement("script");
-      headerJS.src = "/components/header/header.js";
-      document.body.appendChild(headerJS);
-      setTimeout(() => {
-        const currentPage = window.location.pathname.split("/").pop();
-        document.querySelectorAll(".header__nav-link").forEach((link) => {
-          const href = link.getAttribute("href");
-          if (href && currentPage && href.endsWith(currentPage)) {
-            link.classList.add("active");
-          }
-        });
-      }, 300);
+      });
     })
-    .catch((err) => console.error(" Không thể load header:", err));
+    .catch((err) => console.error("Lỗi nghiêm trọng khi tải header:", err));
 });
+
+function loadScriptsInOrder(scripts) {
+  let promise = Promise.resolve();
+
+  scripts.forEach((src) => {
+    promise = promise.then(() => loadScript(src));
+  });
+
+  return promise;
+}
+
+// Load a single script
+function loadScript(src) {
+  return new Promise((resolve, reject) => {
+    const script = document.createElement("script");
+    script.src = src;
+    script.onload = () => {
+      console.log(`✓ Loaded: ${src}`);
+      resolve();
+    };
+    script.onerror = () => {
+      console.error(`✗ Failed to load: ${src}`);
+      reject(new Error(`Failed to load script: ${src}`));
+    };
+    document.body.appendChild(script);
+  });
+}

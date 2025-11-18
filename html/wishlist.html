@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GSW - WISHLIST</title>
+    <script src="/scripts/include-header.js" defer></script>
     <!-- Styles -->
     <link rel="stylesheet" href="/styles/wishlist.css" />
 
@@ -34,114 +35,56 @@
     ></script>
   </head>
   <body>
-    <!-- Header -->
-    <header class="header">
-      <div class="header__container">
-        <a href="#" class="header__logo">
-          <img src="/img/logo.svg" class="header__logo-img" alt="GSW Logo" />
-        </a>
-
-        <!-- Search Bar -->
-        <div class="header__search">
-          <i class="bx bx-search"></i>
-          <input
-            type="text"
-            name="search-text"
-            class="header__search-input"
-            placeholder="Search..."
-          />
-        </div>
-
-        <!-- Menu icon -->
-        <div class="bx bx-menu header__menu-icon" id="menu-icon" hidden></div>
-
-        <!-- Navigation List -->
-        <nav>
-          <ul class="header__nav">
-            <li class="header__nav-item">
-              <a href="#home" class="header__nav-link">HOME</a>
-            </li>
-            <li class="header__nav-item">
-              <a href="#category" class="header__nav-link">CATEGORY</a>
-            </li>
-            <li class="header__nav-item">
-              <a href="#faq" class="header__nav-link">FAQ</a>
-            </li>
-            <li class="header__nav-item">
-              <a href="#about" class="header__nav-link">ABOUT</a>
-            </li>
-          </ul>
-        </nav>
-
-        <!-- Language setting -->
-        <div class="header__language">
-          <img
-            src="/img/icons/earth.svg"
-            class="header__language-icon"
-            alt="Language"
-          />
-          <span class="header__language-text">EN</span>
-        </div>
-
-        <!-- Cart -->
-        <a href="#cart" class="header__cart" aria-label="Cart">
-          <i class="bx bx-cart"></i>
-        </a>
-
-        <!-- Profile -->
-        <a
-          href="#profile"
-          class="header__profile header__profile--active"
-          aria-label="Profile"
-        >
-          <i class="bx bx-user-circle"></i>
-        </a>
-      </div>
-    </header>
     <main class="whislist-page">
       <div class="wishlist-page__container">
         <!-- Profile Infomation -->
         <section class="profile-bar">
           <div class="profile-bar__info">
             <img
-              src="/img/icons/Ellipse 2.svg"
-              alt="User Avatar"
+              src="../img/icons/Ellipse 2.svg"
+              alt="wishlist Avatar"
               class="profile-bar__avatar"
             />
+
             <div class="profile-bar__text">
-              <span class="profile-bar__username">KZy24</span>
+              <span class="profile-bar__wishlistname">KZy24</span>
               <span class="profile-bar__fullname">Nguyen Khanh Vy</span>
             </div>
           </div>
+
           <a href="#" class="profile-bar__signout">Sign Out</a>
         </section>
-        <!-- Nav -->
+
+        <!-- Navigation -->
         <nav class="wishlist-nav">
           <ul class="wishlist-nav__list">
             <li class="wishlist-nav__item">
-              <a
-                href="wishlist.html"
-                class="wishlist-nav__link wishlist-nav__link--active"
-              >
-                <img src="/img/icons/whislist.svg" alt="" />
+              <a href="./wishlist.html" class="wishlist-nav__link">
+                <img src="../img/icons/whislist.svg" alt="" />
                 <span>WISHLIST</span>
               </a>
             </li>
+
             <li class="wishlist-nav__item">
-              <a href="purchase.html" class="wishlist-nav__link">
-                <img src="/img/icons/purchase.png" alt="" />
+              <a href="./your-purchases.html" class="wishlist-nav__link">
+                <img src="../img/icons/purchase.png" alt="" />
                 <span>YOUR PURCHASE</span>
               </a>
             </li>
+
             <li class="wishlist-nav__item">
-              <a href="wallet.html" class="wishlist-nav__link">
-                <img src="/img/icons/wallet.svg" alt="" />
+              <a
+                href="./wallet.html"
+                class="wishlist-nav__link wishlist-nav__link--active"
+              >
+                <img src="../img/icons/wallet.svg" alt="" />
                 <span>WALLET</span>
               </a>
             </li>
+
             <li class="wishlist-nav__item">
-              <a href="setting.html" class="wishlist-nav__link">
-                <img src="/img/icons/setting.svg" alt="" />
+              <a href="./setting.html" class="wishlist-nav__link">
+                <img src="../img/icons/setting.svg" alt="" />
                 <span>SETTINGS</span>
               </a>
             </li>
