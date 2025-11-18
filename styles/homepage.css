@@ -23,17 +23,18 @@
   --black-color: #070f1a;
   --text-color: #ffffff;
   --super-dark-green-color: #0f232c;
+  --bg1: #070F1A;
+  --bg2: #225557;
   font-size: 10px;
 }
 
 body {
-  color: var(--text-color);
-  background-color: var(--black-color);
-  background-image: linear-gradient(
-    180deg,
-    var(--black-color) 25%,
-    var(--dark-green-color) 81%
-  );
+  font-family: 'Roboto Flex', sans-serif;
+  color: var(--text);
+  background: linear-gradient(180deg, var(--bg1) 5%, #0b2a2e 45%, var(--bg2) 95%);
+  background-attachment: fixed;
+  overflow-x: hidden;
+  margin: 0;
   justify-content: center;
   align-items: center;
 }
@@ -41,8 +42,7 @@ body {
 img {
   width: 100%;
   height: auto;
-  align-items: center;
-  justify-content: center;
+  display: block;
 }
 
 h1 {
@@ -53,7 +53,7 @@ h1 {
   Slider Section
 --------------------------------------------------- */
 .slider {
-  margin: 20px 0;
+  margin-top: 20px;
   height: 550px;
   position: relative;
   overflow: hidden;
@@ -70,18 +70,46 @@ h1 {
   transition: all 0.6s ease;
   z-index: 1;
   visibility: hidden;
+  cursor: pointer;
 }
 
 .slider__card-image {
   width: 950px;
   height: 550px;
-  object-fit: cover;
   border-radius: 10px;
+  position: relative;
+  overflow: hidden;
 }
+
+.slider__card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.slider__card:hover .slider__card-image img {
+  transform: scale(1.05);
+}
+
+
+.slider__card-image::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40%;
+  background: linear-gradient(to top, rgba(7, 15, 26, 0.85) 10%, transparent);
+  border-radius: 0 0 10px 10px;
+  z-index: 1;
+}
+
 
 .slider__card-content{
   position: absolute;
   bottom: 50px;
+  right: 130px;
   width: 400px;
   font-weight: bold;
   font-size: 2rem;
@@ -91,6 +119,7 @@ h1 {
   display: flex;
   align-items: center;
   color: var(--text-color);
+  z-index: 2;
 }
 
 /* Slider States */
@@ -115,18 +144,41 @@ h1 {
   z-index: 2;
 }
 
+.slider__dots {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  padding: 30px 0;
+}
+
+.slider__dot {
+  width: 50px;
+  height: 6px;
+  background-color: var(--text-color);
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  opacity: 0.6;
+}
+
+.slider__dot.active {
+  background-color: var(--green-color);
+  opacity: 1;
+}
+
 /* ---------------------------------------------------
   Slider Product Price & Discount
 --------------------------------------------------- */
 .slider__discount, .upcoming .game-card--large .game-card__discount {
   margin-left: auto;
   background-color: red;
-  border-radius: 5px;
+  border-radius: 8px;
   height: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 2px;
+  padding: 5px 15px;
+  margin-right: 5px;
 }
 
 .slider__discount-percent, .upcoming .game-card--large .game-card__discount-percent  {
@@ -205,6 +257,12 @@ h1 {
   color: var(--black-color);
 }
 
+.slider__add-cart {
+  width: auto;
+  height: auto;
+  padding: 5px 15px;
+}
+
 .slider__add-cart:hover, .upcoming .game-card--large .game-card__add-cart:hover{
   color: var(--text-color);
 }
@@ -232,9 +290,9 @@ h1 {
   align-items: center;
   justify-content: center;
   position: absolute;
-  transform: translateY(50%);
+  transform: translateY(-50%);
   cursor: pointer;
-  top: 225px;
+  top: 50%;
   z-index: 5;
 }
 
@@ -266,6 +324,10 @@ h1 {
   height: fit-content;
   width: 100%;
   display: block;
+}
+
+.genres {
+  margin-top: 50px;
 }
 
 .genres__header, 
@@ -302,13 +364,13 @@ h1 {
   display: grid;
   margin-top: 5rem;
   grid-template-columns: auto auto auto auto auto;
-  gap: 10px 10px;
+  gap: 16px;
 }
 
 .genres__bottom-grid {
   display: grid;
   grid-template-columns: auto auto auto;
-  gap: 10px 10px;
+  gap: 16px;
   width: 100%;
   margin-top: 30px;
 }
@@ -322,6 +384,7 @@ h1 {
   display: flex;
   flex-direction: column;
   height: fit-content;
+  cursor: pointer;
 }
 
 .game-card__image {
@@ -329,13 +392,26 @@ h1 {
   height: auto;
   display: block;
   line-height: 0;
+  overflow: hidden;
+  border-radius: 12px 12px 0 0;
 }
+
+.game-card__image img {
+  transition: transform 0.3s ease;
+  border-radius: 12px 12px 0 0;
+}
+
+.game-card:hover .game-card__image img {
+  transform: scale(1.05);
+}
+
 
 .game-card__content {
   background-color: var(--black-color);
   width: 100%;
   display: flex;
   flex-direction: column;
+  border-radius: 0 0 12px 12px;
 }
 
 .game-card__price-wrapper {
@@ -414,8 +490,8 @@ h1 {
   margin-top: 50px;
   display: flex;
   justify-content: center;
-  margin: center;
   overflow: hidden;
+  gap: 10px;
 }
 
 
@@ -437,6 +513,10 @@ h1 {
 .upcoming__grid .game-card__image img{
   height: 100%;
   object-fit: cover;
+}
+
+.upcoming__grid .game-card--large img {
+  border-radius: 12px;
 }
 
 .new-releases__slider .game-card__content,
@@ -483,6 +563,7 @@ h1 {
 
 .upcoming__grid .game-card--large .game-card__image{
   height: 100%;
+  border-radius: 12px;
 }
 
 
@@ -526,7 +607,7 @@ h1 {
 
 /* === Overlay Login === */
 .login-overlay {
-  display: none; /* ẩn mặc định */
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -596,10 +677,16 @@ h1 {
   object-fit: cover;
   float: left;
   margin-left: 10px;
+  border-radius: 5px;
+}
+
+.best-sellers .game-card__image img {
+  border-radius: 5px;
 }
 
 .best-sellers__container {
   margin-top: 50px;
+  margin-bottom: 150px;
   display: flex;
   justify-content: space-between;
   align-items: stretch;
@@ -727,10 +814,11 @@ h1 {
   flex-direction: column;
 }
 
-.game-info__image{
+.game-info__image {
   height: 250px;
   object-fit: cover;
   margin-bottom: 15px;
+  border-radius: 8px;
 }
 
 .game-info__image:last-child{
@@ -758,11 +846,11 @@ h1 {
   }
 
   .slider__btn--prev {
-    left: calc(50% - 420px);
+    left: calc(50% - 320px);
   }
 
   .slider__btn--next {
-    right: calc(50% - 420px);
+    right: calc(50% - 320px);
   }
 
   .main {
@@ -853,7 +941,7 @@ h1 {
 
   .slider__btn {
     font-size: 5rem;
-    top: 240px;
+    top: 140px;
   }
 
   .slider__btn--prev {

@@ -1,6 +1,7 @@
 const cards = document.querySelectorAll('.slider__card');
 const prevBtn = document.getElementById('prev');
 const nextBtn = document.getElementById('next');
+const dotsContainer = document.getElementById('slider-dots');
 
 let currentIndex = 0;
 
@@ -16,6 +17,11 @@ function updateSlider() {
   cards[currentIndex].classList.add('active');
   cards[prevIndex].classList.add('prev');
   cards[nextIndex].classList.add('next');
+
+  const dots = document.querySelectorAll('.slider__dot');
+  dots.forEach((dot, index) => {
+    dot.classList.toggle('active', index === currentIndex);
+  });
 }
 
 nextBtn.addEventListener('click', () => {
@@ -28,5 +34,21 @@ prevBtn.addEventListener('click', () => {
   updateSlider();
 });
 
-// Initialize
+
+function createDots() {
+  dotsContainer.innerHTML = '';
+
+  cards.forEach((_, index) => {
+    const dot = document.createElement('div');
+    dot.classList.add('slider__dot');
+    dot.dataset.index = index;
+    dot.addEventListener('click', () => {
+      currentIndex = index;
+      updateSlider();
+    });
+    dotsContainer.appendChild(dot);
+  });
+}
+
+createDots();
 updateSlider();
