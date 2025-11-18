@@ -175,3 +175,45 @@ document.addEventListener("DOMContentLoaded", () => {
   restrictAddToWishlist();
   console.log("Homepage restrictions initialized");
 });
+
+async function fetchGamesFromAPI(filters = {}) {
+  const baseURL = "https://www.freetogame.com/api/games";
+
+  const params = new URLSearchParams();
+  if (filters.category) params.append("category", filters.category);
+  if (filters.platform) params.append("platform", filters.platform);
+  if (filters.sortBy) params.append("sort-by", filters.sortBy);
+
+  const url = `${baseURL}?${params.toString()}`;
+
+  try {
+    const res = await fetch(url);
+    const data = await res.json();
+    return data;
+  } catch (err) {
+    console.error("Lỗi API:", err);
+    return [];
+  }
+}
+function renderGames(games) {
+  const container = document.querySelector(".category__game-list");
+  if (!container) return;
+
+  container.innerHTML = "";
+
+  games.forEach((game) => {
+    container.innerHTML += `
+      <div class="game-card">
+        <img class="game-card__img" src="${game.thumbnail}" alt="${game.title}">
+        <h3 class="game-card__title">${game.title}</h3>
+        <p class="game-card__genre">${game.genre}</p>
+        <p class="game-card__platform">${game.platform}</p>
+        <button class="game-card__add-cart">Add to cart</button>
+      </div>
+    `;
+  });
+
+  // Gắn lại sự kiện cho wishlist + add to cart sau render
+  restrictAddToCart();
+  restrictAddToWishlist();
+}

@@ -9,6 +9,7 @@
     <script src="/scripts/include-header.js" defer></script>
     <!-- Styles -->
     <link rel="stylesheet" href="/styles/homepage.css" />
+    <link rel="stylesheet" href="/styles/loading.css" />
     <link rel="stylesheet" href="/styles/login.css" />
     <link rel="stylesheet" href="/styles/register.css" />
     <link rel="stylesheet" href="/styles/email-account.css" />
@@ -268,12 +269,15 @@
       </button>
     </section>
 
+    <!-- Slider pagination dots -->
+    <div class="slider__dots" id="slider-dots"></div>
+
     <!-- Main content -->
     <main class="main" id="main" role="main">
       <!-- Popular Genres -->
       <section class="genres" id="genres" aria-labelledby="genres-title">
         <header class="genres__header">
-          <h1 id="genres-title" class="genres__title">Popular Genres</h1>
+          <h1 id="genres-title" class="genres__title">Popular Games</h1>
           <a class="genres__link" href="#categories">See more</a>
         </header>
 
@@ -1176,8 +1180,8 @@
         </div>
       </section>
     </main>
-    <!-- 2. Header JS from components folder -->
-    <script src="/scripts/homepage.js"></script>
+    <!-- External script (keeps existing behavior) -->
+    <script src="/scripts/homepage.js" defer></script>
     <script src="/scripts/include-footer.js" defer></script>
   </body>
 </html>
