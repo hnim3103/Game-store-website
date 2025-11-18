@@ -13,10 +13,10 @@
   font-family: "Roboto Flex", sans-serif;
 }
 
-body {
+/* body {
   background: var(--bg-dark);
   overflow-x: hidden;
-}
+} */
 
 /* ==================== HEADER ==================== */
 .header {
