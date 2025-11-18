@@ -52,7 +52,7 @@ h1 {
 --------------------------------------------------- */
 .slider {
   margin-top: 20px;
-  height: 450px;
+  height: 520px;
   position: relative;
   overflow: hidden;
   display: flex;
@@ -71,8 +71,8 @@ h1 {
 }
 
 .slider__card-image {
-  width: 750px;
-  height: 450px;
+  width: 1200px;
+  height: 520px;
   object-fit: cover;
   border-radius: 10px;
 }
@@ -94,22 +94,22 @@ h1 {
 /* Slider States */
 .slider__card.active {
   visibility: visible;
-  transform: translate(-50%, -50%) scale(1);
+  transform: translate(-50%, -50%);
   opacity: 1;
   z-index: 3;
 }
 
 .slider__card.prev {
   visibility: visible;
-  transform: translate(-150%, -50%) scale(0.85);
-  opacity: 0.8;
+  transform: translate(-145%, -47%) scale(0.85);
+  opacity: 0.6;
   z-index: 2;
 }
 
 .slider__card.next {
   visibility: visible;
-  transform: translate(50%, -50%) scale(0.85);
-  opacity: 0.8;
+  transform: translate(45%, -47%) scale(0.85);
+  opacity: 0.6;
   z-index: 2;
 }
 
