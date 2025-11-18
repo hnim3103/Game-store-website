@@ -135,3 +135,24 @@ window.addEventListener("message", (event) => {
     }
   }
 });
+
+//category colappsible handler
+const wrapper = document.querySelector('.category-item-wrapper');
+const panel = document.querySelector('.category__collabsible');
+
+let closeTimer; 
+
+wrapper.addEventListener('mouseenter', () => {
+
+    clearTimeout(closeTimer);
+
+    panel.classList.add('is-display');
+});
+
+
+wrapper.addEventListener('mouseleave', () => {
+
+    closeTimer = setTimeout(() => {
+        panel.classList.remove('is-display');
+    }, 250);
+});

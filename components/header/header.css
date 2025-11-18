@@ -260,7 +260,7 @@
 .category__collabsible{
   position: absolute;
   width: 90%;
-  display: flex;
+  display: none;
   left: 5%;
   margin: auto;
   margin-top: 30px;
@@ -273,7 +273,6 @@
 }
 
 .category__game-container{
-  border: 1px solid yellow;
   width: 70%;
   background-color: var(--bg-light);
   display: flex;
@@ -320,9 +319,6 @@
     margin-right: 2px;
 }
 
-.game-card{
-}
-
 .seperate__line{
   border: 1px solid var(--green);
   margin: 10px;
@@ -353,8 +349,12 @@
 }
 
 .button__container{
-  border: 1px solid red;
-  justify-content: center;
+  margin-top: 30px;
+  display: flex;
+  border-radius: 5px;
+  border: 1px solid #D9D9D9;
+  background: rgba(255, 255, 255, 0.17);
+  box-shadow: 0 5px 4px 0 rgba(0, 0, 0, 0.25);
 }
 
 .category__button{
@@ -362,9 +362,19 @@
   outline: none;
   font-size: 2.3rem;
   background-color: transparent;
+  margin: auto;
 }
 
 
 .category__button a{
   color: var(--text);
+  font-weight: 700;
+}
+
+.button__container:hover{
+  background: rgba(255, 255, 255, 0.125)
+}
+
+.category__collabsible.is-display{
+  display: flex;
 }
