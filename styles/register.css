@@ -47,34 +47,35 @@
 }
 
 .register__button--register {
-  margin-right: 1.2%;
+  margin-right: 4%;
   box-shadow: 0px 3px 4.8px var(--green-color);
 }
 
 .register__button--signin {
-  margin-left: 1.2%;
+  margin-left: 4%;
   box-shadow: 0px 1.2px 4.8px var(--black-color);
 }
 
 .register__heading {
   color: var(--text-color);
-  font-size: clamp(15px, 3%, 18px);
+  font-size: 14px;
   width: 100%;
   text-align: left;
-  padding-left: 3%;
+  padding-left: 4%;
   padding-bottom: 5%;
-  padding-top: 3%;
+  padding-top: 7%;
 }
 /* register with social */
 .register__social {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: clamp(300px, 30vw, 400px);
-  width: 97%;
-  gap: 18%;
+  width: clamp(300px, 1vw, 400px);
+  width: 94%;
+  gap: 17%;
+  margin-top: 1.2%;
   background-color: var(--dark-green-color);
-  padding: 1.2% 1.2%;
+  padding: 2% 1.2%;
   border-radius: 6px;
   box-sizing: border-box;
 }
@@ -87,8 +88,8 @@
 }
 
 .register__social-icon {
-  max-width: 30px;
-  max-height: 30px;
+  max-width: 25px;
+  max-height: 25px;
   width: 100%;
   height: 100%;
   transition: transform 0.2s ease-in-out;
@@ -109,7 +110,7 @@
   content: "";
   flex: 1;
   border-bottom: 1.2px solid var(--text-color);
-  margin: 6% 1.26%;
+  margin: 8% 4%;
   padding: 0 1.8%;
 }
 /* form */
@@ -118,7 +119,7 @@
   font-size: clamp(12px, 2.4vw, 16.8px);
   font-weight: 600;
   width: 100%;
-  padding: 0 1.2%;
+  padding: 1% 4%;
   box-sizing: border-box;
 }
 
@@ -131,9 +132,9 @@
 }
 
 .register__label {
-  width: 138px;
-  flex-shrink: 1;
-  margin-right: -6%;
+  width: 120px;
+  flex-shrink: 0;
+  font-size: 12px;
 }
 
 .register__input-wrapper {
@@ -147,13 +148,11 @@
 /* input */
 .register__input {
   background-color: var(--dark-green-color);
-  border: 1px solid var(--green-color);
+  border: 1px solid rgba(0, 225, 34, 0.6);
   border-radius: 6px;
-  width: clamp(320px, 30vw, 450px);
-  width: 100%;
-  height: 90%;
-  padding: 2.4% 0%;
-  font-size: clamp(12px, 2.4vw, 14px);
+  max-width: 270px;
+  padding: 4% 0%;
+  font-size: clamp(12px, 2.4vw, 14.4px);
   color: var(--text-color);
   transition: all 0.2s ease-in-out;
   padding-left: 5px;
@@ -174,8 +173,12 @@
 .register__terms-text {
   flex-grow: 1;
   min-width: 0;
-  font-size: clamp(7px, 2vw, 12px);
+  font-size: clamp(7px, 2vw, 10px);
   font-weight: 400;
+}
+
+.register__terms-text u {
+  text-decoration: underline;
 }
 
 .register__confirm {
@@ -184,8 +187,8 @@
 }
 /* custom checkbox */
 .register__checkbox-custom {
-  width: 18px;
-  height: 18px;
+  width: 16px;
+  height: 16px;
   margin-right: 12px;
   background-color: transparent;
   border: 1.2px solid var(--green-color);
@@ -199,13 +202,13 @@
   + .register__terms-label
   .register__checkbox-custom::after {
   content: "";
-  width: 4.8px;
-  height: 10.8px;
+  width: 3px;
+  height: 6px;
   border: solid var(--green-color);
   border-width: 0 3px 3px 0;
   position: absolute;
   top: 1.2px;
-  left: 6px;
+  left: 5px;
   transform: rotate(45deg);
 }
 
@@ -219,6 +222,7 @@
   font-weight: 700;
   border: none;
   transition: all 0.2s ease-in-out;
+  margin-top: 3%;
 }
 
 /* Hover Effects */

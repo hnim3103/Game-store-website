@@ -47,12 +47,12 @@
 }
 
 .phone__button--phone {
-  margin-right: 1.3%;
+  margin-right: 4%;
   box-shadow: 0px 3px 4.8px var(--green-color);
 }
 
 .phone__button--email {
-  margin-left: 1.3%;
+  margin-left: 4%;
   box-shadow: 0px 5px 8px var(--black-color);
 }
 /* form */
@@ -61,15 +61,15 @@
   font-size: clamp(12px, 2.4vw, 16.8px);
   font-weight: 600;
   width: 100%;
-  padding: 0 1.2%;
+  padding: 0 4%;
   box-sizing: border-box;
 }
 
 .phone__label {
   color: var(--text-color);
-  font-size: clamp(15px, 2.4vw, 21px);
+  font-size: 16px;
   font-weight: 700;
-  margin: 3% 0;
+  padding: 5% 0%;
 }
 
 .phone__input-wrapper {
@@ -87,11 +87,10 @@
 /* input */
 .phone__input {
   background-color: var(--dark-green-color);
-  border: 1px solid var(--green-color);
+  border: 1px solid rgba(0, 225, 34, 0.6);
   border-radius: 6px;
   width: 100%;
-  height: 90%;
-  padding: 2.4% 0%;
+  padding: 3% 0%;
   font-size: clamp(12px, 2.4vw, 14.4px);
   color: var(--text-color);
   transition: all 0.2s ease-in-out;
@@ -169,13 +168,13 @@
 
 .phone__return {
   display: inline-block;
-  font-size: clamp(7px, 4vw, 13px);
+  font-size: clamp(7px, 1.8vw, 10px);
   color: var(--text-color);
   background: transparent;
-  font-weight: 300;
+  font-weight: 500;
   text-decoration: underline;
   border: none;
-  margin-top: 12px;
+  margin-top: 7.8px;
 }
 
 /* Hover States */
