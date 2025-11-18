@@ -12,12 +12,17 @@
   --black-color: #070f1a;
   --text-color: #ffffff;
   --super-dark-green-color: #0f232c;
+  --bg1: #070F1A;
+  --bg2: #225557;
 }
 
 body {
   overflow: hidden;
   height: 100vh;
-  background-color: transparent;
+  background: linear-gradient(180deg, var(--bg1) 5%, #0b2a2e 45%, var(--bg2) 95%);
+  background-attachment: fixed;
+  overflow-x: hidden;
+  margin: 0;
   display: flex;
   justify-content: center;
   align-items: center;
