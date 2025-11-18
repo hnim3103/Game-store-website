@@ -14,14 +14,6 @@
   --text-color: #ffffff;
 }
 
-body {
-  overflow: hidden;
-  height: 100vh;
-  background-color: transparent;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 .login {
   display: flex;
   flex-direction: column;
@@ -68,7 +60,7 @@ body {
   font-size: clamp(12px, 2.4vw, 16.8px);
   font-weight: 600;
   width: 100%;
-  padding: 0 1.2%;
+  padding: 3%;
   box-sizing: border-box;
 }
 
@@ -76,6 +68,7 @@ body {
   color: var(--text-color);
   font-size: clamp(15px, 2.4vw, 21px);
   font-weight: 700;
+  padding-bottom: 5%;
 }
 
 .login__input-group {
@@ -111,6 +104,7 @@ body {
   font-size: clamp(12px, 2.4vw, 14.4px);
   color: var(--text-color);
   transition: all 0.2s ease-in-out;
+  padding-left: 5px;
 }
 
 .login__submit {

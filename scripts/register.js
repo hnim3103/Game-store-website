@@ -1,21 +1,21 @@
-document
-  .querySelector(".register__form")
-  .addEventListener("submit", function (event) {
+const registerForm = document.querySelector(".register__form");
+if (registerForm) {
+  registerForm.addEventListener("submit", function (event) {
     event.preventDefault();
 
     // Get user input values
-    const name = document.getElementById("name");
-    const email = document.getElementById("email");
-    const password = document.getElementById("password");
-    const dob = document.getElementById("dob");
-    const terms = document.getElementById("terms");
-    const promotions = document.getElementById("promotions");
-    const nameError = document.getElementById("name-error");
-    const emailError = document.getElementById("email-error");
-    const passwordError = document.getElementById("password-error");
-    const dobError = document.getElementById("date-error");
-    const termsError = document.getElementById("terms-error");
-    const promotionsError = document.getElementById("promotions-error");
+    const name = registerForm.querySelector("#name");
+    const email = registerForm.querySelector("#email");
+    const password = registerForm.querySelector("#password");
+    const dob = registerForm.querySelector("#dob");
+    const terms = registerForm.querySelector("#terms");
+    const promotions = registerForm.querySelector("#promotions");
+    const nameError = registerForm.querySelector("#name-error");
+    const emailError = registerForm.querySelector("#email-error");
+    const passwordError = registerForm.querySelector("#password-error");
+    const dobError = registerForm.querySelector("#date-error");
+    const termsError = registerForm.querySelector("#terms-error");
+    const promotionsError = registerForm.querySelector("#promotions-error");
 
     // Get labels
     const nameLabel = name
@@ -67,13 +67,10 @@ document
     }
 
     // Password validation
-    const passwordPattern =
-      /^(?=.*[A-Z])(?=.*[!@#$%^&*()_+{}\[\]:;<>,.?~\\/-]).{6,}$/;
-    if (!passwordPattern.test(password.value.trim())) {
+    if (password.value.length < 6) {
       password.classList.add("error");
       passwordLabel.classList.add("error");
-      passwordError.textContent =
-        "Password must contain at least 6 characters, 1 uppercase letter, and 1 special character";
+      passwordError.textContent = "Password must be at least 6 characters";
       passwordError.classList.add("show");
       valid = false;
     }
@@ -106,26 +103,29 @@ document
 
     // If all validations pass
     if (valid) {
-      window.location.href = "login.html";
+      window.dispatchEvent(
+        new CustomEvent("register-success", { bubbles: true })
+      );
     }
   });
 
-// Remove error on input
-const form = document.querySelector(".register__form");
-form.addEventListener("input", (e) => {
-  if (e.target.classList.contains("error")) {
-    e.target.classList.remove("error");
-    const label = e.target
-      .closest(".register__input-group")
-      .querySelector(".register__label");
-    const errorMessage = e.target
-      .closest(".register__input-wrapper")
-      .querySelector(".register__error");
+  // Remove error on input
+  const form = document.querySelector(".register__form");
+  form.addEventListener("input", (e) => {
+    if (e.target.classList.contains("error")) {
+      e.target.classList.remove("error");
+      const label = e.target
+        .closest(".register__input-group")
+        .querySelector(".register__label");
+      const errorMessage = e.target
+        .closest(".register__input-wrapper")
+        .querySelector(".register__error");
 
-    if (label) label.classList.remove("error");
-    if (errorMessage) {
-      errorMessage.classList.remove("show");
-      errorMessage.textContent = "";
+      if (label) label.classList.remove("error");
+      if (errorMessage) {
+        errorMessage.classList.remove("show");
+        errorMessage.textContent = "";
+      }
     }
-  }
-});
+  });
+}
