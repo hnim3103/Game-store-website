@@ -236,19 +236,25 @@ body {
 }
 
 @keyframes shake {
-  0% { transform: translateX(0); }
-  25% { transform: translateX(-3px); }
-  50% { transform: translateX(3px); }
-  75% { transform: translateX(-3px); }
-  100% { transform: translateX(0); }
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-3px);
+  }
+  50% {
+    transform: translateX(3px);
+  }
+  75% {
+    transform: translateX(-3px);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 
 /* fix gradient */
 body {
-  background: linear-gradient(
-    180deg,
-    #070F1A 25%,
-    #225557 81%
-  ) !important;
+  background: linear-gradient(180deg, #070f1a 25%, #225557 81%) !important;
   color: var(--text-color);
 }
