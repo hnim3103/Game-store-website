@@ -26,18 +26,17 @@
   --red-color: #ff0000;
   --dark-blue-color: #070F1A;
   --yellow-color: #FFD400;
+  --bg1: #070F1A;
+  --bg2: #225557;
 }
 
 body {
   min-height: 100vh;
   color: var(--text-color);
-  background-color: var(--black-color);
-  background-image: linear-gradient(
-    180deg,
-    var(--black-color) 25%,
-    var(--dark-green-color) 81%
-  );
+  background: linear-gradient(180deg, var(--bg1) 5%, #0b2a2e 45%, var(--bg2) 95%);
+  background-attachment: fixed;
   overflow-x: hidden;
+  margin: 0;
 }
 
 /* ---------------------------------------------------
