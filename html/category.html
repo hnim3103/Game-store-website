@@ -5,15 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>GSW</title>
-  <script src="/scripts/include-header.js" defer></script>
-  <script src="/scripts/category.js" defer></script>
-  <script src="/scripts/fetchAPI.js" defer></script>
-  <!-- Styles -->
-  <link rel="stylesheet" href="/styles/category.css">
+    <!--Page title-->
+    <title>GSW</title>
 
-  <!-- Boxicons CDN -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <!--Import header-->
+    <script src="/scripts/include-header.js" defer></script>
+    <script src="/scripts/category.js" defer></script>
+    <script src="/scripts/fetchAPI.js" defer></script>
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles/category.css">
+
+    <!-- Boxicons CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,6 +32,7 @@
 
   <body>
     <main class="main__section">
+      <!--Main hedear-->
       <div class="main__header">
         <h2 class="main__title">New Games (124)</h2>
         <div class="main__search">
@@ -37,8 +41,11 @@
         </div>
       </div>
 
+      <!--Main content-->
       <div class="main__content">
+        <!--Filter selections container - sidebar-->
         <aside class="game__selections">
+          <!--Always on screen options-->
           <div class="default__selections">
             <label>
               <input type="checkbox" name="good-old-games" value="good-old-games">
@@ -57,12 +64,15 @@
             </label>
           </div>
 
+          <!--extend__selections = collapsible selections-->
           <div class="extend__selections">
+            <!--Type/title of selections-->
             <div class="extend__header">
               <img src="/img/icons/angle-right-solid-full.svg" class="arrow" alt="Expand section">
               <h3 class="title__selections">DLCs</h3>
             </div>
 
+            <!--Collapsible container - hidden by default-->
             <div class="selections__container">
               <label>
                 <input type="checkbox" name="hide-dlcs" value="hide-dlcs">
@@ -217,7 +227,9 @@
           </div>
         </aside>
 
+        <!--Main game display section-->
         <div class="game-display__container">
+          <!--Filter/sort/grid show selections-->
           <div class="result__selections">
             <div class="pagination__bar">
               <a href="#">&lt;</a>
@@ -265,16 +277,23 @@
             </div>
           </div>
 
+          <!--Game grid section-->
           <div class="game-grid__container">
+            <!--Game item-->
             <article class="game-card">
+              <!--a tag is used to direct user to game's information-->
               <a href="game-info.html" title="View game">
+                <!--Game visual-->
                 <div class="game-card__image"><img src="/img/assets/1.png" alt="Trending 4" loading="lazy" /></div>
+                <!--Game content-->
                 <div class="game-card__content">
                   <div class="game-card__price-wrapper">
                     <div class="game-card__price">
                       <p>4.99$</p>
                     </div>
                   </div>
+
+                  <!--Interactive burrons-->
                   <div class="game-card__add-cart">
                     <i class="fa-solid fa-cart-plus" aria-hidden="true"></i>
                     <a href="#cart">Add to cart</a>
@@ -529,6 +548,7 @@
 
           </div>
 
+          <!--Implement simple pagination bar-->
           <div class="pagination__bar" id="bottom">
             <a href="#">&lt;</a>
             <a class="current-page" href="#">1</a>
@@ -540,6 +560,7 @@
       </div>
     </main>
 
+    <!--Colapsible selections logic handler-->
     <script>
       document.querySelectorAll('.extend__header').forEach(header => {
         header.addEventListener('click', () => {
@@ -548,6 +569,8 @@
         });
       });
     </script>
+
+    <!--Import footer-->
     <script src="/scripts/include-footer.js" defer></script>
   </body>
 </html>
