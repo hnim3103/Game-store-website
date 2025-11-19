@@ -79,7 +79,7 @@ function isLoggedIn() {
 // ===== RESTRICT ADD TO CART =====
 function restrictAddToCart() {
   const addToCartBtns = document.querySelectorAll(
-    ".game-item__add-cart, .slider__add-cart"
+    ".game-itemadd-cart, .slider__add-cart"
   );
 
   addToCartBtns.forEach((btn) => {
@@ -98,7 +98,7 @@ function restrictAddToCart() {
 
 function restrictAddToWishlist() {
   const addToWishlisttBtn = document.querySelectorAll(
-    ".game-card__wishlist, slider__wishlist"
+    ".game-cardwishlist, .sliderwishlist"
   );
 
   addToWishlisttBtn.forEach((btn) => {

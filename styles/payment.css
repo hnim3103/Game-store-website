@@ -252,6 +252,11 @@ body {
   transition: all 0.3s ease;
 }
 
+.payment-option__checkbox-input + .payment-option__checkbox-custom::before {
+  content: none !important;
+  display: none;
+}
+
 .payment-option__checkbox-input:checked + .payment-option__checkbox-custom {
   background-color: var(--green-color);
 }
