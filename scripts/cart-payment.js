@@ -1,5 +1,30 @@
 document.addEventListener('DOMContentLoaded', () => {
   new PaymentHandler();
+  const recList = document.getElementById('rec-list');
+  const recPrev = document.getElementById('rec-prev');
+  const recNext = document.getElementById('rec-next');
+
+  if (recList && recPrev && recNext) {
+    
+    // Hàm xử lý cuộn
+    const scrollList = (direction) => {
+      // Lấy chiều rộng của một card + gap
+      const card = recList.querySelector('.product-card');
+      const cardWidth = card.offsetWidth; 
+      const gap = 15;
+      const scrollAmount = cardWidth + gap;
+
+      if (direction === 'next') {
+        recList.scrollLeft += scrollAmount;
+      } else {
+        recList.scrollLeft -= scrollAmount;
+      }
+    };
+
+    // Gán sự kiện click
+    recNext.addEventListener('click', () => scrollList('next'));
+    recPrev.addEventListener('click', () => scrollList('prev'));
+  }
 });
 
 // Xử lý logic mở/đóng và quy trình thanh toán
