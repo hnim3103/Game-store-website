@@ -40,8 +40,4 @@ document.addEventListener("DOMContentLoaded", () => {
   // tự động chuyển trang homepage sau 1s khi người dùng không chịu thao tác click :(
   document.addEventListener("click", exitLoading);
   setTimeout(exitLoading, 1000);
-<<<<<<< HEAD
 });
-=======
-});
->>>>>>> b7af4439465dc812d146cfdf5f6c347ec0bbc300

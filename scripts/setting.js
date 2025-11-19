@@ -126,7 +126,7 @@ document.addEventListener("DOMContentLoaded", () => {
       localStorage.removeItem("loggedInUserEmail");
 
       alert("You have logged out.");
-      window.location.href = "/index.html";
+      window.location.href = "/html/homepage.html";
     });
   }
 });

@@ -75,25 +75,27 @@ function createGameCard(game) {
   
   return `
     <article class="game-card" data-game-id="${game.id}">
-      <div class="game-card__image">
-        <img src="${imageUrl}" alt="${game.name}" loading="lazy" />
-      </div>
-      <div class="game-card__content">
-        <div class="game-card__price-wrapper">
-          <p>${price === '0.00' ? 'Free' : '$' + price}</p>
+      <a href="/html/game-info.html">
+        <div class="game-card__image">
+          <img src="${imageUrl}" alt="${game.name}" loading="lazy" />
         </div>
-      </div>
-      <div class="game-card__button">
-        <div class="game-card__add-cart">
-          <button class="game-card__add-to-cart" aria-label="Add to cart">
-            <i class="fa-solid fa-cart-plus" aria-hidden="true"></i>
-            <span>Add to cart</span>
+        <div class="game-card__content">
+          <div class="game-card__price-wrapper">
+            <p>${price === '0.00' ? 'Free' : '$' + price}</p>
+          </div>
+        </div>
+        <div class="game-card__button">
+          <div class="game-card__add-cart">
+            <button class="game-card__add-to-cart" aria-label="Add to cart">
+              <i class="fa-solid fa-cart-plus" aria-hidden="true"></i>
+              <span>Add to cart</span>
+            </button>
+          </div>
+          <button class="game-card__wishlist" aria-label="Add to wishlist">
+            <i class="fa-regular fa-heart" aria-hidden="true"></i>
           </button>
         </div>
-        <button class="game-card__wishlist" aria-label="Add to wishlist">
-          <i class="fa-regular fa-heart" aria-hidden="true"></i>
-        </button>
-      </div>
+      </a>
     </article>
   `;
 }

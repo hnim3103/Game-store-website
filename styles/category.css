@@ -458,6 +458,9 @@ input[type="range"]::-webkit-slider-thumb {
 
 .game-card__image{
   overflow: hidden;
+}
+
+.game-grid__container .game-card__image{
   height: 150px;
 }
 
