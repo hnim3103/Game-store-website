@@ -2,6 +2,8 @@
 :root {
   --green: #00e122;
   --bg-dark: #070f1a;
+  --bg-dark-1: #0F242C;
+  --bg-light: #225557;
   --text: #ffffff;
   --gray: #404044;
 }
@@ -427,4 +429,127 @@
 .profile li:first-child:hover {
   background-color: #0f242c;
   cursor: default;
+}
+
+
+.category__collabsible{
+  position: absolute;
+  width: 90%;
+  display: none;
+  left: 5%;
+  margin: auto;
+  margin-top: 30px;
+}
+
+.category__selections{
+  background-color: var(--bg-dark-1);
+  width: 30%;
+  padding: 10px;
+}
+
+.category__game-container{
+  width: 70%;
+  background-color: var(--bg-light);
+  display: flex;
+  padding: 30px 50px 50px 50px;
+  flex-direction: column;
+}
+
+.selection:hover,
+.selection#selected{
+  background-color: var(--bg-light);
+  border-radius: 5px;
+  width: 101%;
+  padding-left: 5px;
+}
+
+.selection{
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  justify-content: space-between;
+  height: 2.9rem;
+}
+
+.selection a{
+  color: var(--text);
+  font-weight: 700;
+  font-size: 1.6rem;
+}
+
+.selections ul{
+  margin: 10px;
+  line-height: 1.9rem;
+}
+
+
+.arrow{
+  width: 1.9rem;
+  filter: 
+    invert(93%) 
+    sepia(93%) 
+    saturate(30%) 
+    hue-rotate(143deg) 
+    brightness(107%);
+    margin-right: 2px;
+}
+
+.seperate__line{
+  border: 1px solid var(--green);
+  margin: 10px;
+}
+
+.category__title h2{
+  font-weight: 600;
+  font-size: 2rem;
+}
+
+.game-card__add-cart span{
+  font-size: 1.2rem;
+}
+
+.game-card__price-wrapper p{
+  font-size: 1.6rem;
+}
+
+.game-card__wishlist{
+  font-size: 2rem;
+}
+
+.game-grid{
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+.button__container{
+  margin-top: 30px;
+  display: flex;
+  border-radius: 5px;
+  border: 1px solid #D9D9D9;
+  background: rgba(255, 255, 255, 0.17);
+  box-shadow: 0 5px 4px 0 rgba(0, 0, 0, 0.25);
+}
+
+.category__button{
+  border: none;
+  outline: none;
+  font-size: 2.3rem;
+  background-color: transparent;
+  margin: auto;
+}
+
+
+.category__button a{
+  color: var(--text);
+  font-weight: 700;
+}
+
+.button__container:hover{
+  background: rgba(255, 255, 255, 0.125)
+}
+
+.category__collabsible.is-display{
+  display: flex;
 }

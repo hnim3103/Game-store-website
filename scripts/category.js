@@ -94,6 +94,14 @@ function isLoggedIn() {
     : localStorage.getItem("loggedInUserEmail") !== null;
 }
 
+const wishlists = document.querySelectorAll('.game-card__wishlist');
+wishlists.forEach(wishlist => {
+  wishlist.addEventListener('click', () => {
+    wishlist.classList.toggle('active');
+  });
+});
+
+
 // Hàm hiện Popup Login
 function showLoginPopup() {
   const overlay =
