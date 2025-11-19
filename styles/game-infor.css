@@ -508,7 +508,7 @@ body {
 }
 
 .game-info__title {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   font-weight: 600;
   color: var(--text-color);
 }
@@ -517,7 +517,7 @@ body {
   display: flex;
   align-items: flex-start;
   gap: 10px;
-  font-size: 0.9rem;
+  font-size: 1.5rem;
   line-height: 1.4;
 }
 
@@ -595,7 +595,7 @@ body {
   position: relative;
   max-height: 120px;
   overflow: hidden;
-  line-height: 1.4;
+  line-height: 1.5;
   transition: max-height 0.5s ease-out;
 }
 
@@ -628,15 +628,15 @@ body {
 }
 
 .game-description__subtitle {
-  font-size: 1.2rem;
-  font-weight: 700;
+  font-size: 1.5rem;
+  font-weight: 600;
   color: var(--text-color);
   margin-bottom: 5px;
 }
 
 .game-description__paragraph {
   line-height: 1.4;
-  font-size: 0.9rem;
+  font-size: 1.3rem;
   margin-bottom: 15px;
   color: var(--text-color);
 }
@@ -650,11 +650,11 @@ body {
 .game-description__list-item {
   color: var(--text-color);
   line-height: 1.4;
-  font-size: 0.9rem;
+  font-size: 1.2rem;
 }
 
 .game-description__paragraph--footnotes {
-  font-size: 0.8rem;
+  font-size: 1.2rem;
   margin-top: 35px;
   line-height: 1.4;
 }
@@ -1334,6 +1334,7 @@ body {
 /*RATE & REVIEW SECTION*/
 .rate-review {
   margin-top: 60px;
+  margin-bottom: 60px;
   padding: 40px 30px;
   background: var(--super-dark-green-color);
   border-radius: 12px;
@@ -1461,6 +1462,7 @@ body {
 /*REVIEW FORM */
 .review-form {
   margin-top: 40px;
+  margin-bottom: 60px;
   padding: 40px 30px;
   background: var(--super-dark-green-color);
   border-radius: 12px;
@@ -1583,6 +1585,7 @@ body {
 /*  THANK YOU SCREEN*/
 .rate-thanks {
   margin-top: 60px;
+  margin-bottom: 60px;
   padding: 60px 30px;
   background: var(--super-dark-green-color);
   border-radius: 12px;
