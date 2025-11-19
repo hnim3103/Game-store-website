@@ -258,3 +258,36 @@ body {
   background: linear-gradient(180deg, #070f1a 25%, #225557 81%) !important;
   color: var(--text-color);
 }
+
+@media screen and (min-width: 800px) and (max-width: 1024px) {
+  .user-nav__link img {
+    width: 4.5rem;
+    height: 4.5rem;
+  }
+
+  .user-nav__link {
+    font-size: 15px;
+  }
+}
+@media screen and (max-width: 767px) {
+  /* profile */
+  .profile-bar__info img {
+    width: 5rem;
+    height: 5rem;
+  }
+  .profile-bar__username {
+  font-size: 18px;
+}
+  /* nav */
+  .user-nav__link {
+    font-size: 12px;
+  }
+
+  .user-nav {
+    margin-bottom: 4rem;
+  }
+  .user-nav__link img {
+    width: 3rem;
+    height: 3rem;
+  }
+}
