@@ -44,7 +44,7 @@ body {
 --------------------------------------------------- */
 .main {
   width: 100%;
-  padding: 1rem 0;
+  padding: 1rem 2rem;
   margin-top: 2rem;
 }
 
@@ -250,6 +250,11 @@ body {
   justify-content: center;
   flex-shrink: 0;
   transition: all 0.3s ease;
+}
+
+.payment-option__checkbox-input + .payment-option__checkbox-custom::before {
+  content: none !important;
+  display: none;
 }
 
 .payment-option__checkbox-input:checked + .payment-option__checkbox-custom {

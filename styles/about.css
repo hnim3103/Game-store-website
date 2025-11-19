@@ -433,7 +433,7 @@
   left: calc(50% + 235px);
 }
 
-/* ========== PARTNERS SECTION ========== */
+/* SECTION */
 .partners {
   text-align: center;
   color: #fff;
@@ -527,7 +527,7 @@
   }
   
   .showcase__container {
-    transform: translateX(-55%) scale(0.95);
+    transform: translateX(-45%) scale(0.95);
     transform-origin: center top;
     height: 540px;
   }
@@ -605,8 +605,7 @@
 /* REVEAL ANIMATION */
 .hero, .section, .showcase, .review, .partners {
   opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.8s ease-out;
+  transition: all 1s ease-out;
 }
 
 .hero.visible, .section.visible, .showcase.visible, .review.visible, .partners.visible {
@@ -614,24 +613,3 @@
   transform: translateY(0);
 }
 
-/* QUOTE FADE */
-#quote-text.fade {
-  animation: fadeIn 1.2s ease;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-html, body {
-  overflow-x: hidden !important;
-  scrollbar-width: none; /* Ẩn thanh cuộn trên Firefox */
-  -ms-overflow-style: none; /* Ẩn thanh cuộn trên IE và Edge */
-}
-
-/* Ẩn thanh cuộn trên Chrome, Safari, Opera */
-html::-webkit-scrollbar,
-body::-webkit-scrollbar {
-  display: none;
-}
