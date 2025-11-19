@@ -23,7 +23,7 @@
   --black-color: #070f1a;
   --text-color: #ffffff;
   --super-dark-green-color: #0f232c;
-  --bg1: #070F1A;
+  --bg1: #070f1a;
   --bg2: #225557;
   font-size: 10px;
 }
@@ -31,7 +31,12 @@
 body {
   height: auto;
   color: var(--text-color);
-  background: linear-gradient(180deg, var(--bg1) 5%, #0b2a2e 45%, var(--bg2) 95%);
+  background: linear-gradient(
+    180deg,
+    var(--bg1) 5%,
+    #0b2a2e 45%,
+    var(--bg2) 95%
+  );
   background-attachment: fixed;
   overflow-x: hidden;
   margin: 0;
@@ -50,10 +55,10 @@ h1 {
 
 /*wishlist*/
 .wishlist-page__container {
-  width: 1200px;
+  width: 1100px;
   max-width: 100%;
   margin: auto;
-  padding: 0 1.5rem;
+  padding: 0px 1.5rem;
 }
 
 /* profile bar */
@@ -61,7 +66,7 @@ h1 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 35px 0 25px 0;
+  padding: 75px 0 25px 0;
 }
 
 .profile-bar__info {
@@ -275,7 +280,7 @@ h1 {
   align-items: center;
   padding: 1.5rem;
   border-radius: 8px;
-  background-color: var(--dark-green-color);
+  background-color: #1d4a4d;
   margin-bottom: 4rem;
   transition: opacity 0.4s ease-out, transform 0.4s ease-out;
 }
@@ -492,9 +497,10 @@ h1 {
   position: relative;
   height: 350px;
 }
-
 .fa-angle-left,
-.fa-angle-right {
+.fa-angle-right,
+#slider-prev,
+#slider-next {
   background-color: var(--super-dark-green-color);
   border: none;
   border-radius: 50%;
@@ -508,20 +514,27 @@ h1 {
   transition: all 0.2s ease;
   font-size: 24px;
   color: var(--green-color);
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
 }
 
-.fa-angle-left::before,
-.fa-angle-right::before {
-  position: relative;
-  top: 7px;
-  left: 1px;
+.fa-angle-left:hover,
+.fa-angle-right:hover,
+#slider-prev:hover,
+#slider-next:hover {
+  background-color: var(--green-color);
+  color: var(--black-color);
+  transform: scale(1.1);
 }
 
-.fa-angle-left {
+.fa-angle-left,
+#slider-prev {
   left: 7rem;
 }
 
-.fa-angle-right {
+.fa-angle-right,
+#slider-next {
   right: 7rem;
 }
 
@@ -719,8 +732,11 @@ h1 {
 @media (max-width: 767px) {
   /* profile information */
   .profile-bar__info img {
-    width: 4rem;
-    height: 4rem;
+    width: 5rem;
+    height: 5rem;
+  }
+  .profile-bar__username {
+    font-size: 18px;
   }
   /* nav */
   .wishlist-nav__link {

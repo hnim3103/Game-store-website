@@ -1,8 +1,3 @@
-/* =====================================================
-   WALLET PAGE LOGIC
-   - Chỉ trigger loading khi chuyển sang purchases section
-===================================================== */
-
 document.addEventListener("DOMContentLoaded", () => {
   // Link tới purchases
   const purchasesLink = document.querySelector('a[href="purchases.html"]');
