@@ -1,13 +1,13 @@
 /* ---------------------------------------------------
   Google Font Import
 --------------------------------------------------- */
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap");
 
 /* ---------------------------------------------------
   Reset & Base Styles
 --------------------------------------------------- */
 * {
-  font-family: 'Roboto Flex', sans-serif;
+  font-family: "Roboto Flex", sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -23,15 +23,20 @@
   --black-color: #070f1a;
   --text-color: #ffffff;
   --super-dark-green-color: #0f232c;
-  --bg1: #070F1A;
+  --bg1: #070f1a;
   --bg2: #225557;
   font-size: 10px;
 }
 
 body {
-  font-family: 'Roboto Flex', sans-serif;
+  font-family: "Roboto Flex", sans-serif;
   color: var(--text);
-  background: linear-gradient(180deg, var(--bg1) 5%, #0b2a2e 45%, var(--bg2) 95%);
+  background: linear-gradient(
+    180deg,
+    var(--bg1) 5%,
+    #0b2a2e 45%,
+    var(--bg2) 95%
+  );
   background-attachment: fixed;
   overflow-x: hidden;
   margin: 0;
@@ -92,9 +97,8 @@ h1 {
   transform: scale(1.05);
 }
 
-
 .slider__card-image::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 0;
@@ -105,8 +109,7 @@ h1 {
   z-index: 1;
 }
 
-
-.slider__card-content{
+.slider__card-content {
   position: absolute;
   bottom: 50px;
   right: 130px;
@@ -169,7 +172,8 @@ h1 {
 /* ---------------------------------------------------
   Slider Product Price & Discount
 --------------------------------------------------- */
-.slider__discount, .upcoming .game-card--large .game-card__discount {
+.slider__discount,
+.upcoming .game-card--large .game-card__discount {
   margin-left: auto;
   background-color: red;
   border-radius: 8px;
@@ -181,11 +185,13 @@ h1 {
   margin-right: 5px;
 }
 
-.slider__discount-percent, .upcoming .game-card--large .game-card__discount-percent  {
+.slider__discount-percent,
+.upcoming .game-card--large .game-card__discount-percent {
   font-size: 2.5rem;
 }
 
-.slider__price, .upcoming .game-card--large .game-card__price {
+.slider__price,
+.upcoming .game-card--large .game-card__price {
   margin-left: 5px;
   display: flex;
   flex-direction: column;
@@ -196,13 +202,15 @@ h1 {
   font-weight: bold;
 }
 
-.slider__price-original, .upcoming .game-card--large .game-card__price-original {
+.slider__price-original,
+.upcoming .game-card--large .game-card__price-original {
   font-size: 2rem;
   text-decoration: line-through;
   margin-bottom: 2px;
 }
 
-.slider__price-discounted, .upcoming .game-card--large .game-card__price-discounted {
+.slider__price-discounted,
+.upcoming .game-card--large .game-card__price-discounted {
   font-size: 2.5rem;
 }
 
@@ -218,7 +226,7 @@ h1 {
 }
 
 .slider__wishlist .fa-heart,
-.game-card__wishlist .fa-heart{
+.game-card__wishlist .fa-heart {
   display: flex;
   justify-content: center;
   font-size: 4rem;
@@ -235,16 +243,25 @@ h1 {
 }
 
 @keyframes bounce {
-  0% { transform: scale(1); }
-  30% { transform: scale(1.3); }
-  60% { transform: scale(0.9); }
-  100% { transform: scale(1); }
+  0% {
+    transform: scale(1);
+  }
+  30% {
+    transform: scale(1.3);
+  }
+  60% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 /* ---------------------------------------------------
   Slider Add to Cart Button
 --------------------------------------------------- */
-.slider__add-cart, .upcoming .game-card--large .game-card__add-cart {
+.slider__add-cart,
+.upcoming .game-card--large .game-card__add-cart {
   border: solid 5px var(--green-color);
   width: 150px;
   margin-left: 5px;
@@ -263,15 +280,18 @@ h1 {
   padding: 5px 15px;
 }
 
-.slider__add-cart:hover, .upcoming .game-card--large .game-card__add-cart:hover{
+.slider__add-cart:hover,
+.upcoming .game-card--large .game-card__add-cart:hover {
   color: var(--text-color);
 }
 
-.slider__add-cart a, .upcoming .game-card--large .game-card__add-cart a {
+.slider__add-cart a,
+.upcoming .game-card--large .game-card__add-cart a {
   color: var(--black-color);
 }
 
-.slider__add-cart:hover a, .upcoming .game-card--large .game-card__add-cart:hover a {
+.slider__add-cart:hover a,
+.upcoming .game-card--large .game-card__add-cart:hover a {
   color: var(--text-color);
 }
 
@@ -320,7 +340,10 @@ h1 {
 /* ---------------------------------------------------
   Popular Genres Section
 --------------------------------------------------- */
-.genres, .new-releases, .upcoming, .trending {
+.genres,
+.new-releases,
+.upcoming,
+.trending {
   height: fit-content;
   width: 100%;
   display: block;
@@ -330,11 +353,11 @@ h1 {
   margin-top: 50px;
 }
 
-.genres__header, 
-.new-releases__header, 
-.upcoming__header, 
+.genres__header,
+.new-releases__header,
+.upcoming__header,
 .trending__header,
-.best-sellers__header{
+.best-sellers__header {
   height: 70px;
   width: 100%;
   display: flex;
@@ -342,9 +365,9 @@ h1 {
   border-bottom: 3px solid var(--green-color);
 }
 
-.genres__link, 
-.new-releases__link, 
-.upcoming__link, 
+.genres__link,
+.new-releases__link,
+.upcoming__link,
 .trending__link,
 .best-sellers__link {
   font-size: 1.5rem;
@@ -352,15 +375,16 @@ h1 {
   margin-left: auto;
 }
 
-.genres__link:hover, 
-.new-releases__link:hover, 
-.upcoming__link:hover, 
+.genres__link:hover,
+.new-releases__link:hover,
+.upcoming__link:hover,
 .trending__link:hover,
 .best-sellers__link:hover {
   color: var(--green-color);
 }
 
-.genres__grid, .trending__grid {
+.genres__grid,
+.trending__grid {
   display: grid;
   margin-top: 5rem;
   grid-template-columns: auto auto auto auto auto;
@@ -405,7 +429,6 @@ h1 {
   transform: scale(1.05);
 }
 
-
 .game-card__content {
   background-color: var(--black-color);
   width: 100%;
@@ -446,8 +469,7 @@ h1 {
 
 .game-card__add-cart:hover {
   background-color: var(--green-color);
-} 
-
+}
 
 .game-card__wishlist {
   position: absolute;
@@ -482,11 +504,11 @@ h1 {
   font-size: 6rem;
 }
 
-.new-releases{
+.new-releases {
   margin-top: 50px;
 }
 
-.new-releases__slider{
+.new-releases__slider {
   margin-top: 50px;
   display: flex;
   justify-content: center;
@@ -494,23 +516,22 @@ h1 {
   gap: 10px;
 }
 
-
 .new-releases__slider .game-card,
-.upcoming__grid .game-card{
+.upcoming__grid .game-card {
   width: 190px;
   height: 290px;
   margin: 10px;
-  display: flex ;
+  display: flex;
   position: relative;
 }
 
 .new-releases__slider .game-card__image,
-.upcoming__grid .game-card__image{
+.upcoming__grid .game-card__image {
   height: 85%;
 }
 
 .new-releases__slider .game-card__image img,
-.upcoming__grid .game-card__image img{
+.upcoming__grid .game-card__image img {
   height: 100%;
   object-fit: cover;
 }
@@ -520,21 +541,21 @@ h1 {
 }
 
 .new-releases__slider .game-card__content,
-.upcoming__grid .game-card__content{
+.upcoming__grid .game-card__content {
   height: 15%;
 }
 
 .new-releases__slider .game-card__price-wrapper,
-.upcoming__grid .game-card__price-wrapper{
+.upcoming__grid .game-card__price-wrapper {
   background-color: transparent;
   width: fit-content;
   position: absolute;
   bottom: 15%;
   right: 5%;
-} 
+}
 
 .new-releases__slider .game-card__add-cart,
-.upcoming__grid .game-card__add-cart{
+.upcoming__grid .game-card__add-cart {
   width: fit-content;
   margin: 0;
   height: 80%;
@@ -542,13 +563,13 @@ h1 {
   font-size: 1.5rem;
 }
 
-.new-releases__slider .game-card__wishlist .fa-heart, 
+.new-releases__slider .game-card__wishlist .fa-heart,
 .upcoming__grid .game-card__wishlist .fa-heart {
   font-size: 2rem;
   margin: 5px;
 }
 
-.upcoming__grid .game-card--large{
+.upcoming__grid .game-card--large {
   grid-row: 1/3;
   grid-column: 3/5;
   height: 600px;
@@ -556,18 +577,16 @@ h1 {
   display: flex;
 }
 
-
-.upcoming{
+.upcoming {
   margin-top: 50px;
 }
 
-.upcoming__grid .game-card--large .game-card__image{
+.upcoming__grid .game-card--large .game-card__image {
   height: 100%;
   border-radius: 12px;
 }
 
-
-.upcoming .game-card--large .game-card__content{
+.upcoming .game-card--large .game-card__content {
   display: flex;
   flex-direction: row;
   background-color: transparent;
@@ -579,29 +598,27 @@ h1 {
   padding-right: 30px;
 }
 
-.upcoming .game-card--large .game-card__wishlist{
+.upcoming .game-card--large .game-card__wishlist {
   position: static;
 }
 
-.upcoming .game-card--large .fa-heart{
+.upcoming .game-card--large .fa-heart {
   font-size: 4rem;
 }
 
-
-.upcoming__grid{
+.upcoming__grid {
   display: grid;
   margin: 50px 80px 50px;
   grid-template-columns: auto auto auto auto;
   column-gap: 50px;
 }
 
-.upcoming .game-card--large .game-card__add-cart{
+.upcoming .game-card--large .game-card__add-cart {
   font-size: 2rem;
   width: auto;
 }
 
-
-.trending__grid{
+.trending__grid {
   grid-template-columns: auto auto auto;
 }
 
@@ -614,6 +631,7 @@ h1 {
   width: 100vw;
   height: 100vh;
   background: rgba(10, 10, 10, 0.85);
+  -webkit-backdrop-filter: blur(4px); /* Safari */
   backdrop-filter: blur(4px);
   justify-content: center;
   align-items: center;
@@ -625,7 +643,7 @@ h1 {
 }
 
 .login-container {
-  background: #0F232C;
+  background: #0f232c;
   color: #fff;
   border: 2px solid var(--green-color);
   border-radius: 15px;
@@ -650,17 +668,17 @@ h1 {
 .close-btn:hover {
   filter: brightness(1.3);
 }
-.best-sellers{
+.best-sellers {
   margin-top: 50px;
 }
 
-.best-sellers__game-list{
+.best-sellers__game-list {
   margin-left: 0;
   width: 60%;
   height: auto;
 }
 
-.best-sellers .game-card{
+.best-sellers .game-card {
   height: 100px;
   background-color: var(--super-dark-green-color);
   display: flex;
@@ -669,7 +687,7 @@ h1 {
   margin-bottom: 10px;
 }
 
-.best-sellers .game-card .game-card__image{
+.best-sellers .game-card .game-card__image {
   display: flex;
   position: relative;
   height: 80%;
@@ -690,11 +708,10 @@ h1 {
   display: flex;
   justify-content: space-between;
   align-items: stretch;
-  gap: 20px; 
+  gap: 20px;
 }
 
-
-.best-sellers .game-card__content{
+.best-sellers .game-card__content {
   background-color: transparent;
   display: flex;
   flex-direction: row;
@@ -704,19 +721,19 @@ h1 {
   align-items: center;
 }
 
-.best-sellers .game-card__short-infor{
+.best-sellers .game-card__short-infor {
   margin-right: auto;
   font-size: 1.3em;
   line-height: 1.5em;
   width: 65%;
 }
 
-.best-sellers .game-card__short-infor .game-card__game-name{
+.best-sellers .game-card__short-infor .game-card__game-name {
   font-size: 1.5em;
   font-weight: bold;
 }
 
-.best-sellers .game-card__discount{
+.best-sellers .game-card__discount {
   border-radius: 5px;
   margin-right: auto;
   font-size: 2.5em;
@@ -725,7 +742,7 @@ h1 {
   background-color: red;
 }
 
-.best-sellers .game-card__price{
+.best-sellers .game-card__price {
   font-size: 3em;
   font-weight: 900;
   color: var(--green-color);
@@ -746,7 +763,6 @@ h1 {
   border-radius: 8px;
   overflow: hidden;
 }
-
 
 .game-info__title {
   font-size: 2.5rem;
@@ -770,12 +786,12 @@ h1 {
 }
 
 .game-info__rating {
-  color: #00C3FF;
+  color: #00c3ff;
   margin-right: 4px;
 }
 
 .game-info__votes {
-  color: #CAD4D8;
+  color: #cad4d8;
 }
 
 .game-info__genres {
@@ -788,7 +804,7 @@ h1 {
 }
 
 .game-info__genre {
-  background-color: #7D92A6;
+  background-color: #7d92a6;
   color: var(--text-color);
   padding: 4px 10px;
   border-radius: 5px;
@@ -796,9 +812,9 @@ h1 {
   white-space: nowrap;
 }
 
-.game-info__reviews{
+.game-info__reviews {
   border-radius: 5px;
-  background: #5E6B7B;
+  background: #5e6b7b;
 }
 
 .game-info__reviews p {
@@ -807,8 +823,7 @@ h1 {
   color: #ccc;
 }
 
-
-.game-info__images{
+.game-info__images {
   margin-top: 15px;
   display: flex;
   flex-direction: column;
@@ -821,10 +836,9 @@ h1 {
   border-radius: 8px;
 }
 
-.game-info__image:last-child{
+.game-info__image:last-child {
   margin-bottom: 0;
 }
-
 
 @media screen and (max-width: 1024px) {
   :root {

@@ -59,7 +59,10 @@
         <nav class="wishlist-nav">
           <ul class="wishlist-nav__list">
             <li class="wishlist-nav__item">
-              <a href="./wishlist.html" class="wishlist-nav__link">
+              <a
+                href="./wishlist.html"
+                class="wishlist-nav__link wishlist-nav__link--active"
+              >
                 <img src="../img/icons/whislist.svg" alt="" />
                 <span>WISHLIST</span>
               </a>
@@ -73,10 +76,7 @@
             </li>
 
             <li class="wishlist-nav__item">
-              <a
-                href="./wallet.html"
-                class="wishlist-nav__link wishlist-nav__link--active"
-              >
+              <a href="./wallet.html" class="wishlist-nav__link">
                 <img src="../img/icons/wallet.svg" alt="" />
                 <span>WALLET</span>
               </a>
@@ -124,11 +124,13 @@
         <!-- Add wislist box -->
         <div class="wishlist-item-box">
           <div class="wishlist-item-box__column wishlist-item-box__product">
-            <img
-              src="/img/assets/1.png"
-              alt="Game Cover"
-              class="wishlist-item-box__image"
-            />
+            <a href="game-info.html" title="View game">
+              <img
+                src="/img/assets/1.png"
+                alt="Game Cover"
+                class="wishlist-item-box__image"
+              />
+            </a>
             <div class="wishlist-item-box__details">
               <span class="wishlist-item-box__title">OUTLAST Trinity</span>
               <span class="wishlist-item-box__info"
@@ -163,11 +165,13 @@
         </div>
         <div class="wishlist-item-box">
           <div class="wishlist-item-box__column wishlist-item-box__product">
-            <img
-              src="/img/assets/1.png"
-              alt="Game Cover"
-              class="wishlist-item-box__image"
-            />
+            <a href="game-info.html" title="View game">
+              <img
+                src="/img/assets/1.png"
+                alt="Game Cover"
+                class="wishlist-item-box__image"
+              />
+            </a>
             <div class="wishlist-item-box__details">
               <span class="wishlist-item-box__title">OUTLAST Trinity</span>
               <span class="wishlist-item-box__info"
@@ -211,108 +215,139 @@
         <div class="genres__grid">
           <i class="fa-solid fa-angle-left" id="slider-prev"></i>
           <article class="game-card">
-            <div class="game-card__image">
-              <img src="/img/assets/1.png" alt="Game" />
-            </div>
-            <div class="game-card__content">
-              <div class="game-card__price-wrapper">
-                <div class="game-card__price">
-                  <p>4.99$</p>
+            <a href="game-info.html" title="View game">
+              <div class="game-card__image">
+                <img src="/img/assets/1.png" alt="Game" />
+              </div>
+              <div class="game-card__content">
+                <div class="game-card__price-wrapper">
+                  <div class="game-card__price">
+                    <p>4.99$</p>
+                  </div>
                 </div>
+                <div class="game-card__add-cart">
+                  <i class="fa-solid fa-cart-plus"></i>
+                  <a href="#cart">Add to cart</a>
+                </div>
+                <button
+                  class="game-card__wishlist"
+                  aria-label="Add to wishlist"
+                >
+                  <i class="fa-regular fa-heart"></i>
+                </button>
               </div>
-              <div class="game-card__add-cart">
-                <i class="fa-solid fa-cart-plus"></i>
-                <a href="#cart">Add to cart</a>
-              </div>
-              <button class="game-card__wishlist" aria-label="Add to wishlist">
-                <i class="fa-regular fa-heart"></i>
-              </button>
-            </div>
+            </a>
           </article>
 
           <article class="game-card">
-            <div class="game-card__image">
-              <img src="/img/assets/2.jpg" alt="Game" />
-            </div>
-            <div class="game-card__content">
-              <div class="game-card__price-wrapper">
-                <div class="game-card__price">
-                  <p>4.99$</p>
+            <a href="game-info.html" title="View game">
+              <div class="game-card__image">
+                <img src="/img/assets/2.jpg" alt="Game" />
+              </div>
+              <div class="game-card__content">
+                <div class="game-card__price-wrapper">
+                  <div class="game-card__price">
+                    <p>4.99$</p>
+                  </div>
                 </div>
-              </div>
-              <div class="game-card__add-cart">
-                <i class="fa-solid fa-cart-plus"></i>
-                <a href="#cart"
-                  ><span class="game-card__add-cart-text">Add to cart</span></a
+                <div class="game-card__add-cart">
+                  <i class="fa-solid fa-cart-plus"></i>
+                  <a href="#cart"
+                    ><span class="game-card__add-cart-text"
+                      >Add to cart</span
+                    ></a
+                  >
+                </div>
+                <button
+                  class="game-card__wishlist"
+                  aria-label="Add to wishlist"
                 >
+                  <i class="fa-regular fa-heart"></i>
+                </button>
               </div>
-              <button class="game-card__wishlist" aria-label="Add to wishlist">
-                <i class="fa-regular fa-heart"></i>
-              </button>
-            </div>
+            </a>
           </article>
 
           <article class="game-card">
-            <div class="game-card__image">
-              <img src="/img/assets/3.jpg" alt="Game" />
-            </div>
-            <div class="game-card__content">
-              <div class="game-card__price-wrapper">
-                <div class="game-card__price">
-                  <p>4.99$</p>
+            <a href="game-info.html" title="View game">
+              <div class="game-card__image">
+                <img src="/img/assets/3.jpg" alt="Game" />
+              </div>
+              <div class="game-card__content">
+                <div class="game-card__price-wrapper">
+                  <div class="game-card__price">
+                    <p>4.99$</p>
+                  </div>
                 </div>
-              </div>
-              <div class="game-card__add-cart">
-                <i class="fa-solid fa-cart-plus"></i>
-                <a href="#cart"
-                  ><span class="game-card__add-cart-text">Add to cart</span></a
+                <div class="game-card__add-cart">
+                  <i class="fa-solid fa-cart-plus"></i>
+                  <a href="#cart"
+                    ><span class="game-card__add-cart-text"
+                      >Add to cart</span
+                    ></a
+                  >
+                </div>
+                <button
+                  class="game-card__wishlist"
+                  aria-label="Add to wishlist"
                 >
+                  <i class="fa-regular fa-heart"></i>
+                </button>
               </div>
-              <button class="game-card__wishlist" aria-label="Add to wishlist">
-                <i class="fa-regular fa-heart"></i>
-              </button>
-            </div>
+            </a>
           </article>
           <article class="game-card">
-            <div class="game-card__image">
-              <img src="/img/assets/1.png" alt="Game" />
-            </div>
-            <div class="game-card__content">
-              <div class="game-card__price-wrapper">
-                <div class="game-card__price">
-                  <p>4.99$</p>
+            <a href="game-info.html" title="View game">
+              <div class="game-card__image">
+                <img src="/img/assets/1.png" alt="Game" />
+              </div>
+              <div class="game-card__content">
+                <div class="game-card__price-wrapper">
+                  <div class="game-card__price">
+                    <p>4.99$</p>
+                  </div>
                 </div>
+                <div class="game-card__add-cart">
+                  <i class="fa-solid fa-cart-plus"></i>
+                  <a href="#cart">Add to cart</a>
+                </div>
+                <button
+                  class="game-card__wishlist"
+                  aria-label="Add to wishlist"
+                >
+                  <i class="fa-regular fa-heart"></i>
+                </button>
               </div>
-              <div class="game-card__add-cart">
-                <i class="fa-solid fa-cart-plus"></i>
-                <a href="#cart">Add to cart</a>
-              </div>
-              <button class="game-card__wishlist" aria-label="Add to wishlist">
-                <i class="fa-regular fa-heart"></i>
-              </button>
-            </div>
+            </a>
           </article>
 
           <article class="game-card">
-            <div class="game-card__image">
-              <img src="/img/assets/2.jpg" alt="Game" />
-            </div>
-            <div class="game-card__content">
-              <div class="game-card__price-wrapper">
-                <div class="game-card__price">
-                  <p>4.99$</p>
+            <a href="game-info.html" title="View game">
+              <div class="game-card__image">
+                <img src="/img/assets/2.jpg" alt="Game" />
+              </div>
+              <div class="game-card__content">
+                <div class="game-card__price-wrapper">
+                  <div class="game-card__price">
+                    <p>4.99$</p>
+                  </div>
                 </div>
-              </div>
-              <div class="game-card__add-cart">
-                <i class="fa-solid fa-cart-plus"></i>
-                <a href="#cart"
-                  ><span class="game-card__add-cart-text">Add to cart</span></a
+                <div class="game-card__add-cart">
+                  <i class="fa-solid fa-cart-plus"></i>
+                  <a href="#cart"
+                    ><span class="game-card__add-cart-text"
+                      >Add to cart</span
+                    ></a
+                  >
+                </div>
+                <button
+                  class="game-card__wishlist"
+                  aria-label="Add to wishlist"
                 >
+                  <i class="fa-regular fa-heart"></i>
+                </button>
               </div>
-              <button class="game-card__wishlist" aria-label="Add to wishlist">
-                <i class="fa-regular fa-heart"></i>
-              </button>
-            </div>
+            </a>
           </article>
 
           <i class="fa-solid fa-angle-right" id="slider-next"></i>
