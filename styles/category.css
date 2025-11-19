@@ -469,7 +469,7 @@ input[type="range"]::-webkit-slider-thumb {
   height: 100%;
   border-radius:5px 5px 0px 0px;
   vertical-align: middle;
-  object-fit: fill;
+  object-fit: cover;
 }
 
 .game-card__content{
