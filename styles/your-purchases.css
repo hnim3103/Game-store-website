@@ -15,14 +15,18 @@
   --black-color: #070f1a;
   --text-color: #ffffff;
   --super-dark-green-color: #0f232c;
+  --bg1: #070F1A;
+  --bg2: #225557;
   font-size: 10px;
 }
 
 body {
-  background: linear-gradient(180deg, #051423 25%, #0f232c 85%);
+  background: linear-gradient(180deg, var(--bg1) 5%, #0b2a2e 45%, var(--bg2) 95%);
+  background-attachment: fixed;
+  overflow-x: hidden;
+  margin: 0;
   color: var(--text-color);
 }
-
 
 .purchases-page {
   padding-top: 40px;
@@ -93,7 +97,7 @@ body {
 
 .user-nav__list {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 }
 
@@ -141,13 +145,13 @@ body {
 }
 
 .order-card {
-  background: #1D4A4D;
+  background: #1d4a4d;
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 4px;
   padding: 14px;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 18px;
+  margin-bottom: 20px;
   align-items: center;
 }
 
@@ -166,13 +170,14 @@ body {
 .order-card__title {
   font-size: 1.8rem;
   font-weight: 700;
-  margin-bottom: 4px;
+  margin-bottom: 10px;
 }
 
 .order-card__genre,
 .order-card__date {
   font-size: 1.4rem;
   opacity: 0.8;
+  margin-bottom: 10px;
 }
 
 .order-card__time {
@@ -183,18 +188,18 @@ body {
 
 /* recent activities */
 .recent {
-  margin-bottom: 50px; /* khoảng cách dưới recent  */
+  margin-bottom: 60px; /* khoảng cách dưới recent  */
 }
 
 .recent__header {
   display: flex;
   justify-content: space-between; /* Căn đều khoảng cách giữa các phần tử */
-  align-items: center; 
+  align-items: center;
 }
 
 .recent__see-more {
   font-size: 1.6rem;
-  opacity: 0.7; /* Mờ hơn một chút để không nổi quá và dễ phân biệt hơn */
+  opacity: 1; /* Mờ hơn một chút để không nổi quá và dễ phân biệt hơn */
   cursor: pointer;
 }
 .recent__see-more:hover {
@@ -205,10 +210,9 @@ body {
 .activity-card {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  border-radius: 4px;
+  align-items: flex-start; 
+  background: #0F232C;
+  border-radius: 3px;
   padding: 16px;
   margin-top: 20px;
 }
@@ -228,12 +232,14 @@ body {
 .activity-card__title {
   font-size: 1.8rem;
   font-weight: 700;
+  margin-bottom: 10px;
 }
 
 .activity-card__genre,
 .activity-card__date {
   font-size: 1.4rem;
   opacity: 0.85;
+  margin-bottom: 10px;
 }
 
 /* progress bar */
@@ -263,7 +269,7 @@ body {
 
 .progress-fill {
   height: 100%;
-  width: 20%; /* 1/50 example */
+  width: 10%; /* 1/50 example */
   background: var(--green-color);
   border-radius: 10px;
 }
@@ -277,119 +283,269 @@ body {
 }
 
 /* recommendations */
+/*recommendations*/
 .recommendations {
-  margin-top: 6rem;
-  max-width: 1100px;
+  margin-top: 5rem;
+  max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
 }
 
+@media (max-width: 1024px) {
+  .recommendations {
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .recommendations {
+    padding: 0 0.75rem;
+    margin-top: 2.5rem;
+  }
+}
+
 .recommendations__title {
-  font-size: 2.2rem;
+  font-size: 2.9rem;
   font-weight: 700;
   margin-bottom: 2.5rem;
+}
+
+@media (max-width: 767px) {
+  .recommendations__title {
+    font-size: 2.5rem;
+    text-align: left;
+    margin-bottom: 1.5rem;
+  }
 }
 
 .recommendations__slider {
   position: relative;
   display: flex;
   align-items: center;
+  gap: 1rem;
+  margin-bottom: 50px;
 }
 
-.recommendations__list {
-  display: flex;
-  overflow: hidden;
-  gap: 2rem;
-  scroll-behavior: smooth;
+@media (max-width: 767px) {
+  .recommendations__slider {
+    position: relative;
+    gap: 0;
+  }
 }
 
 .recommendations__arrow {
-  background: none;
+  background-color: var(--dark-blue-color);
   border: none;
-  color: var(--green-color);
-  font-size: 3.5rem;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
-  padding: 0 10px;
+  flex-shrink: 0;
 }
 
-/* product card */
+@media (max-width: 767px) {
+  .recommendations__arrow {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    background-color: rgba(7, 15, 26, 0.8);
+    width: 32px;
+    height: 32px;
+    margin: 0 0.75rem;
+  }
+}
+
+.recommendations__arrow i {
+  font-size: 3.4rem;
+  color: var(--green-color);
+}
+
+@media (max-width: 767px) {
+  .recommendations__arrow i {
+    font-size: 2.2rem;
+  }
+
+  .recommendations__arrow-left {
+    left: 0;
+  }
+
+  .recommendations__arrow-right {
+    right: 0;
+  }
+}
+
+.recommendations__list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  flex: 1;
+}
+
+@media (max-width: 1024px) {
+  .recommendations__list {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .recommendations__list {
+    display: flex;
+    overflow-x: auto;
+    gap: 0.75rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.75rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .recommendations__list::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* ---------------------------------------------------
+  Product Card
+--------------------------------------------------- */
 .product-card {
-  min-width: 32%;
-  background: #0f232c;
-  border-radius: 8px;
-  overflow: hidden;
   position: relative;
-  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: fit-content;
 }
 
-.product-card:hover {
-  transform: translateY(-6px);
+@media (max-width: 767px) {
+  .product-card {
+    flex-shrink: 0;
+    width: 17rem;
+    scroll-snap-align: start;
+  }
 }
 
 .product-card__image {
+  display: block;
   width: 100%;
   height: auto;
+  line-height: 0;
+  border-radius: 12px 12px 0 0;
+  cursor: pointer;
 }
 
-/* content */
 .product-card__content {
-  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  background: var(--black-color);
+  border-radius: 0 0 12px 12px;
   position: relative;
 }
 
-.product-card__price {
-  color: var(--green-color);
-  font-size: 1.6rem;
-  font-weight: 700;
+.product-card__price-wrapper,
+.product-card__add-cart {
+  display: flex;
+  align-items: center;
+  background: var(--super-dark-green-color);
 }
 
-/* add to cart */
+.product-card__price-wrapper {
+  justify-content: flex-start;
+  height: 6rem; 
+  padding-left: 1rem;
+  color: var(--green-color);
+  font-size: 2.4rem;
+  font-weight: 800;
+}
+
+@media (max-width: 1024px) {
+  .product-card__price-wrapper {
+    height: 3rem;
+    padding-left: 0.75rem;
+    font-size: 1.6rem;
+  }
+}
+
 .product-card__add-cart {
-  margin-top: 8px;
-  display: flex;
-  gap: 0.6rem;
-  align-items: center;
-  font-size: 1.4rem;
-  color: var(--text-color);
+  justify-content: flex-start;
+  width: 70%;
+  height: 5rem; 
+  margin: 0.5rem auto 0.5rem 0.5rem;
+  padding: 1.5rem;
+  font-size: 1.8rem;
+  font-weight: 500;
+  cursor: pointer;
 }
 
 .product-card__add-cart:hover {
-  color: var(--green-color);
-  cursor: pointer;
+  background-color: var(--green-color);
 }
 
-/* Trái tim - wishlist */
+@media (max-width: 1024px) {
+  .product-card__add-cart {
+    height: 2.4rem;
+    padding: 0.75rem;
+    font-size: 1.3rem;
+  }
+}
+
+.product-card__add-cart a {
+  color: var(--text-color);
+  margin-left: 0.25rem;
+}
+
 .product-card__wishlist {
+  display: flex;
   position: absolute;
-  right: 1rem;
-  bottom: 1rem;
+  right: 5%;
+  transform: translateY(-50%);
+  height: 2.8rem; 
+  bottom: 0.25rem;
+  align-items: center;
+  justify-content: center;
   background: none;
   border: none;
-  color: var(--text-color);
+  outline: none;
   cursor: pointer;
-  font-size: 1.8rem;
+  font-size: 2.4rem;
+  padding: 0;
 }
 
-.product-card__wishlist:hover {
+.product-card__wishlist .fa-heart {
+  color: var(--text-color);
+  font-size: 3.4rem;
+}
+
+@media (max-width: 1024px) {
+  .product-card__wishlist .fa-heart {
+    font-size: 2.4rem;
+  }
+}
+
+.product-card__wishlist .fa-heart:hover {
   color: var(--green-color);
 }
-/* fix gradient background */
+/* FIX GRADIENT */
 body {
-  background: linear-gradient(
-    180deg,
-    #070F1A 25%,
-    #225557 81%
-  ) !important;
+  background: linear-gradient(180deg, #070f1a 25%, #225557 81%) !important;
   color: var(--text-color);
 }
 
-/* all container layers*/
+/* all container layers */
 .purchases-page,
 .purchases-container,
 .order-history,
 .recent,
 .activity-card {
-  background: transparent !important;
+  background: transparent !important; /* Loại bỏ nền mặc định */
 }
 
 /* background cho order và recent */
@@ -399,6 +555,6 @@ body {
 }
 
 .activity-card {
-  background: rgba(255,255,255,0.03) !important;
-  border: 1px solid rgba(255,255,255,0.06);
+  background: rgba(255, 255, 255, 0.03) !important;
+  border: 1px solid rgba(255, 255, 255, 0.06);
 }
