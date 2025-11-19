@@ -338,11 +338,11 @@ input[type="range"]::-webkit-slider-thumb {
 }
 
 .pagination__bar a:last-child{
-  margin-left: 15px;
+  margin-left: 1.5rem;
 }
 
 .pagination__bar span{
-  margin: 10px;
+  margin: 1rem;
 }
 
 .pagination__bar .current-page{
@@ -469,7 +469,7 @@ input[type="range"]::-webkit-slider-thumb {
   height: 100%;
   border-radius:5px 5px 0px 0px;
   vertical-align: middle;
-  object-fit: fill;
+  object-fit: cover;
 }
 
 .game-card__content{
@@ -588,11 +588,15 @@ input[type="range"]::-webkit-slider-thumb {
   }
   
   .pagination__bar span{
-    margin: 5px;
+    margin: .5rem;
   }
 
   .game-card__add-to-cart{
     padding: 5px;
+  }
+
+  .sort__mode{
+    display: none;
   }
 
 }
