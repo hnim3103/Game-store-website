@@ -52,3 +52,78 @@ function createDots() {
 
 createDots();
 updateSlider();
+
+//Check login
+function showLoginPopup() {
+  const overlay = document.querySelector(".gsw-popup-overlay");
+  const loginBox = document.querySelector('.popup-box[data-popup="login"]');
+
+  if (overlay && loginBox) {
+    // Hide all other popups
+    document.querySelectorAll(".popup-box").forEach((box) => {
+      box.classList.remove("active");
+    });
+
+    // Show login popup
+    loginBox.classList.add("active");
+    overlay.classList.add("active");
+  }
+}
+
+// Check if user is logged in
+function isLoggedIn() {
+  return window.Auth
+    ? window.Auth.isLoggedIn()
+    : localStorage.getItem("loggedInUserEmail") !== null;
+}
+
+// ===== RESTRICT ADD TO CART =====
+function restrictAddToCart() {
+  const addToCartBtns = document.querySelectorAll(
+    ".game-itemadd-cart, .slideradd-cart"
+  );
+
+  addToCartBtns.forEach((btn) => {
+    btn.addEventListener("click", function (e) {
+      if (!isLoggedIn()) {
+        e.preventDefault();
+        e.stopPropagation();
+        alert("You need to login to add products to cart!");
+        showLoginPopup();
+      } else {
+        alert("Added to cart!");
+      }
+    });
+  });
+}
+
+function restrictAddToWishlist() {
+  const addToWishlisttBtn = document.querySelectorAll(
+    ".game-cardwishlist, sliderwishlist"
+  );
+
+  addToWishlisttBtn.forEach((btn) => {
+    btn.addEventListener("click", function (e) {
+      if (!isLoggedIn()) {
+        e.preventDefault();
+        e.stopPropagation();
+        alert("You need to login to add products to wishlist!");
+        showLoginPopup();
+      } else {
+        alert("Added to Wishlist!");
+      }
+    });
+  });
+}
+
+function initAuthRestrictions() {
+  restrictAddToCart();
+  restrictAddToWishlist();
+
+  console.log("Game info auth restrictions initialized");
+}
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initAuthRestrictions);
+} else {
+  initAuthRestrictions();
+}

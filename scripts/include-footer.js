@@ -13,13 +13,6 @@ document.addEventListener("DOMContentLoaded", function () {
       footerCSS.rel = "stylesheet";
       footerCSS.href = "/components/footer/footer.css";
       document.head.appendChild(footerCSS);
-
-      // Optionally load the footer JS (only if it exists)
-      const footerJS = document.createElement("script");
-      footerJS.src = "/components/footer/footer.js";
-      footerJS.onload = () => console.log("Footer script loaded");
-      footerJS.onerror = () => console.warn("No footer.js found — skipping");
-      document.body.appendChild(footerJS);
     })
     .catch((err) => console.error("Can't load footer:", err));
 });
