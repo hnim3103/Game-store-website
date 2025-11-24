@@ -284,7 +284,7 @@
     </div>
   </div>
 </header>
-
+<!-- Pop up login, register, forgot password-->
 <div class="gsw-popup-overlay" id="global-popup-overlay">
   <div class="login popup-box" data-popup="login">
     <div class="login__button-group">
@@ -709,3 +709,20 @@
     </form>
   </div>
 </div>
+
+<!-- notification box-->
+      <div id="notification-box"></div>
+      <!--confirm logout-->
+      <div id="logout-modal" class="modal-overlay">
+        <div class="modal-box">
+          <p>Are you sure you want to sign out?</p>
+          <div class="modal-buttons">
+            <button id="btn-cancel-logout" class="btn-modal btn-cancel">
+              Cancel
+            </button>
+            <button id="btn-confirm-logout" class="btn-modal btn-confirm">
+              Yes, Sign Out
+            </button>
+          </div>
+        </div>
+      </div>

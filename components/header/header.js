@@ -74,7 +74,7 @@ const profileBtn = document.querySelector(".header__signin");
 const cartButton = document.querySelector(".header__cart");
 
 // Hàm HIỆN 1 box cụ thể
-const showPopup = (targetData) => {
+window.showPopup = (targetData) => {
   // Ẩn tất cả các box khác
   allPopupBoxes.forEach((box) => {
     box.classList.remove("active");
@@ -92,7 +92,7 @@ const showPopup = (targetData) => {
   }
 };
 
-const closePopup = () => {
+window.closePopup = () => {
   overlay.classList.remove("active");
   allPopupBoxes.forEach((box) => {
     box.classList.remove("active");
@@ -110,8 +110,10 @@ if (cartButton) {
       : localStorage.getItem("loggedInUserEmail");
 
     if (!isLoggedIn) {
-      alert("You need to login to view cart!");
-      showPopup("login");
+      window.showNotification("You need to login to view card", "remove");
+      setTimeout(() => {
+        showPopup("login");
+      }, 1000);
     } else {
       // Navigate to cart only if logged in
       window.location.href = "/html/cart.html";
@@ -174,22 +176,107 @@ document.addEventListener("click", function (e) {
 });
 
 //category colappsible handler
-const wrapper = document.querySelector('.category-item-wrapper');
-const panel = document.querySelector('.category__collabsible');
+const wrapper = document.querySelector(".category-item-wrapper");
+const panel = document.querySelector(".category__collabsible");
 
-let closeTimer; 
+let closeTimer;
 
-wrapper.addEventListener('mouseenter', () => {
+wrapper.addEventListener("mouseenter", () => {
+  clearTimeout(closeTimer);
 
-    clearTimeout(closeTimer);
-
-    panel.classList.add('is-display');
+  panel.classList.add("is-display");
 });
 
+wrapper.addEventListener("mouseleave", () => {
+  closeTimer = setTimeout(() => {
+    panel.classList.remove("is-display");
+  }, 250);
+});
 
-wrapper.addEventListener('mouseleave', () => {
+// HÀM HIỆN THÔNG BÁO (NOTIFICATION)
 
-    closeTimer = setTimeout(() => {
-        panel.classList.remove('is-display');
-    }, 250);
+// Cấu hình Key lưu trữ
+const GLOBAL_STORAGE_KEY = "list_wishlist";
+
+window.showNotification = function (message, type = "add") {
+  let notificationBox = document.getElementById("notification-box");
+  if (!notificationBox) return;
+
+  const notification = document.createElement("div");
+  notificationBox.appendChild(notification);
+
+  notification.classList.add("notification", type);
+  const iconClass = type === "add" ? "fa-circle-check" : "fa-trash-can";
+
+  notification.innerHTML = `
+    <i class="fa-solid ${iconClass}"></i>
+    <span>${message}</span>
+  `;
+
+  setTimeout(() => {
+    notification.remove();
+  }, 2500);
+};
+
+// QUẢN LÝ STORAGE
+function getGlobalWishlist() {
+  const data = localStorage.getItem(GLOBAL_STORAGE_KEY);
+  return data ? JSON.parse(data) : [];
+}
+
+function saveGlobalWishlist(items) {
+  localStorage.setItem(GLOBAL_STORAGE_KEY, JSON.stringify(items));
+  window.dispatchEvent(new Event("storageUpdated"));
+}
+
+// LẮNG NGHE CLICK wishlist
+document.body.addEventListener("click", (e) => {
+  const btn = e.target.closest(
+    ".game-card__wishlist, .slider__wishlist, .game-item__wishlist, .wishlist"
+  );
+
+  if (btn) {
+    e.preventDefault();
+    const isLoggedIn = window.Auth
+      ? window.Auth.isLoggedIn()
+      : localStorage.getItem("loggedInUserEmail");
+    if (!isLoggedIn) {
+      // Chưa đăng nhập -> Báo lỗi & Mở Login Form
+      window.showNotification("You need login to add to wishlist", "remove");
+
+      setTimeout(() => {
+        if (window.showPopup) window.showPopup("login");
+      }, 1000);
+
+      return; // Dừng lại, không chạy code thêm game bên dưới
+    }
+
+    const id = btn.dataset.id;
+    const img = btn.dataset.img;
+
+    if (!id) {
+      console.warn("Nút Wishlist này thiếu data-id:", btn);
+      return;
+    }
+
+    const currentList = getGlobalWishlist();
+
+    // Check if already in wishlist
+    if (!currentList.some((item) => item.id === id)) {
+      currentList.push({ id, img });
+      saveGlobalWishlist(currentList);
+
+      // chang icon wishlist
+      const icon = btn.querySelector("i");
+      if (icon) {
+        icon.classList.remove("fa-regular");
+        icon.classList.add("fa-solid");
+        icon.style.color = "#00e122";
+      }
+
+      window.showNotification("Added to wishlist", "add");
+    } else {
+      window.showNotification("Game already in wishlist!", "remove");
+    }
+  }
 });
