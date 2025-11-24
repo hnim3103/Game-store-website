@@ -55,3 +55,23 @@ document.addEventListener("DOMContentLoaded", () => {
     if (fullnameElement) fullnameElement.textContent = userEmail;
   }
 });
+// GIFT CARD REDEEM
+const voucherInput = document.getElementById("voucher-code");
+const voucherButton = document.querySelector(".voucher__button");
+const balanceAmount = document.querySelector(".balance-amount");
+
+if (voucherButton) {
+  voucherButton.addEventListener("click", () => {
+    const code = voucherInput.value.trim();
+
+    if (code === "060705") {
+      // Thành công
+      balanceAmount.textContent = "$1.00";
+      voucherInput.value = "";
+      alert("Gift Card redeemed successfully!");
+    } else {
+      // Sai mã
+      alert("Invalid code");
+    }
+  });
+}
