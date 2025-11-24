@@ -139,14 +139,17 @@ body {
 
 /* wallet content */
 .wallet-balance {
-  font-size: 22px;
+  font-size: 30px;
   margin-bottom: 25px;
   font-weight: 500;
+  letter-spacing: 2px;
 }
 
 .balance-amount {
   color: var(--green);
-  font-weight: 700;
+  font-weight: 500;
+  font-size: 30px;
+  letter-spacing: 2px;
 }
 
 /* voucher and gift card form */
@@ -206,17 +209,25 @@ body {
 .history {
   margin-top: 40px;
   padding-bottom: 20px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 .history__title {
-  font-size: 22px;
+  font-size: 30px;
   margin-bottom: 10px;
+  font-weight: 500;
+  letter-spacing: 2px;
+}
+
+.history__line {
+  margin-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #225557;
 }
 
 .empty-text {
+  margin-top: 10px;
   color: var(--text);
-  font-size: 14px;
+  font-size: 20px;
 }
 
 /* footer */
