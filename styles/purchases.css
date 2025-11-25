@@ -53,9 +53,11 @@ h1 {
   font-weight: 600;
   color: var(--text-color);
   letter-spacing: 1px;
+  letter-spacing: 1px;
 }
 
 .empty-text {
+  font-size: 30px;
   font-size: 30px;
   margin-top: 1rem;
   color: #c7d2da;
@@ -66,10 +68,12 @@ h1 {
   width: 1200px;
   max-width: 100%;
   margin: 20px auto 0;
+  margin: 20px auto 0;
   padding: 0 1.5rem;
 }
 
 .genres__title {
+  font-size: 30px;
   font-size: 30px;
   padding: 2rem 0;
   color: var(--text-color);
@@ -77,11 +81,20 @@ h1 {
   margin-left: 51px;
   margin-top: -20px;
   margin-bottom: 0px;
+  margin-left: 51px;
+  margin-top: -20px;
+  margin-bottom: 0px;
 }
 
 /* ✅ FIXED: Slider Grid with Flexbox */
+/* ✅ FIXED: Slider Grid with Flexbox */
 .genres__grid {
   position: relative;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
   height: 400px;
   display: flex;
   align-items: center;
@@ -140,6 +153,9 @@ h1 {
   top: 50%;
   left: 50%;
   transition: all 0.5s ease;
+  visibility: hidden;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.8);
   visibility: hidden;
   opacity: 0;
   transform: translate(-50%, -50%) scale(0.8);
@@ -253,12 +269,14 @@ h1 {
   visibility: visible;
   transform: translate(-160%, -50%);
   opacity: 0.8;
+  opacity: 0.8;
   z-index: 2;
 }
 
 .game-card.next {
   visibility: visible;
   transform: translate(60%, -50%);
+  opacity: 0.8;
   opacity: 0.8;
   z-index: 2;
 }
@@ -314,6 +332,7 @@ h1 {
 
 .genres__grid {
   animation-delay: 0.5s;
+  height: 200px;
   height: 200px;
 }
 
@@ -383,10 +402,15 @@ h1 {
 
   .empty-text {
     font-size: 25px;
+    font-size: 25px;
   }
 
   /* Slider for mobile */
   .genres__title {
+    font-size: 25px;
+  }
+
+  .empty-text {
     font-size: 25px;
   }
 
@@ -428,6 +452,12 @@ h1 {
   .game-card__wishlist .fa-heart {
     font-size: 3.5rem;
     margin-bottom: 0.2rem;
+  }
+    .genres__title {
+    font-size: 25px;
+    font-weight: 700;
+    margin-left: 100px;
+    margin-bottom: -80px;
   }
     .genres__title {
     font-size: 25px;
