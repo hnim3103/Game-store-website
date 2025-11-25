@@ -1,0 +1,297 @@
+/* Container for the entire slider component */
+.slider {
+  position: relative;
+  display: flex;
+  justify-content: center; /* Center the slider horizontally */
+  vertical-align: middle; /* Vertical alignment (though 'align-items: center' on a flex parent is more typical for vertical centering) */
+  overflow: hidden;
+  max-width: 1400px;
+  width: 100%;
+  margin: auto;
+  align-items: center;
+  margin-top: 30px;
+  padding-bottom: 30px;
+}
+
+/* Track/Wrapper for individual slider cards */
+.slider .slider__track {
+  position: relative;
+  height: 550px;
+  display: flex;
+  justify-content: center; /* Center cards horizontally within the track */
+  align-items: center; /* Center cards vertically within the track */
+}
+
+/*
+ * --------------------------------
+ * SLIDER CARD (INACTIVE/DEFAULT STATE)
+ * --------------------------------
+ */
+
+.slider__card {
+  display: flex;
+  position: relative;
+  height: 90%;
+  width: 750px; 
+  opacity: 0.5; /* Fade inactive cards */
+  transition: opacity 0.3s ease;
+  /* Block click by default for inactive cards */
+  pointer-events: none;
+}
+
+/* Create an overlay to prevent interaction with inactive slider cards */
+.slider .slider__card .overlay {
+  position: absolute;
+  /* Make the overlay same size with slider */
+  inset: 0; 
+}
+
+/* Transition for the ::after pseudo-element (likely for background changes) */
+.slider__card::after {
+  transition: background 0.3s ease;
+}
+
+/* Image styling within the card */
+.slider__card-image img {
+  border-radius: 10px;
+  height: 100%;
+  width: 100%;
+}
+
+/*
+ * --------------------------------
+ * SLIDER CARD (ACTIVE STATE)
+ * --------------------------------
+ */
+
+.slider .slider__card.active{
+  width: 950px;
+  height: 100%;
+  opacity: 1; /* Fully visible for the active card */
+  pointer-events: auto; /* Allow clicks/interaction on the active card */
+  /* Added specific margins to push active card away from neighbors */
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+#game-card-slide {
+  width: 100%;
+  height: 100%;
+  opacity: 1; /* Fully visible for the active card */
+  pointer-events: auto; /* Allow clicks/interaction on the active card */
+  /* Added specific margins to push active card away from neighbors */
+}
+
+/* Hide the overlay on the active card to allow interaction */
+.slider__card.active .overlay {
+  display: none;
+}
+
+/* Hover effect for the image in the active card */
+.slider__card.active .slider__card-image:hover,
+#game-card-slide .slider__card-image:hover {
+  transform: scale(1.01);
+  transition: .5s;
+}
+
+/*
+ * --------------------------------
+ * CARD CONTENT & ADD TO CART BUTTON
+ * --------------------------------
+ */
+
+/* Wrapper for content (positioned absolutely) */
+.slider__card-content {
+  position: absolute;
+  display: flex;
+  justify-content: space-between; 
+  width: 450px;
+  bottom: 30px;
+  right: 30px;
+  align-items: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+/* Add to Cart button styling */
+.slider__add-cart {
+  height: 65px;
+  width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  background-color: var(--green);
+  border-radius: 5px;
+}
+
+/* Hover effect for the Add to Cart button on the active card */
+.slider__card.active .slider__add-cart:hover,
+#game-card-slide .slider__add-cart:hover{
+  box-shadow: 0 0 10px 5px var(--green);
+}
+
+/* Text styling within the Add to Cart button */
+.slider__add-cart{
+  border: none;
+  color: var(--text);
+  font-weight: 700;
+}
+
+.slider__wishlist{
+  color: var(--text);
+  font-size: 5rem;
+  display: flex;
+}
+
+.slider__wishlist:hover{
+  color: red;
+  text-shadow: 0px 0px 15px red;
+}
+
+.slider__price{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-weight: 900;
+}
+
+.slider__discount{
+  background-color: red;
+  padding: 8px 5px;
+  border-radius: 5px;
+}
+
+.slider__price-original{
+  text-decoration: line-through;
+}
+
+
+.slider .slider__controls{
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 1000px;
+}
+
+.slider .slider__btn{
+  color: var(--text);
+  font-size: 5rem;
+  border-radius: 40px;
+  background-color: var(--green);
+  text-align: center;
+  width: 50px;
+  height: 50px;
+  margin: 0;
+}
+
+.slider .slider__btn:hover{
+  box-shadow: 0 0 5px 2px var(--green);
+}
+
+.slider .slider__dots{
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  bottom: 10px;
+}
+
+.slider .slider__dot {
+  width: 50px;
+  height: 10px;
+  border-radius: 20px;
+  background: #777;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.slider .slider__dot.active {
+  background: var(--green);
+  transform: scale(1.2);
+}
+
+@media (max-width: 1024px) {
+  .slider{
+    height: auto;
+    width: auto;
+  }
+
+  .slider .slider__card{
+    display: none;
+  }
+
+  .slider .slider__card.active{
+    display: flex;
+  }
+
+  .slider .slider__track{
+    width: 100%;
+    height: 100%;
+  }
+
+  .slider .slider__controls{
+    width: 100%;
+  }
+}
+
+@media (max-width:1280px){
+  #game-card-slide .slider__add-cart span{
+    display: none;
+  }
+
+  #game-card-slide .slider__add-cart{
+    font-size: 3rem;
+    width: auto;
+    padding: 5px 5px;
+    height: auto;
+  }
+
+  #game-card-slide .slider__card-content{
+    width: 250px;
+    font-size: 2rem;
+  }
+}
+
+@media (max-width:768px) {
+
+ .slider__card-content{
+    width: auto;
+    font-size: 1.3rem;
+    right: 20px;
+    bottom: 10px;
+  }
+
+   .slider__wishlist{
+    font-size: 2rem;
+  }
+
+  .slider .slider__add-cart span{
+    display: none;
+  }
+
+  .slider .slider__add-cart{
+    width: auto;
+    height: auto;
+    font-size: 1rem;
+    padding: 5px;
+  }
+
+  .slider .slider__discount{
+    padding: 5px;
+  }
+
+  .slider .slider__btn{
+    font-size: 3rem;
+    width: 30px;
+    height: 30px;
+  }
+
+  .slider .slider__dot{
+    height: 4px;
+    width: 20px;
+  }
+}
