@@ -14,20 +14,18 @@ async function loadGames() {
     /* ---------------------------------------------------
        1. GAME CARDS (.game-card) — SIMPLE PRICE
     --------------------------------------------------- */
-    const gameCards = document.querySelectorAll(".game-card");
-
-    gameCards.forEach((card, index) => {
+    document.querySelectorAll(".game-card").forEach((card, index) => {
       const game = games[index];
       if (!game) return;
 
-      // Replace image
+      // Image
       const img = card.querySelector(".game-card__image img");
       if (img && game.background_image) {
         img.src = game.background_image;
         img.alt = game.name;
       }
 
-      // Generate simple price
+      // Simple random price
       const priceEl = card.querySelector(".game-card__price span");
       if (priceEl) {
         const price = (Math.random() * (59.99 - 4.99) + 4.99).toFixed(2);
@@ -38,36 +36,72 @@ async function loadGames() {
     /* ---------------------------------------------------
        2. SLIDER CARDS (.slider__card) — DISCOUNTED PRICE
     --------------------------------------------------- */
-    const sliderCards = document.querySelectorAll(".slider__card");
-
-    sliderCards.forEach((card, index) => {
+    document.querySelectorAll(".slider__card").forEach((card, index) => {
       const game = games[index];
       if (!game) return;
 
-      // Replace image
+      // Image
       const img = card.querySelector(".slider__card-image img");
       if (img && game.background_image) {
         img.src = game.background_image;
         img.alt = game.name;
       }
 
-      // Generate discounted prices
+      // Price generation
       const originalPrice = (Math.random() * (59.99 - 19.99) + 19.99).toFixed(2);
       const discountedPrice = (originalPrice * 0.6).toFixed(2);
       const discountPercent = Math.floor(((originalPrice - discountedPrice) / originalPrice) * 100);
 
-      // Update discount percent
+      // Discount percent
       const discountEl = card.querySelector(".slider__discount-percent");
-      if (discountEl) {
-        discountEl.textContent = `${discountPercent}%`;
-      }
+      if (discountEl) discountEl.textContent = `${discountPercent}%`;
 
-      // Update price fields
+      // Prices
       const originalEl = card.querySelector(".slider__price-original");
       const discountedEl = card.querySelector(".slider__price-discounted");
 
       if (originalEl) originalEl.textContent = `${originalPrice}$`;
       if (discountedEl) discountedEl.textContent = `${discountedPrice}$`;
+    });
+
+    /* ---------------------------------------------------
+       3. GAME ITEM (.game-item) 
+    --------------------------------------------------- */
+    document.querySelectorAll(".game-item").forEach((item, index) => {
+      const game = games[index];
+      if (!game) return;
+
+      // Image
+      const img = item.querySelector(".game-item__image img");
+      if (img && game.background_image) {
+        img.src = game.background_image;
+        img.alt = game.name;
+      }
+
+      // Name
+      const nameEl = item.querySelector(".game-item__game-name");
+      if (nameEl) nameEl.textContent = game.name;
+
+      // Genres
+      const genresEl = item.querySelector(".game-item__game-genres");
+      if (genresEl) genresEl.textContent = game.genres.map(g => g.name).join(", ");
+
+      // Release Date
+      const releaseEl = item.querySelector(".game-item__game-release-date");
+      if (releaseEl) releaseEl.textContent = `Release Date: ${game.released}`;
+
+      // Generate discount + price
+      const discountPercent = Math.floor(Math.random() * (90 - 10) + 10);
+      const originalPrice = (Math.random() * (59.99 - 19.99) + 19.99).toFixed(2);
+      const discountedPrice = (originalPrice * (1 - discountPercent / 100)).toFixed(2);
+
+      // Discount text
+      const discountEl = item.querySelector(".game-item__discount-percent");
+      if (discountEl) discountEl.textContent = `${discountPercent}%`;
+
+      // Discounted price
+      const priceEl = item.querySelector(".game-item__price-discounted");
+      if (priceEl) priceEl.textContent = `$${discountedPrice}`;
     });
 
   } catch (error) {
