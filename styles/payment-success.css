@@ -1,32 +1,3 @@
-/* ---------------------------------------------------
-  Google Font Import
---------------------------------------------------- */
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap");
-
-/* ---------------------------------------------------
-  Reset & Base Styles
---------------------------------------------------- */
-* {
-  font-family: "Roboto Flex", sans-serif;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  list-style: none;
-  text-decoration: none;
-  scroll-padding-top: 2rem;
-  scroll-behavior: smooth;
-}
-
-:root {
-  --green-color: #00e122;
-  --dark-green-color: #225557;
-  --black-color: #070f1a;
-  --text-color: #ffffff;
-  --super-dark-green-color: #0f232c;
-  --bg1: #070f1a;
-  --bg2: #225557;
-}
-
 .success-container {
     height: 100vh;
     display: flex;
@@ -41,7 +12,7 @@
 
 .success-icon {
     font-size: 8rem;
-    color: var(--green-color);
+    color: var(--green);
     margin-bottom: 2rem;
     animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
@@ -50,7 +21,7 @@
     font-size: 3.5rem;
     font-weight: 700;
     margin-bottom: 1rem;
-    color: var(--green-color);
+    color: var(--green);
 }
 
 @media (max-width: 768px) {
@@ -87,7 +58,7 @@
 
 #countdown {
     font-weight: bold;
-    color: var(--green-color);
+    color: var(--green);
     font-size: 1.4rem
 }
 
