@@ -264,69 +264,15 @@ function initGallery() {
   initializeGallery();
 }
 
-//Check login
-
 (function () {
   "use strict";
 
-  // Helper function to show login popup
-  function showLoginPopup() {
-    const overlay = document.querySelector(".gsw-popup-overlay");
-    const loginBox = document.querySelector('.popup-box[data-popup="login"]');
-
-    if (overlay && loginBox) {
-      // Hide all other popups
-      document.querySelectorAll(".popup-box").forEach((box) => {
-        box.classList.remove("active");
-      });
-
-      // Show login popup
-      loginBox.classList.add("active");
-      overlay.classList.add("active");
-    }
-  }
-
-  // Check if user is logged in
-  function isLoggedIn() {
+  function checkLogin() {
     return window.Auth
       ? window.Auth.isLoggedIn()
-      : localStorage.getItem("loggedInUserEmail") !== null;
+      : localStorage.getItem("loggedInUserEmail");
   }
 
-  // ===== RESTRICT ADD TO CART =====
-  function restrictAddToCart() {
-    const addToCartBtn = document.querySelector(".btn-cart");
-
-    if (addToCartBtn) {
-      addToCartBtn.addEventListener("click", function (e) {
-        if (!isLoggedIn()) {
-          e.preventDefault();
-          e.stopPropagation();
-          alert("You need to login to add products to cart!");
-          showLoginPopup();
-        } else {
-          alert("Added to cart!");
-        }
-      });
-    }
-  }
-
-  function restrictAddToWishlist() {
-    const addToWishlisttBtn = document.querySelector(".wishlist");
-
-    if (addToWishlisttBtn) {
-      addToWishlisttBtn.addEventListener("click", function (e) {
-        if (!isLoggedIn()) {
-          e.preventDefault();
-          e.stopPropagation();
-          alert("You need to login to add products to wishlist!");
-          showLoginPopup();
-        } else {
-          alert("Added to Wishlist!");
-        }
-      });
-    }
-  }
   // ===== RESTRICT RATING STARS =====
   function restrictRating() {
     const rateStarsContainer = document.getElementById("rateStars");
@@ -342,11 +288,13 @@ function initGallery() {
 
         // Add new click listener with auth check
         newStar.addEventListener("click", function (e) {
-          if (!isLoggedIn()) {
+          if (!checkLogin()) {
             e.preventDefault();
             e.stopPropagation();
-            alert("You need to login to rate the game!");
-            showLoginPopup();
+            window.showNotification("You need login to rating star", "remove");
+            setTimeout(() => {
+              window.showPopup("login");
+            }, 1000);
             return false;
           }
 
@@ -400,16 +348,21 @@ function initGallery() {
       newBtn.disabled = true;
 
       newBtn.addEventListener("click", function (e) {
-        if (!isLoggedIn()) {
+        if (!checkLogin()) {
           e.preventDefault();
           e.stopPropagation();
-          alert("You must be logged in to post a bid!");
-          showLoginPopup();
+          window.showNotification("You need login post a review", "remove");
+          setTimeout(() => {
+            window.showPopup("login");
+          }, 1000);
           return false;
         }
 
         if (!window.selectedRating) {
-          alert("Please select a star rating first.");
+          window.showNotification(
+            "Please select a star rating first.",
+            "remove"
+          );
           return;
         }
 
@@ -436,10 +389,11 @@ function initGallery() {
       openReviewFormLink.addEventListener("click", function (e) {
         e.preventDefault();
 
-        if (!isLoggedIn()) {
-          alert("Bạn cần đăng nhập để viết review!");
-          showLoginPopup();
-          return false;
+        if (!checkLogin()) {
+          window.showNotification("You need login to write a review", "remove");
+          setTimeout(() => {
+            window.showPopup("login");
+          }, 1000);
         }
 
         // Open review form
@@ -467,16 +421,21 @@ function initGallery() {
       submitReviewBtn.parentNode.replaceChild(newBtn, submitReviewBtn);
 
       newBtn.addEventListener("click", function (e) {
-        if (!isLoggedIn()) {
+        if (!checkLogin()) {
           e.preventDefault();
           e.stopPropagation();
-          alert("Bạn cần đăng nhập để gửi review!");
-          showLoginPopup();
+          window.showNotification("You need login post a review", "remove");
+          setTimeout(() => {
+            window.showPopup("login");
+          }, 1000);
           return false;
         }
 
         if (!window.selectedRating) {
-          alert("Please select a star rating first.");
+          window.showNotification(
+            "Please select a star rating first.",
+            "remove"
+          );
           return;
         }
 
@@ -487,7 +446,10 @@ function initGallery() {
         const text = reviewContentInput ? reviewContentInput.value.trim() : "";
 
         if (!title || !text) {
-          alert("Please enter both a title and your review.");
+          window.showNotification(
+            "Please enter both a title and your review.",
+            "remove"
+          );
           return;
         }
 
@@ -564,8 +526,6 @@ function initGallery() {
 
   // ===== INITIALIZE ALL RESTRICTIONS =====
   function initAuthRestrictions() {
-    restrictAddToCart();
-    restrictAddToWishlist();
     restrictRating();
     restrictSubmitRating();
     restrictAddReviewLink();
