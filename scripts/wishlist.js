@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
     wishlistContainer.innerHTML = "";
 
     if (items.length === 0) {
-      wishlistContainer.innerHTML = `<p style="text-align:center; font-size: 1.6rem; padding: 30px; color: #ccc;">Your wishlist is empty.</p>`;
+      wishlistContainer.innerHTML = `<p style="text-align: center; padding: 40px; color: #fff; font-size: 30px">Your wishlist is empty.</p>`;
     } else {
       items.forEach((game) => {
         wishlistContainer.insertAdjacentHTML(

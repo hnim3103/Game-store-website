@@ -193,7 +193,42 @@ wrapper.addEventListener("mouseleave", () => {
   }, 250);
 });
 
-// HÀM HIỆN THÔNG BÁO (NOTIFICATION)
+// Hàm gắn id
+
+function initAutoIndexing() {
+  let pageName = window.location.pathname.split("/").pop().split(".")[0];
+  if (!pageName || pageName === "") pageName = "home";
+
+  // Tìm tất cả thẻ game
+  const allCards = document.querySelectorAll(
+    ".game-card, .game-item, .slider__item"
+  );
+
+  allCards.forEach((card, index) => {
+    // A. Gán ID nếu chưa có
+    if (!card.dataset.id) {
+      const uniqueId = `${pageName}_game_${index}`;
+      card.dataset.id = uniqueId;
+    }
+    // B. Gán Ảnh nếu chưa có
+    if (!card.dataset.img) {
+      const imgTag = card.querySelector("img");
+      if (imgTag) {
+        card.dataset.img = imgTag.getAttribute("src");
+      } else {
+        card.dataset.img = "/img/assets/1.png";
+      }
+    }
+  });
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initAutoIndexing);
+} else {
+  initAutoIndexing();
+}
+
+// ADD TO WISHLIST
 
 // Cấu hình Key lưu trữ
 const GLOBAL_STORAGE_KEY = "list_wishlist";
@@ -230,6 +265,7 @@ function saveGlobalWishlist(items) {
 }
 
 // LẮNG NGHE CLICK wishlist
+
 document.body.addEventListener("click", (e) => {
   const btn = e.target.closest(
     ".game-card__wishlist, .slider__wishlist, .game-item__wishlist, .wishlist"
@@ -237,46 +273,145 @@ document.body.addEventListener("click", (e) => {
 
   if (btn) {
     e.preventDefault();
+    const card = btn.closest(
+      ".game-card, .game-info, .game-item, .review-card, .slider__card"
+    );
+
+    // LẤY DỮ LIỆU
+    let id = card?.dataset.id || btn.dataset.id;
+    let img = card?.dataset.img || btn.dataset.img;
+
+    // --- FALLBACK: Tự động tìm ảnh nếu thiếu ---
+    if (!id) {
+      const imgTag = card?.querySelector("img");
+      if (imgTag) {
+        const src = imgTag.getAttribute("src");
+        id = src.substring(src.lastIndexOf("/") + 1).split(".")[0];
+        if (!img) img = src;
+      }
+    }
+
+    if (!id) {
+      return;
+    }
+
+    // LOGIN & LƯU
     const isLoggedIn = window.Auth
       ? window.Auth.isLoggedIn()
       : localStorage.getItem("loggedInUserEmail");
-    if (!isLoggedIn) {
-      // Chưa đăng nhập -> Báo lỗi & Mở Login Form
-      window.showNotification("You need login to add to wishlist", "remove");
 
+    if (!isLoggedIn) {
+      window.showNotification("You need login to add to wishlist", "remove");
       setTimeout(() => {
         if (window.showPopup) window.showPopup("login");
       }, 1000);
-
-      return; // Dừng lại, không chạy code thêm game bên dưới
-    }
-
-    const id = btn.dataset.id;
-    const img = btn.dataset.img;
-
-    if (!id) {
-      console.warn("Nút Wishlist này thiếu data-id:", btn);
       return;
     }
 
     const currentList = getGlobalWishlist();
 
-    // Check if already in wishlist
     if (!currentList.some((item) => item.id === id)) {
       currentList.push({ id, img });
       saveGlobalWishlist(currentList);
 
-      // chang icon wishlist
       const icon = btn.querySelector("i");
       if (icon) {
         icon.classList.remove("fa-regular");
         icon.classList.add("fa-solid");
         icon.style.color = "#00e122";
       }
-
       window.showNotification("Added to wishlist", "add");
     } else {
-      window.showNotification("Game already in wishlist!", "remove");
+      window.showNotification("This game already in wishlist!", "remove");
     }
+  }
+});
+
+// ADD TO CART
+const CART_STORAGE_KEY = "gsw_cart";
+
+// STORAGE
+function getGlobalCart() {
+  const data = localStorage.getItem(CART_STORAGE_KEY);
+  return data ? JSON.parse(data) : [];
+}
+function saveGlobalCart(items) {
+  localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(items));
+  window.dispatchEvent(new Event("cartUpdated"));
+}
+
+// Lắng nghe sự kiện Click Add to Cart
+document.body.addEventListener("click", (e) => {
+  const btn = e.target.closest(
+    ".game-item__add-cart, .slider__add-cart, .game-item__add-cart, .product-card__add-cart, .btn-cart"
+  );
+  if (!btn) return;
+  if (btn) {
+    e.preventDefault();
+    // KIỂM TRA LOGIN
+    const isLoggedIn = window.Auth
+      ? window.Auth.isLoggedIn()
+      : localStorage.getItem("loggedInUserEmail");
+    if (!isLoggedIn) {
+      window.showNotification("You need login to add to cart", "remove");
+      setTimeout(() => {
+        if (window.showPopup) window.showPopup("login");
+      }, 1000);
+      return;
+    }
+
+    const card = btn.closest(
+      ".game-card, .game-item, .product-card, .game-info, .slider__card"
+    );
+
+    // LẤY DỮ LIỆU
+    let id = card.dataset.id || btn.dataset.id;
+    let img = card.dataset.img || btn.dataset.img;
+
+    // Tìm Ảnh & ID (như Wishlist)
+    if (!id || !img) {
+      const imgTag = card.querySelector("img");
+      if (imgTag) {
+        const src = imgTag.getAttribute("src");
+        if (!img) img = src;
+        if (!id) id = src.substring(src.lastIndexOf("/") + 1).split(".")[0];
+      }
+    }
+
+    // Tìm Giá Tiền
+    let price = card.dataset.price;
+    if (!price) {
+      const textTags = card.querySelectorAll("p, span, div");
+      for (let tag of textTags) {
+        const text = tag.innerText.trim();
+        if (/^\$?\d+(\.\d+)?\$?$/.test(text)) {
+          price = text;
+          break;
+        }
+      }
+      if (!price) price = "$0.00";
+    }
+
+    // D. LƯU VÀO GIỎ HÀNG
+    const currentCart = getGlobalCart();
+
+    // Kiểm tra trùng lặp
+    const existingItemIndex = currentCart.findIndex((item) => item.id === id);
+
+    if (existingItemIndex === -1) {
+      currentCart.push({
+        id,
+        img,
+        price,
+        quantity: 1,
+      });
+      window.showNotification("Added to cart", "add");
+    } else {
+      window.showNotification("This game is already in your cart!", "remove");
+      return;
+    }
+    saveGlobalCart(currentCart);
+  } else {
+    window.showNotification("This game is already in your cart!", "remove");
   }
 });
