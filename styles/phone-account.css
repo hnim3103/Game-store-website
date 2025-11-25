@@ -12,7 +12,7 @@
   --black-color: #070f1a;
   --text-color: #ffffff;
   --super-dark-green-color: #0f232c;
-  --bg1: #070F1A;
+  --bg1: #070f1a;
   --bg2: #225557;
 }
 
@@ -236,5 +236,11 @@
 @media (max-width: 767px) {
   .phone {
     padding: 2rem 0.5rem;
+  }
+}
+
+@media screen and (max-width: 1024px) and (min-width: 768px) {
+  .phone {
+    padding: 3rem 1rem;
   }
 }

@@ -719,13 +719,6 @@ h1 {
     visibility: hidden;
     opacity: 0;
   }
-  .fa-angle-left {
-    left: 5rem;
-  }
-
-  .fa-angle-right {
-    right: 5rem;
-  }
 }
 
 /* Mobile */
@@ -832,21 +825,17 @@ h1 {
     visibility: hidden;
     opacity: 0;
   }
+  .fa-angle-left,
+  #slider-prev {
+    left: 1rem;
+  }
 
+  .fa-angle-right,
+  #slider-next {
+    right: 0.5rem;
+  }
   .genres__grid {
-    height: 400px;
-  }
-  .fa-angle-left::before,
-  .fa-angle-right::before {
-    position: relative;
-    top: 7px;
-    left: 1px;
-  }
-  .fa-angle-left {
-    left: 2.5rem;
-  }
-  .fa-angle-right {
-    right: 2.5rem;
+    height: 250px;
   }
   .game-card__add-cart {
     font-size: 1.6rem;
@@ -854,5 +843,13 @@ h1 {
   .game-card__wishlist .fa-heart {
     font-size: 3.5rem;
     margin-bottom: 0.2rem;
+  }
+  #notification-box {
+    top: 70px;
+    right: 15px;
+  }
+  .notification {
+    font-size: 1.2rem;
+    padding: 10px 15px;
   }
 }
