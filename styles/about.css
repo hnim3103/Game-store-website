@@ -1,615 +1,792 @@
+/* ========================================
+   ROOT VARIABLES - Biến CSS toàn cục
+   Định nghĩa các màu sắc chính để dễ quản lý
+   ======================================== */
 :root {
-  --bg1: #070F1A;
-  --bg2: #225557;
-  --green: #00E122;
-  --text: #fff;
-  --text-muted: rgba(255,255,255,0.75);
+    --bg1: #070F1A;       
+    --bg2: #225557;        
+    --green: #00E122;      
+    --text: #fff;         
+    --text-muted: rgba(255,255,255,0.75); 
 }
 
+/* ========================================
+   ABOUT PAGE - Container chính của trang
+   ======================================== */
 .about-page {
-  font-family: 'Roboto Flex', sans-serif;
-  color: var(--text);
-  background: linear-gradient(180deg, var(--bg1) 5%, #0b2a2e 45%, var(--bg2) 95%);
-  background-attachment: fixed;
-  overflow-x: hidden;
-  margin: 0;
+    font-family: 'Roboto Flex', sans-serif;
+    color: var(--text);
+    background: linear-gradient(180deg, var(--bg1) 5%, #0b2a2e 45%, var(--bg2) 95%);
+    background-attachment: fixed; /* Background cố định khi scroll - tạo hiệu ứng parallax */
+    overflow-x: hidden; /* Ẩn scroll ngang để tránh content tràn ra ngoài */
+    margin: 0;
 }
 
-/*  HERO */
+/* ========================================
+   HERO SECTION - Phần giới thiệu chính ở đầu trang
+   ======================================== */
 .hero {
-  text-align: center;
-  padding: clamp(60px, 8vw, 100px) 20px clamp(40px, 6vw, 80px);
-  max-width: 900px;
-  margin: auto;
+    text-align: center;
+    /* clamp(min, preferred, max) - responsive font size tự động điều chỉnh theo viewport */
+    padding: clamp(60px, 8vw, 100px) 20px clamp(40px, 6vw, 80px);
+    max-width: 900px;
+    margin: auto;
 }
 
 .hero__title {
-  color: white;
-  font-size: clamp(32px, 5vw, 44px);
-  font-weight: 300;
-  line-height: 34px;
-  margin-bottom: 24px;
+    color: white;
+    font-size: clamp(32px, 5vw, 44px); /* Font size responsive: min 32px, max 44px */
+    font-weight: 300; /* Font weight mỏng để trông hiện đại */
+    line-height: 34px;
+    margin-bottom: 24px;
 }
 
 .hero__desc {
-  color: rgba(255, 255, 255, 0.8);
-  font-size: clamp(18px, 2vw, 20px);
-  font-weight: 300;
-  line-height: 1.6;
-  margin-bottom: 40px;
+    color: rgba(255, 255, 255, 0.8); /* Trắng với độ mờ 80% */
+    font-size: clamp(18px, 2vw, 20px);
+    font-weight: 300;
+    line-height: 1.6; /* Line height rộng để dễ đọc */
+    margin-bottom: 40px;
 }
 
+/* Quote text với màu xanh lá */
 .hero__quote {
-  color: var(--green);
-  font-style: italic;
-  font-size: clamp(20px, 3vw, 26px);
-  font-weight: 400;
-  position: relative;
-  display: inline-block;
-  overflow: hidden;
-  min-height: 39px;
+    color: var(--green);
+    font-style: italic;
+    font-size: clamp(20px, 3vw, 26px);
+    font-weight: 400;
+    position: relative;
+    display: inline-block;
+    overflow: hidden; /* Ẩn phần text tràn ra khi animate */
+    min-height: 39px; /* Đảm bảo chiều cao cố định khi text thay đổi */
 }
 
+/* Span bên trong quote - được animate bởi JavaScript */
 .hero__quote span {
-  display: inline-block;
-  animation: fadeUp 5s infinite;
+    display: inline-block;
+    animation: fadeUp 5s infinite; /* Animation lặp vô hạn mỗi 5 giây */
 }
 
+/* Animation cho quote text: fade in từ dưới, hiện ra, rồi fade out lên trên */
 @keyframes fadeUp {
-  0%, 10% {
-    opacity: 0;
-    transform: translateY(15px);
-  }
-  15%, 45% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  55%, 100% {
-    opacity: 0;
-    transform: translateY(-15px);
-  }
+    0%, 10% {
+        opacity: 0;
+        transform: translateY(15px); /* Bắt đầu ở dưới */
+    }
+    15%, 45% {
+        opacity: 1;
+        transform: translateY(0); /* Hiện ra ở vị trí chính giữa */
+    }
+    55%, 100% {
+        opacity: 0;
+        transform: translateY(-15px); /* Biến mất lên trên */
+    }
 }
 
-/*  HERO BANNER */
+/* ========================================
+   HERO BANNER - Hình ảnh chính với hiệu ứng
+   Container chứa ảnh hero với glow effect
+   ======================================== */
 .hero-banner {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  max-width: 1180px;
-  margin: 0 auto 80px;
-  padding: 0 20px;
-}
-
-.hero-banner__glow {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 100%;
-  height: 100%;
-  transform: translate(-50%, -50%);  
-  background: radial-gradient(circle at center, rgba(0, 225, 34, 10) 0%, rgba(0, 225, 34, 0.1) 70%, transparent 100%);
-  filter: blur(100px);               
-  z-index: 1;
-}
-
-.hero-banner__wrapper {
-  position: relative;
-  width: 100%;
-  z-index: 2;
-  background: rgba(255, 255, 255, 0.95);
-  box-shadow: 0 0 40px rgba(255, 255, 255, 0.3), 0 8px 32px rgba(0, 0, 0, 0.2);
-  overflow: hidden;
-  transition: all 0.4s ease;
-}
-
-.hero-banner__wrapper:hover {
-  box-shadow: 0 0 50px rgba(0, 225, 34, 0.2), 0 12px 40px rgba(0, 0, 0, 0.3);
-}
-
-.hero-banner__img {
-  width: 100%;
-  height: auto;
-  display: block;
-  filter: brightness(1.1) contrast(1.05);
-  transition: transform 0.4s ease;
-}
-
-.hero-banner__wrapper:hover .hero-banner__img {
-  transform: scale(1.03);
-}
-
-.hero-banner__blur {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 60%;
-  background: linear-gradient(transparent, rgba(255, 255, 255, 1000));
-  filter: blur(10px);
-  z-index: 5;
-  pointer-events: none;
-}
-
-.hero-banner__fade {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 225, 34, 0.05);
-  z-index: 4;
-  pointer-events: none;
-}
-
-/*SECTION SHARED STYLES */
-.section {
-  text-align: center;
-  color: #fff;
-  margin: 100px auto;
-  padding: 0 20px;
-  max-width: 1100px;
-  position: relative;
-  z-index: 5;
-  padding-top: 80px;
-  font-family: 'Roboto Flex', sans-serif;
-  transition: margin-top 0.4s ease, transform 0.4s ease;
-}
-
-/* Specific margin-top cho từng section */
-.section--features {
-  margin-top: -37vh;
-}
-
-.section--customer {
-  margin-top: -50vh;
-}
-
-.section--more {
-  margin-top: -20vh;
-}
-
-/* Header chung */
-.section__header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 50px;
-}
-
-.section__icon {
-  width: clamp(160px, 22vw, 230px);
-  height: auto;
-  margin-bottom: 20px;
-  filter: drop-shadow(0 0 15px rgba(0, 225, 34, 0.6));
-  transition: transform 0.3s ease, filter 0.3s ease;
-}
-
-.section__icon:hover {
-  transform: scale(1.03);
-  filter: drop-shadow(0 0 25px rgba(0, 225, 34, 1));
-}
-
-/* Icon nhỏ hơn cho More section */
-.section--more .section__icon {
-  width: clamp(40px, 10vw, 60px);
-  max-width: 260px;
-  margin-bottom: 8px;
-}
-
-.section__title {
-  color: #00E122;
-  font-size: clamp(28px, 4vw, 44px);
-  font-weight: 300;
-  line-height: 1.2;
-  letter-spacing: 0.5px;
-  margin-bottom: 12px;
-}
-
-.section__desc {
-  color: rgba(255, 255, 255, 0.9);
-  font-size: clamp(16px, 2vw, 22px);
-  font-weight: 300;
-  line-height: 1.5;
-  max-width: 820px;
-  margin: 0 auto;
-}
-
-/* Grid chung */
-.section__grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: stretch;
-  gap: 36px;
-  margin-top: 60px;
-}
-
-/* Grid đặc biệt cho Features (5 cards, layout 3-2) */
-.section--features .section__grid {
-  margin-top: 60px;
-}
-
-/* Card chung */
-.section__card {
-  flex: 1 1 30%;
-  max-width: 340px;
-  height: auto;
-  text-align: center;
-  padding: 24px 20px;
-  transition: transform 0.3s ease, filter 0.3s ease;
-}
-
-.section__card:hover {
-  transform: translateY(-6px);
-  filter: drop-shadow(0 0 20px rgba(0, 225, 34, 0.6));
-}
-
-.section__card-icon {
-  width: 50px;
-  height: 50px;
-  margin: 0 auto 16px;
-  filter: drop-shadow(0 0 10px rgba(0, 225, 34, 0.8));
-}
-
-.section__card-title {
-  color: #00E122;
-  font-size: 22px;
-  font-weight: 400;
-  line-height: 1.4;
-  margin-bottom: 10px;
-}
-
-.section__card-text {
-  color: rgba(255, 255, 255, 0.85);
-  font-size: 16px;
-  line-height: 25px;
-  max-width: 90%;
-  margin: 0 auto;
-}
-
-/* SHOWCASE SECTION */
-.showcase {
-  position: relative;
-  width: 100%;
-  z-index: 4;
-  margin: 0 auto;
-}
-
-.showcase__wrapper {
-  position: relative;
-  width: 100%;
-  height: 722px;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  overflow: visible;
-  margin: 0 auto 100px;
-}
-
-.showcase__container {
-  position: relative;
-  width: 100%;
-  max-width: 1200px;
-  height: 740px;
-  left: 48%;
-  transform: translateX(-50%) scale(1);
-  transform-origin: center bottom;
-  transition: transform 0.3s ease;
-  overflow: visible;
-}
-
-.showcase__img {
-  position: absolute;
-  border-radius: 6px;
-  box-shadow: 0 0 30px rgba(0, 225, 34, 0.7);
-  transition: transform 0.3s ease;
-}
-
-/* Vị trí 7 ảnh gốc */
-.showcase__img:nth-child(1) {
-  width: 282px;
-  height: 143px;
-  left: 170px;
-  top: 76px;
-  filter: blur(4.5px);
-  box-shadow: 0 0 60px rgba(0, 225, 34, 0.22);
-}
-
-.showcase__img:nth-child(2) {
-  width: 323px;
-  height: 165px;
-  left: 0;
-  top: 183px;
-  filter: blur(1.5px);
-  box-shadow: 0 0 60px rgba(0, 225, 34, 0.5);
-}
-
-.showcase__img:nth-child(3) {
-  width: 268px;
-  height: 135px;
-  left: 493px;
-  top: 10px;
-  filter: blur(3px);
-  box-shadow: 0 0 60px rgba(0, 225, 34, 0.62);
-}
-
-.showcase__img:nth-child(4) {
-  width: 326px;
-  height: 166px;
-  left: 405px;
-  top: 556px;
-  filter: blur(11px);
-  box-shadow: 0 0 60px rgba(0, 225, 34, 0.5);
-}
-
-.showcase__img:nth-child(5) {
-  width: 420px;
-  height: 213px;
-  left: 49px;
-  top: 347px;
-  filter: none;
-  box-shadow: 0 0 80px rgba(0, 225, 34, 0.79);
-}
-
-.showcase__img:nth-child(6) {
-  width: 299px;
-  height: 154px;
-  left: 527px;
-  top: 330px;
-  filter: blur(2.5px);
-  box-shadow: 0 0 60px rgba(0, 225, 34, 0.35);
-}
-
-.showcase__img:nth-child(7) {
-  width: 383px;
-  height: 209px;
-  left: 567px;
-  top: 146px;
-  filter: blur(2.5px);
-  box-shadow: 0 0 60px rgba(0, 225, 34, 0.9);
-}
-
-/* REVIEW SHOWCASE SECTION  */
-.review {
-  position: relative;
-  width: 100%;
-  margin: 120px auto 0;
-  z-index: 4;
-}
-
-.review__wrapper {
-  position: relative;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  overflow: visible;
-  height: 520px;
-}
-
-.review__container {
-  position: relative;
-  width: 100%;
-  max-width: 1550px;
-  height: 520px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.review__img {
-  position: absolute;
-  border-radius: 8px;
-  background: transparent;
-  filter: drop-shadow(0 0 30px rgba(0, 225, 34, 0.5))
-          drop-shadow(0 0 60px rgba(0, 225, 34, 0.25));
-  transition: transform 0.3s ease, filter 0.3s ease;
-}
-
-.review__img:hover {
-  transform: translateY(-4px);
-  filter: drop-shadow(0 0 60px rgba(0, 225, 34, 0.8))
-          drop-shadow(0 0 120px rgba(0, 225, 34, 0.4));
-}
-
-.review__img--left {
-  width: 185px;
-  bottom: 0;
-  left: calc(50% - 420px);
-}
-
-.review__img--center {
-  width: 600px;
-  bottom: 0;
-  left: calc(50% - 300px);
-  z-index: 3;
-}
-
-.review__img--right {
-  width: 265px;
-  bottom: 0;
-  left: calc(50% + 235px);
-}
-
-/* SECTION */
-.partners {
-  text-align: center;
-  color: #fff;
-  margin: 0 auto;
-  padding: clamp(80px, 10vw, 120px) 20px clamp(100px, 12vw, 140px);
-  max-width: 1280px;
-  position: relative;
-  z-index: 5;
-  font-family: 'Roboto Flex', sans-serif;
-}
-
-.partners__header {
-  margin-bottom: 50px;
-}
-
-.partners__title {
-  font-size: clamp(22px, 2.5vw, 30px);
-  font-weight: 300;
-  color: #fff;
-  line-height: 1.4;
-  letter-spacing: 0.3px;
-}
-
-.partners__grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 40px 30px;
-  justify-items: center;
-  align-items: center;
-}
-
-.partners__logo {
-  width: 170px;
-  height: auto;
-  opacity: 0.8;
-  filter: grayscale(1) brightness(1.2);
-  transition: all 0.3s ease;
-}
-
-.partners__logo:hover {
-  opacity: 1;
-  filter: grayscale(0) drop-shadow(0 0 10px rgba(0, 225, 34, 0.7));
-  transform: scale(1.08);
-}
-
-/*RESPONSIVE*/
-
-/*  Tablet (≤ 1024px) */
-@media (max-width: 1024px) {
-  /* HERO */
-  .hero {
-    padding: 60px 20px 40px;
-  }
-  
-  .hero-banner {
-    min-height: 360px;
-    margin-bottom: 60px;
-  }
-  
-  .hero-banner__wrapper {
-    width: 95%;
-    margin: 0 auto;
-    box-shadow: 0 0 30px rgba(255, 255, 255, 0.2),
-                0 4px 20px rgba(0, 0, 0, 0.2);
-  }
-
-  /* SECTIONS */
-  .section {
-    margin: 80px auto;
-    padding: 0 20px;
-  }
-  
-  .section__grid {
-    gap: 24px;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  
-  .section__card {
-    flex: 1 1 45%;
-    max-width: 420px;
-  }
-  
-
-  /* SHOWCASE */
-  .showcase__wrapper {
-    height: 540px;
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-  
-  .showcase__container {
-    transform: translateX(-45%) scale(0.95);
-    transform-origin: center top;
-    height: 540px;
-  }
-
-  /* REVIEW */
-  .review__wrapper {
-    height: 420px;
-  }
-  
-  .review__container {
-    transform: translateX(-50%) scale(0.75);
-  }
-
-  /* PARTNERS */
-  .partners__logo {
-    width: 140px;
-  }
+    width: 100%;
+    max-width: 1180px;
+    margin: 0 auto 80px; /* Canh giữa và margin bottom 80px */
+    padding: 0 20px;
 }
 
-/* Mobile (≤ 768px)*/
-@media (max-width: 768px) {
-  /* HERO */
-  .hero__title {
-    font-size: 28px;
-    line-height: 1.3;
-  }
-  
-  .hero__desc {
+/* Glow effect xung quanh banner - tạo ánh sáng xanh lan tỏa */
+.hero-banner__glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%); /* Căn giữa hoàn hảo */
+    /* Radial gradient tạo vòng tròn ánh sáng từ tâm ra ngoài */
+    background: radial-gradient(circle at center, 
+                rgba(0, 225, 34, 0.1) 0%, 
+                rgba(0, 225, 34, 0.1) 70%, 
+                transparent 100%);
+    filter: blur(100px); /* Blur nhiều để tạo hiệu ứng ánh sáng mờ */
+    z-index: 1; /* Nằm dưới wrapper */
+}
+
+/* Wrapper chứa ảnh - viền trắng với shadow */
+.hero-banner__wrapper {
+    position: relative;
+    width: 100%;
+    z-index: 2; /* Nằm trên glow effect */
+    background: rgba(255, 255, 255, 0.95); /* Nền trắng mờ 95% */
+    box-shadow: 0 0 40px rgba(255, 255, 255, 0.3), 
+                0 8px 32px rgba(0, 0, 0, 0.2); /* Shadow kép: glow trắng + shadow đen */
+    overflow: hidden; /* Ẩn phần ảnh tràn ra khi zoom */
+    transition: all 0.4s ease; /* Transition mượt cho tất cả thuộc tính */
+}
+
+/* Hover effect: tăng shadow xanh */
+.hero-banner__wrapper:hover {
+    box-shadow: 0 0 50px rgba(0, 225, 34, 0.2), 
+                0 12px 40px rgba(0, 0, 0, 0.3);
+}
+
+.hero-banner__img {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: brightness(1.1) contrast(1.05); /* Tăng độ sáng và contrast một chút */
+    transition: transform 0.4s ease;
+}
+
+/* Hover: zoom ảnh nhẹ */
+.hero-banner__wrapper:hover .hero-banner__img {
+    transform: scale(1.03); /* Phóng to 3% */
+}
+
+/* Blur gradient ở dưới cùng ảnh - tạo hiệu ứng mờ dần */
+.hero-banner__blur {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60%; /* Chiếm 60% chiều cao từ dưới lên */
+    background: linear-gradient(transparent, rgba(255, 255, 255, 1)); /* Gradient từ trong suốt đến trắng */
+    filter: blur(10px);
+    z-index: 5;
+    pointer-events: none; /* Không chặn event click - cho phép click xuyên qua */
+}
+
+/* Overlay màu xanh nhạt phủ lên toàn bộ ảnh */
+.hero-banner__fade {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 225, 34, 0.05); /* Xanh lá với opacity 5% */
+    z-index: 4;
+    pointer-events: none;
+}
+
+/* ========================================
+   SECTION - Style chung cho tất cả các section
+   BEM naming: .section (block), .section__element (element), .section--modifier (modifier)
+   ======================================== */
+.section {
+    text-align: center;
+    color: #fff;
+    margin: 100px auto;
+    padding: 0 20px;
+    max-width: 1100px;
+    position: relative;
+    z-index: 5; /* Nằm trên các layer khác */
+    padding-top: 80px;
+    font-family: 'Roboto Flex', sans-serif;
+    transition: margin-top 0.4s ease, transform 0.4s ease;
+}
+
+/* Margin-top âm để tạo overlap effect - section chồng lên section trước */
+.section--features {
+    margin-top: -37vh; /* Overlap với hero banner */
+}
+
+.section--customer {
+    margin-top: -50vh; /* Overlap với showcase */
+}
+
+.section--more {
+    margin-top: -20vh; /* Overlap với review */
+}
+
+/* Header của section - chứa icon, title, description */
+.section__header {
+    display: flex;
+    flex-direction: column; /* Stack theo chiều dọc */
+    align-items: center; /* Căn giữa theo chiều ngang */
+    gap: 10px;
+    margin-bottom: 50px;
+}
+
+/* Icon đầu section với drop-shadow xanh */
+.section__icon {
+    width: clamp(160px, 22vw, 230px); /* Responsive width */
+    height: auto;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 0 15px rgba(0, 225, 34, 0.6)); /* Shadow xanh tỏa ra */
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Hover effect: chỉ phóng to, BỎ xoay */
+.section__icon:hover {
+    transform: scale(1.05); /* Phóng to 5% */
+    filter: drop-shadow(0 0 25px rgba(0, 225, 34, 1));
+}
+
+/* Icon nhỏ hơn cho section More */
+.section--more .section__icon {
+    width: clamp(40px, 10vw, 60px);
+    max-width: 260px;
+    margin-bottom: 8px;
+}
+
+/* Title section với màu xanh lá */
+.section__title {
+    color: #00E122;
+    font-size: clamp(28px, 4vw, 44px);
+    font-weight: 300;
+    line-height: 1.2;
+    letter-spacing: 0.5px; /* Khoảng cách giữa các chữ */
+    margin-bottom: 12px;
+}
+
+/* Description section */
+.section__desc {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: clamp(16px, 2vw, 22px);
+    font-weight: 300;
+    line-height: 1.5;
+    max-width: 820px;
+    margin: 0 auto;
+}
+
+/* Grid container chứa các card - sử dụng Flexbox */
+.section__grid {
+    display: flex;
+    flex-wrap: wrap; /* Cho phép wrap sang dòng mới khi hết chỗ */
+    justify-content: center;
+    align-items: stretch; /* Tất cả card có chiều cao bằng nhau */
+    gap: 36px; /* Khoảng cách giữa các card */
+    margin-top: 60px;
+}
+
+/* Grid cho Features section */
+.section--features .section__grid {
+    margin-top: 60px;
+}
+
+/* Card component - flex item */
+.section__card {
+    flex: 1 1 30%; /* flex-grow: 1, flex-shrink: 1, flex-basis: 30% */
+    max-width: 340px;
+    height: auto;
+    text-align: center;
+    padding: 24px 20px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    position: relative; /* Để position pseudo-element */
+    overflow: hidden; /* Ẩn phần border tràn ra */
+}
+
+/* Hover effect: nâng card lên và thêm glow - BỎ xoay */
+.section__card:hover {
+    transform: translateY(-6px); /* Chỉ nâng lên 6px */
+    filter: drop-shadow(0 0 20px rgba(0, 225, 34, 0.6));
+}
+
+/* Icon trong card */
+.section__card-icon {
+    width: 50px;
+    height: 50px;
+    margin: 0 auto 16px;
+    filter: drop-shadow(0 0 10px rgba(0, 225, 34, 0.8));
+    transition: transform 0.3s ease;
+}
+
+/* BỎ animation xoay icon - chỉ phóng to */
+.section__card:hover .section__card-icon {
+    transform: scale(1.1); /* Chỉ phóng to 10% */
+}
+
+/* Title trong card */
+.section__card-title {
+    color: #00E122;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 1.4;
+    margin-bottom: 10px;
+}
+
+/* Text mô tả trong card */
+.section__card-text {
+    color: rgba(255, 255, 255, 0.85);
     font-size: 16px;
-  }
-
-  /* SECTION */
-  .section {
-    margin: 60px auto;
-    padding: 0 15px;
-  }
-  
-  .section__card {
-    flex: 1 1 100%;
-    max-width: 100%;
-  }
-  
-  .section__card-title {
-    font-size: 18px;
-  }
-  
-  .section__card-text {
-    font-size: 15px;
-  }
-
-  /* SHOWCASE */
-  .showcase {
-    display: none;
-  }
-
-  /* REVIEW */
-  .review__wrapper {
-    height: 320px;
-  }
-  
-  .review__container {
-    transform: translateX(-50%) scale(0.55);
-  }
-
-  /* PARTNERS */
-  .partners {
-    padding: 60px 15px;
-  }
-  
-  .partners__logo {
-    width: 100px;
-  }
+    line-height: 25px;
+    max-width: 90%;
+    margin: 0 auto;
 }
 
-/* REVEAL ANIMATION */
+/* ========================================
+   HIỆU ỨNG: RIPPLE EFFECT
+   Tạo gợn sóng khi hover card
+   ======================================== */
+
+/* Thêm pseudo-element cho ripple */
+.section__card::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(0, 225, 34, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease, opacity 0.6s ease;
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Hover: ripple mở rộng ra */
+.section__card:hover::after {
+    width: 300px;
+    height: 300px;
+    opacity: 0;
+}
+
+/* ========================================
+   SHOWCASE SECTION - Hiển thị 7 ảnh game xếp chồng
+   Sử dụng absolute positioning để xếp ảnh theo thiết kế
+   ======================================== */
+.showcase {
+    position: relative;
+    width: 100%;
+    z-index: 4;
+    margin: 0 auto;
+}
+
+.showcase__wrapper {
+    position: relative;
+    width: 100%;
+    height: 722px; /* Chiều cao cố định */
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    overflow: visible; /* Cho phép ảnh tràn ra ngoài */
+    margin: 0 auto 100px;
+}
+
+/* Container chứa các ảnh - sử dụng absolute positioning */
+.showcase__container {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    height: 740px;
+    left: 48%; /* Lệch sang phải một chút */
+    transform: translateX(-50%) scale(1); /* Căn giữa và scale mặc định */
+    transform-origin: center bottom; /* Origin để scale từ đáy lên */
+    transition: transform 0.3s ease;
+    overflow: visible;
+}
+
+/* Style chung cho tất cả ảnh showcase */
+.showcase__img {
+    position: absolute; /* Absolute để xếp chồng lên nhau */
+    border-radius: 6px;
+    box-shadow: 0 0 30px rgba(0, 225, 34, 0.7); /* Shadow xanh */
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Animation: Ảnh breathing effect - phóng to thu nhỏ nhẹ */
+.showcase__img {
+    animation: breathe 4s ease-in-out infinite;
+}
+
+@keyframes breathe {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.02);
+    }
+}
+
+/* Delay khác nhau cho từng ảnh để tạo wave effect */
+.showcase__img:nth-child(1) { animation-delay: 0s; }
+.showcase__img:nth-child(2) { animation-delay: 0.5s; }
+.showcase__img:nth-child(3) { animation-delay: 1s; }
+.showcase__img:nth-child(4) { animation-delay: 1.5s; }
+.showcase__img:nth-child(5) { animation-delay: 2s; }
+.showcase__img:nth-child(6) { animation-delay: 2.5s; }
+.showcase__img:nth-child(7) { animation-delay: 3s; }
+
+/* Hover: pause animation và zoom */
+.showcase__img:hover {
+    animation-play-state: paused;
+    transform: scale(1.05);
+    filter: blur(0) !important;
+    z-index: 10;
+}
+
+/* Vị trí và blur cho từng ảnh - tạo depth effect */
+/* Ảnh 1: góc trái trên, blur nhiều */
+.showcase__img:nth-child(1) {
+    width: 282px;
+    height: 143px;
+    left: 170px;
+    top: 76px;
+    filter: blur(4.5px); /* Blur để tạo độ sâu */
+    box-shadow: 0 0 60px rgba(0, 225, 34, 0.22);
+}
+
+/* Ảnh 2: góc trái giữa, blur ít */
+.showcase__img:nth-child(2) {
+    width: 323px;
+    height: 165px;
+    left: 0;
+    top: 183px;
+    filter: blur(1.5px);
+    box-shadow: 0 0 60px rgba(0, 225, 34, 0.5);
+}
+
+/* Ảnh 3: góc phải trên, blur trung bình */
+.showcase__img:nth-child(3) {
+    width: 268px;
+    height: 135px;
+    left: 493px;
+    top: 10px;
+    filter: blur(3px);
+    box-shadow: 0 0 60px rgba(0, 225, 34, 0.62);
+}
+
+/* Ảnh 4: dưới cùng bên phải, blur nhiều nhất */
+.showcase__img:nth-child(4) {
+    width: 326px;
+    height: 166px;
+    left: 405px;
+    top: 556px;
+    filter: blur(11px);
+    box-shadow: 0 0 60px rgba(0, 225, 34, 0.5);
+}
+
+/* Ảnh 5: FOCUS IMAGE - không blur, ảnh chính */
+.showcase__img:nth-child(5) {
+    width: 420px;
+    height: 213px;
+    left: 49px;
+    top: 347px;
+    filter: none; /* Không blur - ảnh nổi bật nhất */
+    box-shadow: 0 0 80px rgba(0, 225, 34, 0.79); /* Shadow mạnh nhất */
+}
+
+/* Ảnh 6: bên phải giữa */
+.showcase__img:nth-child(6) {
+    width: 299px;
+    height: 154px;
+    left: 527px;
+    top: 330px;
+    filter: blur(2.5px);
+    box-shadow: 0 0 60px rgba(0, 225, 34, 0.35);
+}
+
+/* Ảnh 7: bên phải trên */
+.showcase__img:nth-child(7) {
+    width: 383px;
+    height: 209px;
+    left: 567px;
+    top: 146px;
+    filter: blur(2.5px);
+    box-shadow: 0 0 60px rgba(0, 225, 34, 0.9);
+}
+
+/* ========================================
+   REVIEW SHOWCASE SECTION - Hiển thị 3 ảnh review
+   Layout: 1 ảnh lớn giữa, 2 ảnh nhỏ hai bên
+   ======================================== */
+.review {
+    position: relative;
+    width: 100%;
+    margin: 120px auto 0;
+    z-index: 4;
+}
+
+.review__wrapper {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; /* Căn đáy */
+    overflow: visible;
+    height: 520px;
+}
+
+.review__container {
+    position: relative;
+    width: 100%;
+    max-width: 1550px;
+    height: 520px;
+    left: 50%;
+    transform: translateX(-50%); /* Căn giữa */
+}
+
+/* Style chung cho ảnh review - có drop-shadow kép */
+.review__img {
+    position: absolute;
+    border-radius: 8px;
+    background: transparent;
+    /* Drop-shadow kép: một gần, một xa - tạo depth */
+    filter: drop-shadow(0 0 30px rgba(0, 225, 34, 0.5))
+            drop-shadow(0 0 60px rgba(0, 225, 34, 0.25));
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Animation: Review images float lên xuống */
+.review__img {
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Delay khác nhau cho mỗi ảnh */
+.review__img--left { animation-delay: 0s; }
+.review__img--center { animation-delay: 1s; }
+.review__img--right { animation-delay: 2s; }
+
+/* Hover: tăng glow */
+.review__img:hover {
+    animation-play-state: paused;
+    filter: drop-shadow(0 0 60px rgba(0, 225, 34, 0.8))
+            drop-shadow(0 0 120px rgba(0, 225, 34, 0.4));
+}
+
+/* Vị trí 3 ảnh review */
+.review__img--left {
+    width: 185px;
+    bottom: 0;
+    left: calc(50% - 420px); /* Ảnh trái */
+}
+
+.review__img--center {
+    width: 600px;
+    bottom: 0;
+    left: calc(50% - 300px); /* Ảnh giữa (lớn nhất) */
+    z-index: 3; /* Nằm trên 2 ảnh kia */
+}
+
+.review__img--right {
+    width: 265px;
+    bottom: 0;
+    left: calc(50% + 235px); /* Ảnh phải */
+}
+
+/* ========================================
+   PARTNERS SECTION - Logo các đối tác
+   Sử dụng CSS Grid để responsive layout
+   ======================================== */
+.partners {
+    text-align: center;
+    color: #fff;
+    margin: 0 auto;
+    padding: clamp(80px, 10vw, 120px) 20px clamp(100px, 12vw, 140px);
+    max-width: 1280px;
+    position: relative;
+    z-index: 5;
+    font-family: 'Roboto Flex', sans-serif;
+}
+
+.partners__header {
+    margin-bottom: 50px;
+}
+
+.partners__title {
+    font-size: clamp(22px, 2.5vw, 30px);
+    font-weight: 300;
+    color: #fff;
+    line-height: 1.4;
+    letter-spacing: 0.3px;
+}
+
+/* Grid layout cho logos - tự động responsive */
+.partners__grid {
+    display: grid;
+    /* auto-fit: tự động điều chỉnh số cột, minmax: min 160px, max 1fr */
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 40px 30px; /* row gap 40px, column gap 30px */
+    justify-items: center; /* Căn giữa items trong cell */
+    align-items: center;
+}
+
+/* Logo đối tác - grayscale mặc định */
+.partners__logo {
+    width: 170px;
+    height: auto;
+    opacity: 0.8;
+    /* Grayscale 100% - biến ảnh thành đen trắng, brightness 1.2 - làm sáng lên */
+    filter: grayscale(1) brightness(1.2);
+    transition: all 0.3s ease;
+}
+
+/* Hover: hiện màu gốc và thêm glow - BỎ xoay */
+.partners__logo:hover {
+    opacity: 1;
+    filter: grayscale(0) drop-shadow(0 0 10px rgba(0, 225, 34, 0.7)); /* Bỏ grayscale */
+    transform: scale(1.08); /* Chỉ phóng to 8% */
+}
+
+/* ========================================
+   HIỆU ỨNG: SCROLL INDICATOR
+   Thanh chỉ báo scroll ở top page
+   ======================================== */
+
+/* Thanh progress bar */
+.scroll-indicator {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--green) 0%, rgba(0, 225, 34, 0.5) 100%);
+    z-index: 99999;
+    transition: width 0.1s ease;
+    box-shadow: 0 0 10px var(--green);
+}
+
+/* ========================================
+   RESPONSIVE - Tablet và Mobile
+   Media queries để tối ưu cho các màn hình nhỏ
+   ======================================== */
+
+/* Tablet (≤ 1024px) */
+@media (max-width: 1024px) {
+    .hero {
+        padding: 60px 20px 40px;
+    }
+
+    .hero-banner {
+        min-height: 360px;
+        margin-bottom: 60px;
+    }
+
+    .hero-banner__wrapper {
+        width: 95%;
+        margin: 0 auto;
+        box-shadow: 0 0 30px rgba(255, 255, 255, 0.2),
+                    0 4px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .section {
+        margin: 80px auto;
+        padding: 0 20px;
+    }
+
+    .section__grid {
+        gap: 24px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    /* Card chiếm 45% width - 2 cột trên tablet */
+    .section__card {
+        flex: 1 1 45%;
+        max-width: 420px;
+    }
+
+    /* Thu nhỏ showcase */
+    .showcase__wrapper {
+        height: 540px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .showcase__container {
+        transform: translateX(-45%) scale(0.95); /* Scale nhỏ lại 95% */
+        transform-origin: center top;
+        height: 540px;
+    }
+
+    /* Thu nhỏ review */
+    .review__wrapper {
+        height: 420px;
+    }
+
+    .review__container {
+        transform: translateX(-50%) scale(0.75); /* Scale nhỏ lại 75% */
+    }
+
+    .partners__logo {
+        width: 140px;
+    }
+}
+
+/* Mobile (≤ 768px) */
+@media (max-width: 768px) {
+    .hero__title {
+        font-size: 28px;
+        line-height: 1.3;
+    }
+
+    .hero__desc {
+        font-size: 16px;
+    }
+
+    .section {
+        margin: 60px auto;
+        padding: 0 15px;
+    }
+
+    /* Card chiếm 100% width - 1 cột trên mobile */
+    .section__card {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+
+    .section__card-title {
+        font-size: 18px;
+    }
+
+    .section__card-text {
+        font-size: 15px;
+    }
+
+    /* Ẩn showcase hoàn toàn trên mobile */
+    .showcase {
+        display: none;
+    }
+
+    /* Thu nhỏ review nhiều hơn */
+    .review__wrapper {
+        height: 320px;
+    }
+
+    .review__container {
+        transform: translateX(-50%) scale(0.55); /* Scale nhỏ lại 55% */
+    }
+
+    .partners {
+        padding: 60px 15px;
+    }
+
+    .partners__logo {
+        width: 100px;
+    }
+}
+
+/* ========================================
+   REVEAL ANIMATION - Scroll reveal effect
+   Class này được thêm bởi JavaScript khi scroll
+   ======================================== */
+
+/* Ẩn tất cả sections ban đầu */
 .hero, .section, .showcase, .review, .partners {
-  opacity: 0;
-  transition: all 1s ease-out;
+    opacity: 0;
+    transition: all 1s ease-out; /* Transition mượt 1s */
 }
 
-.hero.visible, .section.visible, .showcase.visible, .review.visible, .partners.visible {
-  opacity: 1;
-  transform: translateY(0);
+/* Class "visible" được thêm bởi JS khi scroll vào view */
+.hero.visible, 
+.section.visible, 
+.showcase.visible, 
+.review.visible, 
+.partners.visible {
+    opacity: 1;
+    transform: translateY(0); /* Trở về vị trí ban đầu */
 }
-
