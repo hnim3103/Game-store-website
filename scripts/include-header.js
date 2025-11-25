@@ -7,8 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
     .then((data) => {
       document.body.insertAdjacentHTML("afterbegin", data);
 
-      const cssFiles = ["/components/header/header.css",
-                        "/styles/category.css"
+      const cssFiles = ["/components/header/header.css"
       ];
 
       cssFiles.forEach((cssFile) => {
