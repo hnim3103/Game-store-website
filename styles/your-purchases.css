@@ -1,14 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap");
-
-* {
-  font-family: "Roboto Flex", sans-serif;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  list-style: none;
-  text-decoration: none;
-}
-
 :root {
   --green-color: #00e122;
   --dark-green-color: #225557;
@@ -42,104 +31,6 @@ body {
   background: transparent;
 }
 
-/* Profile Bar */
-.profile-bar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 35px 0 25px 0;
-}
-
-.profile-bar__info {
-  display: flex;
-  align-items: center;
-  gap: 1.8rem;
-}
-
-.profile-bar__avatar {
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-  border: 3px solid var(--green-color);
-}
-
-.profile-bar__text {
-  display: flex;
-  flex-direction: column;
-}
-
-.profile-bar__username {
-  font-size: 24px;
-  font-weight: 700;
-  color: var(--text-color);
-}
-
-.profile-bar__fullname {
-  font-size: 16px;
-  color: var(--text-color);
-}
-
-.profile-bar__signout {
-  color: #ffffff;
-  text-decoration: underline;
-  font-size: 15px;
-  cursor: pointer;
-  transition: color 0.3s ease;
-}
-
-.profile-bar__signout:hover {
-  color: var(--green-color);
-}
-
-/* User Navigation */
-.user-nav {
-  border-top: 2px solid rgba(0, 225, 34, 0.35);
-  border-bottom: 2px solid rgba(0, 225, 34, 0.35);
-  padding: 15px 0;
-  margin-bottom: 40px;
-}
-
-.user-nav__list {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.user-nav__link {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-  color: var(--text-color);
-  font-size: 1.5rem;
-  transition: 0.25s;
-}
-
-.user-nav__link img {
-  width: 42px;
-  height: 42px;
-  opacity: 0.85;
-  transition: 0.25s ease;
-}
-
-.user-nav__link:hover span {
-  color: var(--green-color);
-}
-
-.user-nav__link:hover img {
-  transform: scale(1.1);
-}
-
-.user-nav__link--active span {
-  color: var(--green-color);
-  font-weight: 700;
-}
-
-.user-nav__link--active img {
-  opacity: 1;
-  filter: brightness(1.6);
-}
-
 /* Section Title */
 .section-title {
   font-size: 2.4rem;
@@ -154,7 +45,7 @@ body {
 }
 
 .order-card {
-  background: rgba(29, 74, 77, 0.55);
+  background: #1D4A4D;
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 4px;
   padding: 14px;
@@ -179,12 +70,14 @@ body {
 .order-card__title {
   font-size: 1.8rem;
   font-weight: 700;
-  margin-bottom: 4px;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
 }
 
 .order-card__genre,
 .order-card__date {
   font-size: 1.4rem;
+  margin-bottom: 10px;
   opacity: 0.8;
 }
 
@@ -192,6 +85,7 @@ body {
   min-width: 120px;
   font-size: 1.5rem;
   text-align: right;
+  margin-bottom: 10px;
 }
 
 /* Recent Activities */
@@ -221,7 +115,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  background: rgba(255, 255, 255, 0.03);
+  background: #0F232C;
   border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: 4px;
   padding: 16px;
@@ -236,11 +130,14 @@ body {
 .activity-card__title {
   font-size: 1.8rem;
   font-weight: 700;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
 }
 
 .activity-card__genre,
 .activity-card__date {
   font-size: 1.4rem;
+  margin-bottom: 10px;
   opacity: 0.85;
 }
 
@@ -253,7 +150,7 @@ body {
 }
 
 .progress-box span {
-  font-size: 1.4rem;
+  font-size: 20px;
 }
 
 .progress-count {
@@ -262,7 +159,7 @@ body {
 }
 
 .progress-bar {
-  flex: 1;
+  width: 300px;
   height: 10px;
   background: #d1d5db;
   border-radius: 10px;
@@ -292,7 +189,7 @@ body {
 }
 
 .genres__title {
-  font-size: clamp(1.5rem, 2vw, 2.5rem);
+  font-size: 30px;
   padding: 2rem 0;
   color: var(--text-color);
   font-weight: 700;
@@ -581,5 +478,27 @@ body {
   .fa-angle-right,
   #slider-next {
     right: 2.5rem;
+  }
+
+  .order-card__time {
+    display: none;
+  }
+
+  .activity-card__info {
+    display: none;
+  }
+
+  .progress-box span {
+    font-size: 15px;
+  }
+
+  .progress-bar {
+    width: 100px;
+  }
+  .genres__title {
+    font-size: 25px;
+    font-weight: 700;
+    margin-left: 100px;
+    margin-bottom: -80px;
   }
 }

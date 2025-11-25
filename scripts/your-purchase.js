@@ -45,3 +45,21 @@ if (cards.length > 0 && prevBtn && nextBtn) {
 
   updateSlider();
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  // LẤY EMAIL NGƯỜI DÙNG TỪ localStorage 
+  const userEmail = localStorage.getItem("loggedInUserEmail");
+
+  if (userEmail) {
+    //TÁCH USERNAME từ email
+    const username = userEmail.split("@")[0];
+
+    //TRUY CẬP TỚI NƠI HIỂN THỊ TRONG HTML
+    const usernameElement = document.querySelector(".profile-bar__username");
+    const fullnameElement = document.querySelector(".profile-bar__fullname");
+
+    //GHI DỮ LIỆU LÊN GIAO DIỆN
+    if (usernameElement) usernameElement.textContent = username;
+    if (fullnameElement) fullnameElement.textContent = userEmail;
+  }
+});
