@@ -252,10 +252,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Log message khi script load xong
-    console.log('✅ about.js loaded successfully!');
-    console.log('🎮 GSW Platform - Making games last forever');
-    console.log('🎨 Active animations: Scroll Progress, Shimmer, Breathing, Float, Scroll to Top, Typing Effect');
-    console.log('❌ Removed: Icon rotation animations');
+    console.log('about.js loaded successfully!');
+    console.log('GSW Platform - Making games last forever');
+    console.log('Active animations: Scroll Progress, Shimmer, Breathing, Float, Scroll to Top, Typing Effect');
+    console.log('Removed: Icon rotation animations');
 });
 
 /* ============================================
