@@ -20,7 +20,7 @@
   grid-template-rows: auto auto;
   gap: 2rem 5rem;
   padding-bottom: 5rem;
-  border-bottom: 1px solid var(--dark-green-color);
+  border-bottom: 1px solid var(--bg2);
   align-items: start;
 }
 
@@ -218,20 +218,20 @@
 
 .cart-item__price--old {
   font-size: 1.4rem;
-  color: var(--green-color);
+  color: var(--green);
   text-decoration: line-through;
 }
 
 .cart-item__price--new {
   font-size: 1.9rem;
-  color: var(--green-color);
+  color: var(--green);
   font-weight: bold;
   letter-spacing: 1.6px;
 }
 
 .cart-item__price {
   font-size: 2rem;
-  color: var(--green-color);
+  color: var(--green);
   font-weight: bold;
   letter-spacing: 1.6px;
 }
@@ -349,7 +349,7 @@
 }
 
 .voucher__button {
-  background-color: var(--dark-green-color);
+  background-color: var(--bg2);
   color: var(--text-color);
   border: none;
   border-radius: 5px;
@@ -381,7 +381,7 @@
   flex-direction: column;
   justify-content: space-between;
   background: linear-gradient(180deg, #070F1A 24.74%, #225557 81.3%);
-  border: 1.5px solid var(--green-color);
+  border: 1.5px solid var(--green);
   border-radius: 5px;
   padding: 1.8rem; 
   height: auto;
@@ -442,7 +442,7 @@
 }
 
 .summary__row--save {
-  color: var(--green-color);
+  color: var(--green);
   padding-top: 0.75rem;
   padding-bottom: 1rem;
   font-size: 1.5rem;
@@ -456,13 +456,13 @@
 }
 
 .summary__value--total {
-  color: var(--green-color);
+  color: var(--green);
   font-size: 2.2rem;
 }
 
 .summary__button {
   width: 100%;
-  background-color: var(--green-color);
+  background-color: var(--green);
   color: var(--black-color);
   border: none;
   border-radius: 5px;
@@ -503,7 +503,7 @@
 }
 
 .summary__link {
-  color: var(--green-color);
+  color: var(--green);
   text-decoration: underline;
   transition: color 0.3s;
 }
@@ -591,7 +591,7 @@
 
 .recommendations__arrow i {
   font-size: 3.4rem;
-  color: var(--green-color);
+  color: var(--green);
 }
 
 .recommendations__list {
@@ -662,7 +662,7 @@
   justify-content: flex-start;
   height: 5rem; 
   padding-left: 1rem;
-  color: var(--green-color);
+  color: var(--green);
   font-size: 2.4rem;
   font-weight: 800;
   margin-bottom: 0.5rem;
@@ -701,7 +701,7 @@
 }
 
 .product-card__price-wrapper .price__current {
-  color: var(--green-color);
+  color: var(--green);
   font-size: 1.8rem;
   font-weight: 700;
 }
@@ -730,7 +730,7 @@
 }
 
 .product-card__add-cart:hover {
-  background-color: var(--green-color);
+  background-color: var(--green);
 }
 
 @media (max-width: 1024px) {
@@ -784,5 +784,5 @@
 }
 
 .product-card__wishlist .fa-heart:hover {
-  color: var(--green-color);
+  color: var(--green);
 }
