@@ -1,0 +1,40 @@
+.game-card.vertical .game-card__image{
+    width: 190px;
+    height: 250px;
+} 
+
+.game-card.vertical .game-card__view{
+    position: relative;
+}
+
+.game-card.vertical .game-card__price-wrapper{
+    background: none;
+    position: absolute;
+}
+
+.game-card.vertical .game-card__price-wrapper{
+    right: 10px;
+    bottom: 5px
+}
+
+.game-card.vertical .game-card__buttons{
+    background-color: var(--bg1);
+    border-radius: 0 0 10px 10px;
+}
+
+.game-card.vertical .game-card__add-cart{
+    width: 70%;
+    margin: 0;
+    padding: 5px;
+}
+
+.game-card.vertical .game-card__add-cart span{
+    font-size: 1.5rem;
+}
+
+@media (max-width:414px) {
+    .game-card.vertical,
+    .game-card.vertical .game-card__image{
+        width: 150px;
+    }
+}

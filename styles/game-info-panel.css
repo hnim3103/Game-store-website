@@ -1,0 +1,63 @@
+.game-info__container{
+    background-color: var(--super-dark-green-color);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    padding: 30px 10px 0 10px;
+}
+
+.game-info__title{
+    font-size: 2.5rem;
+}
+
+.game-info__reviews{
+    margin-top: 10px;
+    background-color: #5e6b7b;
+    height: 80px;
+    border-radius: 5px;
+    padding: 15px;
+    font-size: 1.5rem;
+    line-height: 25px;
+}
+
+.game-info__reviews p,
+.game-info__votes{
+    color: #cccccc;
+}
+
+.game-info__stars{
+    color: var(--bg1);
+    font-size: 2rem;
+    margin-right: 30px;
+}
+
+.game-info__rating{
+    color: #21c3ff;
+    margin-right: 5px;
+}
+
+.game-info__genres{
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.game-info__genre{
+    font-size: 1.3rem;
+    background-color: #7d92a6;
+    padding: 10px 5px;
+    display: flex;
+    border-radius: 5px;
+}
+
+.game-info__images{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.game-info__images img{
+    border-radius: 5px;
+    height: 275px;
+}

@@ -8,7 +8,8 @@ document.addEventListener("DOMContentLoaded", function () {
       document.body.insertAdjacentHTML("afterbegin", data);
 
       const cssFiles = ["/components/header/header.css",
-                        "/styles/category.css"
+                        "/styles/global.css",
+                        "/styles/game-card.css"
       ];
 
       cssFiles.forEach((cssFile) => {
@@ -25,6 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "/scripts/register.js", // 4. Register form
         "/scripts/email-account.js", // 5. Email reset
         "/scripts/phone-account.js", // 6. Phone reset
+        "/scripts/fetchAPI_game-card.js"
       ]).then(() => {
         // 5. CRITICAL: Update UI after all scripts load
         // This ensures the auth state is reflected even on page reload

@@ -1,42 +1,7 @@
-/* ---------------------------------------------------
-  Google Font Import
---------------------------------------------------- */
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
-
-/* ---------------------------------------------------
-  Reset & Base Styles
---------------------------------------------------- */
-* {
-  font-family: 'Roboto Flex', sans-serif;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  list-style: none;
-  text-decoration: none;
-  scroll-padding-top: 1rem;
-  scroll-behavior: smooth;
-}
-
 :root {
-  --green-color: #00e122;
-  --dark-green-color: #225557;
-  --black-color: #070f1a;
-  --text-color: #ffffff;
-  --super-dark-green-color: #0f232c;
   --red-color: #ff0000;
   --dark-blue-color: #070F1A;
   --yellow-color: #FFD400;
-  --bg1: #070F1A;
-  --bg2: #225557;
-}
-
-body {
-  min-height: 100vh;
-  color: var(--text-color);
-  background: linear-gradient(180deg, var(--bg1) 5%, #0b2a2e 45%, var(--bg2) 95%);
-  background-attachment: fixed;
-  overflow-x: hidden;
-  margin: 0;
 }
 
 /* ---------------------------------------------------
@@ -104,7 +69,8 @@ body {
   grid-column: 1 / -1;
   font-size: 3.1rem;
   font-weight: 700;
-  margin-bottom: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 4.5rem;
 }
 
 @media (max-width: 767px) {
@@ -280,7 +246,7 @@ body {
 }
 
 /* ---------------------------------------------------
-  Cart Summary (ĐÃ ĐỒNG BỘ TỪ CART.CSS)
+  Cart Summary
 --------------------------------------------------- */
 .summary {
   grid-column: 2;
@@ -315,6 +281,8 @@ body {
     position: static;
     min-height: auto;
     padding: 1.5rem 1rem;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
   }
 }
 
@@ -413,6 +381,16 @@ body {
   color: #011F65;
 }
 
+.summary__button--card {
+  background-color: #2563eb; 
+  color: #ffffff;
+}
+
+.summary__button--googlepay {
+  background-color: #ffffff;
+  color: #1f1f1f;
+}
+
 .summary__terms {
   margin-bottom: 0.4rem;
   font-size: 1.3rem;
@@ -460,4 +438,58 @@ body {
   .summary__payment-icons {
      padding-right: 0;
   }
+}
+
+/* =========================================
+   TOAST NOTIFICATION STYLES
+   ========================================= */
+#toast-container {
+  position: fixed;
+  top: 100px;
+  right: 20px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  pointer-events: none;
+}
+
+.toast-notification {
+  padding: 16px 24px;
+  border-radius: 8px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  min-width: 280px;
+  max-width: 350px;
+  pointer-events: auto;
+  background-color: #333; 
+  color: white;
+  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1);
+  opacity: 0;
+  transform: translateX(100%);
+  max-height: 0;
+  margin-bottom: 0;
+  overflow: hidden;
+}
+
+.toast-notification.toast-show {
+  opacity: 1;
+  transform: translateX(0);
+  max-height: 100px;
+  margin-bottom: 15px;
+}
+
+.toast-notification.toast-hide {
+  opacity: 0;
+  transform: translateY(-20px);
+  max-height: 0;
+  margin-bottom: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  border: none;
+}
+
+.toast-notification.toast-error {
+  background-color: var(--red-color);
+  color: white;
 }
