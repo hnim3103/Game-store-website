@@ -44,11 +44,15 @@
 /* Kiểu Phần Thương hiệu: Logo, văn bản và mạng xã hội */
 .footer__brand {
   flex: 1;
-  min-width: 280px;
+  width: auto;
+}
+
+.footer__brand img{
+  height: auto;
 }
 
 .footer__logo {
-  width: 140px;
+  font-size: 140px;
   margin-bottom: 20px;
   filter: drop-shadow(0 0 10px rgba(0, 225, 34, 0.3));
   transition: transform 0.3s ease;
@@ -215,7 +219,7 @@
   }
 
   .footer__brand {
-    min-width: auto;
+    min-width: 280px;
   }
 
   .footer__logo {
