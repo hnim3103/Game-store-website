@@ -19,7 +19,7 @@
     background: linear-gradient(180deg, var(--bg1) 5%, #0b2a2e 45%, var(--bg2) 95%);
     background-attachment: fixed; /* Background cố định khi scroll - tạo hiệu ứng parallax */
     overflow-x: hidden; /* Ẩn scroll ngang để tránh content tràn ra ngoài */
-    margin: 0;
+    margin: auto;
 }
 
 /* ========================================
@@ -369,6 +369,7 @@
 
 /* Container chứa các ảnh - sử dụng absolute positioning */
 .showcase__container {
+    margin-left: 30px;
     position: relative;
     width: 100%;
     max-width: 1200px;
