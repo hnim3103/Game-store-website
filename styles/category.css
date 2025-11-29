@@ -27,7 +27,6 @@
 
 .main__search{
   background-color: var(--bg2);
-  padding: auto;
   border: 2px solid var(--green);
   display: flex;
   justify-content: left;
@@ -37,12 +36,6 @@
   padding: 10.5px;
   width: 500px;
   font-size: 2rem;
-}
-
-@media (max-width:768px) {
-  .main__search{
-    width: 200px;
-  }
 }
 
 .main__search-input{
@@ -91,11 +84,6 @@
 
 .pagination__bar a:first-child{
   color: grey;
-  margin-right: 15px;
-}
-
-.pagination__bar a:last-child{
-  margin-left: 1.5rem;
 }
 
 .pagination__bar span{
@@ -207,4 +195,29 @@
 #bottom.pagination__bar a{
   font-size: 1.6rem;
   letter-spacing: 15px;
+}
+
+
+@media (max-width:768px) {
+  aside{
+    display: none;
+  }
+
+  .main__search{
+    display: none;
+  }
+
+  .game-display__container{
+    width: 100%;
+  }
+
+  .game-grid__container{
+    gap: 5px
+  }
+}
+
+@media (max-width:320px) {
+  .sort__mode{
+    display: none;
+  }
 }
