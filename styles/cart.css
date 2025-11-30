@@ -1,8 +1,3 @@
-:root {
-  --red-color: #ff0000;
-  --dark-blue-color: #070F1A;
-}
-
 /* ---------------------------------------------------
   Main Content
 --------------------------------------------------- */
@@ -149,7 +144,7 @@
 .cart-item__title {
   font-size: 1.8rem; 
   font-weight: 600;
-  color: var(--text-color);
+  color: var(--text);
 }
 
 @media (max-width: 767px) {
@@ -160,12 +155,12 @@
 
 .cart-item__genres {
   font-size: 1.4rem;
-  color: var(--text-color);
+  color: var(--text);
 }
 
 .cart-item__release {
   font-size: 1.4rem;
-  color: var(--text-color);
+  color: var(--text);
 }
 
 @media (max-width: 767px) {
@@ -184,8 +179,8 @@
 }
 
 .cart-item__discount {
-  background-color: var(--red-color);
-  color: var(--text-color);
+  background-color: red;
+  color: var(--text);
   padding: 0.5rem 0.75rem;
   border-radius: 5px;
   font-size: 1.5rem;
@@ -259,7 +254,7 @@
 
 .cart-item__delete-icon {
   font-size: 3.1rem;
-  color: var(--text-color);
+  color: var(--text);
 }
 
 @media (max-width: 767px) {
@@ -269,7 +264,7 @@
 }
 
 .cart-item__delete:hover .cart-item__delete-icon {
-  color: var(--red-color);
+  color: red;
 }
 
 /* ---------------------------------------------------
@@ -314,7 +309,7 @@
 
 .voucher__label {
   font-size: 1.7rem;
-  color: var(--text-color);
+  color: var(--text);
   font-weight: 600;
   line-height: 100%;
   margin-left: 1rem;
@@ -350,7 +345,7 @@
 
 .voucher__button {
   background-color: var(--bg2);
-  color: var(--text-color);
+  color: var(--text);
   border: none;
   border-radius: 5px;
   padding: 0.8rem 1rem; 
@@ -438,7 +433,7 @@
 
 .summary__row--divider {
   padding-bottom: 1.25rem;
-  border-bottom: 1px solid var(--text-color);
+  border-bottom: 1px solid var(--text);
 }
 
 .summary__row--save {
@@ -446,7 +441,7 @@
   padding-top: 0.75rem;
   padding-bottom: 1rem;
   font-size: 1.5rem;
-  border-bottom: 1px solid var(--text-color);
+  border-bottom: 1px solid var(--text);
 }
 
 .summary__row--total {
@@ -463,7 +458,7 @@
 .summary__button {
   width: 100%;
   background-color: var(--green);
-  color: var(--black-color);
+  color: var(--bg1);
   border: none;
   border-radius: 5px;
   padding: 1.5rem; 
@@ -494,7 +489,7 @@
 .summary__terms {
   margin-bottom: 0.4rem;
   font-size: 1.2rem;
-  color: var(--text-color);
+  color: var(--text);
 }
 
 .summary__terms-text {
@@ -514,14 +509,14 @@
   font-size: 1.4rem;
   margin-bottom: 1rem;
   background-color: #d9d9d9;
-  color: var(--black-color);
+  color: var(--bg1);
 }
 
 .summary__payment-icon {
   height: 28px; 
   width: auto;
   object-fit: contain;
-  background-color: var(--text-color);
+  background-color: var(--text);
   padding: 0.25rem 0.5rem;
   border-radius: 3px;
   margin-bottom: 0.6rem;
@@ -649,7 +644,7 @@
 .product-card__content {
   display: flex;
   flex-direction: column;
-  background: var(--black-color);
+  background: var(--bg1);
   border-radius: 0 0 12px 12px;
   position: relative;
   padding-bottom: 0.75rem; 
@@ -676,8 +671,8 @@
 }
 
 .product-card__price-wrapper .price__discount {
-  background-color: var(--red-color);
-  color: var(--text-color);
+  background-color: red;
+  color: var(--text);
   font-size: 1.4rem;
   font-weight: bold;
   padding: 5px 8px;
@@ -694,7 +689,7 @@
 }
 
 .product-card__price-wrapper .price__original {
-  color: var(--text-color);
+  color: var(--text);
   font-size: 1.2rem;
   text-decoration: line-through;
   font-weight: 400;
@@ -743,7 +738,7 @@
 }
 
 .product-card__add-cart a {
-  color: var(--text-color);
+  color: var(--text);
   margin-left: 0.25rem;
 }
 
@@ -766,7 +761,7 @@
 }
 
 .product-card__wishlist .fa-heart {
-  color: var(--text-color);
+  color: var(--text);
   font-size: 3rem;
 }
 

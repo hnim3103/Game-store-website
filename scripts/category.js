@@ -11,10 +11,10 @@ function updateTrack() {
   const percent1 = (minRange.value / maxValue) * 100;
   const percent2 = (maxRange.value / maxValue) * 100;
   rangeTrack.style.background = `linear-gradient(to right,
-      var(--green-color) ${percent1}%,
-      var(--dark-green-color) ${percent1}%,
-      var(--dark-green-color) ${percent2}%,
-      var(--green-color) ${percent2}%)`;
+      var(--green) ${percent1}%,
+      var(--bg2) ${percent1}%,
+      var(--bg2) ${percent2}%,
+      var(--green) ${percent2}%)`;
 }
 
 function syncInputs() {

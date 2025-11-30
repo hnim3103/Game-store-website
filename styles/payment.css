@@ -1,9 +1,3 @@
-:root {
-  --red-color: #ff0000;
-  --dark-blue-color: #070F1A;
-  --yellow-color: #FFD400;
-}
-
 /* ---------------------------------------------------
   Main Content
 --------------------------------------------------- */
@@ -125,7 +119,7 @@
 .payment-option__name {
   font-size: 1.9rem;
   font-weight: 500;
-  color: var(--text-color);
+  color: var(--text);
   min-width: 150px;
 }
 
@@ -140,7 +134,7 @@
   height: 28px;
   width: auto;
   object-fit: contain;
-  background-color: var(--text-color);
+  background-color: var(--text);
   padding: 0.25rem 0.5rem;
   border-radius: 3px;
 }
@@ -168,7 +162,7 @@
 
 .payment-option__icon {
   font-size: 2.9rem;
-  color: var(--text-color);
+  color: var(--text);
 }
 
 .payment-option__content {
@@ -185,7 +179,7 @@
 
 .payment-option__description {
   font-size: 1.3rem;
-  color: var(--text-color);
+  color: var(--text);
   line-height: 1.6;
   margin-bottom: 1.2rem;
 }
@@ -199,7 +193,7 @@
   gap: 0.9rem;
   cursor: pointer;
   font-size: 1.3rem;
-  color: var(--text-color);
+  color: var(--text);
 }
 
 .payment-option__checkbox-input {
@@ -209,7 +203,7 @@
 .payment-option__checkbox-custom {
   width: 24px;
   height: 24px;
-  border: 2px solid var(--green-color);
+  border: 2px solid var(--green);
   border-radius: 3px;
   display: flex;
   align-items: center;
@@ -224,12 +218,12 @@
 }
 
 .payment-option__checkbox-input:checked + .payment-option__checkbox-custom {
-  background-color: var(--green-color);
+  background-color: var(--green);
 }
 
 .payment-option__checkbox-input:checked + .payment-option__checkbox-custom::after {
   content: '✓';
-  color: var(--black-color);
+  color: var(--bg1);
   font-size: 1.4rem;
   font-weight: bold;
 }
@@ -256,7 +250,7 @@
   flex-direction: column;
   justify-content: space-between;
   background: linear-gradient(180deg, #070F1A 24.74%, #225557 81.3%);
-  border: 1.5px solid var(--green-color);
+  border: 1.5px solid var(--green);
   border-radius: 5px;
   padding: 1.8rem;
   height: auto;
@@ -328,15 +322,15 @@
 
 .summary__row--divider {
   padding-bottom: 1.25rem;
-  border-bottom: 1px solid var(--text-color);
+  border-bottom: 1px solid var(--text);
 }
 
 .summary__row--save {
-  color: var(--green-color);
+  color: var(--green);
   padding-top: 0.75rem;
   padding-bottom: 1rem;
   font-size: 1.5rem;
-  border-bottom: 1px solid var(--text-color);
+  border-bottom: 1px solid var(--text);
 }
 
 .summary__row--total {
@@ -346,14 +340,14 @@
 }
 
 .summary__value--total {
-  color: var(--green-color);
+  color: var(--green);
   font-size: 2.2rem;
 }
 
 .summary__button {
   width: 100%;
-  background-color: var(--green-color);
-  color: var(--black-color);
+  background-color: var(--green);
+  color: var(--bg1);
   border: none;
   border-radius: 5px;
   padding: 1.5rem;
@@ -394,7 +388,7 @@
 .summary__terms {
   margin-bottom: 0.4rem;
   font-size: 1.3rem;
-  color: var(--text-color);
+  color: var(--text);
 }
 
 .summary__terms-text {
@@ -403,7 +397,7 @@
 }
 
 .summary__link {
-  color: var(--green-color);
+  color: var(--green);
   text-decoration: underline;
   transition: color 0.3s;
 }
@@ -414,14 +408,14 @@
   font-size: 1.4rem;
   margin-bottom: 1rem;
   background-color: #d9d9d9;
-  color: var(--black-color);
+  color: var(--bg1);
 }
 
 .summary__payment-icon {
   height: 28px;
   width: auto;
   object-fit: contain;
-  background-color: var(--text-color);
+  background-color: var(--text);
   padding: 0.25rem 0.5rem;
   border-radius: 3px;
   margin-bottom: 0.6rem;
@@ -490,6 +484,6 @@
 }
 
 .toast-notification.toast-error {
-  background-color: var(--red-color);
+  background-color: red;
   color: white;
 }

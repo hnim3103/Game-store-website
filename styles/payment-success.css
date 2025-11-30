@@ -6,7 +6,7 @@
     align-items: center;
     text-align: center;
     background: linear-gradient(180deg, var(--bg1) 5%, #0b2a2e 45%, var(--bg2) 95%);
-    color: var(--text-color);
+    color: var(--text);
     padding: 20px;
 }
 

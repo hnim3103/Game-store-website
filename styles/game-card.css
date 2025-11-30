@@ -50,12 +50,12 @@
   display: flex;
   justify-content: space-between;
   padding: 5px;
-  color: var(--text-color);
+  color: var(--text);
 }
 
 .game-card__add-cart{
   font-size: 1.8rem;
-  color: var(--text-color);
+  color: var(--text);
   border: none;
   background-color: var(--super-dark-green-color);
   cursor: pointer;
