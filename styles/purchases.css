@@ -142,7 +142,8 @@ h1 {
   color: #c7d2da;
 }
 
-/* Recommendations Slider */
+/*Slider*/
+
 .genres {
   width: 1200px;
   max-width: 100%;
@@ -157,14 +158,10 @@ h1 {
   font-weight: 700;
 }
 
-/* Force visibility for slider elements */
 .genres__grid {
   position: relative;
   height: 350px;
-  display: block;
 }
-
-/* Slider Navigation Arrows */
 .fa-angle-left,
 .fa-angle-right,
 #slider-prev,
@@ -206,7 +203,6 @@ h1 {
   right: 7rem;
 }
 
-/* Game Card Base */
 .game-card {
   max-width: 240px;
   display: flex;
@@ -220,29 +216,19 @@ h1 {
 .game-card:hover {
   cursor: pointer;
 }
-
-/* Game Card Image */
+/* Slider Product Price & Discount */
 .game-card__image {
   width: 100%;
   height: auto;
   display: block;
   line-height: 0;
-  overflow: hidden;
 }
 
-.game-card__image img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* Game Card Content */
 .game-card__content {
   background-color: var(--bg1);
   width: 100%;
   display: flex;
   flex-direction: column;
-  position: relative;
 }
 
 .game-card__price-wrapper {
@@ -257,32 +243,22 @@ h1 {
   align-items: center;
 }
 
-.game-card__price p {
-  margin: 0;
-}
-
 .game-card__add-cart {
-  background-color: var(--super-dark-green-color);
-  width: 70%;
   font-size: 1.8rem;
-  height: 5rem;
-  display: flex;
-  align-items: center;
-  padding: 1.5rem;
-  margin-left: 0.5rem;
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-  transition: all 0.3s ease;
-}
-
-.game-card__add-cart i {
   color: var(--text);
+  border: none;
+  background-color: var(--super-dark-green-color);
+  cursor: pointer;
+  height: 4rem;
+  text-align: left;
+  padding-left: 20px;
+  padding-right: 50px;
+  box-shadow: 0px 4px 4px 0px black;
 }
 
 .game-card__add-cart a {
   color: var(--text);
   margin-left: 0.5rem;
-  text-decoration: none;
 }
 
 .game-card__add-cart:hover {
@@ -292,35 +268,31 @@ h1 {
 }
 
 .game-card__wishlist {
-  background: none;
+  background-color: transparent;
   border: none;
   position: absolute;
   bottom: 1rem;
   right: 5%;
   color: var(--text);
-  cursor: pointer;
-  transition: all 0.3s ease;
 }
 
 .game-card__wishlist .fa-heart {
-  font-size: 4rem;
-  margin-right: -0.4rem;
+  font-size: 3rem;
+  margin-right: -1rem;
 }
 
-.game-card__wishlist:hover,
 .game-card__wishlist .fa-heart:hover {
   color: var(--green);
+  cursor: pointer;
   transform: scale(1.1);
 }
 
-/* Slider Positions */
 .game-card.active {
   visibility: visible;
   transform: translate(-50%, -50%);
   z-index: 3;
-  opacity: 1;
 }
-
+/* Slider Navigation Arrows */
 .game-card.prev {
   visibility: visible;
   transform: translate(-160%, -50%);
@@ -348,7 +320,6 @@ h1 {
   opacity: 0;
   z-index: 1;
 }
-
 /* Animation */
 @keyframes fadeInUp {
   from {
@@ -399,24 +370,27 @@ h1 {
     font-size: 15px;
   }
 
-  /* Slider adjustments for tablet */
+  /* slider */
   .game-card.prev {
     transform: translate(-110%, -50%);
     opacity: 1;
   }
-
   .game-card.next {
     transform: translate(10%, -50%);
     opacity: 1;
   }
-
-  .fa-angle-left,
-  #slider-prev {
+  .game-card.active,
+  .game-card.prev-2,
+  .game-card.next-2 {
+    transform: translate(-50%, -50%) scale(0.7);
+    visibility: hidden;
+    opacity: 0;
+  }
+  .fa-angle-left {
     left: 5rem;
   }
 
-  .fa-angle-right,
-  #slider-next {
+  .fa-angle-right {
     right: 5rem;
   }
 }
@@ -456,15 +430,7 @@ h1 {
     font-size: 1.4rem;
   }
 
-  /* Slider for mobile */
-  .genres__title {
-    font-size: 20px;
-  }
-
-  .genres__grid {
-    height: 400px;
-  }
-
+  /* slider */
   .game-card.active {
     transform: translate(-50%, -50%) scale(1);
   }
@@ -478,20 +444,19 @@ h1 {
     opacity: 0;
   }
 
-  .fa-angle-left,
-  #slider-prev {
+  .genres__grid {
+    height: 400px;
+  }
+
+  .fa-angle-left {
     left: 2.5rem;
   }
-
-  .fa-angle-right,
-  #slider-next {
+  .fa-angle-right {
     right: 2.5rem;
   }
-
   .game-card__add-cart {
     font-size: 1.6rem;
   }
-
   .game-card__wishlist .fa-heart {
     font-size: 3.5rem;
     margin-bottom: 0.2rem;

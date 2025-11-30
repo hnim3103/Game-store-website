@@ -16,3 +16,48 @@ document.addEventListener("DOMContentLoaded", function () {
     })
     .catch((err) => console.error("Can't load footer:", err));
 });
+
+//Check login status
+document.body.addEventListener("click", (e) => {
+  const link = e.target.closest("a");
+  if (!link || link.getAttribute("href") === "#") return;
+
+  // list page require login
+  const restrictedPaths = [
+    "/html/wishlist.html",
+    "/html/cart.html",
+    "/html/wallet.html",
+    "/html/setting.html",
+    "/html/purchases.html",
+    "/html/your-purchases.html",
+    "/html/payment.html",
+  ];
+
+  // Lấy đường dẫn của link vừa bấm
+  const targetHref = link.getAttribute("href");
+
+  // Kiểm tra xem link này có nằm trong danh sách cấm không
+  const isRestricted = restrictedPaths.some((path) =>
+    targetHref.includes(path)
+  );
+
+  // NẾU LÀ LINK CẤM -> KIỂM TRA LOGIN
+  if (isRestricted) {
+    const isLoggedIn = window.Auth
+      ? window.Auth.isLoggedIn()
+      : localStorage.getItem("loggedInUserEmail");
+
+    if (!isLoggedIn) {
+      e.preventDefault();
+      e.stopPropagation();
+
+      // Hiện thông báo đỏ
+      window.showNotification("You need login to access this page", "remove");
+
+      // Hiện Popup Login sau 1 giây
+      setTimeout(() => {
+        if (window.showPopup) window.showPopup("login");
+      }, 1000);
+    }
+  }
+});

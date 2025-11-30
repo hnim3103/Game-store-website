@@ -533,16 +533,16 @@ h1 {
 }
 
 .game-card__add-cart {
-  background-color: var(--super-dark-green-color);
-  width: 70%;
   font-size: 1.8rem;
-  height: 5rem;
-  display: flex;
-  align-items: center;
-  padding: 1.5rem;
-  margin-left: 0.5rem;
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
+  color: var(--text);
+  border: none;
+  background-color: var(--super-dark-green-color);
+  cursor: pointer;
+  height: 4rem;
+  text-align: left;
+  padding-left: 20px;
+  padding-right: 50px;
+  box-shadow: 0px 4px 4px 0px black;
 }
 
 .game-card__add-cart a {
@@ -557,7 +557,7 @@ h1 {
 }
 
 .game-card__wishlist {
-  background: none;
+  background-color: transparent;
   border: none;
   position: absolute;
   bottom: 1rem;
@@ -566,8 +566,8 @@ h1 {
 }
 
 .game-card__wishlist .fa-heart {
-  font-size: 4rem;
-  margin-right: -0.4rem;
+  font-size: 3rem;
+  margin-right: -1rem;
 }
 
 .game-card__wishlist .fa-heart:hover {
@@ -790,12 +790,7 @@ h1 {
   .genres__grid {
     height: 400px;
   }
-  .fa-angle-left::before,
-  .fa-angle-right::before {
-    position: relative;
-    top: 7px;
-    left: 1px;
-  }
+
   .fa-angle-left {
     left: 2.5rem;
   }
