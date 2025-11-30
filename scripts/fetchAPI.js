@@ -77,7 +77,7 @@ function createGameCard(game) {
     <article class="game-card" data-game-id="${game.id}">
       <a href="/html/game-info.html">
         <div class="game-card__image">
-          <img src="${imageUrl}" alt="${game.name}" loading="lazy" />
+          <img src="${imageUrl}" alt="${game.name}" loading="lazy">
         </div>
       </a>
       <div class="game-card__content">

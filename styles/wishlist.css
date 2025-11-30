@@ -1,49 +1,3 @@
-/* ---------------------------------------------------
-  Google Font Import
---------------------------------------------------- */
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap");
-
-/* ---------------------------------------------------
-  Reset & Base Styles
---------------------------------------------------- */
-* {
-  font-family: "Roboto Flex", sans-serif;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  list-style: none;
-  text-decoration: none;
-  scroll-padding-top: 2rem;
-  scroll-behavior: smooth;
-}
-
-:root {
-  --green-color: #00e122;
-  --dark-green-color: #225557;
-  --black-color: #070f1a;
-  --text-color: #ffffff;
-  --super-dark-green-color: #0f232c;
-  --bg1: #070f1a;
-  --bg2: #225557;
-  font-size: 10px;
-}
-
-body {
-  height: auto;
-  color: var(--text-color);
-  background: linear-gradient(
-    180deg,
-    var(--bg1) 5%,
-    #0b2a2e 45%,
-    var(--bg2) 95%
-  );
-  background-attachment: fixed;
-  overflow-x: hidden;
-  margin: 0;
-  justify-content: center;
-  align-items: center;
-}
-
 img {
   width: 100%;
   height: auto;
@@ -183,8 +137,8 @@ h1 {
   margin-top: 3rem;
   width: 100%;
   align-items: center;
-  background-color: var(--dark-green-color);
-  box-shadow: 0px 5px 5px var(--green-color);
+  background-color: var(--bg2);
+  box-shadow: 0px 5px 5px var(--green);
 }
 /* Hear in introduce */
 .wishlist-introduce__heart {
@@ -195,16 +149,16 @@ h1 {
 .wishlist-introduce__heart img {
   width: 25rem;
   height: 25rem;
-  filter: drop-shadow(0 -15px 15px var(--green-color));
+  filter: drop-shadow(0 -15px 15px var(--green));
 }
 /* content in introduce */
 .wishlist-introduce__content {
-  color: var(--text-color);
+  color: var(--text);
   font-size: clamp(1.5rem, 2vw, 2rem);
   font-weight: 300;
 }
 .wishlist-introduce__content .highlight {
-  color: var(--green-color);
+  color: var(--green);
   font-size: clamp(2rem, 2vw, 3.5rem);
   font-weight: 700;
 }
@@ -224,7 +178,7 @@ h1 {
   object-fit: cover;
   position: absolute;
   z-index: 1;
-  filter: drop-shadow(0 0 15px var(--green-color));
+  filter: drop-shadow(0 0 15px var(--green));
 }
 #game-img-1 {
   top: 50px;
@@ -255,11 +209,11 @@ h1 {
 
 .wishlist-add__divider {
   font-size: clamp(1.5rem, 2vw, 2.5rem);
-  color: var(--green-color);
+  color: var(--green);
   margin-top: 4rem;
   margin-bottom: 4rem;
   padding-bottom: 1rem;
-  border-bottom: 2px solid var(--green-color);
+  border-bottom: 2px solid var(--green);
   font-weight: 400;
 }
 /* animation */
@@ -354,19 +308,19 @@ h1 {
 .wishlist-item-box__title {
   font-size: 1.7rem;
   font-weight: 800;
-  color: var(--text-color);
+  color: var(--text);
 }
 
 .wishlist-item-box__info {
   font-size: 1.5rem;
-  color: var(--text-color);
+  color: var(--text);
 }
 
 .wishlist-item-box__release-date {
   font-size: 1.7rem;
   font-weight: 500;
   text-align: center;
-  color: var(--text-color);
+  color: var(--text);
 }
 
 .wishlist-item-box__actions {
@@ -386,7 +340,7 @@ h1 {
 
 .discount-percent {
   background-color: #ff0e02;
-  color: var(--text-color);
+  color: var(--text);
   font-weight: bold;
   padding: 0.6rem 0.6rem;
   border-radius: 7px;
@@ -401,13 +355,13 @@ h1 {
 }
 
 .price-original {
-  color: var(--green-color);
+  color: var(--green);
   text-decoration: line-through;
   font-size: 1.4rem;
 }
 
 .price-sale {
-  color: var(--green-color);
+  color: var(--green);
   font-weight: bold;
   font-size: 1.7rem;
 }
@@ -419,8 +373,8 @@ h1 {
 }
 
 .wishlist-item-box__button {
-  background-color: var(--green-color);
-  color: var(--text-color);
+  background-color: var(--green);
+  color: var(--text);
   font-weight: bold;
   padding: 0.8rem 1.2rem;
   border-radius: 6px;
@@ -432,7 +386,7 @@ h1 {
 }
 /* style after click add to cart */
 .wishlist-item-box__button.button--clicked {
-  background-color: var(--black-color);
+  background-color: var(--bg1);
   filter: none;
   cursor: default;
 }
@@ -440,7 +394,7 @@ h1 {
 /* Override hover and active states  */
 .wishlist-item-box__button.button--clicked:hover,
 .wishlist-item-box__button.button--clicked:active {
-  background-color: var(--black-color);
+  background-color: var(--bg1);
   filter: none;
   transform: scale(1);
 }
@@ -459,7 +413,7 @@ h1 {
   justify-content: center;
   align-items: center;
   background-color: #757575;
-  color: var(--text-color);
+  color: var(--text);
   font-size: clamp(2rem, 3vw, 2.5rem);
   font-weight: 700;
   padding: 1rem;
@@ -489,7 +443,7 @@ h1 {
 .genres__title {
   font-size: clamp(1.5rem, 2vw, 2.5rem);
   padding: 2rem 0;
-  color: var(--text-color);
+  color: var(--text);
   font-weight: 700;
 }
 
@@ -513,7 +467,7 @@ h1 {
   flex-shrink: 0;
   transition: all 0.2s ease;
   font-size: 24px;
-  color: var(--green-color);
+  color: var(--green);
   align-items: center;
   justify-content: center;
   z-index: 10;
@@ -523,8 +477,8 @@ h1 {
 .fa-angle-right:hover,
 #slider-prev:hover,
 #slider-next:hover {
-  background-color: var(--green-color);
-  color: var(--black-color);
+  background-color: var(--green);
+  color: var(--bg1);
   transform: scale(1.1);
 }
 
@@ -560,14 +514,14 @@ h1 {
 }
 
 .game-card__content {
-  background-color: var(--black-color);
+  background-color: var(--bg1);
   width: 100%;
   display: flex;
   flex-direction: column;
 }
 
 .game-card__price-wrapper {
-  color: var(--green-color);
+  color: var(--green);
   font-size: 2rem;
   font-weight: bold;
   display: flex;
@@ -592,12 +546,12 @@ h1 {
 }
 
 .game-card__add-cart a {
-  color: var(--text-color);
+  color: var(--text);
   margin-left: 0.5rem;
 }
 
 .game-card__add-cart:hover {
-  background-color: var(--green-color);
+  background-color: var(--green);
   cursor: pointer;
   transform: scale(1.05);
 }
@@ -608,7 +562,7 @@ h1 {
   position: absolute;
   bottom: 1rem;
   right: 5%;
-  color: var(--text-color);
+  color: var(--text);
 }
 
 .game-card__wishlist .fa-heart {
@@ -617,7 +571,7 @@ h1 {
 }
 
 .game-card__wishlist .fa-heart:hover {
-  color: var(--green-color);
+  color: var(--green);
   cursor: pointer;
   transform: scale(1.1);
 }
@@ -695,7 +649,7 @@ h1 {
 
   .whislist-add__button:hover {
     transform: scale(1.05);
-    background-color: var(--green-color);
+    background-color: var(--green);
     font-size: 2.2rem;
   }
 

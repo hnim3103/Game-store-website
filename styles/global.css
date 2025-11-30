@@ -23,11 +23,11 @@ html{
 
 :root {
   --green: #00e122;
-  --black-color: #070f1a;
   --text: #ffffff;
   --super-dark-green-color: #0f232c;
   --bg1: #070f1a;
   --bg2: #225557;
+  --dark-blue-color: #070F1A;
   font-size: 10px;
 }
 
