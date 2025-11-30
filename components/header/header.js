@@ -209,6 +209,7 @@ function initAutoIndexing() {
     if (!card.dataset.id) {
       const uniqueId = `${pageName}_game_${index}`;
       card.dataset.id = uniqueId;
+      console.log(`Assigned ID ${uniqueId} to card on ${pageName}`);
     }
     // B. Gán Ảnh nếu chưa có
     if (!card.dataset.img) {
@@ -268,13 +269,13 @@ function saveGlobalWishlist(items) {
 
 document.body.addEventListener("click", (e) => {
   const btn = e.target.closest(
-    ".game-card__wishlist, .slider__wishlist, .game-item__wishlist, .wishlist"
+    ".game-card__wishlist, .slider__wishlist, .game-item__wishlist, .wishlist, .product-card__wishlist"
   );
 
   if (btn) {
     e.preventDefault();
     const card = btn.closest(
-      ".game-card, .game-info, .game-item, .review-card, .slider__card"
+      ".game-card, .game-info, .game-item, .review-card, .slider__card, .product-card"
     );
 
     // LẤY DỮ LIỆU
@@ -343,7 +344,7 @@ function saveGlobalCart(items) {
 // Lắng nghe sự kiện Click Add to Cart
 document.body.addEventListener("click", (e) => {
   const btn = e.target.closest(
-    ".game-item__add-cart, .slider__add-cart, .game-item__add-cart, .product-card__add-cart, .btn-cart"
+    ".game-card__add-cart, .slider__add-cart, .product-card__add-cart, .btn-cart"
   );
   if (!btn) return;
   if (btn) {
@@ -361,7 +362,7 @@ document.body.addEventListener("click", (e) => {
     }
 
     const card = btn.closest(
-      ".game-card, .game-item, .product-card, .game-info, .slider__card"
+      ".game-card, .game-item, .product-card, .game-info, .slider__card, .btn-cart"
     );
 
     // LẤY DỮ LIỆU

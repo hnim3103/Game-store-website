@@ -4,9 +4,9 @@
 
 /* Kiểu chính Footer: Nền tổng thể, padding và font family */
 .footer {
-  background: linear-gradient(180deg, var(--bg1) 0%, var(--super-dark-green-color) 50%, var(--dark-green-color) 100%);
+  background: linear-gradient(180deg, var(--bg1) 0%, var(--super-dark-green-color) 50%, var(--bg2) 100%);
   padding: 80px 20px 40px;
-  color: var(--text-color);
+  color: var(--text);
   margin-top: 100px;
   font-family: 'Roboto Flex', sans-serif;
   position: relative; /* Để định vị pseudo-element */
@@ -20,7 +20,7 @@
   left: 0;
   right: 0;
   height: 2px;
-  background: var(--green-color);
+  background: var(--green);
   animation: glow 2s ease-in-out infinite alternate;
 }
 
@@ -44,11 +44,15 @@
 /* Kiểu Phần Thương hiệu: Logo, văn bản và mạng xã hội */
 .footer__brand {
   flex: 1;
-  min-width: 280px;
+  width: auto;
+}
+
+.footer__brand img{
+  height: auto;
 }
 
 .footer__logo {
-  width: 140px;
+  font-size: 140px;
   margin-bottom: 20px;
   filter: drop-shadow(0 0 10px rgba(0, 225, 34, 0.3));
   transition: transform 0.3s ease;
@@ -79,7 +83,7 @@
   width: 50px;
   height: 50px;
   font-size: 1.6rem;
-  color: var(--text-color);
+  color: var(--text);
   background: rgba(0, 225, 34, 0.1);
   border: 1px solid rgba(0, 225, 34, 0.2);
   border-radius: 50%;
@@ -89,7 +93,7 @@
 
 .footer__socials a:hover {
   background: rgba(0, 225, 34, 0.2);
-  border-color: var(--green-color);
+  border-color: var(--green);
   transform: scale(1.1);
   box-shadow: 0 0 10px rgba(0, 225, 34, 0.3);
 }
@@ -115,7 +119,7 @@
   font-size: 1.8rem;
   font-weight: 700;
   margin-bottom: 10px;
-  color: var(--green-color);
+  color: var(--green);
   text-transform: uppercase;
   letter-spacing: 1px;
   position: relative;
@@ -128,7 +132,7 @@
   left: 0;
   width: 30px;
   height: 2px;
-  background: var(--green-color);
+  background: var(--green);
 }
 
 /* Kiểu Liên kết và Văn bản Hỗ trợ: Cơ sở chung cho liên kết và mục không nhấp */
@@ -156,7 +160,7 @@
 .footer__support-text i {
   font-size: 1.2rem;
   width: 16px;
-  color: var(--green-color);
+  color: var(--green);
   opacity: 0.7;
   transition: opacity 0.3s ease;
 }
@@ -167,7 +171,7 @@
 
 /* Hiệu ứng Hover Liên kết: Thay đổi màu, dịch chuyển và gạch chân */
 .footer__column a:hover {
-  color: var(--text-color);
+  color: var(--text);
   transform: translateX(5px);
   background: rgba(0, 225, 34, 0.05);
   padding-left: 10px;
@@ -180,7 +184,7 @@
   bottom: 0;
   width: 0;
   height: 1px;
-  background: var(--green-color);
+  background: var(--green);
   transition: width 0.3s ease;
 }
 
@@ -215,7 +219,7 @@
   }
 
   .footer__brand {
-    min-width: auto;
+    min-width: 280px;
   }
 
   .footer__logo {

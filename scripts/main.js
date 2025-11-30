@@ -1,15 +1,18 @@
 document.addEventListener("DOMContentLoaded", function () {
   // Lấy tất cả các câu hỏi FAQ
   const faqQuestions = document.querySelectorAll(".faq__question");
-
+  // Thêm sự kiện click cho từng câu hỏi
   faqQuestions.forEach((question) => {
+    // Xử lý khi click vào câu hỏi
     question.addEventListener("click", function () {
+      // Lấy phần tử cha và các phần tử liên quan
       const faqItem = this.parentElement;
       const faqAnswer = faqItem.querySelector(".faq__answer");
       const toggleIcon = this.querySelector(".faq__toggle");
       const isActive = faqItem.classList.contains("active");
-
+      // Đóng tất cả các câu hỏi khác
       document.querySelectorAll(".faq__item").forEach((item) => {
+        // Nếu không phải câu hỏi hiện tại, đóng nó lại
         const answer = item.querySelector(".faq__answer");
         const icon = item.querySelector(".faq__toggle");
         if (item !== faqItem) {
@@ -19,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
           icon.classList.add("bx-plus");
         }
       });
-
+      // Mở hoặc đóng câu hỏi hiện tại
       if (isActive) {
         faqItem.classList.remove("active");
         faqAnswer.style.maxHeight = null;

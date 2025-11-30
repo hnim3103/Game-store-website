@@ -1,0 +1,76 @@
+.success-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(180deg, var(--bg1) 5%, #0b2a2e 45%, var(--bg2) 95%);
+    color: var(--text);
+    padding: 20px;
+}
+
+.success-icon {
+    font-size: 8rem;
+    color: var(--green);
+    margin-bottom: 2rem;
+    animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.success-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--green);
+}
+
+@media (max-width: 768px) {
+    .success-title {
+        font-size: 2.2rem;
+    }
+
+    .success-icon {
+        font-size: 6rem;
+    }
+}
+
+.success-message {
+    font-size: 1.8rem;
+    margin-bottom: 3rem;
+    color: #ccc;
+}
+
+.redirect-text {
+    font-size: 1.4rem;
+    opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+    .success-message {
+        font-size: 1.2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .redirect-text {
+        font-size: 1.1rem;
+    }
+}
+
+#countdown {
+    font-weight: bold;
+    color: var(--green);
+    font-size: 1.4rem
+}
+
+@media (max-width: 768px) {
+    #countdown {
+        font-size: 1.2rem;
+    }
+}
+
+/* Hiệu ứng dấu tích nảy ra */
+@keyframes popIn {
+    0% { transform: scale(0); opacity: 0; }
+    80% { transform: scale(1.1); opacity: 1; }
+    100% { transform: scale(1); }
+}

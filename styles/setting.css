@@ -1,3 +1,8 @@
+img {
+  width: 100%;
+  height: auto;
+}
+
 h1 {
   font-size: 3rem;
 }
@@ -348,7 +353,7 @@ input[type="checkbox"] {
   left: 50% !important;
   transform: translate(-50%, -50%) !important;
   font-size: clamp(12px, 2vw, 20px) !important;
-  color: var(--black-color) !important;
+  color: var(--bg1) !important;
   display: block !important;
 }
 
@@ -433,7 +438,7 @@ input[type="checkbox"] {
   cursor: pointer;
 }
 .update-overlay__content select option {
-  background-color: var(--);
+  background-color: var(--bg2);
   color: var(--text);
 }
 

@@ -36,7 +36,7 @@
 
 .email__button--phone {
   margin-right: 4%;
-  box-shadow: 0px 5px 8px var(--black-color);
+  box-shadow: 0px 5px 8px var(--bg1);
 }
 /* form */
 .email__form {

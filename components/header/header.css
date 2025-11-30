@@ -444,11 +444,12 @@
 
 .category__collabsible {
   position: absolute;
-  width: 90%;
+  width: 100%;
   display: none;
-  left: 5%;
+  left: 0;
   margin: auto;
   margin-top: 30px;
+  height: 560px;
 }
 
 .category__selections {
@@ -522,10 +523,10 @@
 }
 
 .game-grid {
-  margin-top: 30px;
+  margin-top: 10px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 20px;
+  gap: 10px;
 }
 
 .button__container {
@@ -680,6 +681,15 @@
 }
 
 .btn-confirm {
-  background: var(--green-color);
-  color: #070f1a;
+  background-color: var(--green);
+}
+select {
+  background: transparent;
+  color: var(--text);
+  border: none;
+  outline: none;
+}
+
+option {
+  background-color: var(--bg-dark-1);
 }

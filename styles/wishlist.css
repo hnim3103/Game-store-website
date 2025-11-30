@@ -1,3 +1,8 @@
+img {
+  width: 100%;
+  height: auto;
+}
+
 h1 {
   font-size: 3rem;
 }
@@ -132,7 +137,7 @@ h1 {
   margin-top: 3rem;
   width: 100%;
   align-items: center;
-  background-color: var(--dark-green-color);
+  background-color: var(--bg2);
   box-shadow: 0px 5px 5px var(--green);
 }
 /* Hear in introduce */
@@ -381,7 +386,7 @@ h1 {
 }
 /* style after click add to cart */
 .wishlist-item-box__button.button--clicked {
-  background-color: var(--black-color);
+  background-color: var(--bg1);
   filter: none;
   cursor: default;
 }
@@ -389,7 +394,7 @@ h1 {
 /* Override hover and active states  */
 .wishlist-item-box__button.button--clicked:hover,
 .wishlist-item-box__button.button--clicked:active {
-  background-color: var(--black-color);
+  background-color: var(--bg1);
   filter: none;
   transform: scale(1);
 }
@@ -473,7 +478,7 @@ h1 {
 #slider-prev:hover,
 #slider-next:hover {
   background-color: var(--green);
-  color: var(--black-color);
+  color: var(--bg1);
   transform: scale(1.1);
 }
 
@@ -509,7 +514,7 @@ h1 {
 }
 
 .game-card__content {
-  background-color: var(--black-color);
+  background-color: var(--bg1);
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -528,16 +533,16 @@ h1 {
 }
 
 .game-card__add-cart {
-  background-color: var(--super-dark-green-color);
-  width: 70%;
   font-size: 1.8rem;
-  height: 5rem;
-  display: flex;
-  align-items: center;
-  padding: 1.5rem;
-  margin-left: 0.5rem;
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
+  color: var(--text);
+  border: none;
+  background-color: var(--super-dark-green-color);
+  cursor: pointer;
+  height: 4rem;
+  text-align: left;
+  padding-left: 20px;
+  padding-right: 50px;
+  box-shadow: 0px 4px 4px 0px black;
 }
 
 .game-card__add-cart a {
@@ -552,7 +557,7 @@ h1 {
 }
 
 .game-card__wishlist {
-  background: none;
+  background-color: transparent;
   border: none;
   position: absolute;
   bottom: 1rem;
@@ -561,8 +566,8 @@ h1 {
 }
 
 .game-card__wishlist .fa-heart {
-  font-size: 4rem;
-  margin-right: -0.4rem;
+  font-size: 3rem;
+  margin-right: -1rem;
 }
 
 .game-card__wishlist .fa-heart:hover {
@@ -784,7 +789,14 @@ h1 {
     right: 0.5rem;
   }
   .genres__grid {
-    height: 250px;
+    height: 400px;
+  }
+
+  .fa-angle-left {
+    left: 2.5rem;
+  }
+  .fa-angle-right {
+    right: 2.5rem;
   }
   .game-card__add-cart {
     font-size: 1.6rem;

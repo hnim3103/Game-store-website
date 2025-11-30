@@ -80,7 +80,6 @@ document.addEventListener("DOMContentLoaded", () => {
       btn.addEventListener("click", (e) => {
         e.preventDefault();
         btn.classList.add("button--clicked");
-        btn.innerText = "IN CART";
       });
     });
   }
