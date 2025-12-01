@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", async function () {
   try {
-    // Preload CSS first (loads in parallel)
+    //preload css
     const cssFiles = [
       "/components/header/header.css",
       "/styles/global.css",
@@ -14,9 +14,14 @@ document.addEventListener("DOMContentLoaded", async function () {
       document.head.appendChild(link);
     });
 
-    // Load HTML + JS in parallel
-    const [html] = await Promise.all([
-      fetch("/components/header/header.html").then(res => res.text()),
+    const html = await fetch("/components/header/header.html").then(res => res.text());
+
+    // Inject HTML immediately
+    document.body.insertAdjacentHTML("afterbegin", html);
+
+
+    //load js
+    await Promise.all([
       loadScript("/scripts/auth.js"),
       loadScript("/components/header/header.js"),
       loadScript("/scripts/login.js"),
@@ -26,12 +31,10 @@ document.addEventListener("DOMContentLoaded", async function () {
       loadScript("/scripts/fetchAPI_game-card.js"),
     ]);
 
-    // Insert header only AFTER everything is loaded
-    document.body.insertAdjacentHTML("afterbegin", html);
-
+    //update auth UI
     if (window.Auth) {
       window.Auth.updateUI();
-      console.log("✓ Header fully loaded");
+      console.log("✓ Header loaded + buttons active");
     }
 
   } catch (err) {
@@ -39,13 +42,13 @@ document.addEventListener("DOMContentLoaded", async function () {
   }
 });
 
-// Script loader
+//Script loader
 function loadScript(src) {
   return new Promise((resolve, reject) => {
     const s = document.createElement("script");
     s.src = src;
     s.onload = resolve;
-    s.onerror = () => reject(new Error("Failed: " + src));
+    s.onerror = () => reject(new Error("Failed to load " + src));
     document.head.appendChild(s);
   });
 }
