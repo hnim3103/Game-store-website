@@ -220,3 +220,9 @@
     padding: 2rem 0.5rem;
   }
 }
+
+@media screen and (max-width: 1024px) and (min-width: 768px) {
+  .phone {
+    padding: 3rem 1rem;
+  }
+}

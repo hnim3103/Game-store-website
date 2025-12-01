@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GSW – Purchases</title>
     <script src="../scripts/include-header.js"></script>
     <!-- Main Styles -->
-    <link rel="stylesheet" href="/styles/global.css">
-    <link rel="stylesheet" href="../styles/your-purchases.css">
+    <link rel="stylesheet" href="/styles/global.css" />
+    <link rel="stylesheet" href="../styles/your-purchases.css" />
 
     <!-- Fonts & Icons -->
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Roboto+Flex:wght@400;600;700&display=swap"
-   >
+    />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"
-   >
+    />
     <script
       src="https://kit.fontawesome.com/546bf66050.js"
       crossorigin="anonymous"
@@ -37,7 +37,7 @@
               src="../img/icons/Ellipse 2.svg"
               class="profile-bar__avatar"
               alt=""
-           >
+            />
             <div class="profile-bar__text">
               <span class="profile-bar__username">KZy24</span>
               <span class="profile-bar__fullname">Nguyen Khanh Vy</span>
@@ -51,7 +51,7 @@
           <ul class="user-nav__list">
             <li>
               <a href="./wishlist.html" class="user-nav__link"
-                ><img src="../img/icons/whislist.svg" alt=""><span
+                ><img src="../img/icons/whislist.svg" alt="" /><span
                   >WISHLIST</span
                 ></a
               >
@@ -60,21 +60,21 @@
               <a
                 href="./purchases.html"
                 class="user-nav__link user-nav__link--active"
-                ><img src="../img/icons/purchase.png" alt=""><span
+                ><img src="../img/icons/purchase.png" alt="" /><span
                   >YOUR PURCHASES</span
                 ></a
               >
             </li>
             <li>
               <a href="./wallet.html" class="user-nav__link"
-                ><img src="../img/icons/wallet.svg" alt=""><span
+                ><img src="../img/icons/wallet.svg" alt="" /><span
                   >WALLET</span
                 ></a
               >
             </li>
             <li>
               <a href="./setting.html" class="user-nav__link"
-                ><img src="../img/icons/setting.svg" alt=""><span
+                ><img src="../img/icons/setting.svg" alt="" /><span
                   >SETTINGS</span
                 ></a
               >
@@ -89,7 +89,7 @@
           <!-- Item -->
           <div class="order-card">
             <a href="game-info.html" aria-label="View Details">
-              <img src="../img/assets/1.png" class="order-card__image" alt="">
+              <img src="../img/assets/1.png" class="order-card__image" alt="" />
             </a>
             <div class="order-card__details">
               <h3 class="order-card__title">OUTLAST Trinity</h3>
@@ -103,7 +103,7 @@
 
           <div class="order-card">
             <a href="game-info.html" aria-label="View Details">
-              <img src="../img/assets/1.png" class="order-card__image" alt="">
+              <img src="../img/assets/1.png" class="order-card__image" alt="" />
             </a>
             <div class="order-card__details">
               <h3 class="order-card__title">DYING LIGHT</h3>
@@ -126,7 +126,7 @@
           <!-- Card -->
           <div class="activity-card">
             <a href="game-info.html" aria-label="View Details">
-              <img src="../img/assets/1.png" class="order-card__image" alt="">
+              <img src="../img/assets/1.png" class="order-card__image" alt="" />
             </a>
             <div class="activity-card__content">
               <h3 class="activity-card__title">Dying Light: The Beast</h3>
@@ -153,7 +153,7 @@
           <!-- Card -->
           <div class="activity-card">
             <a href="game-info.html" aria-label="View Details">
-              <img src="../img/assets/1.png" class="order-card__image" alt="">
+              <img src="../img/assets/1.png" class="order-card__image" alt="" />
             </a>
             <div class="activity-card__content">
               <h3 class="activity-card__title">Dying Light: The Beast</h3>
@@ -179,7 +179,7 @@
           <!--Cart-->
           <div class="activity-card">
             <a href="game-info.html" aria-label="View Details">
-              <img src="../img/assets/1.png" class="order-card__image" alt="">
+              <img src="../img/assets/1.png" class="order-card__image" alt="" />
             </a>
             <div class="activity-card__content">
               <h3 class="activity-card__title">Dying Light: The Beast</h3>
@@ -212,139 +212,162 @@
         <div class="genres__grid">
           <i class="fa-solid fa-angle-left" id="slider-prev"></i>
           <article class="game-card">
+            <!--a tag is used to direct user to game's information-->
             <a href="game-info.html" title="View game">
+              <!--Game visual-->
               <div class="game-card__image">
-                <img src="/img/assets/1.png" alt="Game">
-              </div>
-              <div class="game-card__content">
-                <div class="game-card__price-wrapper">
-                  <div class="game-card__price">
-                    <p>4.99$</p>
-                  </div>
-                </div>
-                <div class="game-card__add-cart">
-                  <i class="fa-solid fa-cart-plus"></i>
-                  <a href="#cart">Add to cart</a>
-                </div>
-                <button
-                  class="game-card__wishlist"
-                  aria-label="Add to wishlist"
-                >
-                  <i class="fa-regular fa-heart"></i>
-                </button>
+                <img src="/img/assets/1.png" alt="Trending 4" loading="lazy" />
               </div>
             </a>
+            <div class="game-card__content">
+              <div class="game-card__price-wrapper">
+                <div class="game-card__price">
+                  <span>4.99$</span>
+                </div>
+              </div>
+
+              <div class="game-card__buttons">
+                <button class="game-card__add-cart">
+                  <i class="fa-solid fa-cart-plus" aria-hidden="true"></i>
+                  <span>Add to cart</span>
+                </button>
+                <button
+                  class="game-card__wishlist"
+                  data-id="game_01"
+                  data-img="/img/assets/1.png"
+                  aria-label="Add to wishlist"
+                >
+                  <i class="fa-regular fa-heart" aria-hidden="true"></i>
+                </button>
+              </div>
+            </div>
           </article>
 
           <article class="game-card">
+            <!--a tag is used to direct user to game's information-->
             <a href="game-info.html" title="View game">
+              <!--Game visual-->
               <div class="game-card__image">
-                <img src="/img/assets/2.jpg" alt="Game">
-              </div>
-              <div class="game-card__content">
-                <div class="game-card__price-wrapper">
-                  <div class="game-card__price">
-                    <p>4.99$</p>
-                  </div>
-                </div>
-                <div class="game-card__add-cart">
-                  <i class="fa-solid fa-cart-plus"></i>
-                  <a href="#cart"
-                    ><span class="game-card__add-cart-text"
-                      >Add to cart</span
-                    ></a
-                  >
-                </div>
-                <button
-                  class="game-card__wishlist"
-                  aria-label="Add to wishlist"
-                >
-                  <i class="fa-regular fa-heart"></i>
-                </button>
+                <img src="/img/assets/1.png" alt="Trending 4" loading="lazy" />
               </div>
             </a>
+            <div class="game-card__content">
+              <div class="game-card__price-wrapper">
+                <div class="game-card__price">
+                  <span>4.99$</span>
+                </div>
+              </div>
+
+              <div class="game-card__buttons">
+                <button class="game-card__add-cart">
+                  <i class="fa-solid fa-cart-plus" aria-hidden="true"></i>
+                  <span>Add to cart</span>
+                </button>
+                <button
+                  class="game-card__wishlist"
+                  data-id="game_02"
+                  data-img="/img/assets/2.jpg"
+                  aria-label="Add to wishlist"
+                >
+                  <i class="fa-regular fa-heart" aria-hidden="true"></i>
+                </button>
+              </div>
+            </div>
           </article>
 
           <article class="game-card">
+            <!--a tag is used to direct user to game's information-->
             <a href="game-info.html" title="View game">
+              <!--Game visual-->
               <div class="game-card__image">
-                <img src="/img/assets/3.jpg" alt="Game">
-              </div>
-              <div class="game-card__content">
-                <div class="game-card__price-wrapper">
-                  <div class="game-card__price">
-                    <p>4.99$</p>
-                  </div>
-                </div>
-                <div class="game-card__add-cart">
-                  <i class="fa-solid fa-cart-plus"></i>
-                  <a href="#cart"
-                    ><span class="game-card__add-cart-text"
-                      >Add to cart</span
-                    ></a
-                  >
-                </div>
-                <button
-                  class="game-card__wishlist"
-                  aria-label="Add to wishlist"
-                >
-                  <i class="fa-regular fa-heart"></i>
-                </button>
+                <img src="/img/assets/1.png" alt="Trending 4" loading="lazy" />
               </div>
             </a>
+            <div class="game-card__content">
+              <div class="game-card__price-wrapper">
+                <div class="game-card__price">
+                  <span>4.99$</span>
+                </div>
+              </div>
+
+              <div class="game-card__buttons">
+                <button class="game-card__add-cart">
+                  <i class="fa-solid fa-cart-plus" aria-hidden="true"></i>
+                  <span>Add to cart</span>
+                </button>
+                <button
+                  class="game-card__wishlist"
+                  data-id="game_03"
+                  data-img="/img/assets/3.jpg"
+                  aria-label="Add to wishlist"
+                >
+                  <i class="fa-regular fa-heart" aria-hidden="true"></i>
+                </button>
+              </div>
+            </div>
           </article>
           <article class="game-card">
+            <!--a tag is used to direct user to game's information-->
             <a href="game-info.html" title="View game">
+              <!--Game visual-->
               <div class="game-card__image">
-                <img src="/img/assets/1.png" alt="Game">
-              </div>
-              <div class="game-card__content">
-                <div class="game-card__price-wrapper">
-                  <div class="game-card__price">
-                    <p>4.99$</p>
-                  </div>
-                </div>
-                <div class="game-card__add-cart">
-                  <i class="fa-solid fa-cart-plus"></i>
-                  <a href="#cart">Add to cart</a>
-                </div>
-                <button
-                  class="game-card__wishlist"
-                  aria-label="Add to wishlist"
-                >
-                  <i class="fa-regular fa-heart"></i>
-                </button>
+                <img src="/img/assets/1.png" alt="Trending 4" loading="lazy" />
               </div>
             </a>
+            <div class="game-card__content">
+              <div class="game-card__price-wrapper">
+                <div class="game-card__price">
+                  <span>4.99$</span>
+                </div>
+              </div>
+
+              <div class="game-card__buttons">
+                <button class="game-card__add-cart">
+                  <i class="fa-solid fa-cart-plus" aria-hidden="true"></i>
+                  <span>Add to cart</span>
+                </button>
+                <button
+                  class="game-card__wishlist"
+                  data-id="game_04"
+                  data-img="/img/assets/1.png"
+                  aria-label="Add to wishlist"
+                >
+                  <i class="fa-regular fa-heart" aria-hidden="true"></i>
+                </button>
+              </div>
+            </div>
           </article>
 
           <article class="game-card">
+            <!--a tag is used to direct user to game's information-->
             <a href="game-info.html" title="View game">
+              <!--Game visual-->
               <div class="game-card__image">
-                <img src="/img/assets/2.jpg" alt="Game">
-              </div>
-              <div class="game-card__content">
-                <div class="game-card__price-wrapper">
-                  <div class="game-card__price">
-                    <p>4.99$</p>
-                  </div>
-                </div>
-                <div class="game-card__add-cart">
-                  <i class="fa-solid fa-cart-plus"></i>
-                  <a href="#cart"
-                    ><span class="game-card__add-cart-text"
-                      >Add to cart</span
-                    ></a
-                  >
-                </div>
-                <button
-                  class="game-card__wishlist"
-                  aria-label="Add to wishlist"
-                >
-                  <i class="fa-regular fa-heart"></i>
-                </button>
+                <img src="/img/assets/1.png" alt="Trending 4" loading="lazy" />
               </div>
             </a>
+            <div class="game-card__content">
+              <div class="game-card__price-wrapper">
+                <div class="game-card__price">
+                  <span>4.99$</span>
+                </div>
+              </div>
+
+              <div class="game-card__buttons">
+                <button class="game-card__add-cart">
+                  <i class="fa-solid fa-cart-plus" aria-hidden="true"></i>
+                  <span>Add to cart</span>
+                </button>
+                <button
+                  class="game-card__wishlist"
+                  data-id="game_05"
+                  data-img="/img/assets/2.jpg"
+                  aria-label="Add to wishlist"
+                >
+                  <i class="fa-regular fa-heart" aria-hidden="true"></i>
+                </button>
+              </div>
+            </div>
           </article>
 
           <i class="fa-solid fa-angle-right" id="slider-next"></i>

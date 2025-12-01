@@ -3,7 +3,7 @@
   flex-direction: column;
   align-items: center;
   padding: 4rem 2rem;
-  background-color: #0f232c;
+  background-color: var(--super-dark-green-color);
   border-radius: 6px;
   width: clamp(320px, 30vw, 400px);
 }
@@ -223,7 +223,13 @@ input {
   display: block;
 }
 /* Mobile */
-@media (max-width: 767px) {
+@media screen and (max-width: 767px) {
+  .login {
+    padding: 2rem 1rem;
+  }
+}
+
+@media screen and (max-width: 1024px) and (min-width: 768px) {
   .login {
     padding: 2rem 1rem;
   }

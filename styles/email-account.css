@@ -156,3 +156,9 @@
     padding: 2rem 1rem;
   }
 }
+
+@media screen and (max-width: 1024px) and (min-width: 768px) {
+  .email {
+    padding: 3rem 1rem;
+  }
+}

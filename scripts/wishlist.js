@@ -1,5 +1,105 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const wishlistContainer = document.getElementById("wishlist-container");
+  const wishlistCountLabel = document.getElementById("wishlist-count");
+  const STORAGE_KEY = "list_wishlist";
+
+  // QUẢN LÝ DỮ LIỆU
+  function getWishlist() {
+    const data = localStorage.getItem(STORAGE_KEY);
+    return data ? JSON.parse(data) : [];
+  }
+
+  function saveWishlist(items) {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
+    renderWishlist();
+  }
+
+  // RENDER HTML
+  function createWishlistItemHTML(game) {
+    return `
+      <div class="wishlist-item-box">
+          <div class="wishlist-item-box__column wishlist-item-box__product">
+            <a href="game-info.html">
+              <img src="${
+                game.img || "/img/assets/1.png"
+              }" alt="Game Cover" class="wishlist-item-box__image" />
+            </a>
+            <div class="wishlist-item-box__details">
+              <span class="wishlist-item-box__title">OUTLAST Trinity</span>
+              <span class="wishlist-item-box__info">Zombies, Action</span>
+              <span class="wishlist-item-box__info">Release: 2024</span>
+            </div>
+          </div>
+
+          <span class="wishlist-item-box__release-date">8 OCT 25</span>
+
+          <div class="wishlist-item-box__column wishlist-item-box__actions">
+            <div class="wishlist-item-box__price-tag">
+              <label class="discount-percent">-75%</label>
+              <div class="price-container">
+                <label class="price-original"><u>$19.99</u></label>
+                <label class="price-sale">$4.99</label>
+              </div>
+            </div>
+
+            <div class="action-buttons">
+              <a href="#" class="wishlist-item-box__button">ADD TO CART</a>
+              <img src="/img/icons/bin.png" class="wishlist-item-box__remove-icon" onclick="removeGame('${
+                game.id
+              }')" />
+            </div>
+          </div>
+        </div>
+    `;
+  }
+
+  function renderWishlist() {
+    const items = getWishlist();
+
+    if (wishlistCountLabel)
+      wishlistCountLabel.textContent = `${items.length} Games`;
+    if (!wishlistContainer) return;
+
+    wishlistContainer.innerHTML = "";
+
+    if (items.length === 0) {
+      wishlistContainer.innerHTML = `<p style="text-align: center; padding: 40px; color: #fff; font-size: 30px">Your wishlist is empty.</p>`;
+    } else {
+      items.forEach((game) => {
+        wishlistContainer.insertAdjacentHTML(
+          "beforeend",
+          createWishlistItemHTML(game)
+        );
+      });
+    }
+    attachCartEvents();
+  }
+
+  function attachCartEvents() {
+    document.querySelectorAll(".wishlist-item-box__button").forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        e.preventDefault();
+        btn.classList.add("button--clicked");
+      });
+    });
+  }
+
+  // HÀM XÓA
+  window.removeGame = function (id) {
+    const newItems = getWishlist().filter((item) => item.id !== id);
+    saveWishlist(newItems);
+
+    // Gọi thông báo từ Header (nếu có)
+    if (typeof window.showNotification === "function") {
+      window.showNotification("Removed from wishlist", "remove");
+    }
+  };
+  window.addEventListener("storageUpdated", () => {
+    renderWishlist();
+  });
+
   // SLIDER
+
   const cards = document.querySelectorAll(".genres__grid .game-card");
   const prevBtn = document.getElementById("slider-prev");
   const nextBtn = document.getElementById("slider-next");
@@ -10,31 +110,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function updateSlider() {
       cards.forEach((card, index) => {
-        // remove old class
         card.classList.remove("active", "prev", "next", "prev-2", "next-2");
 
-        // 1.Calculate position
         const prev2Index = (currentIndex - 2 + totalCards) % totalCards;
         const prevIndex = (currentIndex - 1 + totalCards) % totalCards;
         const nextIndex = (currentIndex + 1) % totalCards;
         const next2Index = (currentIndex + 2) % totalCards;
 
-        // 2. assign new class based on location
-        if (index === currentIndex) {
-          card.classList.add("active"); // mid card
-        } else if (index === prevIndex) {
-          card.classList.add("prev"); // left card
-        } else if (index === nextIndex) {
-          card.classList.add("next"); // right card
-        } else if (index === prev2Index) {
-          card.classList.add("prev-2"); // hide card(left)
-        } else if (index === next2Index) {
-          card.classList.add("next-2"); // hide card(right)
-        }
+        if (index === currentIndex) card.classList.add("active");
+        else if (index === prevIndex) card.classList.add("prev");
+        else if (index === nextIndex) card.classList.add("next");
+        else if (index === prev2Index) card.classList.add("prev-2");
+        else if (index === next2Index) card.classList.add("next-2");
       });
     }
 
-    // 3. assign event to button
     nextBtn.addEventListener("click", () => {
       currentIndex = (currentIndex + 1) % totalCards;
       updateSlider();
@@ -48,45 +138,5 @@ document.addEventListener("DOMContentLoaded", () => {
     updateSlider();
   }
 
-  //  DARKEN BUTTON WHEN CLICKED
-  const allCartButtons = document.querySelectorAll(
-    ".wishlist-item-box__button"
-  );
-  //Loop for button
-  allCartButtons.forEach(function (button) {
-    // listen click event
-    button.addEventListener("click", function (event) {
-      event.preventDefault();
-      //add new class on the old class
-      button.classList.add("button--clicked");
-    });
-  });
-
-  //  HIDE BOX WHEN CLICK BIN
-  const allRemoveIcons = document.querySelectorAll(
-    ".wishlist-item-box__remove-icon"
-  );
-  // loop for icon
-  allRemoveIcons.forEach(function (icon) {
-    icon.addEventListener("click", function () {
-      const parentBox = icon.closest(".wishlist-item-box");
-      //remove box
-      if (parentBox) {
-        parentBox.remove();
-      }
-    });
-  });
-  // Sign-Out
-  const signOutButton = document.querySelector(".profile-bar__signout");
-  if (signOutButton) {
-    signOutButton.addEventListener("click", (e) => {
-      e.preventDefault();
-
-      // Xóa đúng cái Key đã lưu
-      localStorage.removeItem("loggedInUserEmail"); // <-- SỬA DÒNG NÀY
-
-      alert("You have logged out.");
-      window.location.href = "/html/homepage.html";
-    });
-  }
+  renderWishlist();
 });
