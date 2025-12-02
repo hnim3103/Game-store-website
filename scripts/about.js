@@ -1,279 +1,248 @@
 /**
- * ============================================
- * about.js - Script xử lý animation và tương tác
- * 
- * Chức năng chính:
- * 1. Scroll reveal animation - hiện elements khi scroll
- * 2. Rotating quote text - đổi quote mỗi 2.5 giây
- * 3. Scroll progress indicator - thanh chỉ báo scroll
- * 4. Smooth scrolling - cuộn mượt khi click anchor links
- * ============================================
- */
+* ============================================
+* about.js - Script for handling animation and interactions
+*
+* Main functions:
+* 1. Scroll reveal animation - show elements on scroll
+* 2. Rotating quote text - change quote every 2.5 seconds
+* 3. Scroll progress indicator - scroll progress bar
+* 4. Smooth scrolling - smooth scroll when clicking anchor links
+* ============================================
+*/
 
-// Đợi DOM load hoàn toàn trước khi chạy script
+// Wait for the DOM to fully load before running the script
 document.addEventListener("DOMContentLoaded", () => {
 
-    /* ============================================
-       SCROLL REVEAL ANIMATION
-       Phát hiện khi elements vào viewport và thêm class "visible"
-       ============================================ */
-    
-    // Lấy tất cả elements cần reveal khi scroll
-    // querySelectorAll trả về NodeList của tất cả elements match
-    const revealEls = document.querySelectorAll(".hero, .section, .showcase, .review, .partners");
+/* ============================================
+SCROLL REVEAL ANIMATION
+Detect when elements enter viewport and add class "visible"
+============================================ */
 
-    /**
-     * Hàm reveal: Kiểm tra vị trí element so với viewport
-     * Được gọi mỗi khi user scroll hoặc load page
-     */
-    const reveal = () => {
-        // Trigger point: 90% chiều cao viewport
-        // Nghĩa là khi element còn cách đáy viewport 10% thì sẽ trigger
-        const trigger = window.innerHeight * 0.9;
+// Get all elements that need to be revealed when scrolling
+// querySelectorAll returns a NodeList of all matching elements
+const revealEls = document.querySelectorAll(".hero, .section, .showcase, .review, .partners");
 
-        // Loop qua tất cả elements cần reveal
-        revealEls.forEach((el) => {
-            // getBoundingClientRect() trả về vị trí và kích thước element
-            // .top: khoảng cách từ top của element đến top của viewport
-            const top = el.getBoundingClientRect().top;
-
-            // Nếu top < trigger nghĩa là element đã vào vùng nhìn thấy
-            if (top < trigger) {
-                el.classList.add("visible"); // Thêm class để trigger CSS animation
-            }
-        });
-    };
-
-    // Lắng nghe sự kiện scroll trên window
-    window.addEventListener("scroll", reveal);
-    
-    // Gọi ngay lần đầu để reveal các elements đã có sẵn trên màn hình
-    // (không cần scroll)
-    reveal();
-
-    /* ============================================
-       ROTATING QUOTE TEXT
-       Thay đổi text của quote mỗi 2.5 giây
-       ============================================ */
-    
-    // Lấy element chứa quote text bằng ID
-    const quote = document.getElementById("quote-text");
-
-    // Kiểm tra quote element có tồn tại không (defensive programming)
-    if (quote) {
-        // Array chứa các quote sẽ xoay vòng hiển thị
-        const quotes = [
-            "One of 50 Best Websites – TIME",
-            "Trusted by Millions of Gamers",
-            "Your Library, Your Rules",
-        ];
-
-        let index = 0; // Biến đếm index hiện tại
-
-        /**
-         * setInterval: Chạy function mỗi 2500ms (2.5 giây)
-         * Arrow function để giữ context của this
-         */
-        setInterval(() => {
-            // Xóa class "fade" để reset animation
-            quote.classList.remove("fade");
-            
-            // Trigger reflow - đảm bảo browser apply CSS trước khi thêm class lại
-            // offsetWidth là thuộc tính trigger reflow (force browser repaint)
-            void quote.offsetWidth;
-
-            // Tăng index, sử dụng modulo (%) để loop về 0 khi đến cuối array
-            // Ví dụ: (2 + 1) % 3 = 0 (quay lại đầu)
-            index = (index + 1) % quotes.length;
-            
-            // Đổi text content thành quote mới
-            quote.textContent = quotes[index];
-            
-            // Thêm lại class "fade" để trigger animation CSS
-            quote.classList.add("fade");
-        }, 2500); // 2500 milliseconds = 2.5 seconds
-    }
-
-    /* ============================================
-       ANIMATION: SCROLL PROGRESS INDICATOR
-       Tạo thanh progress bar ở top trang hiển thị % scroll
-       ============================================ */
-    
-    // Tạo progress bar element
-    const progressBar = document.createElement('div');
-    progressBar.className = 'scroll-indicator';
-    document.body.appendChild(progressBar);
-    
-    /**
-     * Update progress bar width dựa trên scroll position
-     */
-    function updateProgressBar() {
-        // scrollTop: số pixel đã scroll từ top
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        
-        // scrollHeight: tổng chiều cao có thể scroll
-        // clientHeight: chiều cao viewport
-        const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-        
-        // Tính % đã scroll (0-100)
-        const scrollPercent = (scrollTop / scrollHeight) * 100;
-        
-        // Cập nhật width của progress bar
-        progressBar.style.width = scrollPercent + '%';
-    }
-    
-    // Lắng nghe scroll event
-    window.addEventListener('scroll', updateProgressBar);
-    
-    // Gọi lần đầu
-    updateProgressBar();
-
-    /* ============================================
-       ANIMATION: CARD SHIMMER EFFECT
-       Tạo hiệu ứng ánh sáng lướt qua card khi load
-       ============================================ */
-    
-    /**
-     * Intersection Observer để phát hiện khi card vào viewport
-     * Sau đó trigger shimmer animation
-     */
-    const cards = document.querySelectorAll('.section__card');
-    
-    const cardObserver = new IntersectionObserver((entries) => {
-        entries.forEach((entry, index) => {
-            if (entry.isIntersecting) {
-                // Delay khác nhau cho mỗi card
-                setTimeout(() => {
-                    entry.target.style.animation = 'shimmer 1.5s ease-out';
-                }, index * 100); // Delay 100ms giữa mỗi card
-                
-                // Unobserve sau khi đã animate
-                cardObserver.unobserve(entry.target);
-            }
-        });
-    }, {
-        threshold: 0.2 // Trigger khi 20% card visible
-    });
-    
-    // Observe tất cả cards
-    cards.forEach(card => cardObserver.observe(card));
-
-    /* ============================================
-       BỎ: SECTION ICON ROTATION
-       Đã bỏ animation xoay icon khi scroll vào view
-       ============================================ */
-
-    /* ============================================
-       ANIMATION: SMOOTH SCROLL TO TOP
-       Nút scroll to top xuất hiện khi scroll xuống
-       ============================================ */
-    
-    // Tạo nút scroll to top
-    const scrollTopBtn = document.createElement('button');
-    scrollTopBtn.innerHTML = '↑';
-    scrollTopBtn.className = 'scroll-to-top';
-    scrollTopBtn.style.cssText = `
-        position: fixed;
-        bottom: 30px;
-        right: 30px;
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        background: var(--green);
-        color: var(--bg1);
-        border: none;
-        font-size: 24px;
-        cursor: pointer;
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.3s ease;
-        z-index: 9999;
-        box-shadow: 0 4px 12px rgba(0, 225, 34, 0.4);
-    `;
-    document.body.appendChild(scrollTopBtn);
-    
-    // Hiện/ẩn nút dựa trên scroll position
-    window.addEventListener('scroll', () => {
-        if (window.pageYOffset > 300) {
-            scrollTopBtn.style.opacity = '1';
-            scrollTopBtn.style.visibility = 'visible';
-        } else {
-            scrollTopBtn.style.opacity = '0';
-            scrollTopBtn.style.visibility = 'hidden';
+/**
+* Reveal function: Check element position relative to viewport
+* Called every time user scrolls or loads the page
+*/
+const reveal = () => {
+    // Trigger point: 90% of viewport height
+    // This means when the element is 10% from bottom, it will trigger
+    const trigger = window.innerHeight * 0.9;
+    // Loop through all elements that need revealing
+    revealEls.forEach((el) => {
+        // getBoundingClientRect() returns element's position and size
+        // .top: distance from element's top to viewport top
+        const top = el.getBoundingClientRect().top;
+        // If top < trigger, element is now visible
+        if (top < trigger) {
+            el.classList.add("visible"); // Add class to trigger CSS animation
         }
     });
-    
-    // Click để scroll to top
-    scrollTopBtn.addEventListener('click', () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth' // Smooth scroll
-        });
-    });
-    
-    // Hover effect
-    scrollTopBtn.addEventListener('mouseenter', () => {
-        scrollTopBtn.style.transform = 'scale(1.1)';
-        scrollTopBtn.style.boxShadow = '0 6px 20px rgba(0, 225, 34, 0.6)';
-    });
-    
-    scrollTopBtn.addEventListener('mouseleave', () => {
-        scrollTopBtn.style.transform = 'scale(1)';
-        scrollTopBtn.style.boxShadow = '0 4px 12px rgba(0, 225, 34, 0.4)';
-    });
+};
 
-    /* ============================================
-       ANIMATION: TEXT TYPING EFFECT
-       Hero title xuất hiện như đang được gõ
-       ============================================ */
-    
-    const heroTitle = document.querySelector('.hero__title');
-    
-    if (heroTitle) {
-        const originalText = heroTitle.textContent;
-        heroTitle.textContent = ''; // Xóa text ban đầu
-        heroTitle.style.opacity = '1';
-        
-        let charIndex = 0;
-        
-        /**
-         * Typing effect: thêm từng ký tự
-         */
-        function typeChar() {
-            if (charIndex < originalText.length) {
-                heroTitle.textContent += originalText.charAt(charIndex);
-                charIndex++;
-                setTimeout(typeChar, 50); // 50ms giữa mỗi ký tự
-            }
+// Listen for scroll event on window
+window.addEventListener("scroll", reveal);
+// Trigger immediately to reveal elements already on screen
+// (no need to scroll)
+reveal();
+
+/* ============================================
+ROTATING QUOTE TEXT
+Change the quote text every 2.5 seconds
+============================================ */
+
+// Get the quote text element by ID
+const quote = document.getElementById("quote-text");
+// Check if the quote element exists (defensive programming)
+if (quote) {
+    // Array of quotes to alternate
+    const quotes = [
+        "One of 50 Best Websites – TIME",
+        "Trusted by Millions of Gamers",
+        "Your Library, Your Rules",
+    ];
+    let index = 0; // Current index
+    /**
+     * setInterval: Run function every 2500ms (2.5 seconds)
+     * Arrow function preserves 'this' context
+     */
+    setInterval(() => {
+        // Remove "fade" class to reset animation
+        quote.classList.remove("fade");
+        // Trigger reflow - ensures browser applies CSS before adding the class again
+        // offsetWidth is a property that triggers reflow (force browser repaint)
+        void quote.offsetWidth;
+        // Increase index, use modulo (%) to wrap back to 0 at the end of array
+        // Example: (2 + 1) % 3 = 0 (wraps to start)
+        index = (index + 1) % quotes.length;
+        // Update the text content to the new quote
+        quote.textContent = quotes[index];
+        // Add back the "fade" class to trigger CSS animation
+        quote.classList.add("fade");
+    }, 2500); // 2500 milliseconds = 2.5 seconds
+}
+
+/* ============================================
+ANIMATION: SCROLL PROGRESS INDICATOR
+Create a progress bar at the top to show scroll percentage
+============================================ */
+
+// Create progress bar element
+const progressBar = document.createElement('div');
+progressBar.className = 'scroll-indicator';
+document.body.appendChild(progressBar);
+
+/**
+* Update progress bar width based on scroll position
+*/
+function updateProgressBar() {
+    // scrollTop: number of pixels scrolled from top
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    // scrollHeight: total scrollable height
+    // clientHeight: viewport height
+    const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    // Calculate percent scrolled (0-100)
+    const scrollPercent = (scrollTop / scrollHeight) * 100;
+    // Update progress bar width
+    progressBar.style.width = scrollPercent + '%';
+}
+// Listen for scroll event
+window.addEventListener('scroll', updateProgressBar);
+// Initial call
+updateProgressBar();
+
+/* ============================================
+ANIMATION: CARD SHIMMER EFFECT
+Create light shimmer effect on cards when loaded
+============================================ */
+/**
+* Intersection Observer to detect when card enters viewport
+* Then trigger shimmer animation
+*/
+const cards = document.querySelectorAll('.section__card');
+const cardObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+            // Different delay for each card
+            setTimeout(() => {
+                entry.target.style.animation = 'shimmer 1.5s ease-out';
+            }, index * 100); // 100ms delay between each card
+            // Unobserve after animating
+            cardObserver.unobserve(entry.target);
         }
-        
-        // Bắt đầu typing sau 200ms
-        setTimeout(typeChar, 200);
-    }
+    });
+}, {
+    threshold: 0.2 // Trigger when 20% of card is visible
+});
+// Observe all cards
+cards.forEach(card => cardObserver.observe(card));
 
-    // Log message khi script load xong
-    console.log('about.js loaded successfully!');
-    console.log('GSW Platform - Making games last forever');
-    console.log('Active animations: Scroll Progress, Shimmer, Breathing, Float, Scroll to Top, Typing Effect');
-    console.log('Removed: Icon rotation animations');
+/* ============================================
+REMOVED: SECTION ICON ROTATION
+Animation for rotating icon on section scroll removed
+============================================ */
+
+/* ============================================
+ANIMATION: SMOOTH SCROLL TO TOP
+Show scroll to top button when scrolled down
+============================================ */
+
+// Create scroll to top button
+const scrollTopBtn = document.createElement('button');
+scrollTopBtn.innerHTML = '↑';
+scrollTopBtn.className = 'scroll-to-top';
+scrollTopBtn.style.cssText = `
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--green);
+    color: var(--bg1);
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 9999;
+    box-shadow: 0 4px 12px rgba(0, 225, 34, 0.4);
+`;
+document.body.appendChild(scrollTopBtn);
+// Show/hide button based on scroll position
+window.addEventListener('scroll', () => {
+    if (window.pageYOffset > 300) {
+        scrollTopBtn.style.opacity = '1';
+        scrollTopBtn.style.visibility = 'visible';
+    } else {
+        scrollTopBtn.style.opacity = '0';
+        scrollTopBtn.style.visibility = 'hidden';
+    }
+});
+// Click to scroll to top
+scrollTopBtn.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth' // Smooth scroll
+    });
+});
+// Hover effect
+scrollTopBtn.addEventListener('mouseenter', () => {
+    scrollTopBtn.style.transform = 'scale(1.1)';
+    scrollTopBtn.style.boxShadow = '0 6px 20px rgba(0, 225, 34, 0.6)';
+});
+scrollTopBtn.addEventListener('mouseleave', () => {
+    scrollTopBtn.style.transform = 'scale(1)';
+    scrollTopBtn.style.boxShadow = '0 4px 12px rgba(0, 225, 34, 0.4)';
 });
 
 /* ============================================
-   CSS ANIMATIONS ĐƯỢC THÊM VÀO
-   Inject vào document để sử dụng
-   ============================================ */
-
-// Tạo style element
-const style = document.createElement('style');
-style.textContent = `
-    /* Shimmer animation cho cards */
-    @keyframes shimmer {
-        0% {
-            background-position: -200%;
-        }
-        100% {
-            background-position: 200%;
+ANIMATION: TEXT TYPING EFFECT
+Hero title appears as if being typed
+============================================ */
+const heroTitle = document.querySelector('.hero__title');
+if (heroTitle) {
+    const originalText = heroTitle.textContent;
+    heroTitle.textContent = ''; // Clear the original text
+    heroTitle.style.opacity = '1';
+    let charIndex = 0;
+    /**
+     * Typing effect: add each character one by one
+     */
+    function typeChar() {
+        if (charIndex < originalText.length) {
+            heroTitle.textContent += originalText.charAt(charIndex);
+            charIndex++;
+            setTimeout(typeChar, 50); // 50ms between each character
         }
     }
-`;
-document.head.appendChild(style);
+    // Start typing after 200ms
+    setTimeout(typeChar, 200);
+}
+
+// Log message when script loads
+console.log('about.js loaded successfully!');
+console.log('GSW Platform - Making games last forever');
+console.log('Active animations: Scroll Progress, Shimmer, Breathing, Float, Scroll to Top, Typing Effect');
+console.log('Removed: Icon rotation animations');
+
+/* ============================================
+CSS ANIMATIONS ADDED
+Inject into the document for use
+============================================ */
+// Create style element
+const style = document.createElement('style');
+style.textContent = `
+/* Shimmer animation for cards */
+@keyframes shimmer {
+    0% {
+        background-position: -200%;
+    }
+    100% {
+        background-position: 200%;
+    }
+}`;
+document.head.appendChild(style);});

@@ -1,29 +1,29 @@
 /* ========================================
-   ROOT VARIABLES - Biến CSS toàn cục
-   Định nghĩa các màu sắc chính để dễ quản lý
+   ROOT VARIABLES - Global CSS variables
+   Define main color values for easier management
    ======================================== */
 :root {      
     --text-muted: rgba(255,255,255,0.75); 
 }
 
 /* ========================================
-   ABOUT PAGE - Container chính của trang
+   ABOUT PAGE - Main container of the page
    ======================================== */
 .about-page {
     font-family: 'Roboto Flex', sans-serif;
     color: var(--text);
     background: linear-gradient(180deg, var(--bg1) 5%, #0b2a2e 45%, var(--bg2) 95%);
-    background-attachment: fixed; /* Background cố định khi scroll - tạo hiệu ứng parallax */
-    overflow-x: hidden; /* Ẩn scroll ngang để tránh content tràn ra ngoài */
+    background-attachment: fixed; /* Fixed background on scroll - creates parallax effect */
+    overflow-x: hidden; /* Hide horizontal scroll to prevent content overflow */
     margin: auto;
 }
 
 /* ========================================
-   HERO SECTION - Phần giới thiệu chính ở đầu trang
+   HERO SECTION - Main introduction section at the top of the page
    ======================================== */
 .hero {
     text-align: center;
-    /* clamp(min, preferred, max) - responsive font size tự động điều chỉnh theo viewport */
+    /* clamp(min, preferred, max) - responsive font size that auto-adjusts with viewport */
     padding: clamp(60px, 8vw, 100px) 20px clamp(40px, 6vw, 80px);
     max-width: 900px;
     margin: auto;
@@ -32,20 +32,20 @@
 .hero__title {
     color: white;
     font-size: clamp(32px, 5vw, 44px); /* Font size responsive: min 32px, max 44px */
-    font-weight: 300; /* Font weight mỏng để trông hiện đại */
+    font-weight: 300; 
     line-height: 34px;
     margin-bottom: 24px;
 }
 
 .hero__desc {
-    color: rgba(255, 255, 255, 0.8); /* Trắng với độ mờ 80% */
+    color: rgba(255, 255, 255, 0.8); /* White with 80% opacity */
     font-size: clamp(18px, 2vw, 20px);
     font-weight: 300;
-    line-height: 1.6; /* Line height rộng để dễ đọc */
+    line-height: 1.6; 
     margin-bottom: 40px;
 }
 
-/* Quote text với màu xanh lá */
+/* Quote text with green color */
 .hero__quote {
     color: var(--green);
     font-style: italic;
@@ -53,35 +53,35 @@
     font-weight: 400;
     position: relative;
     display: inline-block;
-    overflow: hidden; /* Ẩn phần text tràn ra khi animate */
-    min-height: 39px; /* Đảm bảo chiều cao cố định khi text thay đổi */
+    overflow: hidden; /* Hide overflowing text when animating */
+    min-height: 39px; /* Ensure fixed height when text changes */
 }
 
-/* Span bên trong quote - được animate bởi JavaScript */
+/* Span inside quote - animated by JavaScript */
 .hero__quote span {
     display: inline-block;
-    animation: fadeUp 5s infinite; /* Animation lặp vô hạn mỗi 5 giây */
+    animation: fadeUp 5s infinite; /* Animation repeats infinitely every 5 seconds */
 }
 
-/* Animation cho quote text: fade in từ dưới, hiện ra, rồi fade out lên trên */
+/* Animation for quote text: fade in from below, stay visible, fade out upward */
 @keyframes fadeUp {
     0%, 10% {
         opacity: 0;
-        transform: translateY(15px); /* Bắt đầu ở dưới */
+        transform: translateY(15px); /* Start from below */
     }
     15%, 45% {
         opacity: 1;
-        transform: translateY(0); /* Hiện ra ở vị trí chính giữa */
+        transform: translateY(0); /* Appear at the center position */
     }
     55%, 100% {
         opacity: 0;
-        transform: translateY(-15px); /* Biến mất lên trên */
+        transform: translateY(-15px); /* Disappear upward */
     }
 }
 
 /* ========================================
-   HERO BANNER - Hình ảnh chính với hiệu ứng
-   Container chứa ảnh hero với glow effect
+   HERO BANNER - Main image with effects
+   Container containing hero image with glow effect
    ======================================== */
 .hero-banner {
     position: relative;
@@ -90,40 +90,39 @@
     align-items: center;
     width: 100%;
     max-width: 1180px;
-    margin: 0 auto 80px; /* Canh giữa và margin bottom 80px */
+    margin: 0 auto 80px; /* Centered with 80px bottom margin */
     padding: 0 20px;
 }
 
-/* Glow effect xung quanh banner - tạo ánh sáng xanh lan tỏa */
+/* Glow effect around the banner - creates a green spreading light */
 .hero-banner__glow {
     position: absolute;
     top: 50%;
     left: 50%;
     width: 100%;
     height: 100%;
-    transform: translate(-50%, -50%); /* Căn giữa hoàn hảo */
-    /* Radial gradient tạo vòng tròn ánh sáng từ tâm ra ngoài */
+    transform: translate(-50%, -50%); /* Center the glow */
     background: radial-gradient(circle at center, 
                 rgba(0, 225, 34, 0.1) 0%, 
                 rgba(0, 225, 34, 0.1) 70%, 
                 transparent 100%);
-    filter: blur(100px); /* Blur nhiều để tạo hiệu ứng ánh sáng mờ */
-    z-index: 1; /* Nằm dưới wrapper */
+    filter: blur(100px); /* Blur heavily to create a soft light effect */
+    z-index: 1; /* Below the wrapper */
 }
 
-/* Wrapper chứa ảnh - viền trắng với shadow */
+/* Wrapper containing the image - white border with shadow */
 .hero-banner__wrapper {
     position: relative;
     width: 100%;
-    z-index: 2; /* Nằm trên glow effect */
-    background: rgba(255, 255, 255, 0.95); /* Nền trắng mờ 95% */
+    z-index: 2; /* Above the glow effect */
+    background: rgba(255, 255, 255, 0.95); /* White background with 95% opacity */
     box-shadow: 0 0 40px rgba(255, 255, 255, 0.3), 
-                0 8px 32px rgba(0, 0, 0, 0.2); /* Shadow kép: glow trắng + shadow đen */
-    overflow: hidden; /* Ẩn phần ảnh tràn ra khi zoom */
-    transition: all 0.4s ease; /* Transition mượt cho tất cả thuộc tính */
+                0 8px 32px rgba(0, 0, 0, 0.2); 
+    overflow: hidden; /* Hide overflowing image when zooming */
+    transition: all 0.4s ease; /* Smooth transition for all properties */
 }
 
-/* Hover effect: tăng shadow xanh */
+/* Hover effect: increase green shadow */
 .hero-banner__wrapper:hover {
     box-shadow: 0 0 50px rgba(0, 225, 34, 0.2), 
                 0 12px 40px rgba(0, 0, 0, 0.3);
@@ -133,42 +132,42 @@
     width: 100%;
     height: auto;
     display: block;
-    filter: brightness(1.1) contrast(1.05); /* Tăng độ sáng và contrast một chút */
+    filter: brightness(1.1) contrast(1.05); /* Slightly increase brightness and contrast */
     transition: transform 0.4s ease;
 }
 
-/* Hover: zoom ảnh nhẹ */
+/* Hover: slightly zoom the image */
 .hero-banner__wrapper:hover .hero-banner__img {
-    transform: scale(1.03); /* Phóng to 3% */
+    transform: scale(1.03); /* Zoom in 3% */
 }
 
-/* Blur gradient ở dưới cùng ảnh - tạo hiệu ứng mờ dần */
+/* Blur gradient at the bottom of the image - creates a fading effect */
 .hero-banner__blur {
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 60%; /* Chiếm 60% chiều cao từ dưới lên */
-    background: linear-gradient(transparent, rgba(255, 255, 255, 1)); /* Gradient từ trong suốt đến trắng */
+    height: 60%; /* Occupies 60% height from the bottom */
+    background: linear-gradient(transparent, rgba(255, 255, 255, 1)); /* Gradient from transparent to white */
     filter: blur(10px);
     z-index: 5;
-    pointer-events: none; /* Không chặn event click - cho phép click xuyên qua */
+    pointer-events: none; /* Does not block click events - allows clicks to pass through */
 }
 
-/* Overlay màu xanh nhạt phủ lên toàn bộ ảnh */
+/* Overlay light green color over the entire image */
 .hero-banner__fade {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 225, 34, 0.05); /* Xanh lá với opacity 5% */
+    background: rgba(0, 225, 34, 0.05); /* Light green with 5% opacity */
     z-index: 4;
     pointer-events: none;
 }
 
 /* ========================================
-   SECTION - Style chung cho tất cả các section
+   SECTION - Common styles for all sections
    BEM naming: .section (block), .section__element (element), .section--modifier (modifier)
    ======================================== */
 .section {
@@ -178,63 +177,63 @@
     padding: 0 20px;
     max-width: 1100px;
     position: relative;
-    z-index: 5; /* Nằm trên các layer khác */
+    z-index: 5; /* Positioned above other layers */
     padding-top: 80px;
     font-family: 'Roboto Flex', sans-serif;
     transition: margin-top 0.4s ease, transform 0.4s ease;
 }
 
-/* Margin-top âm để tạo overlap effect - section chồng lên section trước */
+/* Negative margin-top to create overlap effect - section overlaps the previous section */
 .section--features {
-    margin-top: -37vh; /* Overlap với hero banner */
+    margin-top: -37vh; /* Overlap with hero banner */
 }
 
 .section--customer {
-    margin-top: -50vh; /* Overlap với showcase */
+    margin-top: -50vh; /* Overlap with showcase */
 }
 
 .section--more {
-    margin-top: -20vh; /* Overlap với review */
+    margin-top: -20vh; /* Overlap with review */
 }
 
-/* Header của section - chứa icon, title, description */
+/* Header of section - contains icon, title, description */
 .section__header {
     display: flex;
-    flex-direction: column; /* Stack theo chiều dọc */
-    align-items: center; /* Căn giữa theo chiều ngang */
+    flex-direction: column; /* Stack vertically */
+    align-items: center; /* Center horizontally */
     gap: 10px;
     margin-bottom: 50px;
 }
 
-/* Icon đầu section với drop-shadow xanh */
+/* Icon at the beginning of section with green drop-shadow */
 .section__icon {
     width: clamp(160px, 22vw, 230px); /* Responsive width */
     height: auto;
     margin-bottom: 20px;
-    filter: drop-shadow(0 0 15px rgba(0, 225, 34, 0.6)); /* Shadow xanh tỏa ra */
+    filter: drop-shadow(0 0 15px rgba(0, 225, 34, 0.6)); /* Green shadow glow */
     transition: transform 0.3s ease, filter 0.3s ease;
 }
 
-/* Hover effect: chỉ phóng to, BỎ xoay */
+/* Hover effect: only scale up, REMOVE rotation */
 .section__icon:hover {
-    transform: scale(1.05); /* Phóng to 5% */
+    transform: scale(1.05); /* Zoom in 5% */
     filter: drop-shadow(0 0 25px rgba(0, 225, 34, 1));
 }
 
-/* Icon nhỏ hơn cho section More */
+/* Smaller icon for More section */
 .section--more .section__icon {
     width: clamp(40px, 10vw, 60px);
     max-width: 260px;
     margin-bottom: 8px;
 }
 
-/* Title section với màu xanh lá */
+/* Title section with green color */
 .section__title {
     color: #00E122;
     font-size: clamp(28px, 4vw, 44px);
     font-weight: 300;
     line-height: 1.2;
-    letter-spacing: 0.5px; /* Khoảng cách giữa các chữ */
+    letter-spacing: 0.5px; /* Letter spacing */
     margin-bottom: 12px;
 }
 
@@ -248,17 +247,17 @@
     margin: 0 auto;
 }
 
-/* Grid container chứa các card - sử dụng Flexbox */
+/* Grid container containing cards - using Flexbox */
 .section__grid {
     display: flex;
-    flex-wrap: wrap; /* Cho phép wrap sang dòng mới khi hết chỗ */
+    flex-wrap: wrap; /* Allows wrapping to new lines when out of space */
     justify-content: center;
-    align-items: stretch; /* Tất cả card có chiều cao bằng nhau */
-    gap: 36px; /* Khoảng cách giữa các card */
+    align-items: stretch; /* All cards have equal height */
+    gap: 36px; /* Gap between cards */
     margin-top: 60px;
 }
 
-/* Grid cho Features section */
+/* Grid for Features section */
 .section--features .section__grid {
     margin-top: 60px;
 }
@@ -271,31 +270,32 @@
     text-align: center;
     padding: 24px 20px;
     transition: transform 0.3s ease, filter 0.3s ease;
-    position: relative; /* Để position pseudo-element */
-    overflow: hidden; /* Ẩn phần border tràn ra */
+    position: relative; /* For positioning pseudo-element */
+    overflow: hidden; /* Hide overflowing border parts */
 }
 
-/* Hover effect: nâng card lên và thêm glow - BỎ xoay */
+/* Hover effect: lift card and add glow - REMOVE rotation */
 .section__card:hover {
-    transform: translateY(-6px); /* Chỉ nâng lên 6px */
+    transform: translateY(-6px); /* Only lift up 6px */
     filter: drop-shadow(0 0 20px rgba(0, 225, 34, 0.6));
 }
 
-/* Icon trong card */
+/* Icon in card */
 .section__card-icon {
-    width: 50px;
-    height: 50px;
+    width: auto;
+    height: auto;
+    max-width: 50px;
     margin: 0 auto 16px;
     filter: drop-shadow(0 0 10px rgba(0, 225, 34, 0.8));
     transition: transform 0.3s ease;
 }
 
-/* BỎ animation xoay icon - chỉ phóng to */
+/* REMOVE icon rotation animation - only scale up */
 .section__card:hover .section__card-icon {
-    transform: scale(1.1); /* Chỉ phóng to 10% */
+    transform: scale(1.1); /* Only scale up 10% */
 }
 
-/* Title trong card */
+/* Title in card */
 .section__card-title {
     color: #00E122;
     font-size: 22px;
@@ -304,7 +304,7 @@
     margin-bottom: 10px;
 }
 
-/* Text mô tả trong card */
+/* Description text in card */
 .section__card-text {
     color: rgba(255, 255, 255, 0.85);
     font-size: 16px;
@@ -314,11 +314,11 @@
 }
 
 /* ========================================
-   HIỆU ỨNG: RIPPLE EFFECT
-   Tạo gợn sóng khi hover card
+   RIPPLE EFFECT
+   Create ripple effect when hovering card
    ======================================== */
 
-/* Thêm pseudo-element cho ripple */
+/* Add pseudo-element for ripple */
 .section__card::after {
     content: '';
     position: absolute;
@@ -334,7 +334,7 @@
     pointer-events: none;
 }
 
-/* Hover: ripple mở rộng ra */
+/* Hover: ripple expands */
 .section__card:hover::after {
     width: 300px;
     height: 300px;
@@ -342,8 +342,8 @@
 }
 
 /* ========================================
-   SHOWCASE SECTION - Hiển thị 7 ảnh game xếp chồng
-   Sử dụng absolute positioning để xếp ảnh theo thiết kế
+   SHOWCASE SECTION - Display 7 stacked game images
+   Using absolute positioning to arrange images as per design
    ======================================== */
 .showcase {
     position: relative;
@@ -355,37 +355,38 @@
 .showcase__wrapper {
     position: relative;
     width: 100%;
-    height: 722px; /* Chiều cao cố định */
+    height: 722px; /* Fixed height */
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    overflow: visible; /* Cho phép ảnh tràn ra ngoài */
+    overflow: visible; /* Allow images to overflow */
     margin: 0 auto 100px;
 }
 
-/* Container chứa các ảnh - sử dụng absolute positioning */
+/* Container containing images - using absolute positioning */
 .showcase__container {
     margin-left: 30px;
     position: relative;
     width: 100%;
     max-width: 1200px;
     height: 740px;
-    left: 48%; /* Lệch sang phải một chút */
-    transform: translateX(-50%) scale(1); /* Căn giữa và scale mặc định */
-    transform-origin: center bottom; /* Origin để scale từ đáy lên */
+    left: 48%; /* Slightly shifted to the right */
+    transform: translateX(-50%) scale(1); /* Centered and default scale */
+    transform-origin: center bottom; /* Origin to scale from bottom */
     transition: transform 0.3s ease;
     overflow: visible;
 }
 
-/* Style chung cho tất cả ảnh showcase */
+/* Shared styles for all showcase images */
 .showcase__img {
-    position: absolute; /* Absolute để xếp chồng lên nhau */
+    position: absolute; /* Absolute positioning to stack images on top of each other */
     border-radius: 6px;
-    box-shadow: 0 0 30px rgba(0, 225, 34, 0.7); /* Shadow xanh */
+    box-shadow: 0 0 30px rgba(0, 225, 34, 0.7); /* Green shadow */
     transition: transform 0.3s ease, filter 0.3s ease;
 }
 
-/* Animation: Ảnh breathing effect - phóng to thu nhỏ nhẹ */
+
+/* Animation: Image breathing effect - slight zoom in and out */
 .showcase__img {
     animation: breathe 4s ease-in-out infinite;
 }
@@ -399,7 +400,7 @@
     }
 }
 
-/* Delay khác nhau cho từng ảnh để tạo wave effect */
+/* Different delays for each image to create wave effect */
 .showcase__img:nth-child(1) { animation-delay: 0s; }
 .showcase__img:nth-child(2) { animation-delay: 0.5s; }
 .showcase__img:nth-child(3) { animation-delay: 1s; }
@@ -408,7 +409,7 @@
 .showcase__img:nth-child(6) { animation-delay: 2.5s; }
 .showcase__img:nth-child(7) { animation-delay: 3s; }
 
-/* Hover: pause animation và zoom */
+/* Hover: pause animation and zoom */
 .showcase__img:hover {
     animation-play-state: paused;
     transform: scale(1.05);
@@ -416,18 +417,18 @@
     z-index: 10;
 }
 
-/* Vị trí và blur cho từng ảnh - tạo depth effect */
-/* Ảnh 1: góc trái trên, blur nhiều */
+/* Position and blur for each image - create depth effect */
+/* Image 1: top left corner, heavily blurred */
 .showcase__img:nth-child(1) {
     width: 282px;
     height: 143px;
     left: 170px;
     top: 76px;
-    filter: blur(4.5px); /* Blur để tạo độ sâu */
+    filter: blur(4.5px); /* Heavy blur to create depth */
     box-shadow: 0 0 60px rgba(0, 225, 34, 0.22);
 }
 
-/* Ảnh 2: góc trái giữa, blur ít */
+/* Image 2: middle-left position, slight blur */
 .showcase__img:nth-child(2) {
     width: 323px;
     height: 165px;
@@ -437,7 +438,7 @@
     box-shadow: 0 0 60px rgba(0, 225, 34, 0.5);
 }
 
-/* Ảnh 3: góc phải trên, blur trung bình */
+/* Image 3: top-right position, medium blur */
 .showcase__img:nth-child(3) {
     width: 268px;
     height: 135px;
@@ -447,7 +448,7 @@
     box-shadow: 0 0 60px rgba(0, 225, 34, 0.62);
 }
 
-/* Ảnh 4: dưới cùng bên phải, blur nhiều nhất */
+/* Image 4: bottom-right position, strongest blur */
 .showcase__img:nth-child(4) {
     width: 326px;
     height: 166px;
@@ -457,17 +458,17 @@
     box-shadow: 0 0 60px rgba(0, 225, 34, 0.5);
 }
 
-/* Ảnh 5: FOCUS IMAGE - không blur, ảnh chính */
+/* Image 5: FOCUS IMAGE - no blur, main highlight */
 .showcase__img:nth-child(5) {
     width: 420px;
     height: 213px;
     left: 49px;
     top: 347px;
-    filter: none; /* Không blur - ảnh nổi bật nhất */
-    box-shadow: 0 0 80px rgba(0, 225, 34, 0.79); /* Shadow mạnh nhất */
+    filter: none; /* No blur - main focus image */
+    box-shadow: 0 0 80px rgba(0, 225, 34, 0.79); /* Strongest shadow */
 }
 
-/* Ảnh 6: bên phải giữa */
+/* Image 6: right-middle position */
 .showcase__img:nth-child(6) {
     width: 299px;
     height: 154px;
@@ -477,7 +478,7 @@
     box-shadow: 0 0 60px rgba(0, 225, 34, 0.35);
 }
 
-/* Ảnh 7: bên phải trên */
+/* Image 7: upper-right position */
 .showcase__img:nth-child(7) {
     width: 383px;
     height: 209px;
@@ -517,18 +518,18 @@
     transform: translateX(-50%); /* Căn giữa */
 }
 
-/* Style chung cho ảnh review - có drop-shadow kép */
+/* Common style for review images - with double drop-shadow */
 .review__img {
     position: absolute;
     border-radius: 8px;
     background: transparent;
-    /* Drop-shadow kép: một gần, một xa - tạo depth */
+    /* Double drop-shadow: one near, one far - create depth */
     filter: drop-shadow(0 0 30px rgba(0, 225, 34, 0.5))
             drop-shadow(0 0 60px rgba(0, 225, 34, 0.25));
     transition: transform 0.3s ease, filter 0.3s ease;
 }
 
-/* Animation: Review images float lên xuống */
+/* Animation: Review images float up and down */
 .review__img {
     animation: float 3s ease-in-out infinite;
 }
@@ -542,41 +543,41 @@
     }
 }
 
-/* Delay khác nhau cho mỗi ảnh */
+/* Different delay for each image */
 .review__img--left { animation-delay: 0s; }
 .review__img--center { animation-delay: 1s; }
 .review__img--right { animation-delay: 2s; }
 
-/* Hover: tăng glow */
+/* Hover: increase glow */
 .review__img:hover {
     animation-play-state: paused;
     filter: drop-shadow(0 0 60px rgba(0, 225, 34, 0.8))
             drop-shadow(0 0 120px rgba(0, 225, 34, 0.4));
 }
 
-/* Vị trí 3 ảnh review */
+/* Position of the 3 review images */
 .review__img--left {
     width: 185px;
     bottom: 0;
-    left: calc(50% - 420px); /* Ảnh trái */
+    left: calc(50% - 420px); /* Left image */
 }
 
 .review__img--center {
     width: 600px;
     bottom: 0;
-    left: calc(50% - 300px); /* Ảnh giữa (lớn nhất) */
-    z-index: 3; /* Nằm trên 2 ảnh kia */
+    left: calc(50% - 300px); /* Center image (largest) */
+    z-index: 3; /* On top of the other 2 images */
 }
 
 .review__img--right {
     width: 265px;
     bottom: 0;
-    left: calc(50% + 235px); /* Ảnh phải */
+    left: calc(50% + 235px); /* Right image */
 }
 
 /* ========================================
-   PARTNERS SECTION - Logo các đối tác
-   Sử dụng CSS Grid để responsive layout
+   PARTNERS SECTION - Partner logos
+   Using CSS Grid for responsive layout
    ======================================== */
 .partners {
     text-align: center;
@@ -601,39 +602,39 @@
     letter-spacing: 0.3px;
 }
 
-/* Grid layout cho logos - tự động responsive */
+/* Grid layout for logos - automatically responsive */
 .partners__grid {
     display: grid;
-    /* auto-fit: tự động điều chỉnh số cột, minmax: min 160px, max 1fr */
+    /* auto-fit: automatically adjust number of columns, minmax: min 160px, max 1fr */
     grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
     gap: 40px 30px; /* row gap 40px, column gap 30px */
-    justify-items: center; /* Căn giữa items trong cell */
+    justify-items: center; /* Center items in cell */
     align-items: center;
 }
 
-/* Logo đối tác - grayscale mặc định */
+/* Partner logos - grayscale by default */
 .partners__logo {
     width: 170px;
     height: auto;
     opacity: 0.8;
-    /* Grayscale 100% - biến ảnh thành đen trắng, brightness 1.2 - làm sáng lên */
+    /* Grayscale 100% - make image black and white, brightness 1.2 - brighten up */
     filter: grayscale(1) brightness(1.2);
     transition: all 0.3s ease;
 }
 
-/* Hover: hiện màu gốc và thêm glow - BỎ xoay */
+/* Hover: show original color and add glow - REMOVE rotation */
 .partners__logo:hover {
     opacity: 1;
-    filter: grayscale(0) drop-shadow(0 0 10px rgba(0, 225, 34, 0.7)); /* Bỏ grayscale */
-    transform: scale(1.08); /* Chỉ phóng to 8% */
+    filter: grayscale(0) drop-shadow(0 0 10px rgba(0, 225, 34, 0.7)); /* Remove grayscale */
+    transform: scale(1.08); /* Only scale up 8% */
 }
 
 /* ========================================
-   HIỆU ỨNG: SCROLL INDICATOR
-   Thanh chỉ báo scroll ở top page
+   SCROLL INDICATOR EFFECT
+   Scroll indicator bar at top of page
    ======================================== */
 
-/* Thanh progress bar */
+/* Progress bar */
 .scroll-indicator {
     position: fixed;
     top: 0;
@@ -647,8 +648,8 @@
 }
 
 /* ========================================
-   RESPONSIVE - Tablet và Mobile
-   Media queries để tối ưu cho các màn hình nhỏ
+   RESPONSIVE - Tablet and Mobile
+   Media queries to optimize for smaller screens
    ======================================== */
 
 /* Tablet (≤ 1024px) */
@@ -680,13 +681,13 @@
         justify-content: center;
     }
 
-    /* Card chiếm 45% width - 2 cột trên tablet */
+    /* Card takes 45% width - 2 columns on tablet */
     .section__card {
         flex: 1 1 45%;
         max-width: 420px;
     }
 
-    /* Thu nhỏ showcase */
+    /* Scale down showcase */
     .showcase__wrapper {
         height: 540px;
         display: flex;
@@ -695,18 +696,18 @@
     }
 
     .showcase__container {
-        transform: translateX(-45%) scale(0.95); /* Scale nhỏ lại 95% */
+        transform: translateX(-45%) scale(0.95); /* Scale down to 95% */
         transform-origin: center top;
         height: 540px;
     }
 
-    /* Thu nhỏ review */
+    /* Scale down review */
     .review__wrapper {
         height: 420px;
     }
 
     .review__container {
-        transform: translateX(-50%) scale(0.75); /* Scale nhỏ lại 75% */
+        transform: translateX(-50%) scale(0.75); /* Scale down to 75% */
     }
 
     .partners__logo {
@@ -730,7 +731,7 @@
         padding: 0 15px;
     }
 
-    /* Card chiếm 100% width - 1 cột trên mobile */
+    /* Card takes 100% width - 1 column on mobile */
     .section__card {
         flex: 1 1 100%;
         max-width: 100%;
@@ -744,18 +745,18 @@
         font-size: 15px;
     }
 
-    /* Ẩn showcase hoàn toàn trên mobile */
+    /* Hide showcase completely on mobile */
     .showcase {
         display: none;
     }
 
-    /* Thu nhỏ review nhiều hơn */
+    /* Scale down review even more */
     .review__wrapper {
         height: 320px;
     }
 
     .review__container {
-        transform: translateX(-50%) scale(0.55); /* Scale nhỏ lại 55% */
+        transform: translateX(-50%) scale(0.55); /* Scale down to 55% */
     }
 
     .partners {
@@ -769,21 +770,21 @@
 
 /* ========================================
    REVEAL ANIMATION - Scroll reveal effect
-   Class này được thêm bởi JavaScript khi scroll
+   This class is added by JavaScript when scrolling
    ======================================== */
 
-/* Ẩn tất cả sections ban đầu */
+/* Initially hide all sections */
 .hero, .section, .showcase, .review, .partners {
     opacity: 0;
-    transition: all 1s ease-out; /* Transition mượt 1s */
+    transition: all 1s ease-out; /* Smooth transition 1s */
 }
 
-/* Class "visible" được thêm bởi JS khi scroll vào view */
+/* Class "visible" is added by JS when scrolled into view */
 .hero.visible, 
 .section.visible, 
 .showcase.visible, 
 .review.visible, 
 .partners.visible {
     opacity: 1;
-    transform: translateY(0); /* Trở về vị trí ban đầu */
+    transform: translateY(0); /* Return to original position */
 }
