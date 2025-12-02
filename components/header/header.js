@@ -362,7 +362,7 @@ document.body.addEventListener("click", (e) => {
     }
 
     const card = btn.closest(
-      ".game-card, .game-item, .product-card, .game-info, .slider__card, .btn-cart"
+      ".game-card, .game-item, .product-card, .game-info, .slider__card"
     );
 
     // LẤY DỮ LIỆU
