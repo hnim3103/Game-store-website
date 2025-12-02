@@ -965,7 +965,7 @@
   background: linear-gradient(0deg, #1D464A 27.4%, rgba(29, 70, 74, 0.32) 83.17%);
   opacity: var(--show-gradient, 1);
   transition: opacity 0.3s ease-out;
-  pointer-events: none;  
+  pointer-events: none;
 }
 
 .review-card__content.is-expanded::after {
