@@ -27,12 +27,10 @@ html {
   --super-dark-green-color: #0f232c;
   --bg1: #070f1a;
   --bg2: #225557;
-  --dark-blue-color: #070f1a;
   font-size: 10px;
 }
 
 body {
-  font-family: "Roboto Flex", sans-serif;
   color: var(--text);
   background: linear-gradient(
     180deg,
@@ -42,7 +40,6 @@ body {
   );
   background-attachment: fixed;
   overflow-x: hidden;
-  margin: 0;
   justify-content: center;
   align-items: center;
 }
