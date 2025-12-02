@@ -350,9 +350,15 @@
   border-radius: 5px;
   padding: 0.8rem 1rem; 
   margin-right: 0.5rem;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease, background-color 0.3s ease;
   font-size: 1.7rem;
   font-weight: 600;
   cursor: pointer;
+}
+
+.voucher__button:active {
+  transform: translateY(-1px);
 }
 
 @media (max-width: 767px) {
