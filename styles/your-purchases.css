@@ -15,7 +15,7 @@ body {
   background-attachment: fixed;
   overflow-x: hidden;
   margin: 0;
-  color: var(--text-color);
+  color: var(--text);
 }
 
 .purchases-page {
@@ -55,6 +55,7 @@ body {
   height: 70px;
   border-radius: 50%;
   border: 3px solid var(--green);
+  border: 3px solid var(--green);
 }
 
 .profile-bar__text {
@@ -71,6 +72,7 @@ body {
 .profile-bar__fullname {
   font-size: 16px;
   color: var(--text);
+  color: var(--text);
 }
 
 .profile-bar__signout {
@@ -81,6 +83,7 @@ body {
 }
 
 .profile-bar__signout:hover {
+  color: var(--green);
   color: var(--green);
 }
 
@@ -125,6 +128,7 @@ body {
 /* Hover */
 .user-nav__link:hover span {
   color: var(--green);
+  color: var(--green);
 }
 
 .user-nav__link:hover img {
@@ -133,6 +137,7 @@ body {
 
 /* Active */
 .user-nav__link--active span {
+  color: var(--green);
   color: var(--green);
   font-weight: 700;
 }
@@ -223,7 +228,7 @@ body {
 }
 
 .recent__see-more:hover {
-  color: var(--green-color);
+  color: var(--green);
 }
 
 /* Activity Card */
@@ -276,7 +281,7 @@ body {
 
 .progress-count {
   font-weight: 700;
-  color: var(--green-color);
+  color: var(--green);
 }
 
 .progress-bar {
@@ -291,7 +296,7 @@ body {
 .progress-fill {
   height: 100%;
   width: 20%;
-  background: var(--green-color);
+  background: var(--green);
   border-radius: 10px;
 }
 
@@ -302,11 +307,12 @@ body {
   opacity: 0.8;
 }
 
-/* Recommendations Container */
+/*Slider*/
+
 .genres {
   width: 1200px;
   max-width: 100%;
-  margin: 20px auto 0;
+  margin: auto;
   padding: 0 1.5rem;
 }
 
@@ -314,24 +320,14 @@ body {
   font-size: 30px;
   font-size: 30px;
   padding: 2rem 0;
-  color: var(--text-color);
+  color: var(--text);
   font-weight: 700;
-  margin-left: 51px;
-  margin-top: -20px;
-  margin-bottom: -20px;
 }
 
-/* ✅ FIXED: Slider Grid with Flexbox */
 .genres__grid {
   position: relative;
-  height: 300px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
+  height: 350px;
 }
-
-/* Slider Navigation Arrows */
 .fa-angle-left,
 .fa-angle-right,
 #slider-prev,
@@ -348,7 +344,7 @@ body {
   flex-shrink: 0;
   transition: all 0.2s ease;
   font-size: 24px;
-  color: var(--green-color);
+  color: var(--green);
   align-items: center;
   justify-content: center;
   z-index: 10;
@@ -358,8 +354,8 @@ body {
 .fa-angle-right:hover,
 #slider-prev:hover,
 #slider-next:hover {
-  background-color: var(--green-color);
-  color: var(--black-color);
+  background-color: var(--green);
+  color: var(--bg1);
   transform: scale(1.1);
 }
 
@@ -373,50 +369,36 @@ body {
   right: 7rem;
 }
 
-/* ✅ FIXED: Game Card Base - Hidden by default */
-.game-card {
-  max-width: 240px;
+.genres__grid .game-card {
+  width: 240px;
   display: flex;
   flex-direction: column;
   position: absolute;
   top: 50%;
   left: 50%;
   transition: all 0.5s ease;
-  visibility: hidden;
-  opacity: 0;
-  transform: translate(-50%, -50%) scale(0.8);
 }
 
-.game-card:hover {
+.genres__grid .game-card:hover {
   cursor: pointer;
 }
-
-/* Game Card Image */
-.game-card__image {
+/* Slider Product Price & Discount */
+.genres__grid .game-card__image {
   width: 100%;
-  height: auto;
+  height: 120px;
   display: block;
   line-height: 0;
-  overflow: hidden;
 }
 
-.game-card__image img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* Game Card Content */
-.game-card__content {
-  background-color: var(--black-color);
+.genres__grid .game-card__content {
+  background-color: var(--bg1);
   width: 100%;
   display: flex;
   flex-direction: column;
-  position: relative;
 }
 
-.game-card__price-wrapper {
-  color: var(--green-color);
+.genres__grid .game-card__price-wrapper {
+  color: var(--green);
   font-size: 2rem;
   font-weight: bold;
   display: flex;
@@ -427,98 +409,83 @@ body {
   align-items: center;
 }
 
-.game-card__price p {
-  margin: 0;
-}
-
-.game-card__add-cart {
-  background-color: var(--super-dark-green-color);
-  width: 70%;
+.genres__grid .game-card__add-cart {
   font-size: 1.8rem;
-  height: 5rem;
-  display: flex;
-  align-items: center;
-  padding: 1.5rem;
+  color: var(--text);
+  border: none;
+  background-color: var(--super-dark-green-color);
+  cursor: pointer;
+  height: 4rem;
+  text-align: left;
+  padding-left: 20px;
+  padding-right: 50px;
+  box-shadow: 0px 4px 4px 0px black;
+}
+
+.genres__grid .game-card__add-cart a {
+  color: var(--text);
   margin-left: 0.5rem;
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-  transition: all 0.3s ease;
 }
 
-.game-card__add-cart i {
-  color: var(--text-color);
-}
-
-.game-card__add-cart a {
-  color: var(--text-color);
-  margin-left: 0.5rem;
-  text-decoration: none;
-}
-
-.game-card__add-cart:hover {
-  background-color: var(--green-color);
+.genres__grid .game-card__add-cart:hover {
+  background-color: var(--green);
   cursor: pointer;
   transform: scale(1.05);
 }
 
-.game-card__wishlist {
-  background: none;
+.genres__grid .game-card__wishlist {
+  background-color: transparent;
   border: none;
   position: absolute;
   bottom: 1rem;
   right: 5%;
-  color: var(--text-color);
+  color: var(--text);
+}
+
+.genres__grid .game-card__wishlist .fa-heart {
+  font-size: 3rem;
+  margin-right: -1rem;
+}
+
+.genres__grid .game-card__wishlist .fa-heart:hover {
+  color: var(--green);
   cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.game-card__wishlist .fa-heart {
-  font-size: 4rem;
-  margin-right: -0.4rem;
-}
-
-.game-card__wishlist:hover,
-.game-card__wishlist .fa-heart:hover {
-  color: var(--green-color);
   transform: scale(1.1);
 }
 
-/* Slider Positions */
-.game-card.active {
+.genres__grid .game-card.active {
   visibility: visible;
   transform: translate(-50%, -50%);
   z-index: 3;
-  opacity: 1;
 }
-
-.game-card.prev {
+/* Slider Navigation Arrows */
+.genres__grid .game-card.prev {
   visibility: visible;
   transform: translate(-160%, -50%);
-  opacity: 0.8;
+  opacity: 1;
   z-index: 2;
 }
 
-.game-card.next {
+.genres__grid .game-card.next {
   visibility: visible;
   transform: translate(60%, -50%);
-  opacity: 0.8;
+  opacity: 1;
   z-index: 2;
 }
 
-.game-card.prev-2 {
+.genres__grid .game-card.prev-2 {
   visibility: hidden;
   transform: translate(-200%, -50%);
   opacity: 0;
   z-index: 1;
 }
 
-.game-card.next-2 {
+.genres__grid .game-card.next-2 {
   visibility: hidden;
   transform: translate(150%, -50%);
   opacity: 0;
   z-index: 1;
 }
-
 /* Tablet */
 @media screen and (min-width: 800px) and (max-width: 1024px) {
   .user-nav__link img {
@@ -530,22 +497,27 @@ body {
     font-size: 15px;
   }
 
-  /* Slider adjustments for tablet */
-  .game-card.prev {
-    transform: translate(-110%, -50%) scale(0.9);
+  /* slider */
+  .genres__grid .game-card.prev {
+    transform: translate(-110%, -50%);
+    opacity: 1;
   }
-
-  .game-card.next {
-    transform: translate(10%, -50%) scale(0.9);
+  .genres__grid .game-card.next {
+    transform: translate(10%, -50%);
+    opacity: 1;
   }
-
-  .fa-angle-left,
-  #slider-prev {
+  .genres__grid .game-card.active,
+  .genres__grid .game-card.prev-2,
+  .genres__grid .game-card.next-2 {
+    transform: translate(-50%, -50%) scale(0.7);
+    visibility: hidden;
+    opacity: 0;
+  }
+  .fa-angle-left {
     left: 5rem;
   }
 
-  .fa-angle-right,
-  #slider-next {
+  .fa-angle-right {
     right: 5rem;
   }
 }
@@ -576,34 +548,54 @@ body {
     height: 3rem;
   }
 
-  /* Slider for mobile - only show active card */
-  .genres__grid {
-    height: 400px;
-  }
-
-  .game-card.active {
+  /* slider */
+  .genres__grid .game-card.active {
     transform: translate(-50%, -50%) scale(1);
   }
 
-  .game-card.prev,
-  .game-card.next,
-  .game-card.prev-2,
-  .game-card.next-2 {
+  .genres__grid .game-card.prev,
+  .genres__grid .game-card.next,
+  .genres__grid .game-card.prev-2,
+  .genres__grid .game-card.next-2 {
+    transform: translate(-50%, -50%);
     visibility: hidden;
     opacity: 0;
   }
-
   .fa-angle-left,
   #slider-prev {
-    left: 2.5rem;
+    left: 1rem;
   }
 
   .fa-angle-right,
   #slider-next {
-    right: 2.5rem;
+    right: 0.5rem;
+  }
+  .genres__grid {
+    height: 400px;
   }
 
-  .order-card__time {
+  .fa-angle-left {
+    left: 2.5rem;
+  }
+  .fa-angle-right {
+    right: 2.5rem;
+  }
+  .genres__grid .game-card__add-cart {
+    font-size: 1.6rem;
+  }
+  .genres__grid .game-card__wishlist .fa-heart {
+    font-size: 3.5rem;
+    margin-bottom: 0.2rem;
+  }
+  #notification-box {
+    top: 70px;
+    right: 15px;
+  }
+  .notification {
+    font-size: 1.2rem;
+    padding: 10px 15px;
+  }
+    .order-card__time {
     display: none;
   }
 

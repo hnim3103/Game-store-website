@@ -1,0 +1,19 @@
+.slider.small .slider__track{
+    overflow: hidden;
+    height: fit-content;
+    display: grid;
+    grid-auto-flow: column;
+    gap: 30px;
+    justify-content: center;
+}
+
+.slider.small{
+    position: relative;
+    margin-top: 0;
+    padding: 0;
+}
+
+.slider.small .slider__controls{
+    position: absolute ;
+    width: 100%;
+}

@@ -2,7 +2,7 @@
 :root {
   --green: #00e122;
   --bg-dark: #070f1a;
-  --bg-dark-1: #0F242C;
+  --bg-dark-1: #0f242c;
   --bg-light: #225557;
   --text: #ffffff;
   --gray: #404044;
@@ -14,8 +14,6 @@
   box-sizing: border-box;
   font-family: "Roboto Flex", sans-serif;
 }
-
-
 
 /* body {
   background: var(--bg-dark);
@@ -252,14 +250,14 @@
   .header__menu-toggle {
     display: flex;
   }
-  .header__auth .header__avatar{
+  .header__auth .header__avatar {
     width: 35px;
     height: 35px;
   }
-  .header__auth .header__username{
+  .header__auth .header__username {
     font-size: 12px;
   }
-  .header__auth .profile li a{
+  .header__auth .profile li a {
     font-size: 12px;
   }
 }
@@ -444,23 +442,23 @@
   cursor: default;
 }
 
-
-.category__collabsible{
+.category__collabsible {
   position: absolute;
-  width: 90%;
+  width: 100%;
   display: none;
-  left: 5%;
+  left: 0;
   margin: auto;
   margin-top: 30px;
+  height: 560px;
 }
 
-.category__selections{
+.category__selections {
   background-color: var(--bg-dark-1);
   width: 30%;
   padding: 10px;
 }
 
-.category__game-container{
+.category__game-container {
   width: 70%;
   background-color: var(--bg-light);
   display: flex;
@@ -469,14 +467,14 @@
 }
 
 .selection:hover,
-.selection#selected{
+.selection#selected {
   background-color: var(--bg-light);
   border-radius: 5px;
   width: 101%;
   padding-left: 5px;
 }
 
-.selection{
+.selection {
   display: flex;
   align-items: center;
   cursor: pointer;
@@ -484,69 +482,64 @@
   height: 2.9rem;
 }
 
-.selection a{
+.selection a {
   color: var(--text);
   font-weight: 700;
   font-size: 1.6rem;
 }
 
-.selections ul{
+.selections ul {
   margin: 10px;
   line-height: 1.9rem;
 }
 
-
-.arrow{
+.arrow {
   width: 1.9rem;
-  filter: 
-    invert(93%) 
-    sepia(93%) 
-    saturate(30%) 
-    hue-rotate(143deg) 
+  filter: invert(93%) sepia(93%) saturate(30%) hue-rotate(143deg)
     brightness(107%);
-    margin-right: 2px;
+  margin-right: 2px;
 }
 
-.seperate__line{
+.seperate__line {
   border: 1px solid var(--green);
   margin: 10px;
 }
 
-.category__title h2{
+.category__title h2 {
   font-weight: 600;
   font-size: 2rem;
 }
 
-.game-card__add-cart span{
+.game-card__add-cart span {
   font-size: 1.2rem;
 }
 
-.game-card__price-wrapper p{
+.game-card__price-wrapper p {
   font-size: 1.6rem;
 }
 
-.game-card__wishlist{
+.game-card__wishlist {
   font-size: 2rem;
 }
 
-.game-grid{
-  margin-top: 30px;
+.game-grid {
+  margin-top: 10px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 20px;
+  gap: 10px;
 }
 
-.button__container{
+.button__container {
   margin-top: 30px;
   display: flex;
   border-radius: 5px;
-  border: 1px solid #D9D9D9;
+  border: 1px solid #d9d9d9;
   background: rgba(255, 255, 255, 0.17);
   box-shadow: 0 5px 4px 0 rgba(0, 0, 0, 0.25);
   justify-content: center;
 }
 
-.category__button{
+.category__button {
   border: none;
   outline: none;
   font-size: 2.3rem;
@@ -555,17 +548,148 @@
   color: var(--text);
 }
 
-
-.category__button a{
+.category__button a {
   color: var(--text);
   font-weight: 700;
 }
 
-.button__container:hover{
-  background: rgba(255, 255, 255, 0.125)
+.button__container:hover {
+  background: rgba(255, 255, 255, 0.125);
 }
 
-.category__collabsible.is-display{
+.category__collabsible.is-display {
   display: flex;
 }
 
+/* notification  */
+#notification-box {
+  position: fixed;
+  top: 100px;
+  right: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  z-index: 10000;
+  background-color: var(--bg2);
+}
+
+.notification {
+  min-width: 250px;
+  color: #fff;
+  padding: 15px 20px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 2rem;
+  border-left: 4px solid;
+  animation: slideInLeft 0.5s ease forwards, fadeOut 0.5s ease 2.5s forwards;
+}
+
+/* add notification */
+.notification.add {
+  border-left-color: #00e122;
+}
+.notification.add i {
+  color: #00e122;
+}
+
+/* remove notification */
+.notification.remove {
+  border-left-color: #ff3333;
+}
+.notification.remove i {
+  color: #ff3333;
+}
+
+/* animation appear */
+@keyframes slideInLeft {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* animation hidden */
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+/* === confirm logout === */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  opacity: 0; /* hidden*/
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-box {
+  background: #0f232c;
+  padding: 30px;
+  border-radius: 8px;
+  text-align: center;
+  width: 350px;
+  transition: all 0.3s ease;
+}
+
+.modal-box p {
+  color: #fff;
+  font-size: 1.6rem;
+  margin-bottom: 25px;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.btn-modal {
+  padding: 10px 20px;
+  font-size: 1.4rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-cancel {
+  background: #333;
+  color: #fff;
+}
+
+.btn-confirm {
+  background-color: var(--green);
+}
+select {
+  background: transparent;
+  color: var(--text);
+  border: none;
+  outline: none;
+}
+
+option {
+  background-color: var(--bg-dark-1);
+}

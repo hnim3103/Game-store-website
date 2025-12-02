@@ -117,18 +117,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
-  // Sign-Out
-  const signOutButton = document.querySelector(".profile-bar__signout");
-  if (signOutButton) {
-    signOutButton.addEventListener("click", (e) => {
-      e.preventDefault();
-
-      localStorage.removeItem("loggedInUserEmail");
-
-      alert("You have logged out.");
-      window.location.href = "/html/homepage.html";
-    });
-  }
 });
 
 document.addEventListener("DOMContentLoaded", () => {

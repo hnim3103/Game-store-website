@@ -55,10 +55,10 @@ if (voucherButton) {
       // Thành công
       balanceAmount.textContent = "$1.00";
       voucherInput.value = "";
-      alert("Gift Card redeemed successfully!");
+      window.showNotification("Gift Card redeemed successfully!", "add");
     } else {
       // Sai mã
-      alert("Invalid code");
+      window.showNotification("Invalid Gift Card code!", "remove");
     }
   });
 }

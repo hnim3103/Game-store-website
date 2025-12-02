@@ -321,7 +321,7 @@ body {
 /* fix gradient */
 body {
   background: linear-gradient(180deg, #070f1a 25%, #225557 81%) !important;
-  color: var(--text-color);
+  color: var(--text);
 }
 
 @media screen and (min-width: 800px) and (max-width: 1024px) {

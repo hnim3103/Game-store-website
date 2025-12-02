@@ -31,7 +31,6 @@ const Auth = {
     const signinBtn = document.querySelector(".header__signin");
     const userDiv = document.querySelector(".header__user");
     const usernameSpan = document.querySelector(".header__username");
-    const logoutBtn = document.querySelector(".header__logout");
 
     if (this.isLoggedIn()) {
       const user = this.getCurrentUser();
@@ -42,14 +41,12 @@ const Auth = {
       // Show user info
       if (userDiv) userDiv.style.display = "flex";
       if (usernameSpan) usernameSpan.textContent = user.username;
-      if (logoutBtn) logoutBtn.style.display = "block";
     } else {
       // Show sign in button
       if (signinBtn) signinBtn.style.display = "block";
 
       // Hide user info
       if (userDiv) userDiv.style.display = "none";
-      if (logoutBtn) logoutBtn.style.display = "none";
     }
   },
 
@@ -61,25 +58,51 @@ const Auth = {
 
   // Setup logout functionality
   setupLogout() {
-    const logoutBtn = document.querySelector(".header__logout");
-    console.log("Logout button found:", logoutBtn);
+    const logoutBtn = document.querySelectorAll(
+      ".header__logout, .profile-bar__signout"
+    );
+    const modal = document.getElementById("logout-modal");
+    const btnConfirm = document.getElementById("btn-confirm-logout");
+    const btnCancel = document.getElementById("btn-cancel-logout");
 
-    if (logoutBtn) {
-      logoutBtn.addEventListener("click", (e) => {
-        e.preventDefault();
-        if (confirm("Are you sure you want to logout?")) {
-          console.log("User confirmed logout");
-          this.logout();
-
-          if (window.location.pathname !== "/html/homepage.html") {
-            window.location.href = "/html/homepage.html";
-          } else {
-            console.log("Reloading homepage");
-            window.location.reload();
-          }
-        }
-      });
+    if (!logoutBtn || !modal || !btnConfirm || !btnCancel) {
+      console.warn("Auth: Không tìm thấy đủ các phần tử cho Logout Modal");
+      return;
     }
+    logoutBtn.forEach((btn) => {
+      btn.onclick = (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        const userMenu = document.getElementById("userMenu");
+        if (userMenu) userMenu.classList.remove("show");
+
+        // Hiện modal xác nhận
+        modal.classList.add("active");
+      };
+    });
+
+    const closeModal = () => {
+      modal.classList.remove("active");
+    };
+
+    btnCancel.addEventListener("click", closeModal);
+
+    // Đóng khi bấm ra vùng tối bên ngoài
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) closeModal();
+    });
+    btnConfirm.onclick = () => {
+      closeModal();
+      this.logout();
+      if (typeof window.showNotification === "function") {
+        window.showNotification("You have logged out successfully!", "add");
+      } else {
+        console.log("Logged out");
+      }
+      setTimeout(() => {
+        window.location.href = "/html/homepage.html";
+      }, 1500);
+    };
   },
 };
 

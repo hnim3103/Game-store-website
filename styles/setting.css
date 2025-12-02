@@ -1,48 +1,3 @@
-/* ---------------------------------------------------
-  Google Font Import
---------------------------------------------------- */
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap");
-
-/* ---------------------------------------------------
-  Reset & Base Styles
---------------------------------------------------- */
-* {
-  font-family: "Roboto Flex", sans-serif;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  list-style: none;
-  text-decoration: none;
-  scroll-padding-top: 2rem;
-  scroll-behavior: smooth;
-}
-
-:root {
-  --green-color: #00e122;
-  --dark-green-color: #225557;
-  --black-color: #070f1a;
-  --text-color: #ffffff;
-  --super-dark-green-color: #0f232c;
-  --bg1: #070f1a;
-  --bg2: #225557;
-  font-size: 10px;
-}
-
-body {
-  margin: 0;
-  font-family: "Roboto Flex", sans-serif;
-  background: linear-gradient(
-    180deg,
-    var(--bg1) 5%,
-    #0b2a2e 45%,
-    var(--bg2) 95%
-  );
-  background-attachment: fixed;
-  overflow-x: hidden;
-  margin: 0;
-  color: var(--white);
-}
-
 img {
   width: 100%;
   height: auto;
@@ -101,7 +56,7 @@ h1 {
 }
 
 .profile-bar__signout {
-  color: #ffffff;
+  color: var(--text);
   text-decoration: underline;
   font-size: 15px;
   cursor: pointer;
@@ -192,10 +147,10 @@ h1 {
 }
 
 .settings-box {
-  background-color: var(--dark-green-color);
+  background-color: var(--bg2);
   border-radius: 8px;
   padding: 2.5rem;
-  box-shadow: 0px 3px 4.8px var(--green-color);
+  box-shadow: 0px 3px 4.8px var(--green);
   animation: fadeInUp 1s ease-out backwards;
 }
 
@@ -239,7 +194,7 @@ h1 {
   font-size: clamp(18px, 2vw, 25px);
   font-weight: 700;
   margin: 4rem 0;
-  color: var(--text-color);
+  color: var(--text);
 }
 
 .communication-setting {
@@ -268,7 +223,7 @@ h1 {
 /* content in box */
 .communication-setting__description {
   font-size: clamp(9px, 2vw, 15px);
-  color: var(--text-color);
+  color: var(--text);
   line-height: 1.4;
   cursor: pointer;
 }
@@ -304,24 +259,24 @@ h1 {
 .setting-item__billing label {
   font-size: clamp(12px, 2vw, 18px);
   font-weight: 500;
-  color: var(--text-color);
+  color: var(--text);
 }
 
 .setting-item__billing span {
   font-size: clamp(10px, 2vw, 17px);
-  color: var(--text-color);
+  color: var(--text);
   max-width: 350px;
 }
 
 .setting-item__text label {
   font-size: clamp(12px, 2vw, 18px);
   font-weight: 500;
-  color: var(--text-color);
+  color: var(--text);
 }
 
 .setting-item__text span {
   font-size: clamp(10px, 2vw, 17px);
-  color: var(--text-color);
+  color: var(--text);
   max-width: 350px;
 }
 
@@ -330,7 +285,7 @@ h1 {
   align-items: flex-end;
   font-size: clamp(9px, 2vw, 16px);
   font-weight: 500;
-  color: var(--green-color);
+  color: var(--green);
   text-decoration: underline;
 }
 
@@ -343,7 +298,7 @@ h1 {
   align-items: center;
   gap: clamp(4px, 2vw, 15px);
   font-size: clamp(9px, 2vw, 16px);
-  color: var(--text-color);
+  color: var(--text);
 }
 
 .setting-item__connect img {
@@ -352,8 +307,8 @@ h1 {
 }
 
 .setting-item__button {
-  background-color: var(--green-color);
-  color: var(--text-color);
+  background-color: var(--green);
+  color: var(--text);
   font-size: clamp(7px, 2vw, 14px);
   font-weight: 500;
   padding: 0.8rem 1.5rem;
@@ -378,7 +333,7 @@ input[type="checkbox"] {
   appearance: none !important;
   width: clamp(16px, 2vw, 24px) !important;
   height: clamp(16px, 2vw, 24px) !important;
-  border: 2px solid var(--green-color) !important;
+  border: 2px solid var(--green) !important;
   border-radius: 4px !important;
   background-color: transparent !important;
   cursor: pointer !important;
@@ -388,7 +343,7 @@ input[type="checkbox"] {
 }
 
 .setting-item__toggle:checked {
-  background-color: var(--green-color) !important;
+  background-color: var(--green) !important;
 }
 
 .setting-item__toggle:checked::after {
@@ -398,7 +353,7 @@ input[type="checkbox"] {
   left: 50% !important;
   transform: translate(-50%, -50%) !important;
   font-size: clamp(12px, 2vw, 20px) !important;
-  color: var(--black-color) !important;
+  color: var(--bg1) !important;
   display: block !important;
 }
 
@@ -427,13 +382,13 @@ input[type="checkbox"] {
   width: 90%;
   max-width: 500px;
   position: relative;
-  color: var(--text-color);
+  color: var(--text);
 }
 
 .update-overlay__content h1 {
   margin-top: 0;
   margin-bottom: 2rem;
-  color: var(--text-color);
+  color: var(--text);
   font-size: clamp(2rem, 2vw, 3rem);
 }
 
@@ -443,10 +398,10 @@ input[type="checkbox"] {
   padding: 10px;
   box-sizing: border-box;
   border-radius: 4px;
-  border: 1px solid var(--green-color);
-  background-color: var(--dark-green-color);
+  border: 1px solid var(--green);
+  background-color: var(--bg2);
   filter: brightness(1.1);
-  color: var(--text-color);
+  color: var(--text);
   font-size: clamp(1rem, 2vw, 1.6rem);
 }
 
@@ -464,12 +419,12 @@ input[type="checkbox"] {
 
 .update-overlay__content input:focus {
   outline: none;
-  border: 1.2px solid var(--green-color);
-  box-shadow: 0 0 2.4px var(--green-color);
+  border: 1.2px solid var(--green);
+  box-shadow: 0 0 2.4px var(--green);
 }
 .update-overlay__content input:hover {
   filter: brightness(1.3);
-  border: 2px solid var(--green-color);
+  border: 2px solid var(--green);
 }
 .update-overlay__content label {
   display: block;
@@ -483,19 +438,19 @@ input[type="checkbox"] {
   cursor: pointer;
 }
 .update-overlay__content select option {
-  background-color: var(--dark-green-color);
-  color: var(--text-color);
+  background-color: var(--bg2);
+  color: var(--text);
 }
 
 .update-overlay__content select:focus {
   outline: none;
-  border: 1.2px solid var(--green-color);
-  box-shadow: 0 0 2.4px var(--green-color);
+  border: 1.2px solid var(--green);
+  box-shadow: 0 0 2.4px var(--green);
 }
 
 .update-overlay__content select:hover {
   filter: brightness(1.3);
-  border: 2px solid var(--green-color);
+  border: 2px solid var(--green);
   cursor: pointer;
 }
 /* reset radio */
@@ -518,7 +473,7 @@ input[type="checkbox"] {
   position: relative;
   padding-left: 3rem;
   cursor: pointer;
-  color: var(--text-color);
+  color: var(--text);
   font-weight: normal;
 }
 
@@ -531,9 +486,9 @@ input[type="checkbox"] {
   transform: translateY(-50%);
   width: 16px;
   height: 17px;
-  border: 2px solid var(--green-color);
+  border: 2px solid var(--green);
   border-radius: 50%;
-  background-color: var(--super-dark-green-color);
+  background-color: var(--super-);
   transition: background-color 0.2s;
 }
 
@@ -546,11 +501,11 @@ input[type="checkbox"] {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background-color: var(--green-color);
+  background-color: var(--green);
 }
 
 .radio-group input[type="radio"]:focus + .radio-group__label::before {
-  box-shadow: 0 0 5px var(--green-color);
+  box-shadow: 0 0 5px var(--green);
 }
 
 .update-overlay__actions {
@@ -561,9 +516,9 @@ input[type="checkbox"] {
 }
 
 .update-overlay__actions button {
-  background-color: var(--green-color);
+  background-color: var(--green);
   font-size: clamp(7px, 2vw, 17px);
-  color: var(--text-color);
+  color: var(--text);
 }
 
 .update-overlay__actions button:hover {
