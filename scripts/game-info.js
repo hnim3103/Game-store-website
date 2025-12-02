@@ -17,14 +17,11 @@ function initReviewCard(card) {
       const bodyHeight = body.scrollHeight;
 
       if (bodyHeight <= collapsedHeight) {
-        // Review ngắn - ẩn hoàn toàn READ MORE và gradient
         toggleBtn.style.display = "none";
         content.style.maxHeight = "none";
         content.classList.remove("is-expanded");
-        // Xóa ::after gradient bằng cách thêm class
         content.style.setProperty("--show-gradient", "0");
       } else {
-        // Review dài - hiện READ MORE
         toggleBtn.style.display = "block";
         content.style.setProperty("--show-gradient", "1");
 
@@ -36,10 +33,9 @@ function initReviewCard(card) {
       }
     };
 
-    // Khởi tạo
     updateReadMore();
 
-    // Cập nhật khi resize
+    // Update on window resize
     let resizeTimer;
     window.addEventListener("resize", () => {
       clearTimeout(resizeTimer);
@@ -52,13 +48,13 @@ function initReviewCard(card) {
       const isExpanded = content.classList.contains("is-expanded");
 
       if (isExpanded) {
-        // Thu gọn
+        // Collapse
         content.classList.remove("is-expanded");
         content.style.maxHeight = collapsedHeight + "px";
         toggleBtn.textContent = "READ MORE";
         content.scrollIntoView({ behavior: "smooth", block: "nearest" });
       } else {
-        // Mở rộng
+        // Expand
         content.classList.add("is-expanded");
         content.style.maxHeight = "none";
         toggleBtn.textContent = "SHOW LESS";
@@ -82,7 +78,7 @@ function initReviewCard(card) {
   }
 }
 
-// Khởi tạo cho các review có sẵn
+// Initialize existing reviews
 document.querySelectorAll(".review-card").forEach(initReviewCard);
 
 // GAME DESCRIPTION TOGGLE – READ MORE / SHOW LESS
@@ -109,7 +105,7 @@ function initReadMore() {
 
 // IMAGE GALLERY
 function initGallery() {
-  // Lấy các phần tử DOM cần thiết
+  // Get necessary DOM elements
   const mainImage = document.querySelector(".gallery__main-image");
   const mainVideo = document.querySelector(".gallery__main-video");
   const prevBtn = document.querySelector(".gallery__nav--prev");
@@ -121,7 +117,7 @@ function initGallery() {
 
   if (!mainImage || thumbnails.length === 0) return;
 
-  // Xây dựng mảng dữ liệu từ HTML
+  // Build data array from HTML
   const galleryItems = Array.from(thumbnails).map((wrapper) => {
     return {
       type: wrapper.dataset.type || "image",
@@ -134,20 +130,20 @@ function initGallery() {
   let touchEndX = 0;
   const swipeThreshold = 50;
 
-  // Hàm chuyển slide
+  // Function to change slide
   function setActiveItem(index) {
-    // Kiểm tra: Không làm gì nếu item không tồn tại hoặc đang active
+    // Check: Do nothing if item doesn't exist or is already active
     if (!galleryItems[index] || currentImageIndex === index) return;
 
     const item = galleryItems[index];
     if (mainVideo) mainVideo.src = "";
 
-    // Nếu là video
+    // If it's a video
     if (item.type === "video" && mainVideo) {
-      mainImage.classList.add("is-hidden"); // ẩn ảnh
-      mainVideo.classList.remove("is-hidden"); // hiện video
+      mainImage.classList.add("is-hidden"); // hide image
+      mainVideo.classList.remove("is-hidden"); // show video
       mainVideo.src = item.src + "?autoplay=1&mute=0&controls=1";
-      // Ngược lại nếu là ảnh
+      // Otherwise, if it's an image
     } else {
       mainImage.classList.remove("is-hidden");
       if (mainVideo) mainVideo.classList.add("is-hidden");
@@ -164,20 +160,20 @@ function initGallery() {
     currentImageIndex = index;
   }
 
-  // Hàm cập nhật giao diện
+  // Function to update UI
   function updateActiveUI(index, isInitialLoad = false) {
-    // Cập nhật viền
+    // Update border
     thumbnails.forEach((wrapper, i) => {
       wrapper.classList.toggle("gallery__thumbnail--active", i === index);
     });
-    // Cập nhật chấm tròn cho mobile
+    // Update dots for mobile
     if (dotsContainer) {
       const allDots = dotsContainer.querySelectorAll(".gallery__dot");
       allDots.forEach((dot, i) => {
         dot.classList.toggle("gallery__dot--active", i === index);
       });
     }
-    // Logic cuộn thumbnail vào giữa màn hình
+    // Logic to scroll thumbnail to center of screen
     const activeThumb = thumbnails[index];
     if (activeThumb && thumbnailContainer) {
       const containerWidth = thumbnailContainer.offsetWidth;
@@ -192,7 +188,7 @@ function initGallery() {
     }
   }
 
-  // Hàm khởi tạo để đồng bộ thumbnail
+  // Function to initialize and sync thumbnails
   function initializeGallery() {
     let activeIndex = Array.from(thumbnails).findIndex((wrapper) =>
       wrapper.classList.contains("gallery__thumbnail--active")
@@ -216,7 +212,7 @@ function initGallery() {
     }
   }
 
-  // Hàm điều khiển
+  // Control functions
   function showNextImage() {
     let nextIndex = (currentImageIndex + 1) % galleryItems.length;
     setActiveItem(nextIndex);
@@ -237,7 +233,7 @@ function initGallery() {
     });
   });
 
-  // Gắn sự kiện vuốt
+  // Attach swipe event
   if (swipeArea) {
     swipeArea.addEventListener(
       "touchstart",

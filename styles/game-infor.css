@@ -966,7 +966,6 @@
   opacity: var(--show-gradient, 1);
   transition: opacity 0.3s ease-out;
   pointer-events: none;
-  pointer-events: none;
 }
 
 .review-card__content.is-expanded::after {
