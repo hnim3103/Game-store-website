@@ -1,3 +1,15 @@
+:root {
+  --green-color: #00e122;
+  --dark-green-color: #225557;
+  --black-color: #070f1a;
+  --text-color: #ffffff;
+  --super-dark-green-color: #0f232c;
+  --bg1: #070f1a;
+  --bg2: #225557;
+  font-size: 10px;
+}
+
+/* Fix gradient background */
 body {
   background: linear-gradient(180deg, #070f1a 25%, #225557 81%);
   background-attachment: fixed;
@@ -19,7 +31,12 @@ body {
   background: transparent;
 }
 
-/* Profile Bar */
+
+/* ---------------------------------------------------
+  Profile Bar & User Navigation
+--------------------------------------------------- */
+
+/* profile bar */
 .profile-bar {
   display: flex;
   justify-content: space-between;
@@ -38,6 +55,7 @@ body {
   height: 70px;
   border-radius: 50%;
   border: 3px solid var(--green);
+  border: 3px solid var(--green);
 }
 
 .profile-bar__text {
@@ -48,11 +66,12 @@ body {
 .profile-bar__username {
   font-size: 24px;
   font-weight: 700;
-  color: var(--text);
+  color: var(--white);
 }
 
 .profile-bar__fullname {
   font-size: 16px;
+  color: var(--text);
   color: var(--text);
 }
 
@@ -61,45 +80,54 @@ body {
   text-decoration: underline;
   font-size: 15px;
   cursor: pointer;
-  transition: color 0.3s ease;
 }
 
 .profile-bar__signout:hover {
   color: var(--green);
+  color: var(--green);
 }
 
-/* User Navigation */
+/* user navigation */
 .user-nav {
   border-top: 2px solid rgba(0, 225, 34, 0.35);
   border-bottom: 2px solid rgba(0, 225, 34, 0.35);
-  padding: 15px 0;
-  margin-bottom: 40px;
+  padding: 18px 0;
+  margin-bottom: 35px;
 }
 
 .user-nav__list {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
+/* Link */
 .user-nav__link {
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 12px;
+  align-items: center;
+  text-decoration: none;
   color: var(--text);
-  font-size: 1.5rem;
+  font-size: 15px;
+  font-weight: 500;
   transition: 0.25s;
 }
 
+/* Icon */
 .user-nav__link img {
   width: 42px;
   height: 42px;
   opacity: 0.85;
-  transition: 0.25s ease;
+  transition: 0.25s;
 }
 
+/* Hover */
 .user-nav__link:hover span {
+  color: var(--green);
   color: var(--green);
 }
 
@@ -107,14 +135,16 @@ body {
   transform: scale(1.1);
 }
 
+/* Active */
 .user-nav__link--active span {
+  color: var(--green);
   color: var(--green);
   font-weight: 700;
 }
 
 .user-nav__link--active img {
   opacity: 1;
-  filter: brightness(1.6);
+  filter: brightness(1.7) saturate(1.4);
 }
 
 /* Section Title */
@@ -131,7 +161,8 @@ body {
 }
 
 .order-card {
-  background: rgba(29, 74, 77, 0.55);
+  background: #1D4A4D;
+  background: #1D4A4D;
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 4px;
   padding: 14px;
@@ -156,12 +187,17 @@ body {
 .order-card__title {
   font-size: 1.8rem;
   font-weight: 700;
-  margin-bottom: 4px;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
 }
 
 .order-card__genre,
 .order-card__date {
   font-size: 1.4rem;
+  margin-bottom: 10px;
+  margin-bottom: 10px;
   opacity: 0.8;
 }
 
@@ -169,6 +205,8 @@ body {
   min-width: 120px;
   font-size: 1.5rem;
   text-align: right;
+  margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 /* Recent Activities */
@@ -198,7 +236,8 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  background: rgba(255, 255, 255, 0.03);
+  background: #0F232C;
+  background: #0F232C;
   border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: 4px;
   padding: 16px;
@@ -213,11 +252,17 @@ body {
 .activity-card__title {
   font-size: 1.8rem;
   font-weight: 700;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
 }
 
 .activity-card__genre,
 .activity-card__date {
   font-size: 1.4rem;
+  margin-bottom: 10px;
+  margin-bottom: 10px;
   opacity: 0.85;
 }
 
@@ -230,7 +275,8 @@ body {
 }
 
 .progress-box span {
-  font-size: 1.4rem;
+  font-size: 20px;
+  font-size: 20px;
 }
 
 .progress-count {
@@ -239,7 +285,8 @@ body {
 }
 
 .progress-bar {
-  flex: 1;
+  width: 300px;
+  width: 300px;
   height: 10px;
   background: #d1d5db;
   border-radius: 10px;
@@ -270,7 +317,8 @@ body {
 }
 
 .genres__title {
-  font-size: clamp(1.5rem, 2vw, 2.5rem);
+  font-size: 30px;
+  font-size: 30px;
   padding: 2rem 0;
   color: var(--text);
   font-weight: 700;
@@ -513,7 +561,15 @@ body {
     visibility: hidden;
     opacity: 0;
   }
+  .fa-angle-left,
+  #slider-prev {
+    left: 1rem;
+  }
 
+  .fa-angle-right,
+  #slider-next {
+    right: 0.5rem;
+  }
   .genres__grid {
     height: 400px;
   }
@@ -530,5 +586,34 @@ body {
   .genres__grid .game-card__wishlist .fa-heart {
     font-size: 3.5rem;
     margin-bottom: 0.2rem;
+  }
+  #notification-box {
+    top: 70px;
+    right: 15px;
+  }
+  .notification {
+    font-size: 1.2rem;
+    padding: 10px 15px;
+  }
+    .order-card__time {
+    display: none;
+  }
+
+  .activity-card__info {
+    display: none;
+  }
+
+  .progress-box span {
+    font-size: 15px;
+  }
+
+  .progress-bar {
+    width: 100px;
+  }
+  .genres__title {
+    font-size: 25px;
+    font-weight: 700;
+    margin-left: 100px;
+    margin-bottom: -80px;
   }
 }

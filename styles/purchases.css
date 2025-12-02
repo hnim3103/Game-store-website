@@ -1,3 +1,24 @@
+/* PURCHASES PAGE STYLES */
+/* ---------------------------------------------------
+  Reset & Base Styles
+--------------------------------------------------- */
+:root {
+  --green-color: #00e122;
+  --dark-green-color: #225557;
+  --black-color: #070f1a;
+  --text-color: #ffffff;
+  --super-dark-green-color: #0f232c;
+  --bg1: #070f1a;
+  --bg2: #225557;
+  font-size: 10px;
+}
+
+body {
+  background-attachment: fixed;
+  overflow-x: hidden;
+  color: var(--text-color);
+}
+
 img {
   width: 100%;
   height: auto;
@@ -20,7 +41,11 @@ h1 {
   padding: 0 1.5rem;
 }
 
-/* Profile Bar */
+/* ---------------------------------------------------
+  Profile Bar & User Navigation
+--------------------------------------------------- */
+
+/* profile bar */
 .profile-bar {
   display: flex;
   justify-content: space-between;
@@ -39,6 +64,7 @@ h1 {
   height: 70px;
   border-radius: 50%;
   border: 3px solid var(--green);
+  border: 3px solid var(--green);
 }
 
 .profile-bar__text {
@@ -49,11 +75,12 @@ h1 {
 .profile-bar__username {
   font-size: 24px;
   font-weight: 700;
-  color: var(--text);
+  color: var(--white);
 }
 
 .profile-bar__fullname {
   font-size: 16px;
+  color: var(--text);
   color: var(--text);
 }
 
@@ -62,14 +89,14 @@ h1 {
   text-decoration: underline;
   font-size: 15px;
   cursor: pointer;
-  transition: color 0.3s ease;
 }
 
 .profile-bar__signout:hover {
   color: var(--green);
+  color: var(--green);
 }
 
-/* User Navigation */
+/* user navigation */
 .user-nav {
   border-top: 2px solid rgba(0, 225, 34, 0.35);
   border-bottom: 2px solid rgba(0, 225, 34, 0.35);
@@ -86,6 +113,7 @@ h1 {
   margin: 0;
 }
 
+/* Link */
 .user-nav__link {
   display: flex;
   flex-direction: column;
@@ -93,19 +121,23 @@ h1 {
   align-items: center;
   text-decoration: none;
   color: var(--text);
+  color: var(--text);
   font-size: 15px;
   font-weight: 500;
   transition: 0.25s;
 }
 
+/* Icon */
 .user-nav__link img {
   width: 42px;
   height: 42px;
   opacity: 0.85;
-  transition: 0.25s ease;
+  transition: 0.25s;
 }
 
+/* Hover */
 .user-nav__link:hover span {
+  color: var(--green);
   color: var(--green);
 }
 
@@ -113,7 +145,9 @@ h1 {
   transform: scale(1.1);
 }
 
+/* Active */
 .user-nav__link--active span {
+  color: var(--green);
   color: var(--green);
   font-weight: 700;
 }
@@ -123,24 +157,29 @@ h1 {
   filter: brightness(1.7) saturate(1.4);
 }
 
+
 /* Empty Notification */
-.notification {
+.notifica {
   text-align: center;
   margin-top: 3rem;
   margin-bottom: 5rem;
 }
 
-.notification__title {
-  font-size: 2.2rem;
+.notifica__title {
+  font-size: 40px;
   font-weight: 600;
-  color: var(--text);
+  color: var(--text-color);
+  letter-spacing: 1px;
+  letter-spacing: 1px;
 }
 
 .empty-text {
-  font-size: 1.6rem;
+  font-size: 30px;
+  font-size: 30px;
   margin-top: 1rem;
   color: #c7d2da;
 }
+
 
 /*Slider*/
 
@@ -152,7 +191,8 @@ h1 {
 }
 
 .genres__title {
-  font-size: clamp(1.5rem, 2vw, 2.5rem);
+  font-size: 30px;
+  font-size: 30px;
   padding: 2rem 0;
   color: var(--text);
   font-weight: 700;
@@ -320,44 +360,6 @@ h1 {
   opacity: 0;
   z-index: 1;
 }
-/* Animation */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.profile-bar,
-.user-nav,
-.notification,
-.genres {
-  animation: fadeInUp 1.2s ease-out backwards;
-}
-
-.profile-bar {
-  animation-delay: 0.1s;
-}
-
-.user-nav {
-  animation-delay: 0.2s;
-}
-
-.notification {
-  animation-delay: 0.3s;
-}
-
-.genres__title {
-  animation-delay: 0.4s;
-}
-
-.genres__grid {
-  animation-delay: 0.5s;
-}
 
 /* Tablet Responsive */
 @media screen and (min-width: 800px) and (max-width: 1024px) {
@@ -422,12 +424,13 @@ h1 {
   }
 
   /* Notification */
-  .notification__title {
-    font-size: 1.8rem;
+  .notifica__title {
+    font-size: 30px;
   }
 
   .empty-text {
-    font-size: 1.4rem;
+    font-size: 25px;
+    font-size: 25px;
   }
 
   /* slider */
@@ -443,7 +446,15 @@ h1 {
     visibility: hidden;
     opacity: 0;
   }
+  .fa-angle-left,
+  #slider-prev {
+    left: 1rem;
+  }
 
+  .fa-angle-right,
+  #slider-next {
+    right: 0.5rem;
+  }
   .genres__grid {
     height: 400px;
   }
@@ -460,6 +471,14 @@ h1 {
   .genres__grid .game-card__wishlist .fa-heart {
     font-size: 3.5rem;
     margin-bottom: 0.2rem;
+  }
+  #notification-box {
+    top: 70px;
+    right: 15px;
+  }
+  .notification {
+    font-size: 1.2rem;
+    padding: 10px 15px;
   }
 }
 

@@ -24,3 +24,41 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  // LẤY EMAIL NGƯỜI DÙNG TỪ localStorage 
+  const userEmail = localStorage.getItem("loggedInUserEmail");
+
+  if (userEmail) {
+    //TÁCH USERNAME từ email
+    const username = userEmail.split("@")[0];
+
+    //TRUY CẬP TỚI NƠI HIỂN THỊ TRONG HTML
+    const usernameElement = document.querySelector(".profile-bar__username");
+    const fullnameElement = document.querySelector(".profile-bar__fullname");
+
+    //GHI DỮ LIỆU LÊN GIAO DIỆN
+    if (usernameElement) usernameElement.textContent = username;
+    if (fullnameElement) fullnameElement.textContent = userEmail;
+  }
+});
+// GIFT CARD REDEEM
+const voucherInput = document.getElementById("voucher-code");
+const voucherButton = document.querySelector(".voucher__button");
+const balanceAmount = document.querySelector(".balance-amount");
+
+if (voucherButton) {
+  voucherButton.addEventListener("click", () => {
+    const code = voucherInput.value.trim();
+
+    if (code === "060705") {
+      // Thành công
+      balanceAmount.textContent = "$1.00";
+      voucherInput.value = "";
+      window.showNotification("Gift Card redeemed successfully!", "add");
+    } else {
+      // Sai mã
+      window.showNotification("Invalid Gift Card code!", "remove");
+    }
+  });
+}
