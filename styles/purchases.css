@@ -203,8 +203,8 @@ h1 {
   right: 7rem;
 }
 
-.game-card {
-  max-width: 240px;
+.genres__grid .game-card {
+  width: 240px;
   display: flex;
   flex-direction: column;
   position: absolute;
@@ -213,25 +213,25 @@ h1 {
   transition: all 0.5s ease;
 }
 
-.game-card:hover {
+.genres__grid .game-card:hover {
   cursor: pointer;
 }
 /* Slider Product Price & Discount */
-.game-card__image {
+.genres__grid .game-card__image {
   width: 100%;
-  height: auto;
+  height: 120px;
   display: block;
   line-height: 0;
 }
 
-.game-card__content {
+.genres__grid .game-card__content {
   background-color: var(--bg1);
   width: 100%;
   display: flex;
   flex-direction: column;
 }
 
-.game-card__price-wrapper {
+.genres__grid .game-card__price-wrapper {
   color: var(--green);
   font-size: 2rem;
   font-weight: bold;
@@ -243,7 +243,7 @@ h1 {
   align-items: center;
 }
 
-.game-card__add-cart {
+.genres__grid .game-card__add-cart {
   font-size: 1.8rem;
   color: var(--text);
   border: none;
@@ -256,18 +256,18 @@ h1 {
   box-shadow: 0px 4px 4px 0px black;
 }
 
-.game-card__add-cart a {
+.genres__grid .game-card__add-cart a {
   color: var(--text);
   margin-left: 0.5rem;
 }
 
-.game-card__add-cart:hover {
+.genres__grid .game-card__add-cart:hover {
   background-color: var(--green);
   cursor: pointer;
   transform: scale(1.05);
 }
 
-.game-card__wishlist {
+.genres__grid .game-card__wishlist {
   background-color: transparent;
   border: none;
   position: absolute;
@@ -276,45 +276,45 @@ h1 {
   color: var(--text);
 }
 
-.game-card__wishlist .fa-heart {
+.genres__grid .game-card__wishlist .fa-heart {
   font-size: 3rem;
   margin-right: -1rem;
 }
 
-.game-card__wishlist .fa-heart:hover {
+.genres__grid .game-card__wishlist .fa-heart:hover {
   color: var(--green);
   cursor: pointer;
   transform: scale(1.1);
 }
 
-.game-card.active {
+.genres__grid .game-card.active {
   visibility: visible;
   transform: translate(-50%, -50%);
   z-index: 3;
 }
 /* Slider Navigation Arrows */
-.game-card.prev {
+.genres__grid .game-card.prev {
   visibility: visible;
   transform: translate(-160%, -50%);
   opacity: 1;
   z-index: 2;
 }
 
-.game-card.next {
+.genres__grid .game-card.next {
   visibility: visible;
   transform: translate(60%, -50%);
   opacity: 1;
   z-index: 2;
 }
 
-.game-card.prev-2 {
+.genres__grid .game-card.prev-2 {
   visibility: hidden;
   transform: translate(-200%, -50%);
   opacity: 0;
   z-index: 1;
 }
 
-.game-card.next-2 {
+.genres__grid .game-card.next-2 {
   visibility: hidden;
   transform: translate(150%, -50%);
   opacity: 0;
@@ -371,17 +371,17 @@ h1 {
   }
 
   /* slider */
-  .game-card.prev {
+  .genres__grid .game-card.prev {
     transform: translate(-110%, -50%);
     opacity: 1;
   }
-  .game-card.next {
+  .genres__grid .game-card.next {
     transform: translate(10%, -50%);
     opacity: 1;
   }
-  .game-card.active,
-  .game-card.prev-2,
-  .game-card.next-2 {
+  .genres__grid .game-card.active,
+  .genres__grid .game-card.prev-2,
+  .genres__grid .game-card.next-2 {
     transform: translate(-50%, -50%) scale(0.7);
     visibility: hidden;
     opacity: 0;
@@ -431,14 +431,14 @@ h1 {
   }
 
   /* slider */
-  .game-card.active {
+  .genres__grid .game-card.active {
     transform: translate(-50%, -50%) scale(1);
   }
 
-  .game-card.prev,
-  .game-card.next,
-  .game-card.prev-2,
-  .game-card.next-2 {
+  .genres__grid .game-card.prev,
+  .genres__grid .game-card.next,
+  .genres__grid .game-card.prev-2,
+  .genres__grid .game-card.next-2 {
     transform: translate(-50%, -50%);
     visibility: hidden;
     opacity: 0;
@@ -454,10 +454,10 @@ h1 {
   .fa-angle-right {
     right: 2.5rem;
   }
-  .game-card__add-cart {
+  .genres__grid .game-card__add-cart {
     font-size: 1.6rem;
   }
-  .game-card__wishlist .fa-heart {
+  .genres__grid .game-card__wishlist .fa-heart {
     font-size: 3.5rem;
     margin-bottom: 0.2rem;
   }

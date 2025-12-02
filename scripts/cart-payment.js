@@ -247,16 +247,20 @@ function renderCartPage() {
 
     const html = `
       <div class="cart-item">
-        <img src="${item.img}" alt="Game Cover" class="cart-item__image" />
+        <img src="${item.img}" alt="${item.title}" class="cart-item__image" />
         <div class="cart-item__info">
-          <h3 class="cart-item__title">Dying Light: The Beast</h3>
+          <h3 class="cart-item__title">${
+            item.title || "Dying Light: The Beast"
+          }</h3>
           <p class="cart-item__genres">Zombies, Action, Parkour, Open World</p>
           <p class="cart-item__release">Release Date: 19 Sep, 2025</p>
         </div>
         <div class="cart-item__pricing">
             <span class="cart-item__price--new">${item.price}</span>
         </div>
-        <button class="cart-item__delete" aria-label="Remove item" onclick="removeCartItem('${item.id}')">
+        <button class="cart-item__delete" aria-label="Remove item" onclick="removeCartItem('${
+          item.id
+        }')">
           <i class="bx bx-trash cart-item__delete-icon"></i>
         </button>
       </div>
@@ -267,9 +271,16 @@ function renderCartPage() {
 
 window.removeCartItem = function (id) {
   let items = getCartData();
-  const newItems = items.filter((item) => item.id !== id);
+  const newItems = items.filter((item) => {
+    return String(item.id) !== String(id);
+  });
+
   saveCartData(newItems);
-  if (window.showNotification) {
-    window.showNotification("Removed from cart", "remove");
+  if (items.length === newItems.length) {
+    console.warn("Không tìm thấy ID này trong kho để xóa!");
+  } else {
+    if (window.showNotification) {
+      window.showNotification("Item removed from cart", "remove");
+    }
   }
 };
