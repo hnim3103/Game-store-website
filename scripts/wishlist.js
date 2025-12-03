@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const wishlistCountLabel = document.getElementById("wishlist-count");
   const STORAGE_KEY = "list_wishlist";
 
-  // QUẢN LÝ DỮ LIỆU
+  // manege wishlist data
   function getWishlist() {
     const data = localStorage.getItem(STORAGE_KEY);
     return data ? JSON.parse(data) : [];
@@ -84,12 +84,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // HÀM XÓA
+  // remove function
   window.removeGame = function (id) {
     const newItems = getWishlist().filter((item) => item.id !== id);
     saveWishlist(newItems);
 
-    // Gọi thông báo từ Header (nếu có)
+    // call notification
     if (typeof window.showNotification === "function") {
       window.showNotification("Removed from wishlist", "remove");
     }
@@ -142,18 +142,18 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-  // LẤY EMAIL NGƯỜI DÙNG TỪ localStorage 
+  // get email from localstorage
   const userEmail = localStorage.getItem("loggedInUserEmail");
 
   if (userEmail) {
-    //TÁCH USERNAME từ email
     const username = userEmail.split("@")[0];
 
-    //TRUY CẬP TỚI NƠI HIỂN THỊ TRONG HTML
-    const usernameElement = document.querySelector(".profile-bar__wishlistname");
+    //connect to elements
+    const usernameElement = document.querySelector(
+      ".profile-bar__wishlistname"
+    );
     const fullnameElement = document.querySelector(".profile-bar__fullname");
 
-    //GHI DỮ LIỆU LÊN GIAO DIỆN
     if (usernameElement) usernameElement.textContent = username;
     if (fullnameElement) fullnameElement.textContent = userEmail;
   }
