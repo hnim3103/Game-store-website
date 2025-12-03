@@ -75,8 +75,6 @@ const Auth = {
         e.stopPropagation();
         const userMenu = document.getElementById("userMenu");
         if (userMenu) userMenu.classList.remove("show");
-
-        // Hiện modal xác nhận
         modal.classList.add("active");
       };
     });
@@ -87,7 +85,7 @@ const Auth = {
 
     btnCancel.addEventListener("click", closeModal);
 
-    // Đóng khi bấm ra vùng tối bên ngoài
+    // close modal when clicking outside content
     modal.addEventListener("click", (e) => {
       if (e.target === modal) closeModal();
     });

@@ -7,12 +7,13 @@ The **Game Store Website** is a simple, responsive web application built using o
 ## Key Features
 
 ### User Features
-- **Home Page**: Displays featured games and promotions.  
-- **Game Catalog**: Browse all available games with images, prices, and descriptions.  
+
+- **Home Page**: Displays featured games and promotions.
+- **Game Catalog**: Browse all available games with images, prices, and descriptions.
 - **Simple Authentication**: Simple flow with client and user.
-- **Game Detail Page**: View detailed information, screenshots, and price of a selected game.  
-- **Shopping Cart (Frontend only)**: Add games to cart, update quantities, and calculate total price.  
-- **Responsive Design**: Works seamlessly across desktop, tablet, and mobile devices.  
+- **Game Detail Page**: View detailed information, screenshots, and price of a selected game.
+- **Shopping Cart (Frontend only)**: Add games to cart, update quantities, and calculate total price.
+- **Responsive Design**: Works seamlessly across desktop, tablet, and mobile devices.
 
 ## Project Structure
 
@@ -31,23 +32,25 @@ game-store-website/
 ├── img/ # Game images and assets
 └── README.md # Project documentation
 ```
+
 ## Technology Stack
 
-- **HTML5**: Structure and semantic markup  
-- **CSS3**: Styling and responsive layout (Flexbox & Grid)  
-- **JavaScript (ES6+)**: Interactivity, DOM manipulation, and client-side logic  
+- **HTML5**: Structure and semantic markup
+- **CSS3**: Styling and responsive layout (Flexbox & Grid)
+- **JavaScript (ES6+)**: Interactivity, DOM manipulation, and client-side logic
 
-_No external frameworks (e.g., React, Angular, Vue) or libraries are used._  
+_No external frameworks (e.g., React, Angular, Vue) or libraries are used._
 
 ## Architecture Overview
 
-- **Static Frontend**: Pure HTML, CSS, and JavaScript files served directly.  
-- **Responsive Design**: Media queries in CSS ensure the site adapts to different screen sizes.  
+- **Static Frontend**: Pure HTML, CSS, and JavaScript files served directly.
+- **Responsive Design**: Media queries in CSS ensure the site adapts to different screen sizes.
 
 ## Development Setup
 
 ### Prerequisites
-- Any modern web browser (Chrome, Firefox, Edge, Safari).  
+
+- Any modern web browser (Chrome, Firefox, Edge, Safari).
 
 ### Future Enhancements
 

@@ -269,15 +269,10 @@
 }
 
 /* POP UP */
-/* =================================
-   CSS CHO POPUP (ĐÃ CẬP NHẬT)
-   ================================= */
 
 .gsw-popup-overlay {
-  /* Ẩn mặc định */
   display: none;
   opacity: 0;
-
   position: fixed;
   top: 0;
   left: 0;
@@ -285,29 +280,26 @@
   height: 100%;
   background-color: rgba(0, 0, 0, 0.6);
   z-index: 99999;
-
-  /* Dùng flex để căn giữa */
   justify-content: center;
   align-items: center;
-
   transition: opacity 0.3s ease;
-  overflow-y: auto; /* Cho phép cuộn nếu box quá cao */
+  overflow-y: auto;
 }
-
+/*active*/
 .gsw-popup-overlay.active {
-  display: flex; /* Hiện nền mờ */
+  display: flex;
   opacity: 1;
 }
 
-/* ẨN TẤT CẢ CÁC BOX BÊN TRONG */
+/* hide */
 .popup-box {
-  display: none; /* Ẩn */
+  display: none;
   opacity: 0;
   transform: scale(0.95);
   transition: all 0.3s ease-out;
 }
 
-/* CHỈ HIỆN BOX NÀO CÓ CLASS .ACTIVE */
+/* active */
 .popup-box.active {
   display: flex;
   flex-direction: column;

@@ -5,9 +5,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const recNext = document.getElementById("rec-next");
 
   if (recList && recPrev && recNext) {
-    // Hàm xử lý cuộn
+    // function to scroll the list
     const scrollList = (direction) => {
-      // Lấy chiều rộng của một card + gap
+      // get card with gap
       const card = recList.querySelector(".product-card");
       const cardWidth = card.offsetWidth;
       const gap = 15;
@@ -20,38 +20,38 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     };
 
-    // Gán sự kiện click
+    // attach event listeners
     recNext.addEventListener("click", () => scrollList("next"));
     recPrev.addEventListener("click", () => scrollList("prev"));
   }
-  // 1. Render Giỏ hàng ngay khi vào trang
+  // render cart page
   renderCartPage();
-  // 4. Lắng nghe sự kiện nếu Header thêm hàng mới thì tự cập nhật
+  // listen for cart updates
   window.addEventListener("cartUpdated", renderCartPage);
 });
 
-// Xử lý logic mở/đóng và quy trình thanh toán
+//handle payment option selection and order placement
 class PaymentHandler {
   constructor() {
-    // Tìm tất cả các div có class .payment-option
+    // find all payment options
     this.paymentOptions = document.querySelectorAll(".payment-option");
-    // Tìm nút PLACE ORDER bằng id của nó
+    // find place order button
     this.placeOrderBtn = document.getElementById("placeOrderBtn");
-    // Tạo trạng tháy null khi chưa chọn phương thức nào
+    // creare variable to track selected payment
     this.selectedPayment = null;
 
     this.init();
   }
 
   init() {
-    // Lặp qua từng tùy chọn thanh toán
+    // loop through payment options and add click listeners
     this.paymentOptions.forEach((option) => {
-      // Tìm đến phần tùy chọn thanh toán
+      // find header inside option
       const header = option.querySelector(".payment-option__header");
       header.addEventListener("click", () => this.togglePaymentOption(option));
     });
 
-    // Thêm trình xử lý nhấp chuột và nút PLACE ORDER
+    //add listener to place order button
     if (this.placeOrderBtn) {
       this.placeOrderBtn.addEventListener("click", () =>
         this.handlePlaceOrder()
@@ -60,17 +60,17 @@ class PaymentHandler {
   }
 
   togglePaymentOption(clickedOption) {
-    // Kiểm tra đã có option nào được mở hay chưa
+    // check if click option is ready active
     const wasActive = clickedOption.classList.contains(
       "payment-option--active"
     );
 
-    // Lặp qua các option và đóng tất cả lại bằng cách xóa class
+    // lôop through all options and deactivate them
     this.paymentOptions.forEach((option) => {
       option.classList.remove("payment-option--active");
     });
 
-    // Nếu option vừa nhấp chưa mở, mở nó ra
+    // if clicked option was not active, activate it
     if (!wasActive) {
       clickedOption.classList.add("payment-option--active");
       this.selectedPayment = clickedOption.dataset.payment;
@@ -82,14 +82,14 @@ class PaymentHandler {
   }
 
   updatePlaceOrderButton(paymentMethod) {
-    // Xóa các class cũ
+    // remove old class
     this.placeOrderBtn.classList.remove(
       "summary__button--paypal",
       "summary__button--card",
       "summary__button--googlepay"
     );
 
-    // Cập nhật nút dựa trên lựa chọn
+    // update button
     switch (paymentMethod) {
       case "paypal":
         this.placeOrderBtn.textContent = "PAY PAL";
@@ -114,23 +114,19 @@ class PaymentHandler {
       this.showNotification("Please select a payment method", "error");
       return;
     }
-    // Hiện trạng thái xử lý
     this.placeOrderBtn.disabled = true;
     this.placeOrderBtn.textContent = "PROCESSING...";
 
-    // Mô phỏng xử lý thanh toán (1.5 giây)
     setTimeout(() => {
       this.processPayment(this.selectedPayment);
     }, 1500);
   }
-  // Xử lý thanh toán thành công
+  // handle payment processing
   processPayment(method) {
     this.placeOrderBtn.disabled = false;
     this.updatePlaceOrderButton(method);
-    // Chuyển hướng đến trang thành công
     window.location.href = "./payment-success.html";
   }
-  // Lấy tên phương thức thanh toán để hiển thị
   getPaymentMethodName(method) {
     const names = {
       paypal: "PayPal",
@@ -140,50 +136,45 @@ class PaymentHandler {
     return names[method] || method;
   }
 
-  // Hàm hiển thị thông báo dạng toast
+  // function to show notification
   showNotification(message, type = "error") {
     let container = document.getElementById("toast-container");
-    // Tạo container
     if (!container) {
       container = document.createElement("div");
       container.id = "toast-container";
       document.body.appendChild(container);
     }
-    // Tạo thông báo mới
+    // create notification
     const notification = document.createElement("div");
     notification.textContent = message;
-    // Thêm class chung
+    // add base class
     notification.classList.add("toast-notification");
 
-    // Thêm class theo loại thông báo
+    // add type class
     if (type === "error") {
       notification.classList.add("toast-error");
     }
-    // Thêm thông báo vào container
     container.appendChild(notification);
-    // Kích hoạt hiệu ứng hiển thị
     requestAnimationFrame(() => {
       notification.classList.add("toast-show");
     });
-    // Hàm xóa thông báo
+    // emove notification function
     const removeToast = () => {
       notification.classList.remove("toast-show");
       notification.classList.add("toast-hide");
       notification.addEventListener("transitionend", () => {
-        // Xóa thông báo khỏi DOM
         if (notification.parentNode) {
           notification.remove();
         }
-        // Nếu không còn thông báo nào, xóa container
         if (container.childElementCount === 0) {
           container.remove();
         }
       });
     };
-    // Giới hạn số lượng thông báo hiển thị tối đa là 3
+    // limit to 3 notifications
     if (container.childElementCount > 2) {
       const oldestToast = container.firstElementChild;
-      // Xóa thông báo cũ nhất
+      //remove oldest toast
       if (oldestToast) {
         oldestToast.classList.remove("toast-show");
         oldestToast.classList.add("toast-hide");
@@ -192,16 +183,13 @@ class PaymentHandler {
         );
       }
     }
-    // Tự động xóa thông báo sau 3 giây
     setTimeout(() => {
       removeToast();
     }, 3000);
   }
 }
 
-/* ============================================================
-   LOGIC QUẢN LÝ GIỎ HÀNG (RENDER & CALCULATE)
-   ============================================================ */
+/*CART MANEGEMENT*/
 document.addEventListener("DOMContentLoaded", () => {
   renderCartPage();
   window.addEventListener("cartUpdated", renderCartPage);

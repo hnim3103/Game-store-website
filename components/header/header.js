@@ -210,26 +210,25 @@ updateHover();
 // Update if screen is resized
 window.addEventListener("resize", updateHover);
 
-
-// Hàm gắn id
+// add auto indexing to cards
 
 function initAutoIndexing() {
   let pageName = window.location.pathname.split("/").pop().split(".")[0];
   if (!pageName || pageName === "") pageName = "home";
 
-  // Tìm tất cả thẻ game
+  // find all card game
   const allCards = document.querySelectorAll(
     ".game-card, .game-item, .slider__item"
   );
 
   allCards.forEach((card, index) => {
-    // A. Gán ID nếu chưa có
+    // assign unique id if not existing
     if (!card.dataset.id) {
       const uniqueId = `${pageName}_game_${index}`;
       card.dataset.id = uniqueId;
       console.log(`Assigned ID ${uniqueId} to card on ${pageName}`);
     }
-    // B. Gán Ảnh nếu chưa có
+    // assign unique img if not existing
     if (!card.dataset.img) {
       const imgTag = card.querySelector("img");
       if (imgTag) {
@@ -249,7 +248,6 @@ if (document.readyState === "loading") {
 
 // ADD TO WISHLIST
 
-// Cấu hình Key lưu trữ
 const GLOBAL_STORAGE_KEY = "list_wishlist";
 
 window.showNotification = function (message, type = "add") {
@@ -272,7 +270,7 @@ window.showNotification = function (message, type = "add") {
   }, 2500);
 };
 
-// QUẢN LÝ STORAGE
+// manage wishlist data
 function getGlobalWishlist() {
   const data = localStorage.getItem(GLOBAL_STORAGE_KEY);
   return data ? JSON.parse(data) : [];
@@ -283,7 +281,7 @@ function saveGlobalWishlist(items) {
   window.dispatchEvent(new Event("storageUpdated"));
 }
 
-// LẮNG NGHE CLICK wishlist
+// listen for add to wishlist clicks
 
 document.body.addEventListener("click", (e) => {
   const btn = e.target.closest(
@@ -296,11 +294,11 @@ document.body.addEventListener("click", (e) => {
       ".game-card, .game-info, .game-item, .review-card, .slider__card, .product-card"
     );
 
-    // LẤY DỮ LIỆU
+    // get data
     let id = card?.dataset.id || btn.dataset.id;
     let img = card?.dataset.img || btn.dataset.img;
 
-    // --- FALLBACK: Tự động tìm ảnh nếu thiếu ---
+    // auto find id & img if not found
     if (!id) {
       const imgTag = card?.querySelector("img");
       if (imgTag) {
@@ -314,7 +312,7 @@ document.body.addEventListener("click", (e) => {
       return;
     }
 
-    // LOGIN & LƯU
+    // LOGIN and save
     const isLoggedIn = window.Auth
       ? window.Auth.isLoggedIn()
       : localStorage.getItem("loggedInUserEmail");
@@ -359,7 +357,7 @@ function saveGlobalCart(items) {
   window.dispatchEvent(new Event("cartUpdated"));
 }
 
-// Lắng nghe sự kiện Click Add to Cart
+// listen for add to cart clicks
 document.body.addEventListener("click", (e) => {
   const btn = e.target.closest(
     ".game-card__add-cart, .slider__add-cart, .product-card__add-cart, .btn-cart"
@@ -367,7 +365,7 @@ document.body.addEventListener("click", (e) => {
   if (!btn) return;
   if (btn) {
     e.preventDefault();
-    // KIỂM TRA LOGIN
+    // check login
     const isLoggedIn = window.Auth
       ? window.Auth.isLoggedIn()
       : localStorage.getItem("loggedInUserEmail");
@@ -383,11 +381,11 @@ document.body.addEventListener("click", (e) => {
       ".game-card, .game-item, .product-card, .game-info, .slider__card"
     );
 
-    // LẤY DỮ LIỆU
+    // get data
     let id = card.dataset.id || btn.dataset.id;
     let img = card.dataset.img || btn.dataset.img;
 
-    // Tìm Ảnh & ID (như Wishlist)
+    // find img and id
     if (!id || !img) {
       const imgTag = card.querySelector("img");
       if (imgTag) {
@@ -397,7 +395,7 @@ document.body.addEventListener("click", (e) => {
       }
     }
 
-    // Tìm Giá Tiền
+    // find price
     let price = card.dataset.price;
     if (!price) {
       const textTags = card.querySelectorAll("p, span, div");
@@ -411,10 +409,10 @@ document.body.addEventListener("click", (e) => {
       if (!price) price = "$0.00";
     }
 
-    // D. LƯU VÀO GIỎ HÀNG
+    // save to cart
     const currentCart = getGlobalCart();
 
-    // Kiểm tra trùng lặp
+    // check for loop
     const existingItemIndex = currentCart.findIndex((item) => item.id === id);
 
     if (existingItemIndex === -1) {
