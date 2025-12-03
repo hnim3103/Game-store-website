@@ -181,17 +181,35 @@ const panel = document.querySelector(".category__collabsible");
 
 let closeTimer;
 
-wrapper.addEventListener("mouseenter", () => {
+function onEnter() {
   clearTimeout(closeTimer);
-
   panel.classList.add("is-display");
-});
+}
 
-wrapper.addEventListener("mouseleave", () => {
+function onLeave() {
   closeTimer = setTimeout(() => {
     panel.classList.remove("is-display");
   }, 250);
-});
+}
+
+function updateHover() {
+  if (!wrapper || !panel) return;
+
+  if (window.innerWidth >= 900) {
+    wrapper.addEventListener("mouseenter", onEnter);
+    wrapper.addEventListener("mouseleave", onLeave);
+  } else {
+    wrapper.removeEventListener("mouseenter", onEnter);
+    wrapper.removeEventListener("mouseleave", onLeave);
+  }
+}
+
+// Run once on load
+updateHover();
+
+// Update if screen is resized
+window.addEventListener("resize", updateHover);
+
 
 // Hàm gắn id
 
